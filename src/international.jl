@@ -1,5 +1,3 @@
 function is_labor_day(::AbstractCountry, date::Date)::Bool
-    day = Dates.day(date)
-    month = Dates.month(date)
-    return month == 5 && day == 1
+    return Dates.month(date) == Dates.May && Dates.day(date) == 1
 end
