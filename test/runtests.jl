@@ -5,6 +5,9 @@ using Dates
 using Test
 
 include("aqua.jl")
+
+include("groups/christian.jl")
+
 include("countries/brazil.jl")
 include("countries/united_states.jl")
 
@@ -13,6 +16,10 @@ function test_all()
     #     test_aqua()
     # end
 
+    @testset "Christian" begin
+        test_christian()
+    end
+
     @testset "Brazil" begin
         test_brazil()
     end
@@ -20,7 +27,6 @@ function test_all()
     @testset "United States" begin
         test_united_states()
     end
-
 
     return nothing
 end

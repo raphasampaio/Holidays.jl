@@ -5,7 +5,13 @@ end
 function test_brazil()
     country = Holidays.Brazil()
 
-    @test is_holiday(country, Date(2020, 1, 1)) == true
+    @testset "New Year's Day" begin
+        @test is_holiday(country, Date(2020, 1, 1)) == true
+    end
+
+    @testset "Good Friday" begin
+        @test is_holiday(country, Date(2020, 4, 10)) == true
+    end
 
     return nothing
 end

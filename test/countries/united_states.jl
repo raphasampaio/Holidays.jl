@@ -13,6 +13,13 @@ function test_united_states()
         @test is_holiday(country, Date(2020, 7, 5)) == false
     end
 
+    @testset "Labor Day" begin
+        Holidays.is_labor_day(country, Date(2023, 9, 4)) == true
+        Holidays.is_labor_day(country, Date(2024, 9, 2)) == true
+        Holidays.is_labor_day(country, Date(2025, 9, 1)) == true
+        Holidays.is_labor_day(country, Date(2026, 9, 7)) == true
+    end
+
     @testset "Thanksgiving" begin
         @test is_holiday(country, Date(2023, 11, 22)) == false
         @test is_holiday(country, Date(2023, 11, 23)) == true

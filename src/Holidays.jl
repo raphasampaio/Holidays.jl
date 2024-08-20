@@ -6,6 +6,8 @@ export is_holiday
 
 include("abstract.jl")
 
+include("international.jl")
+
 include("calendar/gregorian.jl")
 
 include("groups/christian.jl")
