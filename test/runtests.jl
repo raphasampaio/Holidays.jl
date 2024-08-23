@@ -18,7 +18,7 @@ function test_holidays(country, year::Integer, holidays::Vector{Date})
 
     set = Set(holidays)
 
-    for date = start_date:end_date
+    for date in start_date:end_date
         @testset "$date" begin
             @test is_holiday(country, date) == (date in set)
         end
