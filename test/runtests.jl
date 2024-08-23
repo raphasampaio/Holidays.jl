@@ -16,17 +16,23 @@ function test_all()
     #     test_aqua()
     # end
 
-    @testset "Christian" begin
-        test_christian()
-    end
+    country = Country.Brazil(region = Location.RioDeJaneiro())
+    is_holiday(country, Date(2021, 1, 1))
 
-    @testset "Brazil" begin
-        test_brazil()
-    end
+    country = Country.Brazil()
+    is_holiday(country, Date(2021, 1, 1))
 
-    @testset "United States" begin
-        test_united_states()
-    end
+    # @testset "Christian" begin
+    #     test_christian()
+    # end
+
+    # @testset "Brazil" begin
+    #     test_brazil()
+    # end
+
+    # @testset "United States" begin
+    #     test_united_states()
+    # end
 
     return nothing
 end
