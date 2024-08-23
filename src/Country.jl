@@ -11,14 +11,15 @@ macro country(name)
         begin
             struct $(esc(name)){T<:Union{Nothing,Location.AbstractLocation}} <:
                    AbstractCountry
-                region::T
+                location::T
             end
         end
         begin
-            $(esc(name))(; region = nothing) = $(esc(name))(region)
+            $(esc(name))(; location = nothing) = $(esc(name))(location)
             $(esc(name)){T}(;
-                region = nothing,
-            ) where {T<:Union{Nothing,Location.AbstractLocation}} = $(esc(name)){T}(region)
+                location = nothing,
+            ) where {T<:Union{Nothing,Location.AbstractLocation}} =
+                $(esc(name)){T}(location)
         end
     end
 end

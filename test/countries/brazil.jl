@@ -1,5 +1,5 @@
 function test_brazil_rio_de_janeiro(holidays)
-    country = Country.Brazil(region = Location.RioDeJaneiro())
+    country = Country.Brazil(location = Location.RioDeJaneiro())
 
     more_holidays = Set([Date(2024, 1, 20)])
 
