@@ -1,4 +1,5 @@
-function is_holiday(::Type{Regions.Brazil}, date::Date)::Bool
+is_holiday(::Country.Brazil, date::Date) = is_holiday(Country.Brazil, date)
+function is_holiday(::Type{Country.Brazil}, date::Date)
     day = Dates.day(date)
     month = Dates.month(date)
 
@@ -75,26 +76,8 @@ function is_holiday(::Type{Regions.Brazil}, date::Date)::Bool
     return false
 end
 
-function is_holiday(::Type{Regions.BrazilRioDeJaneiro}, date::Date)::Bool
-    day = Dates.day(date)
-    month = Dates.month(date)
-
-    if is_holiday(Regions.Brazil, date)
-        return true
-    end
-
-    if month == Dates.Apr && day == 23
-        return true
-    end
-
-    return false
-end
-
-function is_holiday(::Type{Regions.BrazilRioDeJaneiroRioDeJaneiro}, date::Date)::Bool
-    day = Dates.day(date)
-    month = Dates.month(date)
-
-    if is_holiday(Regions.BrazilRioDeJaneiro, date)
+function is_holiday(country::Country.Brazil{Location.RioDeJaneiro}, date::Date)
+    if is_holiday(Country.Brazil, date)
         return true
     end
 
