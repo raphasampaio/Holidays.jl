@@ -41,6 +41,24 @@ end
 @location Sergipe
 @location Tocantins
 
+# Germany
+@location BadenWurttemberg
+@location Bavaria
+@location Berlin
+@location Brandenburg
+@location Bremen
+@location Hamburg
+@location Hesse
+@location MecklenburgVorpommern
+@location LowerSaxony
+@location NorthRhineWestphalia
+@location RhinelandPalatinate
+@location Saarland
+@location Saxony
+@location SaxonyAnhalt
+@location SchleswigHolstein
+@location Thuringia
+
 # UnitedStates
 @location Alabama
 @location Alaska

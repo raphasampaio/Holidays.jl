@@ -9,17 +9,13 @@ abstract type AbstractCountry end
 macro country(name)
     quote
         begin
-            struct $(esc(name)){T <: Union{Nothing, Location.AbstractLocation}} <:
-                   AbstractCountry
+            struct $(esc(name)){T <: Union{Nothing, Location.AbstractLocation}} <: AbstractCountry
                 location::T
             end
         end
         begin
             $(esc(name))(; location = nothing) = $(esc(name))(location)
-            $(esc(name)){T}(;
-                location = nothing,
-            ) where {T <: Union{Nothing, Location.AbstractLocation}} =
-                $(esc(name)){T}(location)
+            $(esc(name)){T}(; location = nothing) where {T <: Union{Nothing, Location.AbstractLocation}} = $(esc(name)){T}(location)
         end
     end
 end

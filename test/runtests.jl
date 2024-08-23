@@ -10,6 +10,8 @@ include("calendars/christian.jl")
 include("calendars/islamic.jl")
 
 include("countries/brazil.jl")
+include("countries/egypt.jl")
+include("countries/germany.jl")
 include("countries/united_states.jl")
 
 function test_holidays(country, year::Integer, holidays::Vector{Date})
@@ -42,12 +44,24 @@ function test_all()
         test_aqua()
     end
 
+    @testset "Christian" begin
+        test_christian()
+    end
+    
     @testset "Islamic" begin
         test_islamic()
     end
 
     @testset "Brazil" begin
         test_brazil()
+    end
+
+    @testset "Egypt" begin
+        test_egypt()
+    end
+
+    @testset "Germany" begin
+        test_germany()
     end
 
     @testset "United States" begin
