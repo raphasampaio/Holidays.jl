@@ -1,49 +1,34 @@
+# abstract type Country end
+# abstract type Brazil <: Country end
+# abstract type BrazilRioDeJaneiro <: Brazil end
+# abstract type BrazilSaoPaulo <: Brazil end
+
+# function is_holiday(::Type{Brazil})
+#     @show "Checking holiday in Brazil..."
+#     return false
+# end
+
+# function is_holiday(::Type{BrazilRioDeJaneiro})
+#     if is_holiday(Brazil)
+#         return true
+#     end
+#     @show "Checking holiday in Rio de Janeiro..."
+#     return false
+# end
+
+
+
+# @show Brazil
+
 using Holidays
 
-using Aqua
 using Dates
 using Test
 
-include("aqua.jl")
-
-include("groups/christian.jl")
-
-include("countries/brazil.jl")
-include("countries/united_states.jl")
-
-function test_holidays(country, holidays, year::Integer)
-    start_date = Date(year, 1, 1)
-    end_date = Date(year, 12, 31)
-
-    for date = start_date:end_date
-        @testset "$(Dates.format(date, "yyyy, mm, dd"))" begin
-            if date in holidays
-                @test is_holiday(country, date) == true
-            else
-                @test is_holiday(country, date) == false
-            end
-        end
-    end
-
-    return nothing
-end
-
 function test_all()
-    # @testset "Aqua.jl" begin
-    #     test_aqua()
-    # end
-
-    @testset "Christian" begin
-        test_christian()
-    end
-
-    @testset "Brazil" begin
-        test_brazil()
-    end
-
-    @testset "United States" begin
-        test_united_states()
-    end
+    @show is_holiday(Regions.Brazil, Date(2024, 01, 20))
+    @show is_holiday(Regions.BrazilRioDeJaneiro, Date(2024, 01, 20))
+    @show is_holiday(Regions.BrazilRioDeJaneiroRioDeJaneiro, Date(2024, 01, 20))
 
     return nothing
 end

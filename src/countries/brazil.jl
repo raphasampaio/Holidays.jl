@@ -1,29 +1,28 @@
-struct Brazil <: AbstractCountry end
-
-function is_independence_day(::Brazil, date::Date)::Bool
-    return Dates.day(date) == 7 && Dates.month(date) == Dates.Sep
-end
-
-function is_holiday(country::Brazil, date::Date)::Bool
+function is_holiday(::Type{Regions.Brazil}, date::Date)::Bool
     day = Dates.day(date)
     month = Dates.month(date)
 
+    # Ano Novo
     if is_new_years_day(date)
         return true
     end
 
+    # Carnaval
     if Christian.is_shrove_monday(date)
         return true
     end
 
+    # Carnaval
     if Christian.is_shrove_tuesday(date)
         return true
     end
 
+    # Quarta de Cinzas
     if Christian.is_ash_wednesday(date)
         return true
     end
 
+    # Sexta-feira Santa
     if Christian.is_good_friday(date)
         return true
     end
@@ -33,15 +32,18 @@ function is_holiday(country::Brazil, date::Date)::Bool
         return true
     end
 
-    if is_labor_day(country, date)
+    # Dia do Trabalhador
+    if month == Dates.May && day == 1
         return true
     end
 
+    # Corpus Christi
     if Christian.is_chorus_christi(date)
         return true
     end
 
-    if is_independence_day(country, date)
+    # Dia da Independência
+    if month == Dates.Sep && day == 7
         return true
     end
 
@@ -50,6 +52,7 @@ function is_holiday(country::Brazil, date::Date)::Bool
         return true
     end
 
+    # Finados
     if Christian.is_all_souls_day(date)
         return true
     end
@@ -64,7 +67,38 @@ function is_holiday(country::Brazil, date::Date)::Bool
         return true
     end
 
+    # Natal
     if Christian.is_christmas_day(date)
+        return true
+    end
+
+    return false
+end
+
+function is_holiday(::Type{Regions.BrazilRioDeJaneiro}, date::Date)::Bool
+    day = Dates.day(date)
+    month = Dates.month(date)
+
+    if is_holiday(Regions.Brazil, date)
+        return true
+    end
+
+    if month == Dates.Apr && day == 23
+        return true
+    end
+
+    return false
+end
+
+function is_holiday(::Type{Regions.BrazilRioDeJaneiroRioDeJaneiro}, date::Date)::Bool
+    day = Dates.day(date)
+    month = Dates.month(date)
+
+    if is_holiday(Regions.BrazilRioDeJaneiro, date)
+        return true
+    end
+
+    if month == Dates.Jan && day == 20
         return true
     end
 

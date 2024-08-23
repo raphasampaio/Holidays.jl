@@ -1,18 +1,18 @@
 module Holidays
 
 using Dates
+include("Regions.jl")
+using .Regions
 
-export is_holiday
+export Regions, is_holiday
 
-include("abstract.jl")
-
-include("international.jl")
+# include("international.jl")
 
 include("calendar/gregorian.jl")
 
 include("groups/christian.jl")
 
 include("countries/brazil.jl")
-include("countries/united_states.jl")
+# include("countries/united_states.jl")
 
 end
