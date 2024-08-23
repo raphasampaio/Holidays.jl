@@ -1,34 +1,33 @@
 struct UnitedStates <: AbstractCountry end
 
-function is_labor_day(::UnitedStates, date::Date)::Bool
-    day_of_week = Dates.dayofweek(date)
-    day_of_week_of_month = Dates.dayofweekofmonth(date)
-    month = Dates.month(date)
+function is_martin_luther_king_day(date::Date)::Bool
+    return Dates.dayofweek(date) == Dates.Mon &&
+           Dates.dayofweekofmonth(date) == 3 &&
+           Dates.month(date) == Dates.Jan
+end
 
-    return day_of_week == Dates.Monday &&
-           day_of_week_of_month == 1 &&
-           month == Dates.September
+function is_labor_day(::UnitedStates, date::Date)::Bool
+    return Dates.dayofweek(date) == Dates.Mon &&
+           Dates.dayofweekofmonth(date) == 1 &&
+           Dates.month(date) == Dates.Sep
 end
 
 function is_independence_day(::UnitedStates, date::Date)::Bool
-    day = Dates.day(date)
-    month = Dates.month(date)
-
-    return month == 7 && day == 4
+    return Dates.day(date) == 4 && Dates.month(date) == Dates.Jul
 end
 
 function is_thanksgiving(date::Date)::Bool
-    day_of_week = Dates.dayofweek(date)
-    day_of_week_of_month = Dates.dayofweekofmonth(date)
-    month = Dates.month(date)
-
-    return day_of_week == Dates.Thursday &&
-           day_of_week_of_month == 4 &&
-           month == Dates.November
+    return Dates.dayofweek(date) == Dates.Thu &&
+           Dates.dayofweekofmonth(date) == 4 &&
+           Dates.month(date) == Dates.Nov
 end
 
 function is_holiday(country::UnitedStates, date::Date)::Bool
     if is_new_years_day(date)
+        return true
+    end
+
+    if is_martin_luther_king_day(date)
         return true
     end
 
@@ -49,5 +48,4 @@ function is_holiday(country::UnitedStates, date::Date)::Bool
     end
 
     return false
-
 end
