@@ -6,29 +6,37 @@ using Test
 
 include("aqua.jl")
 
-include("groups/christian.jl")
-
 include("countries/brazil.jl")
-include("countries/united_states.jl")
+
+
+# include("groups/christian.jl")
+
+
+# include("countries/united_states.jl")
+
+function test_holidays(country, holidays::Set, year::Integer)
+    start_date = Date(year, 1, 1)
+    end_date = Date(year, 12, 31)
+
+    for date in start_date:end_date
+        @test is_holiday(country, date) == (date in holidays)
+    end
+
+    return nothing
+end
 
 function test_all()
     # @testset "Aqua.jl" begin
     #     test_aqua()
     # end
 
-    country = Country.Brazil(region = Location.RioDeJaneiro())
-    is_holiday(country, Date(2021, 1, 1))
-
-    country = Country.Brazil()
-    is_holiday(country, Date(2021, 1, 1))
-
     # @testset "Christian" begin
     #     test_christian()
     # end
 
-    # @testset "Brazil" begin
-    #     test_brazil()
-    # end
+    @testset "Brazil" begin
+        test_brazil()
+    end
 
     # @testset "United States" begin
     #     test_united_states()
