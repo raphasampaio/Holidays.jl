@@ -12,41 +12,47 @@ include("calendars/islamic.jl")
 include("countries/brazil.jl")
 include("countries/united_states.jl")
 
-function test_holidays(country, year::Integer, holidays::Set)
+function test_holidays(country, year::Integer, holidays::Vector{Date})
     start_date = Date(year, 1, 1)
     end_date = Date(year, 12, 31)
 
+    set = Set(holidays)
+
     for date = start_date:end_date
         @testset "$date" begin
-            @test is_holiday(country, date) == (date in holidays)
+            @test is_holiday(country, date) == (date in set)
         end
     end
 
     return nothing
 end
 
-function test_holidays(country, year::Integer, holidays::Set, more_holidays::Set)
-    merged = union(holidays, more_holidays)
-    test_holidays(country, year, merged)
+function test_holidays(
+    country,
+    year::Integer,
+    holidays::Vector{Date},
+    more_holidays::Vector{Date},
+)
+    test_holidays(country, year, vcat(holidays, more_holidays))
     return nothing
 end
 
 function test_all()
-    # @testset "Aqua.jl" begin
-    #     test_aqua()
-    # end
+    @testset "Aqua.jl" begin
+        test_aqua()
+    end
 
     @testset "Islamic" begin
         test_islamic()
     end
 
-    # @testset "Brazil" begin
-    #     test_brazil()
-    # end
+    @testset "Brazil" begin
+        test_brazil()
+    end
 
-    # @testset "United States" begin
-    #     test_united_states()
-    # end
+    @testset "United States" begin
+        test_united_states()
+    end
 
     return nothing
 end

@@ -1,7 +1,7 @@
 function test_united_states()
     country = Country.UnitedStates()
 
-    holidays = Set([
+    holidays = [
         Date(2024, 1, 1),
         Date(2024, 1, 15),
         Date(2024, 5, 27),
@@ -12,7 +12,7 @@ function test_united_states()
         Date(2024, 11, 11),
         Date(2024, 11, 28),
         Date(2024, 12, 25),
-    ])
+    ]
 
     test_holidays(country, 2024, holidays)
 

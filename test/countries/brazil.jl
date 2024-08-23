@@ -1,17 +1,7 @@
-function test_brazil_rio_de_janeiro(holidays)
-    country = Country.Brazil(location = Location.RioDeJaneiro())
-
-    more_holidays = Set([Date(2024, 4, 23)])
-
-    test_holidays(country, 2024, holidays, more_holidays)
-
-    return nothing
-end
-
 function test_brazil()
     country = Country.Brazil()
 
-    holidays = Set([
+    holidays = [
         Date(2024, 1, 1),
         Date(2024, 2, 12),
         Date(2024, 2, 13),
@@ -26,11 +16,18 @@ function test_brazil()
         Date(2024, 11, 15),
         Date(2024, 11, 20),
         Date(2024, 12, 25),
-    ])
+    ]
 
     test_holidays(country, 2024, holidays)
 
-    test_brazil_rio_de_janeiro(holidays)
+    @testset "RioDeJaneiro" begin
+        test_holidays(
+            Country.Brazil(location = Location.RioDeJaneiro()),
+            2024,
+            holidays,
+            [Date(2024, 4, 23)],
+        )
+    end
 
     return nothing
 end
