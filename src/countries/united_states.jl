@@ -15,7 +15,9 @@ function is_holiday(::Type{Country.UnitedStates}, date::Date)
     end
 
     # Memorial Day
-    if month == Dates.May && day_of_week == Dates.Mon && day_of_week_of_month == days_of_week_in_month
+    if month == Dates.May &&
+       day_of_week == Dates.Mon &&
+       day_of_week_of_month == days_of_week_in_month
         return true
     end
 
