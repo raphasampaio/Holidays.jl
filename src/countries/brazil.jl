@@ -60,7 +60,7 @@ function is_holiday(::Type{Country.Brazil}, date::Date)
     return false
 end
 
-function is_holiday(country::Country.Brazil{Location.RioDeJaneiro}, date::Date)
+function is_holiday(::Country.Brazil{Location.RioDeJaneiro}, date::Date)
     if is_holiday(Country.Brazil, date)
         return true
     end
