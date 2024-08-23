@@ -1,3 +1,8 @@
+is_sham_ennessim(date::Date) = date == sham_ennessim(Dates.year(date))
+function sham_ennessim(year::Integer)::Date
+    return Christian.easter(year) + Dates.Day(1)
+end
+
 function is_holiday(::Type{Country.Egypt}, date::Date)
     day, month = Dates.day(date), Dates.month(date)
 
@@ -13,6 +18,11 @@ function is_holiday(::Type{Country.Egypt}, date::Date)
 
     # Sinai Liberation Day
     if month == Dates.Apr && day == 25
+        return true
+    end
+
+    # Sham El Nessim
+    if is_sham_ennessim(date)
         return true
     end
 

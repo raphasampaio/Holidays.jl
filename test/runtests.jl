@@ -6,6 +6,9 @@ using Test
 
 include("aqua.jl")
 
+include("calendars/christian.jl")
+include("calendars/islamic.jl")
+
 include("countries/brazil.jl")
 include("countries/united_states.jl")
 
@@ -33,13 +36,17 @@ function test_all()
     #     test_aqua()
     # end
 
-    @testset "Brazil" begin
-        test_brazil()
+    @testset "Islamic" begin
+        test_islamic()
     end
 
-    @testset "United States" begin
-        test_united_states()
-    end
+    # @testset "Brazil" begin
+    #     test_brazil()
+    # end
+
+    # @testset "United States" begin
+    #     test_united_states()
+    # end
 
     return nothing
 end

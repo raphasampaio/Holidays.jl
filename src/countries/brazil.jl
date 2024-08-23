@@ -61,15 +61,11 @@ function is_holiday(::Type{Country.Brazil}, date::Date)
 end
 
 function is_holiday(::Country.Brazil{Location.RioDeJaneiro}, date::Date)
-    if is_holiday(Country.Brazil, date)
-        return true
-    end
-
     day, month = Dates.day(date), Dates.month(date)
 
-    if month == Dates.Jan && day == 20
+    if month == Dates.Apr && day == 23
         return true
     end
 
-    return false
+    return is_holiday(Country.Brazil, date)
 end

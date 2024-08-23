@@ -60,11 +60,7 @@ function is_holiday(::Type{Country.UnitedStates}, date::Date)
 end
 
 function is_holiday(::Country.UnitedStates{Location.NewYork}, date::Date)
-    if is_holiday(Country.UnitedStates, date)
-        return true
-    end
-
     day, month = Dates.day(date), Dates.month(date)
 
-    return false
+    return is_holiday(Country.UnitedStates, date)
 end
