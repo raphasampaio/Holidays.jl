@@ -14,7 +14,9 @@ function test_holidays(country, year::Integer, holidays::Set)
     end_date = Date(year, 12, 31)
 
     for date = start_date:end_date
-        @test is_holiday(country, date) == (date in holidays)
+        @testset "$date" begin
+            @test is_holiday(country, date) == (date in holidays)
+        end
     end
 
     return nothing
