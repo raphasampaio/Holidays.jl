@@ -8,7 +8,17 @@ include("Location.jl")
 include("Country.jl")
 
 include("calendars/christian.jl")
+
 include("countries/brazil.jl")
+include("countries/united_states.jl")
+
+is_holiday(country::Country.Brazil, date::Date) = is_holiday(Country.Brazil, date)
+is_holiday(country::Country.UnitedStates, date::Date) = is_holiday(Country.UnitedStates, date)
+
+# function is_holiday(::T, date::Date) where {T<:Country.AbstractCountry}
+#     return is_holiday(T, date)
+# end
+
 
 # is_holiday(country::Country.Brazil, date::Date) = is_holiday(Country.Brazil, date)
 # function is_holiday(::Type{Country.Brazil}, date::Date)

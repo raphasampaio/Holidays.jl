@@ -1,4 +1,32 @@
-# struct UnitedStates <: AbstractCountry end
+function is_holiday(::Type{Country.UnitedStates}, date::Date)
+    day = Dates.day(date)
+    month = Dates.month(date)
+
+    if month == Dates.Jan && day == 1
+        return true
+    end
+
+    if Christian.is_christmas_day(date)
+        return true
+    end
+
+    return false
+end
+
+function is_holiday(country::Country.UnitedStates{Location.NewYork}, date::Date)
+    if is_holiday(Country.UnitedStates, date)
+        return true
+    end
+
+    if month == Dates.Jan && day == 20
+        return true
+    end
+
+    return false
+end
+
+
+
 
 # function is_martin_luther_king_day(date::Date)::Bool
 #     return Dates.dayofweek(date) == Dates.Mon &&

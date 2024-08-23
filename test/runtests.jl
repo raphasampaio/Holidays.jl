@@ -7,12 +7,7 @@ using Test
 include("aqua.jl")
 
 include("countries/brazil.jl")
-
-
-# include("groups/christian.jl")
-
-
-# include("countries/united_states.jl")
+include("countries/united_states.jl")
 
 function test_holidays(country, holidays::Set, year::Integer)
     start_date = Date(year, 1, 1)
@@ -30,17 +25,13 @@ function test_all()
     #     test_aqua()
     # end
 
-    # @testset "Christian" begin
-    #     test_christian()
-    # end
-
     @testset "Brazil" begin
         test_brazil()
     end
 
-    # @testset "United States" begin
-    #     test_united_states()
-    # end
+    @testset "United States" begin
+        test_united_states()
+    end
 
     return nothing
 end

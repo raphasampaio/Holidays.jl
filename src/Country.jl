@@ -10,4 +10,8 @@ abstract type AbstractCountry end
     region::T = nothing
 end
 
+@kwdef struct UnitedStates{T<:Union{Nothing,Location.AbstractLocation}} <: AbstractCountry
+    region::T = nothing
+end
+
 end
