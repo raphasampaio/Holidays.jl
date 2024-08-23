@@ -1,6 +1,5 @@
 function is_holiday(::Type{Country.UnitedStates}, date::Date)
-    day = Dates.day(date)
-    month = Dates.month(date)
+    day, month = Dates.day(date), Dates.month(date)
 
     if month == Dates.Jan && day == 1
         return true
@@ -18,9 +17,7 @@ function is_holiday(country::Country.UnitedStates{Location.NewYork}, date::Date)
         return true
     end
 
-    if month == Dates.Jan && day == 20
-        return true
-    end
+    day, month = Dates.day(date), Dates.month(date)
 
     return false
 end

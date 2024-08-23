@@ -1,4 +1,12 @@
-function test_brazil_rio_de_janeiro()
+function test_brazil_rio_de_janeiro(holidays)
+    country = Country.Brazil(region=Location.RioDeJaneiro())
+
+    more_holidays = Set([
+        Date(2024, 1, 20),
+    ])
+
+    test_holidays(country, 2024, holidays, more_holidays)
+
     return nothing
 end
 
@@ -22,9 +30,9 @@ function test_brazil()
         Date(2024, 12, 25),
     ])
 
-    test_holidays(country, holidays, 2024)
+    test_holidays(country, 2024, holidays)
 
-    country = Country.Brazil(region = Location.RioDeJaneiro())
+    test_brazil_rio_de_janeiro(holidays)
 
     return nothing
 end

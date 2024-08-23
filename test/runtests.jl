@@ -9,14 +9,20 @@ include("aqua.jl")
 include("countries/brazil.jl")
 include("countries/united_states.jl")
 
-function test_holidays(country, holidays::Set, year::Integer)
+function test_holidays(country, year::Integer, holidays::Set)
     start_date = Date(year, 1, 1)
     end_date = Date(year, 12, 31)
 
-    for date in start_date:end_date
+    for date = start_date:end_date
         @test is_holiday(country, date) == (date in holidays)
     end
 
+    return nothing
+end
+
+function test_holidays(country, year::Integer, holidays::Set, more_holidays::Set)
+    merged = union(holidays, more_holidays)
+    test_holidays(country, year, merged)
     return nothing
 end
 

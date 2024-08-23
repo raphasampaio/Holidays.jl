@@ -6,7 +6,7 @@ function test_united_states()
         Date(2024, 12, 25),
     ])
 
-    test_holidays(country, holidays, 2024)
+    test_holidays(country, 2024, holidays)
 
     return nothing
 end
