@@ -3,7 +3,7 @@ function sham_ennessim(year::Integer)::Date
     return Christian.easter(year) + Dates.Day(1)
 end
 
-function is_holiday(::Type{Country.Egypt}, date::Date)
+function is_holiday(::Type{Country.Egypt}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Christmas Day

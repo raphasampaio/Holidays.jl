@@ -1,4 +1,4 @@
-function is_holiday(::Type{Country.UnitedStates}, date::Date)
+function is_holiday(::Type{Country.UnitedStates}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
     day_of_week = Dates.dayofweek(date)
     day_of_week_of_month = Dates.dayofweekofmonth(date)
@@ -59,7 +59,7 @@ function is_holiday(::Type{Country.UnitedStates}, date::Date)
     return false
 end
 
-function is_holiday(::Country.UnitedStates{Location.NewYork}, date::Date)
+function is_holiday(::Country.UnitedStates{Location.NewYork}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     return is_holiday(Country.UnitedStates, date)
