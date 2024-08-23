@@ -7,8 +7,7 @@ export is_holiday, Country, Location
 include("Location.jl")
 include("Country.jl")
 
-include("calendar/gregorian.jl")
-include("groups/christian.jl")
+include("calendars/christian.jl")
 include("countries/brazil.jl")
 
 # is_holiday(country::Country.Brazil, date::Date) = is_holiday(Country.Brazil, date)
