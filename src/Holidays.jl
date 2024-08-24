@@ -2,7 +2,9 @@ module Holidays
 
 using Dates
 
-export is_holiday, Country, Location
+export is_holiday,
+    Country,
+    Location
 
 include("Location.jl")
 include("Country.jl")

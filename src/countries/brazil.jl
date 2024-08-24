@@ -442,11 +442,6 @@ end
 function is_holiday(::Country.Brazil{Location.Tocantins}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
-    # Criação do estado
-    if month == Dates.Oct && day == 5
-        return true
-    end
-
     # Autonomia do Estado
     if month == Dates.Mar && day == 18
         return true
@@ -454,6 +449,11 @@ function is_holiday(::Country.Brazil{Location.Tocantins}, date::Date)::Bool
 
     # Nossa Senhora da Natividade
     if month == Dates.Sep && day == 8
+        return true
+    end
+
+    # Criação do estado
+    if month == Dates.Oct && day == 5
         return true
     end
 

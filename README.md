@@ -10,8 +10,8 @@ Holidays.jl is a Julia package that provides a simple and efficient way to check
 
 ## Supported Countries
 
-- Brazil
-- Germany
+- Brazil (including states)
+- Germany (including states)
 - United States
 
 ## Getting Started
