@@ -6,9 +6,9 @@
 
 ## Introduction
 
-Holidays.jl is a Julia package that provides a simple and efficient way to check whether a given date is a holiday in specific countries. The package allows you to determine both national and regional holidays, making it an ideal tool for applications that need to account for date-sensitive events.
+Holidays.jl is a lightweight Julia package designed for determining whether a specific date is a public holiday in a variety of countries. The package supports checking national and regional holidays, making it a perfect fit for applications that require accurate date-based calculations.
 
-## Supported Countries
+## Currently Supported Countries
 
 - Brazil (including states)
 - Germany (including states)
@@ -22,7 +22,7 @@ Holidays.jl is a Julia package that provides a simple and efficient way to check
 julia> ] add Holidays
 ```
 
-### Example
+### Example 1: United States
 
 ```julia
 using Holidays
@@ -39,7 +39,7 @@ usa = Country.UnitedStates()
 @show is_holiday(usa, Date(2024, 11, 28)) # true
 ```
 
-### Example
+### Example 2: Brazil (National and State Holidays)
 
 ```julia
 using Holidays
