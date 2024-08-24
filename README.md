@@ -22,21 +22,25 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 julia> ] add Holidays
 ```
 
+### Usage
+
+TODO
+
 ### Example 1: United States
 
 ```julia
 using Holidays
 
-usa = Holidays.UnitedStates()
+usa_holidays = Holidays.UnitedStates()
 
 # check if new year's day is a holiday
-@show is_holiday(usa, Date(2024, 1, 1)) # true
+@show Date(2024, 1, 1) in usa_holidays # true
 
 # check if memorial day is a holiday
-@show is_holiday(usa, Date(2024, 5, 27)) # true
+@show Date(2024, 5, 27) in usa_holidays # true
 
 # check if thanksgiving day is a holiday
-@show is_holiday(usa, Date(2024, 11, 28)) # true
+@show Date(2024, 11, 28) in usa_holidays # true
 ```
 
 ### Example 2: Brazil (National and State Holidays)
@@ -44,14 +48,14 @@ usa = Holidays.UnitedStates()
 ```julia
 using Holidays
 
-brazil = Holidays.Brazil()
-rio = Holidays.Brazil(location = Location.RioDeJaneiro())
+brazil_holidays = Holidays.Brazil()
+rio_holidays = Holidays.Brazil(location = Location.RioDeJaneiro())
 
 # check if april 23rd is a holiday in brazil
-@show is_holiday(brazil, Date(2024, 4, 23)) # false
+@show Date(2024, 4, 23) in brazil_holidays # false
 
 # check if april 23rd is a holiday specifically in rio de janeiro
-@show is_holiday(rio, Date(2024, 4, 23)) # true
+@show Date(2024, 4, 23) in rio_holidays # true
 ```
 
 ## Contributing
