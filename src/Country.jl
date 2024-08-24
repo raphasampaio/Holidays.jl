@@ -1,5 +1,9 @@
 abstract type AbstractCountry end
 
+function Base.in(date::Date, country::AbstractCountry) 
+    return is_holiday(country, date)
+end
+    
 macro country(name)
     quote
         begin

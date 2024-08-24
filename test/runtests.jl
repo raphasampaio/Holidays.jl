@@ -22,7 +22,7 @@ function test_holidays(country::AbstractCountry, year::Integer, holidays::Vector
 
     for date in start_date:end_date
         @testset "$date" begin
-            @test is_holiday(country, date) == (date in set)
+            @test (date in country) == (date in set)
         end
     end
 
