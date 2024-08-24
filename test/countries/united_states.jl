@@ -1,5 +1,5 @@
 function test_united_states()
-    country = Country.UnitedStates()
+    country = Holidays.UnitedStates()
 
     holidays = [
         Date(2024, 1, 1),

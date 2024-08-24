@@ -1,4 +1,4 @@
-function is_holiday(::Type{Country.Germany}, date::Date)::Bool
+function is_holiday(::Type{Germany}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # New Year's Day
@@ -49,7 +49,7 @@ function is_holiday(::Type{Country.Germany}, date::Date)::Bool
     return false
 end
 
-function is_holiday(::Country.Germany{Location.BadenWurttemberg}, date::Date)::Bool
+function is_holiday(::Germany{Location.BadenWurttemberg}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Epiphany
@@ -67,10 +67,10 @@ function is_holiday(::Country.Germany{Location.BadenWurttemberg}, date::Date)::B
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Bavaria}, date::Date)::Bool
+function is_holiday(::Germany{Location.Bavaria}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Epiphany
@@ -93,10 +93,10 @@ function is_holiday(::Country.Germany{Location.Bavaria}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Berlin}, date::Date)::Bool
+function is_holiday(::Germany{Location.Berlin}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # International Women's Day
@@ -104,10 +104,10 @@ function is_holiday(::Country.Germany{Location.Berlin}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Brandenburg}, date::Date)::Bool
+function is_holiday(::Germany{Location.Brandenburg}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -115,10 +115,10 @@ function is_holiday(::Country.Germany{Location.Brandenburg}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Bremen}, date::Date)::Bool
+function is_holiday(::Germany{Location.Bremen}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -126,10 +126,10 @@ function is_holiday(::Country.Germany{Location.Bremen}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Hamburg}, date::Date)::Bool
+function is_holiday(::Germany{Location.Hamburg}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -137,10 +137,10 @@ function is_holiday(::Country.Germany{Location.Hamburg}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Hesse}, date::Date)::Bool
+function is_holiday(::Germany{Location.Hesse}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Corpus Christi
@@ -148,10 +148,10 @@ function is_holiday(::Country.Germany{Location.Hesse}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.MecklenburgVorpommern}, date::Date)::Bool
+function is_holiday(::Germany{Location.MecklenburgVorpommern}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # International Women's Day
@@ -164,10 +164,10 @@ function is_holiday(::Country.Germany{Location.MecklenburgVorpommern}, date::Dat
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.LowerSaxony}, date::Date)::Bool
+function is_holiday(::Germany{Location.LowerSaxony}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -175,10 +175,10 @@ function is_holiday(::Country.Germany{Location.LowerSaxony}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.NorthRhineWestphalia}, date::Date)::Bool
+function is_holiday(::Germany{Location.NorthRhineWestphalia}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Corpus Christi
@@ -191,10 +191,10 @@ function is_holiday(::Country.Germany{Location.NorthRhineWestphalia}, date::Date
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.RhinelandPalatinate}, date::Date)::Bool
+function is_holiday(::Germany{Location.RhinelandPalatinate}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Corpus Christi
@@ -207,10 +207,10 @@ function is_holiday(::Country.Germany{Location.RhinelandPalatinate}, date::Date)
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Saarland}, date::Date)::Bool
+function is_holiday(::Germany{Location.Saarland}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Corpus Christi
@@ -228,10 +228,10 @@ function is_holiday(::Country.Germany{Location.Saarland}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Saxony}, date::Date)::Bool
+function is_holiday(::Germany{Location.Saxony}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -244,10 +244,10 @@ function is_holiday(::Country.Germany{Location.Saxony}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.SaxonyAnhalt}, date::Date)::Bool
+function is_holiday(::Germany{Location.SaxonyAnhalt}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Epiphany
@@ -260,10 +260,10 @@ function is_holiday(::Country.Germany{Location.SaxonyAnhalt}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.SchleswigHolstein}, date::Date)::Bool
+function is_holiday(::Germany{Location.SchleswigHolstein}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Reformation Day
@@ -271,10 +271,10 @@ function is_holiday(::Country.Germany{Location.SchleswigHolstein}, date::Date)::
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end
 
-function is_holiday(::Country.Germany{Location.Thuringia}, date::Date)::Bool
+function is_holiday(::Germany{Location.Thuringia}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # World Children's Day
@@ -287,5 +287,5 @@ function is_holiday(::Country.Germany{Location.Thuringia}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Germany, date)
+    return is_holiday(Germany, date)
 end

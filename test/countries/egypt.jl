@@ -1,5 +1,5 @@
 function test_egypt()
-    country = Country.Egypt()
+    country = Holidays.Egypt()
 
     holidays = [
     # Date(2024, 1, 7),
