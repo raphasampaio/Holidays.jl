@@ -1,5 +1,5 @@
-function is_holiday(::Type{Country.UnitedStates}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
+function is_holiday(::Type{UnitedStates}, date::Date)::Bool
+    day, month, year = Dates.day(date), Dates.month(date), Dates.year(date)
     day_of_week = Dates.dayofweek(date)
     day_of_week_of_month = Dates.dayofweekofmonth(date)
     days_of_week_in_month = Dates.daysofweekinmonth(date)
@@ -22,17 +22,17 @@ function is_holiday(::Type{Country.UnitedStates}, date::Date)::Bool
     end
 
     # Juneteenth National Independence Day
-    if month == Dates.Jun && day == 19
+    if year >= 2021 && month == Dates.Jun && day == 19
         return true
     end
 
     # Independence Day 
-    if month == Dates.Jul && day == 4
+    if year >= 1871 && month == Dates.Jul && day == 4
         return true
     end
 
     # Labor Day
-    if month == Dates.Sep && day_of_week_of_month == 1 && day_of_week == Dates.Mon
+    if year >= 1894 && month == Dates.Sep && day_of_week_of_month == 1 && day_of_week == Dates.Mon
         return true
     end
 
@@ -47,20 +47,20 @@ function is_holiday(::Type{Country.UnitedStates}, date::Date)::Bool
     end
 
     # Thanksgiving Day
-    if month == Dates.Nov && day_of_week_of_month == 4 && day_of_week == Dates.Thu
+    if year >= 1871 && month == Dates.Nov && day_of_week_of_month == 4 && day_of_week == Dates.Thu
         return true
     end
 
     # Christmas Day
-    if Christian.is_christmas_day(date)
+    if year >= 1871 && Christian.is_christmas_day(date)
         return true
     end
 
     return false
 end
 
-function is_holiday(::Country.UnitedStates{Location.NewYork}, date::Date)::Bool
+function is_holiday(::UnitedStates{Location.NewYork}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
-    return is_holiday(Country.UnitedStates, date)
+    return is_holiday(UnitedStates, date)
 end

@@ -27,7 +27,7 @@ julia> ] add Holidays
 ```julia
 using Holidays
 
-usa = Country.UnitedStates()
+usa = Holidays.UnitedStates()
 
 # check if new year's day is a holiday
 @show is_holiday(usa, Date(2024, 1, 1)) # true
@@ -44,8 +44,8 @@ usa = Country.UnitedStates()
 ```julia
 using Holidays
 
-brazil = Country.Brazil()
-rio = Country.Brazil(location = Location.RioDeJaneiro())
+brazil = Holidays.Brazil()
+rio = Holidays.Brazil(location = Location.RioDeJaneiro())
 
 # check if april 23rd is a holiday in brazil
 @show is_holiday(brazil, Date(2024, 4, 23)) # false

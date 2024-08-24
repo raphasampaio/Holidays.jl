@@ -1,4 +1,4 @@
-function is_holiday(::Type{Country.Brazil}, date::Date)::Bool
+function is_holiday(::Type{Brazil}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Confraternização Universal
@@ -69,7 +69,7 @@ function is_holiday(::Type{Country.Brazil}, date::Date)::Bool
     return false
 end
 
-function is_holiday(::Country.Brazil{Location.Acre}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Acre}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia do evangélico
@@ -97,10 +97,10 @@ function is_holiday(::Country.Brazil{Location.Acre}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Alagoas}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Alagoas}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # São João
@@ -118,10 +118,10 @@ function is_holiday(::Country.Brazil{Location.Alagoas}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Amapa}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Amapa}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia de São José
@@ -134,10 +134,10 @@ function is_holiday(::Country.Brazil{Location.Amapa}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Amazonas}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Amazonas}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Elevação do Amazonas à categoria de província
@@ -150,10 +150,10 @@ function is_holiday(::Country.Brazil{Location.Amazonas}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Bahia}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Bahia}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Independência da Bahia
@@ -161,10 +161,10 @@ function is_holiday(::Country.Brazil{Location.Bahia}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Brasilia}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Brasilia}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Fundação de Brasília
@@ -177,10 +177,10 @@ function is_holiday(::Country.Brazil{Location.Brasilia}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Ceara}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Ceara}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia de São José
@@ -198,10 +198,10 @@ function is_holiday(::Country.Brazil{Location.Ceara}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.EspiritoSanto}, date::Date)::Bool
+function is_holiday(::Brazil{Location.EspiritoSanto}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia de Nossa Senhora da Penha
@@ -209,10 +209,10 @@ function is_holiday(::Country.Brazil{Location.EspiritoSanto}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Goias}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Goias}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia da Nossa Senhora Auxiliadora
@@ -230,10 +230,10 @@ function is_holiday(::Country.Brazil{Location.Goias}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Maranhao}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Maranhao}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Adesão do Maranhão à independência do Brasil
@@ -241,16 +241,16 @@ function is_holiday(::Country.Brazil{Location.Maranhao}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.MatoGrosso}, date::Date)::Bool
+function is_holiday(::Brazil{Location.MatoGrosso}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.MatoGrossoDoSul}, date::Date)::Bool
+function is_holiday(::Brazil{Location.MatoGrossoDoSul}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Criação do estado
@@ -258,10 +258,10 @@ function is_holiday(::Country.Brazil{Location.MatoGrossoDoSul}, date::Date)::Boo
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.MinasGerais}, date::Date)::Bool
+function is_holiday(::Brazil{Location.MinasGerais}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Tiradentes
@@ -269,10 +269,10 @@ function is_holiday(::Country.Brazil{Location.MinasGerais}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Para}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Para}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Adesão do Pará à independência do Brasil
@@ -280,10 +280,10 @@ function is_holiday(::Country.Brazil{Location.Para}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Paraiba}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Paraiba}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Nossa Senhora das Neves
@@ -291,10 +291,10 @@ function is_holiday(::Country.Brazil{Location.Paraiba}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Parana}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Parana}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia de Nossa Senhora do Rocio
@@ -307,10 +307,10 @@ function is_holiday(::Country.Brazil{Location.Parana}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Pernambuco}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Pernambuco}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Revolução Pernambucana de 1817
@@ -323,10 +323,10 @@ function is_holiday(::Country.Brazil{Location.Pernambuco}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Piaui}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Piaui}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia do Piauí
@@ -334,20 +334,20 @@ function is_holiday(::Country.Brazil{Location.Piaui}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.RioDeJaneiro}, date::Date)::Bool
+function is_holiday(::Brazil{Location.RioDeJaneiro}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     if month == Dates.Apr && day == 23
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.RioGrandeDoNorte}, date::Date)::Bool
+function is_holiday(::Brazil{Location.RioGrandeDoNorte}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia do Rio Grande do Norte
@@ -360,10 +360,10 @@ function is_holiday(::Country.Brazil{Location.RioGrandeDoNorte}, date::Date)::Bo
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.RioGrandeDoSul}, date::Date)::Bool
+function is_holiday(::Brazil{Location.RioGrandeDoSul}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia do Gaúcho
@@ -371,10 +371,10 @@ function is_holiday(::Country.Brazil{Location.RioGrandeDoSul}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Rondonia}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Rondonia}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Criação do estado
@@ -387,10 +387,10 @@ function is_holiday(::Country.Brazil{Location.Rondonia}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Roraima}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Roraima}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Criação do estado
@@ -398,10 +398,10 @@ function is_holiday(::Country.Brazil{Location.Roraima}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.SantaCatarina}, date::Date)::Bool
+function is_holiday(::Brazil{Location.SantaCatarina}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Dia de Santa Catarina
@@ -414,10 +414,10 @@ function is_holiday(::Country.Brazil{Location.SantaCatarina}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.SaoPaulo}, date::Date)::Bool
+function is_holiday(::Brazil{Location.SaoPaulo}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Revolução Constitucionalista de 1932
@@ -425,10 +425,10 @@ function is_holiday(::Country.Brazil{Location.SaoPaulo}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Sergipe}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Sergipe}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Emancipação política de Sergipe
@@ -436,10 +436,10 @@ function is_holiday(::Country.Brazil{Location.Sergipe}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end
 
-function is_holiday(::Country.Brazil{Location.Tocantins}, date::Date)::Bool
+function is_holiday(::Brazil{Location.Tocantins}, date::Date)::Bool
     day, month = Dates.day(date), Dates.month(date)
 
     # Autonomia do Estado
@@ -457,5 +457,5 @@ function is_holiday(::Country.Brazil{Location.Tocantins}, date::Date)::Bool
         return true
     end
 
-    return is_holiday(Country.Brazil, date)
+    return is_holiday(Brazil, date)
 end

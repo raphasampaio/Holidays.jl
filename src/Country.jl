@@ -1,9 +1,3 @@
-module Country
-
-using ..Location
-
-export AbstractCountry
-
 abstract type AbstractCountry end
 
 macro country(name)
@@ -216,5 +210,3 @@ end
 @country Yemen
 @country Zambia
 @country Zimbabwe
-
-end

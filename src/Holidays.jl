@@ -3,7 +3,7 @@ module Holidays
 using Dates
 
 export is_holiday,
-    Country,
+    AbstractCountry,
     Location
 
 include("Location.jl")
@@ -17,7 +17,7 @@ include("countries/germany.jl")
 include("countries/egypt.jl")
 include("countries/united_states.jl")
 
-function is_holiday(::T, date::Date) where {T <: Country.AbstractCountry}
+function is_holiday(::T, date::Date) where {T <: AbstractCountry}
     return is_holiday(T.name.wrapper, date)
 end
 
