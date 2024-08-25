@@ -1,461 +1,226 @@
-function is_holiday(::Type{Brazil}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Confraternização Universal
-    if month == Dates.Jan && day == 1
-        return true
-    end
-
-    if Christian.is_shrove_monday(date)
-        return true
-    end
-
-    if Christian.is_shrove_tuesday(date)
-        return true
-    end
-
-    if Christian.is_ash_wednesday(date)
-        return true
-    end
-
-    if Christian.is_good_friday(date)
-        return true
-    end
-
-    # Tiradentes
-    if month == Dates.Apr && day == 21
-        return true
-    end
-
-    # Dia do Trabalhador
-    if month == Dates.May && day == 1
-        return true
-    end
-
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # Independência do Brasil
-    if month == Dates.Sep && day == 7
-        return true
-    end
-
-    # Nossa Senhora Aparecida
-    if month == Dates.Oct && day == 12
-        return true
-    end
-
-    # Finados
-    if Christian.is_all_souls_day(date)
-        return true
-    end
-
-    # Proclamação da República
-    if month == Dates.Nov && day == 15
-        return true
-    end
-
-    # Dia Nacional de Zumbi e da Consciência Negra
-    if month == Dates.Nov && day == 20
-        return true
-    end
-
-    # Natal
-    if Christian.is_christmas_day(date)
-        return true
-    end
-
-    return false
+function fetch_holidays(::Type{Brazil})
+    return [
+        Holiday("Confraternização Universal", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 1),
+        Holiday("Segunda Feira de Carnaval", Christian.is_shrove_monday),
+        Holiday("Terça Feira de Carnaval", Christian.is_shrove_tuesday),
+        Holiday("Quarta Feira de Cinzas", Christian.is_ash_wednesday),
+        Holiday("Sexta Feira Santa", Christian.is_good_friday),
+        Holiday("Tiradentes", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 21),
+        Holiday("Dia do Trabalhador", (d) -> Dates.month(d) == Dates.May && Dates.day(d) == 1),
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Independência do Brasil", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 7),
+        Holiday("Nossa Senhora Aparecida", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 12),
+        Holiday("Finados", Christian.is_all_souls_day),
+        Holiday("Proclamação da República", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 15),
+        Holiday("Dia Nacional de Zumbi e da Consciência Negra", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 20),
+        Holiday("Natal", Christian.is_christmas_day),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Acre}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia do evangélico
-    if month == Dates.Jan && day == 23
-        return true
-    end
-
-    # Alusivo ao Dia Internacional da Mulher
-    if month == Dates.Mar && day == 8
-        return true
-    end
-
-    # Aniversário do estado (Data Magna)
-    if month == Dates.Jun && day == 15
-        return true
-    end
-
-    # Dia da Amazônia
-    if month == Dates.Sep && day == 5
-        return true
-    end
-
-    # Assinatura do Tratado de Petrópolis
-    if month == Dates.Nov && day == 17
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Acre}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia do evangélico", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 23),
+        Holiday("Alusivo ao Dia Internacional da Mulher", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 8),
+        Holiday("Aniversário do estado (Data Magna)", (d) -> Dates.month(d) == Dates.Jun && Dates.day(d) == 15),
+        Holiday("Dia da Amazônia", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 5),
+        Holiday("Assinatura do Tratado de Petrópolis", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 17),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Alagoas}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # São João
-    if month == Dates.Jun && day == 24
-        return true
-    end
-
-    # São Pedro
-    if month == Dates.Jun && day == 29
-        return true
-    end
-
-    # Emancipação política (Data Magna)
-    if month == Dates.Sep && day == 16
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Alagoas}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("São João", (d) -> Dates.month(d) == Dates.Jun && Dates.day(d) == 24),
+        Holiday("São Pedro", (d) -> Dates.month(d) == Dates.Jun && Dates.day(d) == 29),
+        Holiday("Emancipação política (Data Magna)", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 16),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Amapa}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia de São José
-    if month == Dates.Mar && day == 19
-        return true
-    end
-
-    # Criação do Território Federal
-    if month == Dates.Sep && day == 13
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Amapa}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia de São José", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 19),
+        Holiday("Criação do Território Federal", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 13),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Amazonas}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Elevação do Amazonas à categoria de província
-    if month == Dates.Sep && day == 5
-        return true
-    end
-
-    # Nossa Senhora da Conceição
-    if month == Dates.Dec && day == 8
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Amazonas}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Elevação do Amazonas à categoria de província", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 5),
+        Holiday("Nossa Senhora da Conceição", (d) -> Dates.month(d) == Dates.Dec && Dates.day(d) == 8),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Bahia}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Independência da Bahia
-    if month == Dates.Jul && day == 2
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Bahia}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Independência da Bahia", (d) -> Dates.month(d) == Dates.Jul && Dates.day(d) == 2),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Brasilia}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Fundação de Brasília
-    if month == Dates.Apr && day == 21
-        return true
-    end
-
-    # Dia do evangélico
-    if month == Dates.Nov && day == 30
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Brasilia}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Fundação de Brasília", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 21),
+        Holiday("Dia do evangélico", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 30),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Ceara}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia de São José
-    if month == Dates.Mar && day == 19
-        return true
-    end
-
-    # Abolição da escravidão no Ceará
-    if month == Dates.Mar && day == 25
-        return true
-    end
-
-    # Dia de Nossa Senhora da Assunção
-    if month == Dates.Aug && day == 15
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Ceara}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia de São José", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 19),
+        Holiday("Abolição da escravidão no Ceará", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 25),
+        Holiday("Dia de Nossa Senhora da Assunção", (d) -> Dates.month(d) == Dates.Aug && Dates.day(d) == 15),
+    ]
 end
 
-function is_holiday(::Brazil{Location.EspiritoSanto}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia de Nossa Senhora da Penha
-    if date == (Christian.easter(Dates.year(date)) + Dates.Day(8))
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.EspiritoSanto}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia de Nossa Senhora da Penha", (d) -> d == (Christian.easter(Dates.year(d)) + Dates.Day(8))),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Goias}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia da Nossa Senhora Auxiliadora
-    if month == Dates.May && day == 24
-        return true
-    end
-
-    # Dia da Nossa Senhora de Sant'Anna
-    if month == Dates.Jul && day == 26
-        return true
-    end
-
-    # Pedra fundamental de Goiânia
-    if month == Dates.Oct && day == 24
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Goias}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia da Nossa Senhora Auxiliadora", (d) -> Dates.month(d) == Dates.May && Dates.day(d) == 24),
+        Holiday("Dia da Nossa Senhora de Sant'Anna", (d) -> Dates.month(d) == Dates.Jul && Dates.day(d) == 26),
+        Holiday("Pedra fundamental de Goiânia", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 24),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Maranhao}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Adesão do Maranhão à independência do Brasil
-    if month == Dates.Jul && day == 28
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Maranhao}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Adesão do Maranhão à independência do Brasil", (d) -> Dates.month(d) == Dates.Jul && Dates.day(d) == 28),
+    ]
 end
 
-function is_holiday(::Brazil{Location.MatoGrosso}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.MatoGrosso}})
+    return [
+        fetch_holidays(Brazil)...,
+    ]
 end
 
-function is_holiday(::Brazil{Location.MatoGrossoDoSul}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Criação do estado
-    if month == Dates.Oct && day == 11
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.MatoGrossoDoSul}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Criação do estado", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 11),
+    ]
 end
 
-function is_holiday(::Brazil{Location.MinasGerais}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Tiradentes
-    if month == Dates.Apr && day == 21
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.MinasGerais}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Tiradentes", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 21),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Para}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Adesão do Pará à independência do Brasil
-    if month == Dates.Aug && day == 15
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Para}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Adesão do Pará à independência do Brasil", (d) -> Dates.month(d) == Dates.Aug && Dates.day(d) == 15),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Paraiba}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Nossa Senhora das Neves
-    if month == Dates.Aug && day == 5
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Paraiba}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Nossa Senhora das Neves", (d) -> Dates.month(d) == Dates.Aug && Dates.day(d) == 5),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Parana}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia de Nossa Senhora do Rocio
-    if month == Dates.Nov && day == 15
-        return true
-    end
-
-    # Emancipação política do estado do Paraná
-    if month == Dates.Dec && day == 19
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Parana}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia de Nossa Senhora do Rocio", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 15),
+        Holiday("Emancipação política do estado do Paraná", (d) -> Dates.month(d) == Dates.Dec && Dates.day(d) == 19),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Pernambuco}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Revolução Pernambucana de 1817
-    if month == Dates.Mar && day == 6
-        return true
-    end
-
-    # Festa de São João
-    if month == Dates.Jun && day == 24
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Pernambuco}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Revolução Pernambucana de 1817", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 6),
+        Holiday("Festa de São João", (d) -> Dates.month(d) == Dates.Jun && Dates.day(d) == 24),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Piaui}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia do Piauí
-    if month == Dates.Oct && day == 19
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Piaui}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia do Piauí", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 19),
+    ]
 end
 
-function is_holiday(::Brazil{Location.RioDeJaneiro}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    if month == Dates.Apr && day == 23
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.RioDeJaneiro}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("xxx", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 23),
+    ]
 end
 
-function is_holiday(::Brazil{Location.RioGrandeDoNorte}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia do Rio Grande do Norte
-    if month == Dates.Aug && day == 7
-        return true
-    end
-
-    # Mártires de Cunhaú e Uruaçu
-    if month == Dates.Oct && day == 3
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.RioGrandeDoNorte}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia do Rio Grande do Norte", (d) -> Dates.month(d) == Dates.Aug && Dates.day(d) == 7),
+        Holiday("Mártires de Cunhaú e Uruaçu", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 3),
+    ]
 end
 
-function is_holiday(::Brazil{Location.RioGrandeDoSul}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia do Gaúcho
-    if month == Dates.Sep && day == 20
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.RioGrandeDoSul}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia do Gaúcho", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 20),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Rondonia}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Criação do estado
-    if month == Dates.Jan && day == 4
-        return true
-    end
-
-    # Dia do evangélico
-    if month == Dates.Jun && day == 18
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Rondonia}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Criação do estado", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 4),
+        Holiday("Dia do evangélico", (d) -> Dates.month(d) == Dates.Jun && Dates.day(d) == 18),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Roraima}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Criação do estado
-    if month == Dates.Oct && day == 5
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Roraima}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Criação do estado", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 5),
+    ]
 end
 
-function is_holiday(::Brazil{Location.SantaCatarina}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Dia de Santa Catarina
-    if month == Dates.Aug && day == 11
-        return true
-    end
-
-    # Dia de Santa Catarina de Alexandria
-    if month == Dates.Nov && day == 25
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.SantaCatarina}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Dia de Santa Catarina", (d) -> Dates.month(d) == Dates.Aug && Dates.day(d) == 11),
+        Holiday("Dia de Santa Catarina de Alexandria", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 25),
+    ]
 end
 
-function is_holiday(::Brazil{Location.SaoPaulo}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Revolução Constitucionalista de 1932
-    if month == Dates.Jul && day == 9
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.SaoPaulo}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Revolução Constitucionalista de 1932", (d) -> Dates.month(d) == Dates.Jul && Dates.day(d) == 9),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Sergipe}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Emancipação política de Sergipe
-    if month == Dates.Jul && day == 8
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Sergipe}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Emancipação política de Sergipe", (d) -> Dates.month(d) == Dates.Jul && Dates.day(d) == 8),
+    ]
 end
 
-function is_holiday(::Brazil{Location.Tocantins}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Autonomia do Estado
-    if month == Dates.Mar && day == 18
-        return true
-    end
-
-    # Nossa Senhora da Natividade
-    if month == Dates.Sep && day == 8
-        return true
-    end
-
-    # Criação do estado
-    if month == Dates.Oct && day == 5
-        return true
-    end
-
-    return is_holiday(Brazil, date)
+function fetch_holidays(::Type{Brazil{Location.Tocantins}})
+    return [
+        fetch_holidays(Brazil)...,
+        Holiday("Autonomia do Estado", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 18),
+        Holiday("Nossa Senhora da Natividade", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 8),
+        Holiday("Criação do estado", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 5),
+    ]
 end
