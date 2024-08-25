@@ -58,6 +58,8 @@ rio_holidays = Holidays.Brazil(location = Location.RioDeJaneiro())
 @show Date(2024, 4, 23) in rio_holidays # true
 ```
 
+### Example 3: Custom Holidays
+
 ## Contributing
 
 Contributions, bug reports, and feature requests are welcome! Feel free to open an issue or submit a pull request.
