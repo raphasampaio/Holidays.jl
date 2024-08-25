@@ -49,7 +49,7 @@ usa_holidays = Holidays.UnitedStates()
 using Holidays
 
 brazil_holidays = Holidays.Brazil()
-rio_holidays = Holidays.Brazil(location = Location.RioDeJaneiro())
+rio_holidays = Holidays.Brazil(subdivision = Subdivision.RioDeJaneiro())
 
 # check if april 23rd is a holiday in brazil
 @show Date(2024, 4, 23) in brazil_holidays # false
@@ -57,6 +57,8 @@ rio_holidays = Holidays.Brazil(location = Location.RioDeJaneiro())
 # check if april 23rd is a holiday specifically in rio de janeiro
 @show Date(2024, 4, 23) in rio_holidays # true
 ```
+
+### Example 3: Custom Holidays
 
 ## Contributing
 

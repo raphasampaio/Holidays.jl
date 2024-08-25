@@ -4,9 +4,10 @@ using Dates
 
 export is_holiday,
     AbstractCountry,
-    Location
+    Subdivision
 
-include("Location.jl")
+include("holiday.jl")
+include("Subdivision.jl")
 include("Country.jl")
 
 include("calendars/christian.jl")
@@ -14,11 +15,15 @@ include("calendars/islamic.jl")
 
 include("countries/brazil.jl")
 include("countries/germany.jl")
-include("countries/egypt.jl")
 include("countries/united_states.jl")
 
-function is_holiday(::T, date::Date) where {T <: AbstractCountry}
-    return is_holiday(T.name.wrapper, date)
+function is_holiday(calendar::T, date::Date) where {T <: AbstractCountry}
+    for holiday in calendar.holidays
+        if date in holiday
+            return true
+        end
+    end
+    return false
 end
 
 end

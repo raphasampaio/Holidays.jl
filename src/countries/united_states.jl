@@ -1,66 +1,14 @@
-function is_holiday(::Type{UnitedStates}, date::Date)::Bool
-    day, month, year = Dates.day(date), Dates.month(date), Dates.year(date)
-    day_of_week = Dates.dayofweek(date)
-    day_of_week_of_month = Dates.dayofweekofmonth(date)
-    days_of_week_in_month = Dates.daysofweekinmonth(date)
-
-    # New Year's Day
-    if month == Dates.Jan && day == 1
-        return true
-    end
-
-    # Birthday of Martin Luther King, Jr.
-    if month == Dates.Jan && day_of_week_of_month == 3 && day_of_week == Dates.Mon
-        return true
-    end
-
-    # Memorial Day
-    if month == Dates.May &&
-       day_of_week == Dates.Mon &&
-       day_of_week_of_month == days_of_week_in_month
-        return true
-    end
-
-    # Juneteenth National Independence Day
-    if year >= 2021 && month == Dates.Jun && day == 19
-        return true
-    end
-
-    # Independence Day 
-    if year >= 1871 && month == Dates.Jul && day == 4
-        return true
-    end
-
-    # Labor Day
-    if year >= 1894 && month == Dates.Sep && day_of_week_of_month == 1 && day_of_week == Dates.Mon
-        return true
-    end
-
-    # Columbus Day
-    if month == Dates.Oct && day_of_week_of_month == 2 && day_of_week == Dates.Mon
-        return true
-    end
-
-    # Veterans Day
-    if month == Dates.Nov && day == 11
-        return true
-    end
-
-    # Thanksgiving Day
-    if year >= 1871 && month == Dates.Nov && day_of_week_of_month == 4 && day_of_week == Dates.Thu
-        return true
-    end
-
-    # Christmas Day
-    if year >= 1871 && Christian.is_christmas_day(date)
-        return true
-    end
-
-    return false
-end
-
-function is_holiday(::UnitedStates{Location.NewYork}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    return is_holiday(UnitedStates, date)
+function fetch_holidays(::Type{UnitedStates})
+    return [
+        Holiday("New Year's Day", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 1),
+        Holiday("Birthday of Martin Luther King, Jr.", (d) -> Dates.month(d) == Dates.Jan && Dates.dayofweekofmonth(d) == 3 && Dates.dayofweek(d) == Dates.Mon),
+        Holiday("Memorial Day", (d) -> Dates.month(d) == Dates.May && Dates.dayofweek(d) == Dates.Mon && Dates.dayofweekofmonth(d) == Dates.daysofweekinmonth(d)),
+        Holiday("Juneteenth National Independence Day", (d) -> Dates.year(d) >= 2021 && Dates.month(d) == Dates.Jun && Dates.day(d) == 19),
+        Holiday("Independence Day", (d) -> Dates.year(d) >= 1871 && Dates.month(d) == Dates.Jul && Dates.day(d) == 4),
+        Holiday("Labor Day", (d) -> Dates.year(d) >= 1894 && Dates.month(d) == Dates.Sep && Dates.dayofweekofmonth(d) == 1 && Dates.dayofweek(d) == Dates.Mon),
+        Holiday("Columbus Day", (d) -> Dates.month(d) == Dates.Oct && Dates.dayofweekofmonth(d) == 2 && Dates.dayofweek(d) == Dates.Mon),
+        Holiday("Veterans Day", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 11),
+        Holiday("Thanksgiving Day", (d) -> Dates.year(d) >= 1871 && Dates.month(d) == Dates.Nov && Dates.dayofweekofmonth(d) == 4 && Dates.dayofweek(d) == Dates.Thu),
+        Holiday("Christmas Day", Christian.is_christmas_day),
+    ]
 end
