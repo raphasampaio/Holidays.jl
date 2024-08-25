@@ -1,291 +1,138 @@
-function is_holiday(::Type{Germany}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # New Year's Day
-    if month == Dates.Jan && day == 1
-        return true
-    end
-
-    # Good Friday
-    if Christian.is_good_friday(date)
-        return true
-    end
-
-    # Easter Monday
-    if Christian.is_easter_monday(date)
-        return true
-    end
-
-    # Labour Day
-    if month == Dates.May && day == 1
-        return true
-    end
-
-    # Ascension Day
-    if Christian.is_ascension_day(date)
-        return true
-    end
-
-    # Whit Monday
-    if Christian.is_whit_monday(date)
-        return true
-    end
-
-    # German Unity Day
-    if month == Dates.Oct && day == 3
-        return true
-    end
-
-    # Christmas Day
-    if Christian.is_christmas_day(date)
-        return true
-    end
-
-    # Second Day of Christmas
-    if Christian.is_boxing_day(date)
-        return true
-    end
-
-    return false
+function fetch_holidays(::Type{Germany})
+    return [
+        Holiday("New Year's Day", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 1),
+        Holiday("Good Friday", Christian.is_good_friday),
+        Holiday("Easter Monday", Christian.is_easter_monday),
+        Holiday("Labour Day", (d) -> Dates.month(d) == Dates.May && Dates.day(d) == 1),
+        Holiday("Ascension Day", Christian.is_ascension_day),
+        Holiday("Whit Monday", Christian.is_whit_monday),
+        Holiday("German Unity Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 3),
+        Holiday("Christmas Day", Christian.is_christmas_day),
+        Holiday("Second Day of Christmas", Christian.is_boxing_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.BadenWurttemberg}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Epiphany
-    if month == Dates.Jan && day == 6
-        return true
-    end
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # All Saints' Day
-    if Christian.is_all_saints_day(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.BadenWurttemberg}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Epiphany", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 6),
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.Bavaria}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Epiphany
-    if month == Dates.Jan && day == 6
-        return true
-    end
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # Assumption Day
-    if Christian.is_assumption_day(date)
-        return true
-    end
-
-    # All Saints' Day
-    if Christian.is_all_saints_day(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Bavaria}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Epiphany", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 6),
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Assumption Day", Christian.is_assumption_day),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.Berlin}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # International Women's Day
-    if month == Dates.Mar && day == 8
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Berlin}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("International Women's Day", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 8),
+    ]
 end
 
-function is_holiday(::Germany{Location.Brandenburg}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Brandenburg}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.Bremen}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Bremen}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.Hamburg}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Hamburg}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.Hesse}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Hesse}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+    ]
 end
 
-function is_holiday(::Germany{Location.MecklenburgVorpommern}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
+function fetch_holidays(::Type{Germany{Location.MecklenburgVorpommern}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("International Women's Day", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 8),
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
+end 
 
-    # International Women's Day
-    if month == Dates.Mar && day == 8
-        return true
-    end
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.LowerSaxony}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.LowerSaxony}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.NorthRhineWestphalia}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.NorthRhineWestphalia}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # All Saints' Day
-    if Christian.is_all_saints_day(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.RhinelandPalatinate}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.RhinelandPalatinate}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # All Saints' Day
-    if Christian.is_all_saints_day(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Saarland}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Assumption Day", Christian.is_assumption_day),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+    ]
 end
 
-function is_holiday(::Germany{Location.Saarland}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Corpus Christi
-    if Christian.is_chorus_christi(date)
-        return true
-    end
-
-    # Assumption Day
-    if Christian.is_assumption_day(date)
-        return true
-    end
-
-    # All Saints' Day
-    if Christian.is_all_saints_day(date)
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Saxony}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+        Holiday("Repentance and Prayer Day", (d) -> d == (Christian.advent_sunday(Dates.year(d)) - Dates.Day(11))),
+    ]
 end
 
-function is_holiday(::Germany{Location.Saxony}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    # Repentance and Prayer Day
-    if date == (Christian.advent_sunday(Dates.year(date)) - Dates.Day(11))
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.SaxonyAnhalt}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Epiphany", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 6),
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.SaxonyAnhalt}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Epiphany
-    if month == Dates.Jan && day == 6
-        return true
-    end
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.SchleswigHolstein}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end
 
-function is_holiday(::Germany{Location.SchleswigHolstein}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
-end
-
-function is_holiday(::Germany{Location.Thuringia}, date::Date)::Bool
-    day, month = Dates.day(date), Dates.month(date)
-
-    # World Children's Day
-    if month == Dates.Sep && day == 20
-        return true
-    end
-
-    # Reformation Day
-    if month == Dates.Oct && day == 31
-        return true
-    end
-
-    return is_holiday(Germany, date)
+function fetch_holidays(::Type{Germany{Location.Thuringia}})
+    return [
+        fetch_holidays(Germany)...,
+        Holiday("World Children's Day", (d) -> Dates.month(d) == Dates.Sep && Dates.day(d) == 20),
+        Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
+    ]
 end

@@ -1,5 +1,5 @@
 function test_germany()
-    country = Holidays.Germany()
+    calendar = Holidays.Germany()
 
     holidays = [
         Date(2024, 1, 1),   # New Year's Day
@@ -13,86 +13,86 @@ function test_germany()
         Date(2024, 12, 26), # Second Christmas Day
     ]
 
-    test_holidays(country, 2024, holidays)
+    test_holidays(calendar, 2024, holidays)
 
     @testset "BadenWurttemberg" begin
-        country = Holidays.Germany(location = Location.BadenWurttemberg())
-        test_holidays(country, 2024, holidays, [Date(2024, 5, 30), Date(2024, 1, 6), Date(2024, 11, 1)])
+        calendar = Holidays.Germany(location = Location.BadenWurttemberg())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 30), Date(2024, 1, 6), Date(2024, 11, 1)])
     end
 
     @testset "Bavaria" begin
-        country = Holidays.Germany(location = Location.Bavaria())
-        test_holidays(country, 2024, holidays, [Date(2024, 1, 6), Date(2024, 5, 30), Date(2024, 8, 15), Date(2024, 11, 1)])
+        calendar = Holidays.Germany(location = Location.Bavaria())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 1, 6), Date(2024, 5, 30), Date(2024, 8, 15), Date(2024, 11, 1)])
     end
 
     @testset "Berlin" begin
-        country = Holidays.Germany(location = Location.Berlin())
-        test_holidays(country, 2024, holidays, [Date(2024, 3, 8)])
+        calendar = Holidays.Germany(location = Location.Berlin())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 8)])
     end
 
     @testset "Brandenburg" begin
-        country = Holidays.Germany(location = Location.Brandenburg())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.Brandenburg())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31)])
     end
 
     @testset "Bremen" begin
-        country = Holidays.Germany(location = Location.Bremen())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.Bremen())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31)])
     end
 
     @testset "Hamburg" begin
-        country = Holidays.Germany(location = Location.Hamburg())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.Hamburg())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31)])
     end
 
     @testset "Hesse" begin
-        country = Holidays.Germany(location = Location.Hesse())
-        test_holidays(country, 2024, holidays, [Date(2024, 5, 30)])
+        calendar = Holidays.Germany(location = Location.Hesse())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 30)])
     end
 
     @testset "MecklenburgVorpommern" begin
-        country = Holidays.Germany(location = Location.MecklenburgVorpommern())
-        test_holidays(country, 2024, holidays, [Date(2024, 3, 8), Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.MecklenburgVorpommern())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 8), Date(2024, 10, 31)])
     end
 
     @testset "LowerSaxony" begin
-        country = Holidays.Germany(location = Location.LowerSaxony())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.LowerSaxony())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31)])
     end
 
     @testset "NorthRhineWestphalia" begin
-        country = Holidays.Germany(location = Location.NorthRhineWestphalia())
-        test_holidays(country, 2024, holidays, [Date(2024, 5, 30), Date(2024, 11, 1)])
+        calendar = Holidays.Germany(location = Location.NorthRhineWestphalia())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 30), Date(2024, 11, 1)])
     end
 
     @testset "RhinelandPalatinate" begin
-        country = Holidays.Germany(location = Location.RhinelandPalatinate())
-        test_holidays(country, 2024, holidays, [Date(2024, 5, 30), Date(2024, 11, 1)])
+        calendar = Holidays.Germany(location = Location.RhinelandPalatinate())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 30), Date(2024, 11, 1)])
     end
 
     @testset "Saarland" begin
-        country = Holidays.Germany(location = Location.Saarland())
-        test_holidays(country, 2024, holidays, [Date(2024, 5, 30), Date(2024, 8, 15), Date(2024, 11, 1)])
+        calendar = Holidays.Germany(location = Location.Saarland())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 30), Date(2024, 8, 15), Date(2024, 11, 1)])
     end
 
     @testset "Saxony" begin
-        country = Holidays.Germany(location = Location.Saxony())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31), Date(2024, 11, 20)])
+        calendar = Holidays.Germany(location = Location.Saxony())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31), Date(2024, 11, 20)])
     end
 
     @testset "SaxonyAnhalt" begin
-        country = Holidays.Germany(location = Location.SaxonyAnhalt())
-        test_holidays(country, 2024, holidays, [Date(2024, 1, 6), Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.SaxonyAnhalt())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 1, 6), Date(2024, 10, 31)])
     end
 
     @testset "SchleswigHolstein" begin
-        country = Holidays.Germany(location = Location.SchleswigHolstein())
-        test_holidays(country, 2024, holidays, [Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.SchleswigHolstein())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 31)])
     end
 
     @testset "Thuringia" begin
-        country = Holidays.Germany(location = Location.Thuringia())
-        test_holidays(country, 2024, holidays, [Date(2024, 9, 20), Date(2024, 10, 31)])
+        calendar = Holidays.Germany(location = Location.Thuringia())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 9, 20), Date(2024, 10, 31)])
     end
 
     return nothing
