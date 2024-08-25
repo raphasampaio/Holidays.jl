@@ -1,19 +1,16 @@
-abstract type AbstractCountryHolidayCalendar <: AbstractHolidayCalendar end
-
 macro country(name)
     quote
         begin
-            struct $(esc(name)){T <: Union{Nothing, Subdivision.AbstractSubdivision}} <: AbstractCountryHolidayCalendar
+            struct $(esc(name)){T <: Union{Nothing, Subdivision.AbstractSubdivision}} <: AbstractHolidayCalendar
                 subdivision::T
                 holidays::Vector{Holiday}
-            end
-        end
-        begin
-            function $(esc(name))(; subdivision = nothing)
-                if subdivision == nothing
-                    return $(esc(name))(subdivision, fetch_holidays($(esc(name))))
-                else
-                    return $(esc(name))(subdivision, fetch_holidays($(esc(name)){typeof(subdivision)}))
+
+                function $(esc(name))(; subdivision::T = nothing) where {T <: Union{Nothing, Subdivision.AbstractSubdivision}}
+                    if subdivision == nothing
+                        return new{T}(subdivision, fetch_holidays($(esc(name))))
+                    else
+                        return new{T}(subdivision, fetch_holidays($(esc(name)){T}))
+                    end
                 end
             end
         end
