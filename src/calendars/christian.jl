@@ -2,27 +2,27 @@ module Christian
 
 using Dates
 
-is_shrove_sunday(date::Date) = date == shrove_sunday(Dates.year(date))
+is_shrove_sunday(x::Date) = x == shrove_sunday(Dates.year(x))
 function shrove_sunday(year::Integer)::Date
     return easter(year) - Dates.Day(49)
 end
 
-is_shrove_monday(date::Date) = date == shrove_monday(Dates.year(date))
+is_shrove_monday(x::Date) = x == shrove_monday(Dates.year(x))
 function shrove_monday(year::Integer)::Date
     return easter(year) - Dates.Day(48)
 end
 
-is_shrove_tuesday(date::Date) = date == shrove_tuesday(Dates.year(date))
+is_shrove_tuesday(x::Date) = x == shrove_tuesday(Dates.year(x))
 function shrove_tuesday(year::Integer)::Date
     return easter(year) - Dates.Day(47)
 end
 
-is_ash_wednesday(date::Date) = date == ash_wednesday(Dates.year(date))
+is_ash_wednesday(x::Date) = x == ash_wednesday(Dates.year(x))
 function ash_wednesday(year::Integer)::Date
     return easter(year) - Dates.Day(46)
 end
 
-is_easter(date::Date) = date == easter(Dates.year(date))
+is_easter(x::Date) = x == easter(Dates.year(x))
 function easter(year::Integer)::Date
     g = year % 19
     c = div(year, 100)
@@ -36,47 +36,47 @@ function easter(year::Integer)::Date
     return Date(year, month, day)
 end
 
-is_good_friday(date::Date) = date == good_friday(Dates.year(date))
+is_good_friday(x::Date) = x == good_friday(Dates.year(x))
 function good_friday(year::Integer)::Date
     return easter(year) - Dates.Day(2)
 end
 
-is_easter_monday(date::Date) = date == easter_monday(Dates.year(date))
+is_easter_monday(x::Date) = x == easter_monday(Dates.year(x))
 function easter_monday(year::Integer)::Date
     return easter(year) + Dates.Day(1)
 end
 
-is_chorus_christi(date::Date) = date == chorus_christi(Dates.year(date))
+is_chorus_christi(x::Date) = x == chorus_christi(Dates.year(x))
 function chorus_christi(year::Integer)::Date
     return easter(year) + Dates.Day(60)
 end
 
-is_ascension_day(date::Date) = date == ascension_day(Dates.year(date))
+is_ascension_day(x::Date) = x == ascension_day(Dates.year(x))
 function ascension_day(year::Integer)::Date
     return easter(year) + Dates.Day(39)
 end
 
-is_whit_monday(date::Date) = date == whit_monday(Dates.year(date))
+is_whit_monday(x::Date) = x == whit_monday(Dates.year(x))
 function whit_monday(year::Integer)::Date
     return easter(year) + Dates.Day(50)
 end
 
-is_assumption_day(date::Date) = date == assumption_day(Dates.year(date))
+is_assumption_day(x::Date) = x == assumption_day(Dates.year(x))
 function assumption_day(year::Integer)::Date
     return Date(year, 8, 15)
 end
 
-is_all_saints_day(date::Date) = date == all_saints_day(Dates.year(date))
+is_all_saints_day(x::Date) = x == all_saints_day(Dates.year(x))
 function all_saints_day(year::Integer)::Date
     return Date(year, 11, 1)
 end
 
-is_all_souls_day(date::Date) = date == all_souls_day(Dates.year(date))
+is_all_souls_day(x::Date) = x == all_souls_day(Dates.year(x))
 function all_souls_day(year::Integer)::Date
     return Date(year, 11, 2)
 end
 
-is_advent_sunday(date::Date) = date == advent_sunday(Dates.year(date))
+is_advent_sunday(x::Date) = x == advent_sunday(Dates.year(x))
 function advent_sunday(year::Integer)::Date
     christmas = christmas_day(year)
 
@@ -88,12 +88,12 @@ function advent_sunday(year::Integer)::Date
     return first_advent - Dates.Day(day_of_week % 7)
 end
 
-is_christmas_day(date::Date) = date == christmas_day(Dates.year(date))
+is_christmas_day(x::Date) = x == christmas_day(Dates.year(x))
 function christmas_day(year::Integer)::Date
     return Date(year, 12, 25)
 end
 
-is_boxing_day(date::Date) = date == boxing_day(Dates.year(date))
+is_boxing_day(x::Date) = x == boxing_day(Dates.year(x))
 function boxing_day(year::Integer)::Date
     return Date(year, 12, 26)
 end

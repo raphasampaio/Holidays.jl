@@ -1,14 +1,14 @@
 function fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", (d) -> Gregorian.is_new_years_day),
-        Holiday("Birthday of Martin Luther King, Jr.", (d) -> Dates.month(d) == Dates.Jan && Dates.dayofweekofmonth(d) == 3 && Dates.dayofweek(d) == Dates.Mon),
-        Holiday("Memorial Day", (d) -> Dates.month(d) == Dates.May && Dates.dayofweek(d) == Dates.Mon && Dates.dayofweekofmonth(d) == Dates.daysofweekinmonth(d)),
-        Holiday("Juneteenth National Independence Day", (d) -> Dates.year(d) >= 2021 && Dates.month(d) == Dates.Jun && Dates.day(d) == 19),
-        Holiday("Independence Day", (d) -> Dates.year(d) >= 1871 && Dates.month(d) == Dates.Jul && Dates.day(d) == 4),
-        Holiday("Labor Day", (d) -> Dates.year(d) >= 1894 && Dates.month(d) == Dates.Sep && Dates.dayofweekofmonth(d) == 1 && Dates.dayofweek(d) == Dates.Mon),
-        Holiday("Columbus Day", (d) -> Dates.month(d) == Dates.Oct && Dates.dayofweekofmonth(d) == 2 && Dates.dayofweek(d) == Dates.Mon),
-        Holiday("Veterans Day", (d) -> Dates.month(d) == Dates.Nov && Dates.day(d) == 11),
-        Holiday("Thanksgiving Day", (d) -> Dates.year(d) >= 1871 && Dates.month(d) == Dates.Nov && Dates.dayofweekofmonth(d) == 4 && Dates.dayofweek(d) == Dates.Thu),
+        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("Birthday of Martin Luther King, Jr.", x -> Dates.month(x) == Dates.Jan && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon),
+        Holiday("Memorial Day", x -> Dates.month(x) == Dates.May && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)),
+        Holiday("Juneteenth National Independence Day", x -> Dates.year(x) >= 2021 && Dates.month(x) == Dates.Jun && Dates.day(x) == 19),
+        Holiday("Independence Day", x -> Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4),
+        Holiday("Labor Day", x -> Dates.year(x) >= 1894 && Dates.month(x) == Dates.Sep && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon),
+        Holiday("Columbus Day", x -> Dates.month(x) == Dates.Oct && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon),
+        Holiday("Veterans Day", x -> Dates.month(x) == Dates.Nov && Dates.day(x) == 11),
+        Holiday("Thanksgiving Day", x -> Dates.year(x) >= 1871 && Dates.month(x) == Dates.Nov && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end
