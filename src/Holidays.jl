@@ -2,7 +2,8 @@ module Holidays
 
 using Dates
 
-export is_holiday,
+export
+    is_holiday,
     AbstractHolidayCalendar,
     AbstractCountryHolidayCalendar,
     Subdivision
