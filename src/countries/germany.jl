@@ -72,7 +72,7 @@ function fetch_holidays(::Type{Germany{Subdivision.MecklenburgVorpommern}})
         Holiday("International Women's Day", (d) -> Dates.month(d) == Dates.Mar && Dates.day(d) == 8),
         Holiday("Reformation Day", (d) -> Dates.month(d) == Dates.Oct && Dates.day(d) == 31),
     ]
-end 
+end
 
 function fetch_holidays(::Type{Germany{Subdivision.LowerSaxony}})
     return [
