@@ -5,7 +5,6 @@ using Dates
 export
     is_holiday,
     AbstractHolidayCalendar,
-    AbstractCountryHolidayCalendar,
     Subdivision
 
 include("Subdivision.jl")

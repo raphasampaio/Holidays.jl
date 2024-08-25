@@ -115,45 +115,45 @@ function test_brazil()
         test_holidays(calendar, 2024, holidays, [Date(2024, 4, 23)])
     end
 
-    # @testset "RioGrandeDoNorte" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoNorte())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 8, 7), Date(2024, 10, 3)])
-    # end
+    @testset "RioGrandeDoNorte" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoNorte())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 8, 7), Date(2024, 10, 3)])
+    end
 
-    # @testset "RioGrandeDoSul" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoSul())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 9, 20)])
-    # end
+    @testset "RioGrandeDoSul" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoSul())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 9, 20)])
+    end
 
-    # @testset "Rondonia" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.Rondonia())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 1, 4), Date(2024, 6, 18)])
-    # end
+    @testset "Rondonia" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Rondonia())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 1, 4), Date(2024, 6, 18)])
+    end
 
-    # @testset "Roraima" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.Roraima())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 10, 5)])
-    # end
+    @testset "Roraima" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Roraima())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 10, 5)])
+    end
 
-    # @testset "SantaCatarina" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.SantaCatarina())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 8, 11), Date(2024, 11, 25)])
-    # end
+    @testset "SantaCatarina" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.SantaCatarina())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 8, 11), Date(2024, 11, 25)])
+    end
 
-    # @testset "SaoPaulo" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.SaoPaulo())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 7, 9)])
-    # end
+    @testset "SaoPaulo" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.SaoPaulo())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 7, 9)])
+    end
 
-    # @testset "Sergipe" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.Sergipe())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 7, 8)])
-    # end
+    @testset "Sergipe" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Sergipe())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 7, 8)])
+    end
 
-    # @testset "Tocantins" begin
-    #     calendar = Holidays.Brazil(subdivision = Subdivision.Tocantins())
-    #     test_holidays(calendar, 2024, holidays, [Date(2024, 3, 18), Date(2024, 9, 8), Date(2024, 10, 5)])
-    # end
+    @testset "Tocantins" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Tocantins())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 18), Date(2024, 9, 8), Date(2024, 10, 5)])
+    end
 
     return nothing
 end
