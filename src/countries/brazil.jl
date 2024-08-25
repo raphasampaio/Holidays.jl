@@ -160,7 +160,7 @@ end
 function fetch_holidays(::Type{Brazil{Subdivision.RioDeJaneiro}})
     return [
         fetch_holidays(Brazil)...,
-        Holiday("xxx", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 23),
+        Holiday("Dia de São Jorge", (d) -> Dates.month(d) == Dates.Apr && Dates.day(d) == 23),
     ]
 end
 

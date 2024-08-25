@@ -3,12 +3,15 @@ module Holidays
 using Dates
 
 export is_holiday,
-    AbstractCountry,
+    AbstractHolidayCalendar,
+    AbstractCountryHolidayCalendar,
     Subdivision
 
-include("holiday.jl")
 include("Subdivision.jl")
-include("Country.jl")
+
+include("abstract.jl")
+include("holiday.jl")
+include("country.jl")
 
 include("calendars/christian.jl")
 include("calendars/islamic.jl")
@@ -16,14 +19,5 @@ include("calendars/islamic.jl")
 include("countries/brazil.jl")
 include("countries/germany.jl")
 include("countries/united_states.jl")
-
-function is_holiday(calendar::T, date::Date) where {T <: AbstractCountry}
-    for holiday in calendar.holidays
-        if date in holiday
-            return true
-        end
-    end
-    return false
-end
 
 end
