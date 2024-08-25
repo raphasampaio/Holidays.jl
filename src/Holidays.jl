@@ -2,9 +2,8 @@ module Holidays
 
 using Dates
 
-export
-    is_holiday,
-    Country,
+export is_holiday,
+    AbstractCountry,
     Subdivision
 
 include("holiday.jl")

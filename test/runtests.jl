@@ -14,7 +14,7 @@ include("countries/egypt.jl")
 include("countries/germany.jl")
 include("countries/united_states.jl")
 
-function test_holidays(country, year::Integer, holidays::Vector{Date})
+function test_holidays(country::AbstractCountry, year::Integer, holidays::Vector{Date})
     start_date = Date(year, 1, 1)
     end_date = Date(year, 12, 31)
 
@@ -29,31 +29,31 @@ function test_holidays(country, year::Integer, holidays::Vector{Date})
     return nothing
 end
 
-function test_holidays(country, year::Integer, holidays::Vector{Date}, more_holidays::Vector{Date})
+function test_holidays(country::AbstractCountry, year::Integer, holidays::Vector{Date}, more_holidays::Vector{Date})
     test_holidays(country, year, vcat(holidays, more_holidays))
     return nothing
 end
 
 function test_all()
-    # @testset "Aqua.jl" begin
-    #     test_aqua()
-    # end
+    @testset "Aqua.jl" begin
+        test_aqua()
+    end
 
-    # @testset "Christian" begin
-    #     test_christian()
-    # end
+    @testset "Christian" begin
+        test_christian()
+    end
 
-    # @testset "Islamic" begin
-    #     test_islamic()
-    # end
+    @testset "Islamic" begin
+        test_islamic()
+    end
 
     @testset "Brazil" begin
         test_brazil()
     end
 
-    # @testset "Egypt" begin
-    #     test_egypt()
-    # end
+    @testset "Egypt" begin
+        test_egypt()
+    end
 
     @testset "Germany" begin
         test_germany()
