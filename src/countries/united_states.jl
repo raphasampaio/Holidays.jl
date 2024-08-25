@@ -1,6 +1,6 @@
 function fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 1),
+        Holiday("New Year's Day", (d) -> Gregorian.is_new_years_day),
         Holiday("Birthday of Martin Luther King, Jr.", (d) -> Dates.month(d) == Dates.Jan && Dates.dayofweekofmonth(d) == 3 && Dates.dayofweek(d) == Dates.Mon),
         Holiday("Memorial Day", (d) -> Dates.month(d) == Dates.May && Dates.dayofweek(d) == Dates.Mon && Dates.dayofweekofmonth(d) == Dates.daysofweekinmonth(d)),
         Holiday("Juneteenth National Independence Day", (d) -> Dates.year(d) >= 2021 && Dates.month(d) == Dates.Jun && Dates.day(d) == 19),

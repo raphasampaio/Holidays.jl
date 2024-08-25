@@ -14,6 +14,7 @@ include("holiday.jl")
 include("country.jl")
 
 include("calendars/christian.jl")
+include("calendars/gregorian.jl")
 include("calendars/islamic.jl")
 
 include("countries/brazil.jl")

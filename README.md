@@ -10,8 +10,8 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 
 ## Currently Supported Countries
 
-- Brazil (including states)
-- Germany (including states)
+- Brazil (including subdivisions)
+- Germany (including subdivisions)
 - United States
 
 ## Getting Started
@@ -43,7 +43,7 @@ usa_holidays = Holidays.UnitedStates()
 @show Date(2024, 11, 28) in usa_holidays # true
 ```
 
-### Example 2: Brazil (National and State Holidays)
+### Example 2: Brazil (Country and Subdivisions Holidays)
 
 ```julia
 using Holidays

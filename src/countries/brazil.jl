@@ -1,6 +1,6 @@
 function fetch_holidays(::Type{Brazil})
     return [
-        Holiday("Confraternização Universal", (d) -> Dates.month(d) == Dates.Jan && Dates.day(d) == 1),
+        Holiday("Confraternização Universal", Gregorian.is_new_years_day),
         Holiday("Segunda Feira de Carnaval", Christian.is_shrove_monday),
         Holiday("Terça Feira de Carnaval", Christian.is_shrove_tuesday),
         Holiday("Quarta Feira de Cinzas", Christian.is_ash_wednesday),
