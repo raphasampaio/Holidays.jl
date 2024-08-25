@@ -1,7 +1,7 @@
 function test_egypt()
-    country = Holidays.Egypt()
+    # country = Holidays.Egypt()
 
-    holidays = [
+    # holidays = [
     # Date(2024, 1, 7),
     # Date(2024, 1, 25),
     # Date(2024, 4, 9),
@@ -9,7 +9,7 @@ function test_egypt()
     # Date(2024, 4, 25),
     # Date(2024, 5, 5),
     # Date(2024, 5, 6),
-    ]
+    # ]
 
     # test_holidays(country, 2024, holidays)
 
