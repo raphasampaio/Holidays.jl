@@ -14,7 +14,7 @@ include("countries/egypt.jl")
 include("countries/germany.jl")
 include("countries/united_states.jl")
 
-function test_holidays(country::AbstractHolidayCalendar, year::Integer, holidays::Vector{Date})
+function test_holidays(country, year::Integer, holidays::Vector{Date})
     start_date = Date(year, 1, 1)
     end_date = Date(year, 12, 31)
 
@@ -29,7 +29,7 @@ function test_holidays(country::AbstractHolidayCalendar, year::Integer, holidays
     return nothing
 end
 
-function test_holidays(country::AbstractHolidayCalendar, year::Integer, holidays::Vector{Date}, more_holidays::Vector{Date})
+function test_holidays(country, year::Integer, holidays::Vector{Date}, more_holidays::Vector{Date})
     test_holidays(country, year, vcat(holidays, more_holidays))
     return nothing
 end
@@ -59,9 +59,9 @@ function test_all()
         test_germany()
     end
 
-    # @testset "United States" begin
-    #     test_united_states()
-    # end
+    @testset "United States" begin
+        test_united_states()
+    end
 
     return nothing
 end

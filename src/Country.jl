@@ -1,23 +1,23 @@
-abstract type AbstractHolidayCalendar end
+abstract type AbstractCountry end
 
-function Base.in(date::Date, country::AbstractHolidayCalendar)
+function Base.in(date::Date, country::AbstractCountry)
     return is_holiday(country, date)
 end
 
 macro country(name)
     quote
         begin
-            struct $(esc(name)){T <: Union{Nothing, Location.AbstractLocation}} <: AbstractHolidayCalendar
-                location::T
+            struct $(esc(name)){T <: Union{Nothing, Subdivision.AbstractSubdivision}} <: AbstractCountry
+                subdivision::T
                 holidays::Vector{Holiday}
             end
         end
         begin
-            function $(esc(name))(; location = nothing)
-                if location == nothing
-                    return $(esc(name))(location, fetch_holidays($(esc(name))))
+            function $(esc(name))(; subdivision = nothing)
+                if subdivision == nothing
+                    return $(esc(name))(subdivision, fetch_holidays($(esc(name))))
                 else
-                    return $(esc(name))(location, fetch_holidays($(esc(name)){typeof(location)}))
+                    return $(esc(name))(subdivision, fetch_holidays($(esc(name)){typeof(subdivision)}))
                 end
             end
         end
