@@ -1,4 +1,13 @@
-function fetch_holidays(::Type{Brazil})
+module BrazilHolidays
+
+using Dates
+using Holidays
+
+const Christian = Holidays.Christian
+const Gregorian = Holidays.Gregorian
+const Brazil = Holidays.Brazil
+
+function Holidays.fetch_holidays(::Type{Brazil})
     return [
         Holiday("Confraternização Universal", Gregorian.is_new_years_day),
         Holiday("Segunda Feira de Carnaval", Christian.is_shrove_monday),
@@ -17,7 +26,7 @@ function fetch_holidays(::Type{Brazil})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Acre}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Acre}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia do evangélico", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 23),
@@ -28,7 +37,7 @@ function fetch_holidays(::Type{Brazil{Subdivision.Acre}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Alagoas}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Alagoas}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("São João", x -> Dates.month(x) == Dates.Jun && Dates.day(x) == 24),
@@ -37,7 +46,7 @@ function fetch_holidays(::Type{Brazil{Subdivision.Alagoas}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Amapa}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Amapa}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de São José", x -> Dates.month(x) == Dates.Mar && Dates.day(x) == 19),
@@ -45,7 +54,7 @@ function fetch_holidays(::Type{Brazil{Subdivision.Amapa}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Amazonas}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Amazonas}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Elevação do Amazonas à categoria de província", x -> Dates.month(x) == Dates.Sep && Dates.day(x) == 5),
@@ -53,14 +62,14 @@ function fetch_holidays(::Type{Brazil{Subdivision.Amazonas}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Bahia}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Bahia}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Independência da Bahia", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 2),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Brasilia}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Brasilia}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Fundação de Brasília", x -> Dates.month(x) == Dates.Apr && Dates.day(x) == 21),
@@ -68,7 +77,7 @@ function fetch_holidays(::Type{Brazil{Subdivision.Brasilia}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Ceara}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Ceara}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de São José", x -> Dates.month(x) == Dates.Mar && Dates.day(x) == 19),
@@ -77,14 +86,14 @@ function fetch_holidays(::Type{Brazil{Subdivision.Ceara}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.EspiritoSanto}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.EspiritoSanto}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de Nossa Senhora da Penha", x -> x == (Christian.easter(Dates.year(x)) + Dates.Day(8))),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Goias}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Goias}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia da Nossa Senhora Auxiliadora", x -> Dates.month(x) == Dates.May && Dates.day(x) == 24),
@@ -93,48 +102,48 @@ function fetch_holidays(::Type{Brazil{Subdivision.Goias}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Maranhao}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Maranhao}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Adesão do Maranhão à independência do Brasil", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 28),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.MatoGrosso}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.MatoGrosso}})
     return [
         fetch_holidays(Brazil)...,
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.MatoGrossoDoSul}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.MatoGrossoDoSul}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Criação do estado", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 11),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.MinasGerais}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.MinasGerais}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Tiradentes", x -> Dates.month(x) == Dates.Apr && Dates.day(x) == 21),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Para}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Para}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Adesão do Pará à independência do Brasil", x -> Dates.month(x) == Dates.Aug && Dates.day(x) == 15),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Paraiba}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Paraiba}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Nossa Senhora das Neves", x -> Dates.month(x) == Dates.Aug && Dates.day(x) == 5),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Parana}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Parana}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de Nossa Senhora do Rocio", x -> Dates.month(x) == Dates.Nov && Dates.day(x) == 15),
@@ -142,7 +151,7 @@ function fetch_holidays(::Type{Brazil{Subdivision.Parana}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Pernambuco}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Pernambuco}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Revolução Pernambucana de 1817", x -> Dates.month(x) == Dates.Mar && Dates.day(x) == 6),
@@ -150,21 +159,21 @@ function fetch_holidays(::Type{Brazil{Subdivision.Pernambuco}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Piaui}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Piaui}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia do Piauí", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 19),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.RioDeJaneiro}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.RioDeJaneiro}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de São Jorge", x -> Dates.month(x) == Dates.Apr && Dates.day(x) == 23),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.RioGrandeDoNorte}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.RioGrandeDoNorte}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia do Rio Grande do Norte", x -> Dates.month(x) == Dates.Aug && Dates.day(x) == 7),
@@ -172,14 +181,14 @@ function fetch_holidays(::Type{Brazil{Subdivision.RioGrandeDoNorte}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.RioGrandeDoSul}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.RioGrandeDoSul}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia do Gaúcho", x -> Dates.month(x) == Dates.Sep && Dates.day(x) == 20),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Rondonia}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Rondonia}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Criação do estado", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 4),
@@ -187,14 +196,14 @@ function fetch_holidays(::Type{Brazil{Subdivision.Rondonia}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Roraima}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Roraima}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Criação do estado", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 5),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.SantaCatarina}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.SantaCatarina}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia de Santa Catarina", x -> Dates.month(x) == Dates.Aug && Dates.day(x) == 11),
@@ -202,25 +211,27 @@ function fetch_holidays(::Type{Brazil{Subdivision.SantaCatarina}})
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.SaoPaulo}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.SaoPaulo}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Revolução Constitucionalista de 1932", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 9),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Sergipe}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Sergipe}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Emancipação política de Sergipe", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 8),
     ]
 end
 
-function fetch_holidays(::Type{Brazil{Subdivision.Tocantins}})
+function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Tocantins}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Autonomia do Estado", x -> Dates.month(x) == Dates.Mar && Dates.day(x) == 18),
         Holiday("Nossa Senhora da Natividade", x -> Dates.month(x) == Dates.Sep && Dates.day(x) == 8),
         Holiday("Criação do estado", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 5),
     ]
+end
+
 end

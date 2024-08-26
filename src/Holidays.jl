@@ -4,6 +4,8 @@ using Dates
 
 export
     is_holiday,
+    fetch_holidays,
+    Holiday,
     AbstractHolidayCalendar,
     Subdivision
 

@@ -12,3 +12,7 @@ function is_holiday(calendar::AbstractHolidayCalendar, date::Date)
     end
     return false
 end
+
+function fetch_holidays(::Type{AbstractHolidayCalendar})
+    return Vector{Holiday}()
+end
