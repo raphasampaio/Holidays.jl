@@ -26,6 +26,8 @@ function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holiday
         end
     end
 
+    @test Holidays.find_holidays(calendar; years = [year]) == length(holidays)
+
     return nothing
 end
 
