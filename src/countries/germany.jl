@@ -1,4 +1,15 @@
-function fetch_holidays(::Type{Germany})
+module GermanyHolidays
+
+using Dates
+using Holidays
+
+const Christian = Holidays.Christian
+const Gregorian = Holidays.Gregorian
+const International = Holidays.International
+
+const Germany = Holidays.Germany
+
+function Holidays.fetch_holidays(::Type{Germany})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
@@ -12,7 +23,7 @@ function fetch_holidays(::Type{Germany})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.BadenWurttemberg}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.BadenWurttemberg}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Epiphany", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 6),
@@ -21,7 +32,7 @@ function fetch_holidays(::Type{Germany{Subdivision.BadenWurttemberg}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Bavaria}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Bavaria}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Epiphany", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 6),
@@ -31,42 +42,42 @@ function fetch_holidays(::Type{Germany{Subdivision.Bavaria}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Berlin}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Berlin}})
     return [
         fetch_holidays(Germany)...,
         Holiday("International Women's Day", International.is_womens_day),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Brandenburg}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Brandenburg}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Bremen}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Bremen}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Hamburg}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Hamburg}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Hesse}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Hesse}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Corpus Christi", Christian.is_chorus_christi),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.MecklenburgVorpommern}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.MecklenburgVorpommern}})
     return [
         fetch_holidays(Germany)...,
         Holiday("International Women's Day", International.is_womens_day),
@@ -74,14 +85,14 @@ function fetch_holidays(::Type{Germany{Subdivision.MecklenburgVorpommern}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.LowerSaxony}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.LowerSaxony}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.NorthRhineWestphalia}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.NorthRhineWestphalia}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Corpus Christi", Christian.is_chorus_christi),
@@ -89,7 +100,7 @@ function fetch_holidays(::Type{Germany{Subdivision.NorthRhineWestphalia}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.RhinelandPalatinate}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.RhinelandPalatinate}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Corpus Christi", Christian.is_chorus_christi),
@@ -97,7 +108,7 @@ function fetch_holidays(::Type{Germany{Subdivision.RhinelandPalatinate}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Saarland}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Saarland}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Corpus Christi", Christian.is_chorus_christi),
@@ -106,7 +117,7 @@ function fetch_holidays(::Type{Germany{Subdivision.Saarland}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Saxony}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Saxony}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
@@ -114,7 +125,7 @@ function fetch_holidays(::Type{Germany{Subdivision.Saxony}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.SaxonyAnhalt}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.SaxonyAnhalt}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Epiphany", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 6),
@@ -122,17 +133,19 @@ function fetch_holidays(::Type{Germany{Subdivision.SaxonyAnhalt}})
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.SchleswigHolstein}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.SchleswigHolstein}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
 end
 
-function fetch_holidays(::Type{Germany{Subdivision.Thuringia}})
+function Holidays.fetch_holidays(::Type{Germany{Subdivision.Thuringia}})
     return [
         fetch_holidays(Germany)...,
         Holiday("World Children's Day", x -> Dates.month(x) == Dates.Sep && Dates.day(x) == 20),
         Holiday("Reformation Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 31),
     ]
+end
+
 end

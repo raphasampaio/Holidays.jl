@@ -5,6 +5,8 @@ using Holidays
 
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
+const International = Holidays.International
+
 const Brazil = Holidays.Brazil
 
 function Holidays.fetch_holidays(::Type{Brazil})

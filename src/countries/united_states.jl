@@ -5,6 +5,7 @@ using Holidays
 
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
+
 const UnitedStates = Holidays.UnitedStates
 
 function is_new_years_day(x::Date)
