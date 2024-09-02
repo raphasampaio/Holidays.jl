@@ -20,7 +20,7 @@ function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holiday
 
     set = Set(holidays)
 
-    for date in start_date:end_date
+    for date in start_date:Day(1):end_date
         @testset "$date" begin
             @test (date in calendar) == (date in set)
         end
