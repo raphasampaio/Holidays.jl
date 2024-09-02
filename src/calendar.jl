@@ -23,7 +23,7 @@ function find_holidays(calendar::AbstractHolidayCalendar; years::AbstractVector{
         start_date = Date(year, 1, 1)
         end_date = Date(year, 12, 31)
 
-        for date in start_date:end_date
+        for date in start_date:Day(1):end_date
             for holiday in find_holidays(calendar, date)
                 push!(holidays, holiday)
             end
