@@ -5,7 +5,7 @@
 ## Installation
 
 ````julia
-(v1.0) pkg> add Query
+pkg> add Holidays
 ````
 
 ## Highlights
