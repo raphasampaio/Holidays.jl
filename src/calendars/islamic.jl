@@ -3,7 +3,7 @@ module Islamic
 using Dates
 using Holidays
 
-const MonthDay = Holidays.MonthDays.MonthDay
+const MonthDay = Holidays.MonthDay
 
 # from https://github.com/vacanza/python-holidays
 
