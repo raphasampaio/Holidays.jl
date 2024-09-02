@@ -28,18 +28,38 @@ function is_memorial_day(x::Date)
     return Dates.year(x) >= 1971 && Dates.month(x) == Dates.May && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
+function is_indenpendence_day(x::Date)
+    return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4
+end
+
+function is_labor_day(x::Date)
+    return Dates.year(x) >= 1894 && Dates.month(x) == Dates.Sep && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+end
+
+function is_thanksgiving_day(x::Date)
+    return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Nov && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu
+end
+
+function is_veterans_day(x::Date)
+    return Dates.year(x) >= 1954 && Dates.month(x) == Dates.Nov && Dates.day(x) == 11
+end
+
+function is_juneteenth_national_independence_day(x::Date)
+    return Dates.year(x) >= 2021 && Dates.month(x) == Dates.Jun && Dates.day(x) == 19
+end
+
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
         Holiday("New Year's Day", is_new_years_day),
         Holiday("Martin Luther King Birthday", is_martin_luther_king_birthday),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
-        Holiday("Juneteenth National Independence Day", x -> Dates.year(x) >= 2021 && Dates.month(x) == Dates.Jun && Dates.day(x) == 19),
-        Holiday("Independence Day", x -> Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4),
-        Holiday("Labor Day", x -> Dates.year(x) >= 1894 && Dates.month(x) == Dates.Sep && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon),
-        Holiday("Columbus Day", x -> Dates.month(x) == Dates.Oct && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon),
-        Holiday("Veterans Day", x -> Dates.month(x) == Dates.Nov && Dates.day(x) == 11),
-        Holiday("Thanksgiving Day", x -> Dates.year(x) >= 1871 && Dates.month(x) == Dates.Nov && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu),
+        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day),
+        Holiday("Independence Day", is_indenpendence_day),
+        Holiday("Labor Day", is_labor_day),
+        Holiday("Columbus Day", is_columbus_day),
+        Holiday("Veterans Day", is_veterans_day),
+        Holiday("Thanksgiving Day", is_thanksgiving_day),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

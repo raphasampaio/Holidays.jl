@@ -23,10 +23,6 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 julia> ] add Holidays
 ```
 
-### Usage
-
-TODO
-
 ### Example 1: United States
 
 ```julia
