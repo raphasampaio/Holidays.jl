@@ -21,9 +21,10 @@ function Holidays.fetch_holidays(::Type{Egypt})
         Holiday("Revolution Day", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 23),
         Holiday("Armed Forces Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 6),
         # Islamic holidays
-        Holiday("Eid al-Fitr", Islamic.is_eid_al_fitr_day),
-        Holiday("Eid al-Fitr", Islamic.is_eid_al_fitr_day_two),
-        Holiday("Eid al-Fitr", Islamic.is_eid_al_fitr_day_three),
+        Holiday("عيد الفطر المبارك", Islamic.is_eid_al_fitr_day),
+        Holiday("عيد الفطر المبارك", Islamic.is_eid_al_fitr_day_two),
+        Holiday("عيد الفطر المبارك", Islamic.is_eid_al_fitr_day_three),
+        Holiday("عيد الأضحى المبارك", Islamic.is_eid_al_adha_day),
     ]
 end
 
