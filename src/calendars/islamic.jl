@@ -3,8 +3,6 @@ module Islamic
 using Dates
 using Holidays
 
-const MonthDay = Holidays.MonthDay
-
 # from https://github.com/vacanza/python-holidays
 
 const ALI_AL_RIDA_DEATH_DATES = Set{Date}([
