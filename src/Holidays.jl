@@ -21,6 +21,7 @@ include("calendars/international.jl")
 include("calendars/islamic.jl")
 
 include("countries/brazil.jl")
+include("countries/egypt.jl")
 include("countries/germany.jl")
 include("countries/united_states.jl")
 
