@@ -32,7 +32,7 @@ function Holidays.fetch_holidays(::Type{Brazil{Subdivision.Acre}})
     return [
         fetch_holidays(Brazil)...,
         Holiday("Dia do evangélico", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 23),
-        Holiday("Alusivo ao Dia Internacional da Mulher", x -> Dates.month(x) == Dates.Mar && Dates.day(x) == 8),
+        Holiday("Dia Internacional da Mulher", International.is_womens_day),
         Holiday("Aniversário do estado (Data Magna)", x -> Dates.month(x) == Dates.Jun && Dates.day(x) == 15),
         Holiday("Dia da Amazônia", x -> Dates.month(x) == Dates.Sep && Dates.day(x) == 5),
         Holiday("Assinatura do Tratado de Petrópolis", x -> Dates.month(x) == Dates.Nov && Dates.day(x) == 17),

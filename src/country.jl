@@ -69,7 +69,7 @@ end
 # @country DominicanRepublic
 # @country EastTimor
 # @country Ecuador
-# @country Egypt
+@country Egypt
 # @country ElSalvador
 # @country EquatorialGuinea
 # @country Eritrea
