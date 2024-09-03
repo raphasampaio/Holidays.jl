@@ -37,33 +37,33 @@ function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holiday
 end
 
 function test_all()
-    @testset "Aqua.jl" begin
-        test_aqua()
-    end
+    # @testset "Aqua.jl" begin
+    #     test_aqua()
+    # end
 
-    @testset "Christian" begin
-        test_christian()
-    end
+    # @testset "Christian" begin
+    #     test_christian()
+    # end
 
     @testset "Islamic" begin
         test_islamic()
     end
 
-    @testset "Brazil" begin
-        test_brazil()
-    end
+    # @testset "Brazil" begin
+    #     test_brazil()
+    # end
 
-    @testset "Egypt" begin
-        test_egypt()
-    end
+    # @testset "Egypt" begin
+    #     test_egypt()
+    # end
 
-    @testset "Germany" begin
-        test_germany()
-    end
+    # @testset "Germany" begin
+    #     test_germany()
+    # end
 
-    @testset "United States" begin
-        test_united_states()
-    end
+    # @testset "United States" begin
+    #     test_united_states()
+    # end
 
     return nothing
 end

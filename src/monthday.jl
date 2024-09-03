@@ -7,8 +7,21 @@ struct MonthDay
     end
 end
 
-MonthDay(d::Date) = MonthDay(Dates.monthday(d)...)
+function MonthDay(d::Date)
+    return MonthDay(Dates.monthday(d)...)
+end
+
+function Base.convert(::Type{Date}, md::MonthDay)
+    return Date(md)
+end
 
 Dates.year(md::MonthDay) = md.year
+
 Dates.month(md::MonthDay) = md.month
+
 Dates.monthday(md::MonthDay) = (md.month, md.day)
+
+function Base.in(date::Date, set::Set{MonthDay})::Bool
+    error("Not implemented")
+    return nothing
+end
