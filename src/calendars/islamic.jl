@@ -3713,7 +3713,7 @@ is_eid_al_fitr_day_two(x::Date) = (x - Day(1)) in EID_AL_FITR_DATES
 
 is_eid_al_fitr_day_three(x::Date) = (x - Day(2)) in EID_AL_FITR_DATES
 
-is_eid_al_adha(x::Date) = x in EID_AL_ADHA_DATES
+is_eid_al_adha_day(x::Date) = x in EID_AL_ADHA_DATES
 
 is_mawlid(x::Date) = x in MAWLID_DATES
 
