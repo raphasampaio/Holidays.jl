@@ -3707,14 +3707,14 @@ const TASUA_DATES = Set{Date}([
     Date(2076, 12, 05),
 ])
 
-is_eid_al_fitr_day(x::Date) = x in EID_AL_FITR_DATES
+is_eid_al_fitr_day(x::TimeType) = x in EID_AL_FITR_DATES
 
-is_eid_al_fitr_day_two(x::Date) = (x - Day(1)) in EID_AL_FITR_DATES
+is_eid_al_fitr_day_two(x::TimeType) = (x - Day(1)) in EID_AL_FITR_DATES
 
-is_eid_al_fitr_day_three(x::Date) = (x - Day(2)) in EID_AL_FITR_DATES
+is_eid_al_fitr_day_three(x::TimeType) = (x - Day(2)) in EID_AL_FITR_DATES
 
-is_eid_al_adha_day(x::Date) = x in EID_AL_ADHA_DATES
+is_eid_al_adha_day(x::TimeType) = x in EID_AL_ADHA_DATES
 
-is_mawlid(x::Date) = x in MAWLID_DATES
+is_mawlid(x::TimeType) = x in MAWLID_DATES
 
 end

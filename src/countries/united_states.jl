@@ -8,43 +8,43 @@ const Gregorian = Holidays.Gregorian
 
 const UnitedStates = Holidays.UnitedStates
 
-function is_new_years_day(x::Date)
+function is_new_years_day(x::TimeType)
     return Dates.year(x) >= 1871 && Gregorian.is_new_years_day(x)
 end
 
-function is_martin_luther_king_birthday(x::Date)
+function is_martin_luther_king_birthday(x::TimeType)
     return Dates.year(x) >= 1986 && Dates.month(x) == Dates.Jan && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
 end
 
-function is_washington_birthday(x::Date)
+function is_washington_birthday(x::TimeType)
     return Dates.year(x) >= 1971 && Dates.month(x) == Dates.Feb && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
 end
 
-function is_columbus_day(x::Date)
+function is_columbus_day(x::TimeType)
     return Dates.year(x) >= 1971 && Dates.month(x) == Dates.Oct && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
 end
 
-function is_memorial_day(x::Date)
+function is_memorial_day(x::TimeType)
     return Dates.year(x) >= 1971 && Dates.month(x) == Dates.May && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
-function is_indenpendence_day(x::Date)
+function is_indenpendence_day(x::TimeType)
     return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4
 end
 
-function is_labor_day(x::Date)
+function is_labor_day(x::TimeType)
     return Dates.year(x) >= 1894 && Dates.month(x) == Dates.Sep && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
 end
 
-function is_thanksgiving_day(x::Date)
+function is_thanksgiving_day(x::TimeType)
     return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Nov && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu
 end
 
-function is_veterans_day(x::Date)
+function is_veterans_day(x::TimeType)
     return Dates.year(x) >= 1954 && Dates.month(x) == Dates.Nov && Dates.day(x) == 11
 end
 
-function is_juneteenth_national_independence_day(x::Date)
+function is_juneteenth_national_independence_day(x::TimeType)
     return Dates.year(x) >= 2021 && Dates.month(x) == Dates.Jun && Dates.day(x) == 19
 end
 

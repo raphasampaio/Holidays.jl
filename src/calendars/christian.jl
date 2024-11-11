@@ -2,28 +2,28 @@ module Christian
 
 using Dates
 
-is_shrove_sunday(x::Date) = x == shrove_sunday(Dates.year(x))
-function shrove_sunday(year::Integer)::Date
+is_shrove_sunday(x::TimeType) = x == shrove_sunday(Dates.year(x))
+function shrove_sunday(year::Integer)
     return easter(year) - Dates.Day(49)
 end
 
-is_shrove_monday(x::Date) = x == shrove_monday(Dates.year(x))
-function shrove_monday(year::Integer)::Date
+is_shrove_monday(x::TimeType) = x == shrove_monday(Dates.year(x))
+function shrove_monday(year::Integer)
     return easter(year) - Dates.Day(48)
 end
 
-is_shrove_tuesday(x::Date) = x == shrove_tuesday(Dates.year(x))
-function shrove_tuesday(year::Integer)::Date
+is_shrove_tuesday(x::TimeType) = x == shrove_tuesday(Dates.year(x))
+function shrove_tuesday(year::Integer)
     return easter(year) - Dates.Day(47)
 end
 
-is_ash_wednesday(x::Date) = x == ash_wednesday(Dates.year(x))
-function ash_wednesday(year::Integer)::Date
+is_ash_wednesday(x::TimeType) = x == ash_wednesday(Dates.year(x))
+function ash_wednesday(year::Integer)
     return easter(year) - Dates.Day(46)
 end
 
-is_easter(x::Date) = x == easter(Dates.year(x))
-function easter(year::Integer)::Date
+is_easter(x::TimeType) = x == easter(Dates.year(x))
+function easter(year::Integer)
     g = year % 19
     c = div(year, 100)
     h = (c - div(c, 4) - div(8 * c + 13, 25) + 19 * g + 15) % 30
@@ -36,48 +36,48 @@ function easter(year::Integer)::Date
     return Date(year, month, day)
 end
 
-is_good_friday(x::Date) = x == good_friday(Dates.year(x))
-function good_friday(year::Integer)::Date
+is_good_friday(x::TimeType) = x == good_friday(Dates.year(x))
+function good_friday(year::Integer)
     return easter(year) - Dates.Day(2)
 end
 
-is_easter_monday(x::Date) = x == easter_monday(Dates.year(x))
-function easter_monday(year::Integer)::Date
+is_easter_monday(x::TimeType) = x == easter_monday(Dates.year(x))
+function easter_monday(year::Integer)
     return easter(year) + Dates.Day(1)
 end
 
-is_chorus_christi(x::Date) = x == chorus_christi(Dates.year(x))
-function chorus_christi(year::Integer)::Date
+is_chorus_christi(x::TimeType) = x == chorus_christi(Dates.year(x))
+function chorus_christi(year::Integer)
     return easter(year) + Dates.Day(60)
 end
 
-is_ascension_day(x::Date) = x == ascension_day(Dates.year(x))
-function ascension_day(year::Integer)::Date
+is_ascension_day(x::TimeType) = x == ascension_day(Dates.year(x))
+function ascension_day(year::Integer)
     return easter(year) + Dates.Day(39)
 end
 
-is_whit_monday(x::Date) = x == whit_monday(Dates.year(x))
-function whit_monday(year::Integer)::Date
+is_whit_monday(x::TimeType) = x == whit_monday(Dates.year(x))
+function whit_monday(year::Integer)
     return easter(year) + Dates.Day(50)
 end
 
-is_assumption_day(x::Date) = x == assumption_day(Dates.year(x))
-function assumption_day(year::Integer)::Date
+is_assumption_day(x::TimeType) = x == assumption_day(Dates.year(x))
+function assumption_day(year::Integer)
     return Date(year, 8, 15)
 end
 
-is_all_saints_day(x::Date) = x == all_saints_day(Dates.year(x))
-function all_saints_day(year::Integer)::Date
+is_all_saints_day(x::TimeType) = x == all_saints_day(Dates.year(x))
+function all_saints_day(year::Integer)
     return Date(year, 11, 1)
 end
 
-is_all_souls_day(x::Date) = x == all_souls_day(Dates.year(x))
-function all_souls_day(year::Integer)::Date
+is_all_souls_day(x::TimeType) = x == all_souls_day(Dates.year(x))
+function all_souls_day(year::Integer)
     return Date(year, 11, 2)
 end
 
-is_advent_sunday(x::Date) = x == advent_sunday(Dates.year(x))
-function advent_sunday(year::Integer)::Date
+is_advent_sunday(x::TimeType) = x == advent_sunday(Dates.year(x))
+function advent_sunday(year::Integer)
     christmas = christmas_day(year)
 
     # find the fourth Sunday before Christmas
@@ -88,13 +88,13 @@ function advent_sunday(year::Integer)::Date
     return first_advent - Dates.Day(day_of_week % 7)
 end
 
-is_christmas_day(x::Date) = x == christmas_day(Dates.year(x))
-function christmas_day(year::Integer)::Date
+is_christmas_day(x::TimeType) = x == christmas_day(Dates.year(x))
+function christmas_day(year::Integer)
     return Date(year, 12, 25)
 end
 
-is_boxing_day(x::Date) = x == boxing_day(Dates.year(x))
-function boxing_day(year::Integer)::Date
+is_boxing_day(x::TimeType) = x == boxing_day(Dates.year(x))
+function boxing_day(year::Integer)
     return Date(year, 12, 26)
 end
 

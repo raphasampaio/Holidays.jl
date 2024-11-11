@@ -4,7 +4,7 @@ function fetch_holidays(::Type{AbstractHolidayCalendar})::Vector{Holiday}
     return Vector{Holiday}()
 end
 
-function find_holidays(calendar::AbstractHolidayCalendar, date::Date)::Vector{Holiday}
+function find_holidays(calendar::AbstractHolidayCalendar, date::TimeType)::Vector{Holiday}
     found = Vector{Holiday}()
 
     for holiday in calendar.holidays
@@ -33,10 +33,10 @@ function find_holidays(calendar::AbstractHolidayCalendar; years::AbstractVector{
     return holidays
 end
 
-function is_holiday(calendar::AbstractHolidayCalendar, date::Date)::Bool
+function is_holiday(calendar::AbstractHolidayCalendar, date::TimeType)::Bool
     return length(find_holidays(calendar, date)) > 0
 end
 
-function Base.in(date::Date, calendar::AbstractHolidayCalendar)::Bool
+function Base.in(date::TimeType, calendar::AbstractHolidayCalendar)::Bool
     return is_holiday(calendar, date)
 end
