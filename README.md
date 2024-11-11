@@ -28,6 +28,7 @@ julia> ] add Holidays
 
 ```julia
 using Holidays
+using Dates
 
 usa_holidays = Holidays.UnitedStates()
 
@@ -45,6 +46,7 @@ usa_holidays = Holidays.UnitedStates()
 
 ```julia
 using Holidays
+using Dates
 
 # check if april 23rd is a holiday in brazil
 brazil_holidays = Holidays.Brazil()
