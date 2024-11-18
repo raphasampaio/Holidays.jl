@@ -3,6 +3,8 @@ module Islamic
 using Dates
 using Holidays
 
+const Christian = Holidays.Christian
+
 # from https://github.com/vacanza/holidays
 
 const ALI_AL_RIDA_DEATH_DATES = Set{Date}([
@@ -3723,5 +3725,7 @@ is_eid_al_adha_day_three(x::TimeType) = (x - Day(2)) in EID_AL_ADHA_DATES
 is_mawlid(x::TimeType) = x in MAWLID_DATES
 
 is_hijri_new_year(x::TimeType) = x in HIJRI_NEW_YEAR_DATES
+
+is_sham_el_nessim(x::TimeType) = Christian.is_easter_monday(x)
 
 end
