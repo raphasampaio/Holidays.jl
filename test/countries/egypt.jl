@@ -15,6 +15,7 @@ function test_egypt()
         Date(2024, 6, 30), # June 30 Revolution
         Date(2024, 7, 7),  # Islamic New Year
         Date(2024, 7, 23), # Revolution Day
+        Date(2024, 9, 15), # Prophet Muhammad's Birthday
         Date(2024, 10, 6), # Armed Forces Day
     ]
 

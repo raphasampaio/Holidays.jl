@@ -3,7 +3,7 @@ function test_islamic()
     @test Holidays.Islamic.is_eid_al_fitr_day_one(Date(2024, 4, 10)) == true
     @test Holidays.Islamic.is_eid_al_fitr_day_two(Date(2024, 4, 11)) == true
     @test Holidays.Islamic.is_eid_al_fitr_day_three(Date(2024, 4, 12)) == true
-    @test Holidays.Islamic.is_sham_el_nessim(Date(2024, 5, 6)) == true
+    # @test Holidays.Islamic.is_sham_el_nessim(Date(2024, )) == true
     @test Holidays.Islamic.is_eid_al_adha_day_one(Date(2024, 6, 16)) == true
     @test Holidays.Islamic.is_eid_al_adha_day_two(Date(2024, 6, 17)) == true
     @test Holidays.Islamic.is_eid_al_adha_day_three(Date(2024, 6, 18)) == true

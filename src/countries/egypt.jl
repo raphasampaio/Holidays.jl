@@ -28,6 +28,7 @@ function Holidays.fetch_holidays(::Type{Egypt})
         Holiday("Eid Al-Adha", Islamic.is_eid_al_adha_day_two),
         Holiday("Eid Al-Adha", Islamic.is_eid_al_adha_day_three),
         Holiday("Islamic New Year", Islamic.is_hijri_new_year),
+        Holiday("Prophet Muhammad's Birthday", Islamic.is_mawlid_day),
     ]
 end
 
