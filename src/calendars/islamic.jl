@@ -3,7 +3,9 @@ module Islamic
 using Dates
 using Holidays
 
-# from https://github.com/vacanza/python-holidays
+const Christian = Holidays.Christian
+
+# from https://github.com/vacanza/holidays
 
 const ALI_AL_RIDA_DEATH_DATES = Set{Date}([
     Date(1924, 09, 28),
@@ -2419,6 +2421,7 @@ const MALDIVES_EMBRACED_ISLAM_DAY_DATES = Set{Date}([
     Date(2076, 03, 06),
     Date(2077, 02, 24),
 ])
+
 const MAWLID_DATES = Set{Date}([
     Date(1924, 10, 10),
     Date(1925, 09, 30),
@@ -3707,14 +3710,22 @@ const TASUA_DATES = Set{Date}([
     Date(2076, 12, 05),
 ])
 
-is_eid_al_fitr_day(x::TimeType) = x in EID_AL_FITR_DATES
+is_eid_al_fitr_day_one(x::TimeType) = x in EID_AL_FITR_DATES
 
 is_eid_al_fitr_day_two(x::TimeType) = (x - Day(1)) in EID_AL_FITR_DATES
 
 is_eid_al_fitr_day_three(x::TimeType) = (x - Day(2)) in EID_AL_FITR_DATES
 
-is_eid_al_adha_day(x::TimeType) = x in EID_AL_ADHA_DATES
+is_eid_al_adha_day_one(x::TimeType) = x in EID_AL_ADHA_DATES
 
-is_mawlid(x::TimeType) = x in MAWLID_DATES
+is_eid_al_adha_day_two(x::TimeType) = (x - Day(1)) in EID_AL_ADHA_DATES
+
+is_eid_al_adha_day_three(x::TimeType) = (x - Day(2)) in EID_AL_ADHA_DATES
+
+is_mawlid_day(x::TimeType) = x in MAWLID_DATES
+
+is_hijri_new_year(x::TimeType) = x in HIJRI_NEW_YEAR_DATES
+
+is_sham_el_nessim(x::TimeType) = Christian.is_easter_monday(x)
 
 end
