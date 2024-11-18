@@ -3722,7 +3722,7 @@ is_eid_al_adha_day_two(x::TimeType) = (x - Day(1)) in EID_AL_ADHA_DATES
 
 is_eid_al_adha_day_three(x::TimeType) = (x - Day(2)) in EID_AL_ADHA_DATES
 
-is_mawlid(x::TimeType) = x in MAWLID_DATES
+is_mawlid_day(x::TimeType) = x in MAWLID_DATES
 
 is_hijri_new_year(x::TimeType) = x in HIJRI_NEW_YEAR_DATES
 
