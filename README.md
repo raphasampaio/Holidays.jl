@@ -57,6 +57,16 @@ rio_holidays = Holidays.Brazil(subdivision = Subdivision.RioDeJaneiro())
 @show Date(2024, 4, 23) in rio_holidays # true
 ```
 
+### Example 3: Find Holidays in a Specific Year Range
+
+```julia
+using Holidays
+
+calendar = Holidays.UnitedStates()
+
+@show Holidays.find_holidays(calendar, years = [2024, 2025])
+```
+
 ## Contributing
 
 Contributions, bug reports, and feature requests are welcome! Feel free to open an issue or submit a pull request.
