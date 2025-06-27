@@ -99,7 +99,7 @@ end
 # @country Iran
 # @country Iraq
 @country Ireland
-# @country Israel
+@country Israel
 @country Italy
 # @country Jamaica
 @country Japan
@@ -179,7 +179,7 @@ end
 # @country Slovenia
 # @country SolomonIslands
 # @country Somalia
-# @country SouthAfrica
+@country SouthAfrica
 @country Spain
 # @country SriLanka
 # @country Sudan
@@ -191,7 +191,7 @@ end
 # @country Taiwan
 # @country Tajikistan
 # @country Tanzania
-# @country Thailand
+@country Thailand
 # @country Togo
 # @country Tonga
 # @country TrinidadAndTobago
