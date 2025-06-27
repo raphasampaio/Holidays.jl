@@ -43,8 +43,8 @@ function good_friday(year::Integer)
     return easter(year) - Dates.Day(2)
 end
 
-is_easter_saturday(x::TimeType) = x == easter_saturday(Dates.year(x))
-function easter_saturday(year::Integer)
+is_holy_saturday(x::TimeType) = x == holy_saturday(Dates.year(x))
+function holy_saturday(year::Integer)
     return easter(year) - Dates.Day(1)
 end
 
@@ -112,6 +112,11 @@ end
 
 is_boxing_day(x::TimeType) = x == boxing_day(Dates.year(x))
 function boxing_day(year::Integer)
+    return Date(year, 12, 26)
+end
+
+ is_st_stephens_day(x::TimeType) = x == st_stephens_day(Dates.year(x))
+function st_stephens_day(year::Integer)
     return Date(year, 12, 26)
 end
 

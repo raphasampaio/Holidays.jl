@@ -1,0 +1,16 @@
+module TestInternational
+
+using Dates
+using Holidays
+using Test
+
+@testset "International Calendar" begin
+    @test Holidays.International.is_womens_day(Date(2024, 3, 7)) == false
+    @test Holidays.International.is_womens_day(Date(2024, 3, 8)) == true
+    @test Holidays.International.is_womens_day(Date(2024, 3, 9)) == false
+
+    @test Holidays.International.is_workers_day(Date(2024, 5, 1)) == true
+    @test Holidays.International.is_workers_day(Date(2024, 5, 2)) == false
+end
+
+end

@@ -6,7 +6,7 @@ using Test
 
 include("../util.jl")
 
-@testset "Islamic" begin
+@testset "Islamic Calendar" begin
     # 1445 AH
     @test Holidays.Islamic.is_eid_al_fitr_day_one(Date(2024, 4, 10)) == true
     @test Holidays.Islamic.is_eid_al_fitr_day_two(Date(2024, 4, 11)) == true

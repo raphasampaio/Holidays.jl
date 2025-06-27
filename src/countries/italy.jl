@@ -31,10 +31,6 @@ function is_immaculate_conception(x::TimeType)
     return is_december(x) && Dates.day(x) == 8
 end
 
-function is_st_stephens_day(x::TimeType)
-    return is_december(x) && Dates.day(x) == 26
-end
-
 function Holidays.fetch_holidays(::Type{Italy})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
@@ -47,7 +43,7 @@ function Holidays.fetch_holidays(::Type{Italy})
         Holiday("All Saints' Day", Christian.is_all_saints_day),
         Holiday("Immaculate Conception", is_immaculate_conception),
         Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("St. Stephen's Day", is_st_stephens_day),
+        Holiday("St. Stephen's Day", Christian.is_st_stephens_day),
     ]
 end
 

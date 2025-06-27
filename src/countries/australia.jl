@@ -32,7 +32,7 @@ function Holidays.fetch_holidays(::Type{Australia})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Australia Day", is_australia_day),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Saturday", x -> x == (Christian.easter(Dates.year(x)) - Dates.Day(1))),
+        Holiday("Easter Saturday", Christian.is_holy_saturday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("ANZAC Day", is_anzac_day),
         Holiday("Queen's Birthday", is_queens_birthday),
