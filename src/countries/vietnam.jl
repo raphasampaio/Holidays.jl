@@ -15,7 +15,7 @@ function is_tet_holiday(x::TimeType)
         2024 => [Date(2024, 2, 9), Date(2024, 2, 10), Date(2024, 2, 11), Date(2024, 2, 12), Date(2024, 2, 13)],
         2025 => [Date(2025, 1, 28), Date(2025, 1, 29), Date(2025, 1, 30), Date(2025, 1, 31), Date(2025, 2, 1)],
         2026 => [Date(2026, 2, 16), Date(2026, 2, 17), Date(2026, 2, 18), Date(2026, 2, 19), Date(2026, 2, 20)],
-        2027 => [Date(2027, 2, 5), Date(2027, 2, 6), Date(2027, 2, 7), Date(2027, 2, 8), Date(2027, 2, 9)]
+        2027 => [Date(2027, 2, 5), Date(2027, 2, 6), Date(2027, 2, 7), Date(2027, 2, 8), Date(2027, 2, 9)],
     )
     return haskey(tet_dates, Dates.year(x)) && x in tet_dates[Dates.year(x)]
 end
@@ -26,7 +26,7 @@ function is_hung_kings_day(x::TimeType)
         2024 => Date(2024, 4, 18),
         2025 => Date(2025, 4, 7),
         2026 => Date(2026, 4, 26),
-        2027 => Date(2027, 4, 16)
+        2027 => Date(2027, 4, 16),
     )
     return haskey(hung_kings_dates, Dates.year(x)) && x == hung_kings_dates[Dates.year(x)]
 end

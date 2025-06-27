@@ -16,7 +16,7 @@ function is_chinese_new_year(x::TimeType)
         2024 => Date(2024, 2, 10),
         2025 => Date(2025, 1, 29),
         2026 => Date(2026, 2, 17),
-        2027 => Date(2027, 2, 6)
+        2027 => Date(2027, 2, 6),
     )
     return haskey(chinese_new_years, Dates.year(x)) && x == chinese_new_years[Dates.year(x)]
 end
@@ -27,7 +27,7 @@ function is_nyepi(x::TimeType)
         2024 => Date(2024, 3, 11),
         2025 => Date(2025, 3, 29),
         2026 => Date(2026, 3, 19),
-        2027 => Date(2027, 3, 9)
+        2027 => Date(2027, 3, 9),
     )
     return haskey(nyepi_dates, Dates.year(x)) && x == nyepi_dates[Dates.year(x)]
 end
@@ -46,7 +46,7 @@ function is_isra_miraj(x::TimeType)
         2024 => Date(2024, 2, 8),
         2025 => Date(2025, 1, 27),
         2026 => Date(2026, 1, 16),
-        2027 => Date(2027, 1, 6)
+        2027 => Date(2027, 1, 6),
     )
     return haskey(isra_miraj_dates, Dates.year(x)) && x == isra_miraj_dates[Dates.year(x)]
 end
@@ -57,7 +57,7 @@ function is_eid_al_fitr(x::TimeType)
         2024 => [Date(2024, 4, 10), Date(2024, 4, 11)],
         2025 => [Date(2025, 3, 30), Date(2025, 3, 31)],
         2026 => [Date(2026, 3, 20), Date(2026, 3, 21)],
-        2027 => [Date(2027, 3, 9), Date(2027, 3, 10)]
+        2027 => [Date(2027, 3, 9), Date(2027, 3, 10)],
     )
     return haskey(eid_dates, Dates.year(x)) && x in eid_dates[Dates.year(x)]
 end
@@ -68,7 +68,7 @@ function is_vesak_day(x::TimeType)
         2024 => Date(2024, 5, 23),
         2025 => Date(2025, 5, 12),
         2026 => Date(2026, 5, 31),
-        2027 => Date(2027, 5, 20)
+        2027 => Date(2027, 5, 20),
     )
     return haskey(vesak_dates, Dates.year(x)) && x == vesak_dates[Dates.year(x)]
 end
@@ -79,7 +79,7 @@ function is_eid_al_adha(x::TimeType)
         2024 => Date(2024, 6, 17),
         2025 => Date(2025, 6, 6),
         2026 => Date(2026, 5, 27),
-        2027 => Date(2027, 5, 16)
+        2027 => Date(2027, 5, 16),
     )
     return haskey(eid_adha_dates, Dates.year(x)) && x == eid_adha_dates[Dates.year(x)]
 end
@@ -90,7 +90,7 @@ function is_islamic_new_year(x::TimeType)
         2024 => Date(2024, 7, 7),
         2025 => Date(2025, 6, 26),
         2026 => Date(2026, 6, 16),
-        2027 => Date(2027, 6, 5)
+        2027 => Date(2027, 6, 5),
     )
     return haskey(islamic_new_year_dates, Dates.year(x)) && x == islamic_new_year_dates[Dates.year(x)]
 end
@@ -101,7 +101,7 @@ function is_prophet_birthday(x::TimeType)
         2024 => Date(2024, 9, 15),
         2025 => Date(2025, 9, 5),
         2026 => Date(2026, 8, 25),
-        2027 => Date(2027, 8, 14)
+        2027 => Date(2027, 8, 14),
     )
     return haskey(prophet_dates, Dates.year(x)) && x == prophet_dates[Dates.year(x)]
 end

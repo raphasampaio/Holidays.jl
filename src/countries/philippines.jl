@@ -48,7 +48,7 @@ function is_chinese_new_year(x::TimeType)
         2024 => Date(2024, 2, 10),
         2025 => Date(2025, 1, 29),
         2026 => Date(2026, 2, 17),
-        2027 => Date(2027, 2, 6)
+        2027 => Date(2027, 2, 6),
     )
     return haskey(chinese_new_years, Dates.year(x)) && x == chinese_new_years[Dates.year(x)]
 end
@@ -59,7 +59,7 @@ function is_eid_al_fitr(x::TimeType)
         2024 => Date(2024, 4, 10),
         2025 => Date(2025, 3, 30),
         2026 => Date(2026, 3, 20),
-        2027 => Date(2027, 3, 9)
+        2027 => Date(2027, 3, 9),
     )
     return haskey(eid_dates, Dates.year(x)) && x == eid_dates[Dates.year(x)]
 end

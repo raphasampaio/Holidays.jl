@@ -8,6 +8,7 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 const Finland = Holidays.Finland
+const day = Dates.day
 
 function is_epiphany(x::TimeType)
     return is_january(x) && Dates.day(x) == 6
