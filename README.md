@@ -11,9 +11,15 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 
 ## Currently Supported Countries
 
+- Australia
 - Brazil (including subdivisions)
+- Canada
 - Egypt
+- France
 - Germany (including subdivisions)
+- India
+- Japan
+- United Kingdom
 - United States
 
 ## Getting Started

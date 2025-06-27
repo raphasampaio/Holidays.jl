@@ -49,22 +49,44 @@ function test_all()
 
     @testset "Christian" begin
         test_christian()
+    end    @testset "Islamic" begin
+        test_islamic()
     end
 
-    @testset "Islamic" begin
-        test_islamic()
+    @testset "Australia" begin
+        test_australia()
     end
 
     @testset "Brazil" begin
         test_brazil()
     end
 
+    @testset "Canada" begin
+        test_canada()
+    end
+
     @testset "Egypt" begin
         test_egypt()
     end
 
+    @testset "France" begin
+        test_france()
+    end
+
     @testset "Germany" begin
         test_germany()
+    end
+
+    @testset "India" begin
+        test_india()
+    end
+
+    @testset "Japan" begin
+        test_japan()
+    end
+
+    @testset "United Kingdom" begin
+        test_united_kingdom()
     end
 
     @testset "United States" begin
