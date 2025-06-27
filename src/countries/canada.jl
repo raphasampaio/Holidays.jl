@@ -10,12 +10,12 @@ const International = Holidays.International
 const Canada = Holidays.Canada
 
 function is_family_day(x::TimeType)
-    return Dates.year(x) >= 2008 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 2008 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_victoria_day(x::TimeType)
     # Monday preceding May 25
-    return is_may(x) && Dates.dayofweek(x) == Dates.Mon && Dates.day(x) >= 18 && Dates.day(x) <= 24
+    return is_may(x) && is_monday(x) && Dates.day(x) >= 18 && Dates.day(x) <= 24
 end
 
 function is_canada_day(x::TimeType)
@@ -23,15 +23,15 @@ function is_canada_day(x::TimeType)
 end
 
 function is_civic_holiday(x::TimeType)
-    return is_august(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_august(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_labour_day_canada(x::TimeType)
-    return is_september(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_september(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_thanksgiving_canada(x::TimeType)
-    return is_october(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return is_october(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_remembrance_day(x::TimeType)

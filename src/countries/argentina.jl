@@ -35,17 +35,17 @@ end
 
 function is_san_martin_day(x::TimeType)
     # Third Monday in August
-    return is_august(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return is_august(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_respect_for_cultural_diversity_day(x::TimeType)
     # Second Monday in October
-    return is_october(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return is_october(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_national_sovereignty_day(x::TimeType)
     # Fourth Monday in November
-    return is_november(x) && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Mon
+    return is_november(x) && Dates.dayofweekofmonth(x) == 4 && is_monday(x)
 end
 
 function Holidays.fetch_holidays(::Type{Argentina})

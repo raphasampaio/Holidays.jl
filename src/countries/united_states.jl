@@ -13,19 +13,19 @@ function is_new_years_day(x::TimeType)
 end
 
 function is_martin_luther_king_birthday(x::TimeType)
-    return Dates.year(x) >= 1986 && is_january(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1986 && is_january(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_washington_birthday(x::TimeType)
-    return Dates.year(x) >= 1971 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1971 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_columbus_day(x::TimeType)
-    return Dates.year(x) >= 1971 && is_october(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1971 && is_october(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_memorial_day(x::TimeType)
-    return Dates.year(x) >= 1971 && is_may(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return Dates.year(x) >= 1971 && is_may(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function is_independence_day(x::TimeType)
@@ -33,11 +33,11 @@ function is_independence_day(x::TimeType)
 end
 
 function is_labor_day(x::TimeType)
-    return Dates.year(x) >= 1894 && is_september(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1894 && is_september(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_thanksgiving_day(x::TimeType)
-    return Dates.year(x) >= 1871 && is_november(x) && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu
+    return Dates.year(x) >= 1871 && is_november(x) && Dates.dayofweekofmonth(x) == 4 && is_thursday(x)
 end
 
 function is_veterans_day(x::TimeType)

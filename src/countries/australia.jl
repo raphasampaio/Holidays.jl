@@ -19,12 +19,12 @@ end
 
 function is_queens_birthday(x::TimeType)
     # Second Monday in June (varies by state but this is common)
-    return is_june(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return is_june(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_labour_day_october(x::TimeType)
     # First Monday in October (varies by state)
-    return is_october(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_october(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function Holidays.fetch_holidays(::Type{Australia})

@@ -10,17 +10,17 @@ const International = Holidays.International
 const UnitedKingdom = Holidays.UnitedKingdom
 
 function is_early_may_bank_holiday(x::TimeType)
-    return is_may(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_may(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_spring_bank_holiday(x::TimeType)
     # Last Monday in May
-    return is_may(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return is_may(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function is_summer_bank_holiday(x::TimeType)
     # Last Monday in August
-    return is_august(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return is_august(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function Holidays.fetch_holidays(::Type{UnitedKingdom})

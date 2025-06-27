@@ -27,7 +27,7 @@ end
 
 function is_national_heroes_day(x::TimeType)
     # Last Monday of August
-    return is_august(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return is_august(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function is_all_saints_day(x::TimeType)

@@ -15,17 +15,17 @@ end
 
 function is_june_bank(x::TimeType)
     # First Monday in June
-    return is_june(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_june(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_august_bank(x::TimeType)
     # First Monday in August
-    return is_august(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_august(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_october_bank(x::TimeType)
     # Last Monday in October
-    return is_october(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return is_october(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function Holidays.fetch_holidays(::Type{Ireland})
@@ -33,7 +33,7 @@ function Holidays.fetch_holidays(::Type{Ireland})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("St. Patrick's Day", is_st_patricks_day),
         Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("May Bank Holiday", x -> is_may(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon),
+        Holiday("May Bank Holiday", x -> is_may(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)),
         Holiday("June Bank Holiday", is_june_bank),
         Holiday("August Bank Holiday", is_august_bank),
         Holiday("October Bank Holiday", is_october_bank),

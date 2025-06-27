@@ -9,7 +9,7 @@ const Japan = Holidays.Japan
 
 function is_coming_of_age_day(x::TimeType)
     # Second Monday of January
-    return Dates.year(x) >= 2000 && is_january(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 2000 && is_january(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_national_foundation_day(x::TimeType)
@@ -44,7 +44,7 @@ end
 
 function is_marine_day(x::TimeType)
     # Third Monday of July
-    return Dates.year(x) >= 2003 && is_july(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 2003 && is_july(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_mountain_day(x::TimeType)
@@ -53,7 +53,7 @@ end
 
 function is_respect_for_the_aged_day(x::TimeType)
     # Third Monday of September
-    return Dates.year(x) >= 2003 && is_september(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 2003 && is_september(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
 end
 
 function is_autumnal_equinox_day(x::TimeType)
@@ -63,7 +63,7 @@ end
 
 function is_sports_day(x::TimeType)
     # Second Monday of October
-    return Dates.year(x) >= 2000 && is_october(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 2000 && is_october(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
 end
 
 function is_culture_day(x::TimeType)

@@ -23,12 +23,12 @@ end
 
 function is_queens_birthday(x::TimeType)
     # First Monday in June
-    return is_june(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_june(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
 end
 
 function is_matariki(x::TimeType)
     # Matariki is typically the last Friday of June
-    if is_june(x) && Dates.dayofweek(x) == Dates.Fri
+    if is_june(x) && is_friday(x)
         # Check if this is the last Friday of June
         next_friday = x + Dates.Day(7)
         return Dates.month(next_friday) == Dates.Jul
@@ -38,7 +38,7 @@ end
 
 function is_labour_day(x::TimeType)
     # Fourth Monday in October
-    return is_october(x) && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Mon
+    return is_october(x) && Dates.dayofweekofmonth(x) == 4 && is_monday(x)
 end
 
 function Holidays.fetch_holidays(::Type{NewZealand})

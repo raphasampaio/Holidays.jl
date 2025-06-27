@@ -19,7 +19,7 @@ end
 
 function is_midsummer_eve(x::TimeType)
     # Friday between June 19-25
-    if is_june(x) && Dates.dayofweek(x) == Dates.Fri
+    if is_june(x) && is_friday(x)
         return Dates.day(x) >= 19 && Dates.day(x) <= 25
     end
     return false

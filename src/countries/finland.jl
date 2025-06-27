@@ -19,7 +19,7 @@ end
 
 function is_midsummer_eve(x::TimeType)
     # Friday between June 19-25
-    if is_june(x) && Dates.dayofweek(x) == Dates.Fri
+    if is_june(x) && is_friday(x)
         return Dates.day(x) >= 19 && Dates.day(x) <= 25
     end
     return false
@@ -27,7 +27,7 @@ end
 
 function is_midsummer_day(x::TimeType)
     # Saturday between June 20-26
-    if is_june(x) && Dates.dayofweek(x) == Dates.Sat
+    if is_june(x) && is_saturday(x)
         return Dates.day(x) >= 20 && Dates.day(x) <= 26
     end
     return false
@@ -35,9 +35,9 @@ end
 
 function is_all_saints_day(x::TimeType)
     # Saturday between October 31 and November 6
-    if is_october(x) && Dates.dayofweek(x) == Dates.Sat && Dates.day(x) == 31
+    if is_october(x) && is_saturday(x) && Dates.day(x) == 31
         return true
-    elseif is_november(x) && Dates.dayofweek(x) == Dates.Sat
+    elseif is_november(x) && is_saturday(x)
         return Dates.day(x) <= 6
     end
     return false
