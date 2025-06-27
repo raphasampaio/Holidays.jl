@@ -9,28 +9,7 @@
 
 Holidays.jl is a lightweight Julia package designed for determining whether a specific date is a public holiday in a variety of countries. The package supports checking national and regional holidays, making it a perfect fit for applications that require accurate date-based calculations.
 
-## Currently Supported Countries
-
-- Argentina
-- Australia
-- Brazil (including subdivisions)
-- Canada
-- China
-- Egypt
-- France
-- Germany (including subdivisions)
-- India
-- Italy
-- Japan
-- Mexico
-- Netherlands
-- Poland
-- Russia
-- South Korea
-- Spain
-- Turkey
-- United Kingdom
-- United States
+**Currently Supported Countries**: Argentina, Australia, Brazil (including subdivisions), Canada, China, Egypt, France, Germany (including subdivisions), India, Italy, Japan, Mexico, Netherlands, Poland, Russia, South Korea, Spain, Turkey, United Kingdom, United States.
 
 ## Getting Started
 

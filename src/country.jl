@@ -26,14 +26,14 @@ end
 @country Argentina
 # @country Armenia
 @country Australia
-# @country Austria
+@country Austria
 # @country Azerbaijan
 # @country TheBahamas
 # @country Bahrain
 # @country Bangladesh
 # @country Barbados
 # @country Belarus
-# @country Belgium
+@country Belgium
 # @country Belize
 # @country Benin
 # @country Bhutan
@@ -62,8 +62,8 @@ end
 # @country Croatia
 # @country Cuba
 # @country Cyprus
-# @country CzechRepublic
-# @country Denmark
+@country CzechRepublic
+@country Denmark
 # @country Djibouti
 # @country Dominica
 # @country DominicanRepublic
@@ -77,14 +77,14 @@ end
 # @country Eswatini
 # @country Ethiopia
 # @country Fiji
-# @country Finland
+@country Finland
 @country France
 # @country Gabon
 # @country TheGambia
 # @country Georgia
 @country Germany
 # @country Ghana
-# @country Greece
+@country Greece
 # @country Grenada
 # @country Guatemala
 # @country Guinea
@@ -98,7 +98,7 @@ end
 # @country Indonesia
 # @country Iran
 # @country Iraq
-# @country Ireland
+@country Ireland
 # @country Israel
 @country Italy
 # @country Jamaica
@@ -143,12 +143,12 @@ end
 # @country Nauru
 # @country Nepal
 @country Netherlands
-# @country NewZealand
+@country NewZealand
 # @country Nicaragua
 # @country Niger
 # @country Nigeria
 # @country NorthMacedonia
-# @country Norway
+@country Norway
 # @country Oman
 # @country Pakistan
 # @country Palau
@@ -158,7 +158,7 @@ end
 # @country Peru
 # @country Philippines
 @country Poland
-# @country Portugal
+@country Portugal
 # @country Qatar
 # @country Romania
 @country Russia
@@ -185,8 +185,8 @@ end
 # @country Sudan
 # @country SouthSudan
 # @country Suriname
-# @country Sweden
-# @country Switzerland
+@country Sweden
+@country Switzerland
 # @country Syria
 # @country Taiwan
 # @country Tajikistan

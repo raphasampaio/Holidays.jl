@@ -61,6 +61,11 @@ function whit_monday(year::Integer)
     return easter(year) + Dates.Day(50)
 end
 
+is_whit_sunday(x::TimeType) = x == whit_sunday(Dates.year(x))
+function whit_sunday(year::Integer)
+    return easter(year) + Dates.Day(49)
+end
+
 is_assumption_day(x::TimeType) = x == assumption_day(Dates.year(x))
 function assumption_day(year::Integer)
     return Date(year, 8, 15)
