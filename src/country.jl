@@ -53,7 +53,7 @@ end
 # @country Chad
 # @country Chile
 @country China
-# @country Colombia
+@country Colombia
 # @country Comoros
 # @country DemocraticRepublicOfTheCongo
 # @country RepublicOfTheCongo
@@ -95,7 +95,7 @@ end
 # @country Hungary
 # @country Iceland
 @country India
-# @country Indonesia
+@country Indonesia
 # @country Iran
 # @country Iraq
 @country Ireland
@@ -146,7 +146,7 @@ end
 @country NewZealand
 # @country Nicaragua
 # @country Niger
-# @country Nigeria
+@country Nigeria
 # @country NorthMacedonia
 @country Norway
 # @country Oman
@@ -156,11 +156,11 @@ end
 # @country PapuaNewGuinea
 # @country Paraguay
 # @country Peru
-# @country Philippines
+@country Philippines
 @country Poland
 @country Portugal
 # @country Qatar
-# @country Romania
+@country Romania
 @country Russia
 # @country Rwanda
 # @country SaintKittsAndNevis
@@ -209,7 +209,7 @@ end
 # @country Vanuatu
 # @country VaticanCity
 # @country Venezuela
-# @country Vietnam
+@country Vietnam
 # @country Yemen
 # @country Zambia
 # @country Zimbabwe
