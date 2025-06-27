@@ -115,7 +115,7 @@ function boxing_day(year::Integer)
     return Date(year, 12, 26)
 end
 
- is_st_stephens_day(x::TimeType) = x == st_stephens_day(Dates.year(x))
+is_st_stephens_day(x::TimeType) = x == st_stephens_day(Dates.year(x))
 function st_stephens_day(year::Integer)
     return Date(year, 12, 26)
 end
