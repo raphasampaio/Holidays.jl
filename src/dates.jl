@@ -1,0 +1,12 @@
+is_january(x::TimeType) = Dates.month(x) == Dates.Jan
+is_february(x::TimeType) = Dates.month(x) == Dates.Feb
+is_march(x::TimeType) = Dates.month(x) == Dates.Mar
+is_april(x::TimeType) = Dates.month(x) == Dates.Apr
+is_may(x::TimeType) = Dates.month(x) == Dates.May
+is_june(x::TimeType) = Dates.month(x) == Dates.Jun
+is_july(x::TimeType) = Dates.month(x) == Dates.Jul
+is_august(x::TimeType) = Dates.month(x) == Dates.Aug
+is_september(x::TimeType) = Dates.month(x) == Dates.Sep
+is_october(x::TimeType) = Dates.month(x) == Dates.Oct
+is_november(x::TimeType) = Dates.month(x) == Dates.Nov
+is_december(x::TimeType) = Dates.month(x) == Dates.Dec

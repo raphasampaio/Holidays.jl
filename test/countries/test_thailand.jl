@@ -19,8 +19,8 @@ include("../util.jl")
         Date(2024, 5, 4),   # Coronation Day
         Date(2024, 5, 13),  # Royal Ploughing Ceremony
         Date(2024, 5, 22),  # Visakha Bucha Day
-        Date(2024, 7, 20),  # Asanha Bucha Day
         Date(2024, 7, 21),  # Khao Phansa Day
+        Date(2024, 7, 22),  # Asanha Bucha Day (day after)
         Date(2024, 7, 28),  # HM King's Birthday
         Date(2024, 8, 12),  # HM Queen's Birthday
         Date(2024, 10, 23), # King Chulalongkorn Day

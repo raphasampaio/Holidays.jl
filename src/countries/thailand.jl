@@ -6,12 +6,13 @@ using Holidays
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
+const Buddhist = Holidays.Buddhist
 
 const Thailand = Holidays.Thailand
 
 function is_makha_bucha_day(x::TimeType)
-    # Buddhist holiday - simplified to February 24
-    return Dates.month(x) == Dates.Feb && Dates.day(x) == 24
+    # Use the Buddhist calendar for Magha Puja
+    return Buddhist.is_magha_puja(x)
 end
 
 function is_chakri_day(x::TimeType)
@@ -27,8 +28,8 @@ function is_coronation_day(x::TimeType)
 end
 
 function is_visakha_bucha_day(x::TimeType)
-    # Buddhist holiday - simplified to May 22
-    return Dates.month(x) == Dates.May && Dates.day(x) == 22
+    # Use the Buddhist calendar for Vesak Day
+    return Buddhist.is_vesak_day(x)
 end
 
 function is_royal_ploughing_ceremony(x::TimeType)
@@ -37,13 +38,13 @@ function is_royal_ploughing_ceremony(x::TimeType)
 end
 
 function is_asanha_bucha_day(x::TimeType)
-    # Buddhist holiday - simplified to July 20
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 20
+    # Use the Buddhist calendar for Asalha Puja
+    return Buddhist.is_asalha_puja(x)
 end
 
 function is_khao_phansa_day(x::TimeType)
-    # Buddhist Lent Day - day after Asanha Bucha
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 21
+    # Use the Buddhist calendar for Khao Phansa
+    return Buddhist.is_khao_phansa(x)
 end
 
 function is_hm_queen_birthday(x::TimeType)
