@@ -10,27 +10,27 @@ const International = Holidays.International
 const SouthAfrica = Holidays.SouthAfrica
 
 function is_human_rights_day(x::TimeType)
-    return Dates.month(x) == Dates.Mar && Dates.day(x) == 21
+    return is_march(x) && Dates.day(x) == 21
 end
 
 function is_freedom_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 27
+    return is_april(x) && Dates.day(x) == 27
 end
 
 function is_youth_day(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 16
+    return is_june(x) && Dates.day(x) == 16
 end
 
 function is_national_womens_day(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 9
+    return is_august(x) && Dates.day(x) == 9
 end
 
 function is_heritage_day(x::TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 24
+    return is_september(x) && Dates.day(x) == 24
 end
 
 function is_day_of_reconciliation(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 16
+    return is_december(x) && Dates.day(x) == 16
 end
 
 function Holidays.fetch_holidays(::Type{SouthAfrica})

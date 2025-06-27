@@ -10,7 +10,7 @@ const International = Holidays.International
 const Romania = Holidays.Romania
 
 function is_epiphany_romania(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 6
+    return is_january(x) && Dates.day(x) == 6
 end
 
 function is_orthodox_easter_romania(x::TimeType)
@@ -24,29 +24,29 @@ function is_orthodox_easter_monday_romania(x::TimeType)
 end
 
 function is_childrens_day_romania(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 1
+    return is_june(x) && Dates.day(x) == 1
 end
 
 function is_assumption_romania(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+    return is_august(x) && Dates.day(x) == 15
 end
 
 function is_st_andrew_day(x::TimeType)
-    return Dates.month(x) == Dates.Nov && Dates.day(x) == 30
+    return is_november(x) && Dates.day(x) == 30
 end
 
 function is_national_day_romania(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 1
+    return is_december(x) && Dates.day(x) == 1
 end
 
 function is_st_nicholas_day(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 6
+    return is_december(x) && Dates.day(x) == 6
 end
 
 function Holidays.fetch_holidays(::Type{Romania})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Day after New Year's Day", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 2),
+        Holiday("Day after New Year's Day", x -> is_january(x) && Dates.day(x) == 2),
         Holiday("Epiphany", is_epiphany_romania),
         Holiday("Orthodox Easter", is_orthodox_easter_romania),
         Holiday("Orthodox Easter Monday", is_orthodox_easter_monday_romania),

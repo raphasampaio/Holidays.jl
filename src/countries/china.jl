@@ -29,8 +29,8 @@ function is_mid_autumn_festival(x::TimeType)
     return Chinese.is_mid_autumn_festival(x)
 end
 
-function is_national_day_china(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 1
+function is_national_day(x::TimeType)
+    return is_october(x) && Dates.day(x) == 1
 end
 
 function Holidays.fetch_holidays(::Type{China})
@@ -42,7 +42,7 @@ function Holidays.fetch_holidays(::Type{China})
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Dragon Boat Festival", is_dragon_boat_festival),
         Holiday("Mid-Autumn Festival", is_mid_autumn_festival),
-        Holiday("National Day", is_national_day_china),
+        Holiday("National Day", is_national_day),
         # Note: Chinese holidays are now using proper lunar calendar calculations
         # from the Chinese calendar module for more accurate dates
     ]

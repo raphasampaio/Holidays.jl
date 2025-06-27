@@ -16,15 +16,15 @@ function is_makha_bucha_day(x::TimeType)
 end
 
 function is_chakri_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 6
+    return is_april(x) && Dates.day(x) == 6
 end
 
 function is_songkran_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && (Dates.day(x) >= 13 && Dates.day(x) <= 15)
+    return is_april(x) && (Dates.day(x) >= 13 && Dates.day(x) <= 15)
 end
 
 function is_coronation_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 4
+    return is_may(x) && Dates.day(x) == 4
 end
 
 function is_visakha_bucha_day(x::TimeType)
@@ -34,7 +34,7 @@ end
 
 function is_royal_ploughing_ceremony(x::TimeType)
     # Simplified to May 13
-    return Dates.month(x) == Dates.May && Dates.day(x) == 13
+    return is_may(x) && Dates.day(x) == 13
 end
 
 function is_asanha_bucha_day(x::TimeType)
@@ -48,19 +48,19 @@ function is_khao_phansa_day(x::TimeType)
 end
 
 function is_hm_queen_birthday(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 12
+    return is_august(x) && Dates.day(x) == 12
 end
 
 function is_king_chulalongkorn_day(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 23
+    return is_october(x) && Dates.day(x) == 23
 end
 
 function is_hm_king_birthday(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 28
+    return is_july(x) && Dates.day(x) == 28
 end
 
 function is_constitution_day(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 10
+    return is_december(x) && Dates.day(x) == 10
 end
 
 function Holidays.fetch_holidays(::Type{Thailand})

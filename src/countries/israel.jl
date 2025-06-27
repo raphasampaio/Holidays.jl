@@ -12,38 +12,38 @@ const Israel = Holidays.Israel
 function is_independence_day(x::TimeType)
     # Independence Day is on the 5th of Iyar in the Hebrew calendar
     # For simplicity, we use a fixed date (actual date varies)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 14
+    return is_may(x) && Dates.day(x) == 14
 end
 
 function is_memorial_day(x::TimeType)
     # Memorial Day is the day before Independence Day
-    return Dates.month(x) == Dates.May && Dates.day(x) == 13
+    return is_may(x) && Dates.day(x) == 13
 end
 
 function is_holocaust_remembrance_day(x::TimeType)
     # Holocaust Remembrance Day is on the 27th of Nisan
     # For simplicity, we use a fixed date (actual date varies)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 28
+    return is_april(x) && Dates.day(x) == 28
 end
 
 function is_rosh_hashanah(x::TimeType)
     # Jewish New Year - simplified to early September
-    return Dates.month(x) == Dates.Sep && (Dates.day(x) == 15 || Dates.day(x) == 16)
+    return is_september(x) && (Dates.day(x) == 15 || Dates.day(x) == 16)
 end
 
 function is_yom_kippur(x::TimeType)
     # Day of Atonement - 10 days after Rosh Hashanah
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 25
+    return is_september(x) && Dates.day(x) == 25
 end
 
 function is_sukkot(x::TimeType)
     # Feast of Tabernacles - simplified
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 30
+    return is_september(x) && Dates.day(x) == 30
 end
 
 function is_simchat_torah(x::TimeType)
     # Rejoicing with the Torah - simplified
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 7
+    return is_october(x) && Dates.day(x) == 7
 end
 
 function Holidays.fetch_holidays(::Type{Israel})

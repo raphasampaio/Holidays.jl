@@ -10,21 +10,21 @@ const International = Holidays.International
 const Australia = Holidays.Australia
 
 function is_australia_day(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 26
+    return is_january(x) && Dates.day(x) == 26
 end
 
 function is_anzac_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 25
+    return is_april(x) && Dates.day(x) == 25
 end
 
 function is_queens_birthday(x::TimeType)
     # Second Monday in June (varies by state but this is common)
-    return Dates.month(x) == Dates.Jun && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return is_june(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function is_labour_day_october(x::TimeType)
     # First Monday in October (varies by state)
-    return Dates.month(x) == Dates.Oct && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return is_october(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function Holidays.fetch_holidays(::Type{Australia})

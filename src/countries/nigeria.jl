@@ -9,19 +9,19 @@ const International = Holidays.International
 
 const Nigeria = Holidays.Nigeria
 
-function is_independence_day_nigeria(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 1
+function is_independence_day(x::TimeType)
+    return is_october(x) && Dates.day(x) == 1
 end
 
-function is_democracy_day_nigeria(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 12
+function is_democracy_day(x::TimeType)
+    return is_june(x) && Dates.day(x) == 12
 end
 
-function is_childrens_day_nigeria(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 27
+function is_childrens_day(x::TimeType)
+    return is_may(x) && Dates.day(x) == 27
 end
 
-function is_eid_al_fitr_nigeria(x::TimeType)
+function is_eid_al_fitr(x::TimeType)
     # Eid al-Fitr (simplified dates - varies by year due to lunar calendar)
     eid_dates = Dict(
         2024 => [Date(2024, 4, 10), Date(2024, 4, 11)],
@@ -32,7 +32,7 @@ function is_eid_al_fitr_nigeria(x::TimeType)
     return haskey(eid_dates, Dates.year(x)) && x in eid_dates[Dates.year(x)]
 end
 
-function is_eid_al_adha_nigeria(x::TimeType)
+function is_eid_al_adha(x::TimeType)
     # Eid al-Adha (simplified dates)
     eid_adha_dates = Dict(
         2024 => [Date(2024, 6, 16), Date(2024, 6, 17)],
@@ -43,7 +43,7 @@ function is_eid_al_adha_nigeria(x::TimeType)
     return haskey(eid_adha_dates, Dates.year(x)) && x in eid_adha_dates[Dates.year(x)]
 end
 
-function is_islamic_new_year_nigeria(x::TimeType)
+function is_islamic_new_year(x::TimeType)
     # Islamic New Year (simplified dates)
     islamic_new_year_dates = Dict(
         2024 => Date(2024, 7, 7),
@@ -54,7 +54,7 @@ function is_islamic_new_year_nigeria(x::TimeType)
     return haskey(islamic_new_year_dates, Dates.year(x)) && x == islamic_new_year_dates[Dates.year(x)]
 end
 
-function is_prophet_birthday_nigeria(x::TimeType)
+function is_prophet_birthday(x::TimeType)
     # Prophet Muhammad's Birthday (simplified dates)
     prophet_dates = Dict(
         2024 => Date(2024, 9, 15),
@@ -71,13 +71,13 @@ function Holidays.fetch_holidays(::Type{Nigeria})
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("Children's Day", is_childrens_day_nigeria),
-        Holiday("Democracy Day", is_democracy_day_nigeria),
-        Holiday("Eid al-Fitr", is_eid_al_fitr_nigeria),
-        Holiday("Eid al-Adha", is_eid_al_adha_nigeria),
-        Holiday("Islamic New Year", is_islamic_new_year_nigeria),
-        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday_nigeria),
-        Holiday("Independence Day", is_independence_day_nigeria),
+        Holiday("Children's Day", is_childrens_day),
+        Holiday("Democracy Day", is_democracy_day),
+        Holiday("Eid al-Fitr", is_eid_al_fitr),
+        Holiday("Eid al-Adha", is_eid_al_adha),
+        Holiday("Islamic New Year", is_islamic_new_year),
+        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
+        Holiday("Independence Day", is_independence_day),
         Holiday("Christmas Day", Christian.is_christmas_day),
         Holiday("Boxing Day", Christian.is_boxing_day),
     ]

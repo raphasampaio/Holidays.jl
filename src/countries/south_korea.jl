@@ -8,37 +8,37 @@ const Gregorian = Holidays.Gregorian
 const SouthKorea = Holidays.SouthKorea
 
 function is_independence_movement_day(x::TimeType)
-    return Dates.month(x) == Dates.Mar && Dates.day(x) == 1
+    return is_march(x) && Dates.day(x) == 1
 end
 
 function is_childrens_day_korea(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 5
+    return is_may(x) && Dates.day(x) == 5
 end
 
 function is_buddha_birthday(x::TimeType)
     # Simplified - usually in May, using May 8 as approximation
     # In reality this is lunar calendar based and varies
-    return Dates.month(x) == Dates.May && Dates.day(x) == 8
+    return is_may(x) && Dates.day(x) == 8
 end
 
 function is_memorial_day_korea(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 6
+    return is_june(x) && Dates.day(x) == 6
 end
 
 function is_constitution_day_korea(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 17
+    return is_july(x) && Dates.day(x) == 17
 end
 
 function is_liberation_day_korea(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+    return is_august(x) && Dates.day(x) == 15
 end
 
 function is_national_foundation_day_korea(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 3
+    return is_october(x) && Dates.day(x) == 3
 end
 
 function is_hangeul_day(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 9
+    return is_october(x) && Dates.day(x) == 9
 end
 
 function Holidays.fetch_holidays(::Type{SouthKorea})

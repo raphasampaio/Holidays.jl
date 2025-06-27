@@ -9,55 +9,55 @@ const International = Holidays.International
 const Turkey = Holidays.Turkey
 
 function is_national_sovereignty_day_turkey(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 23
+    return is_april(x) && Dates.day(x) == 23
 end
 
 function is_ataturk_commemoration_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 19
+    return is_may(x) && Dates.day(x) == 19
 end
 
 function is_democracy_day(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 15
+    return is_july(x) && Dates.day(x) == 15
 end
 
 function is_victory_day_turkey(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 30
+    return is_august(x) && Dates.day(x) == 30
 end
 
 function is_republic_day_turkey(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 29
+    return is_october(x) && Dates.day(x) == 29
 end
 
 function is_ramadan_feast_day_one(x::TimeType)
     # Simplified - using April 10 as approximation for 2024
     # In reality this is lunar calendar based and varies
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 10
+    return is_april(x) && Dates.day(x) == 10
 end
 
 function is_ramadan_feast_day_two(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 11
+    return is_april(x) && Dates.day(x) == 11
 end
 
 function is_ramadan_feast_day_three(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 12
+    return is_april(x) && Dates.day(x) == 12
 end
 
 function is_sacrifice_feast_day_one(x::TimeType)
     # Simplified - using June 16 as approximation for 2024
     # In reality this is lunar calendar based and varies
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 16
+    return is_june(x) && Dates.day(x) == 16
 end
 
 function is_sacrifice_feast_day_two(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 17
+    return is_june(x) && Dates.day(x) == 17
 end
 
 function is_sacrifice_feast_day_three(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 18
+    return is_june(x) && Dates.day(x) == 18
 end
 
 function is_sacrifice_feast_day_four(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 19
+    return is_june(x) && Dates.day(x) == 19
 end
 
 function Holidays.fetch_holidays(::Type{Turkey})

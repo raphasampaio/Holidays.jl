@@ -13,39 +13,39 @@ function is_new_years_day(x::TimeType)
 end
 
 function is_martin_luther_king_birthday(x::TimeType)
-    return Dates.year(x) >= 1986 && Dates.month(x) == Dates.Jan && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1986 && is_january(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function is_washington_birthday(x::TimeType)
-    return Dates.year(x) >= 1971 && Dates.month(x) == Dates.Feb && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1971 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function is_columbus_day(x::TimeType)
-    return Dates.year(x) >= 1971 && Dates.month(x) == Dates.Oct && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1971 && is_october(x) && Dates.dayofweekofmonth(x) == 2 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function is_memorial_day(x::TimeType)
-    return Dates.year(x) >= 1971 && Dates.month(x) == Dates.May && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return Dates.year(x) >= 1971 && is_may(x) && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
 function is_independence_day(x::TimeType)
-    return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4
+    return Dates.year(x) >= 1871 && is_july(x) && Dates.day(x) == 4
 end
 
 function is_labor_day(x::TimeType)
-    return Dates.year(x) >= 1894 && Dates.month(x) == Dates.Sep && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
+    return Dates.year(x) >= 1894 && is_september(x) && Dates.dayofweekofmonth(x) == 1 && Dates.dayofweek(x) == Dates.Mon
 end
 
 function is_thanksgiving_day(x::TimeType)
-    return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Nov && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu
+    return Dates.year(x) >= 1871 && is_november(x) && Dates.dayofweekofmonth(x) == 4 && Dates.dayofweek(x) == Dates.Thu
 end
 
 function is_veterans_day(x::TimeType)
-    return Dates.year(x) >= 1954 && Dates.month(x) == Dates.Nov && Dates.day(x) == 11
+    return Dates.year(x) >= 1954 && is_november(x) && Dates.day(x) == 11
 end
 
 function is_juneteenth_national_independence_day(x::TimeType)
-    return Dates.year(x) >= 2021 && Dates.month(x) == Dates.Jun && Dates.day(x) == 19
+    return Dates.year(x) >= 2021 && is_june(x) && Dates.day(x) == 19
 end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})

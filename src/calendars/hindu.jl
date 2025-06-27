@@ -1,6 +1,7 @@
 module Hindu
 
 using Dates
+using Holidays
 
 # Hindu Calendar Functions
 # The Hindu calendar is a lunisolar calendar with various regional variations
@@ -196,7 +197,7 @@ Simplified to February 21st as approximation.
 """
 function is_maha_shivratri(x::TimeType)
     # Simplified approximation - actual date varies by lunar calendar
-    return Dates.month(x) == 2 && (Dates.day(x) >= 20 && Dates.day(x) <= 22)
+    return is_february(x) && (Dates.day(x) >= 20 && Dates.day(x) <= 22)
 end
 
 """
@@ -208,8 +209,7 @@ Simplified approximation.
 """
 function is_karva_chauth(x::TimeType)
     # Simplified approximation - usually in late October or early November
-    return (Dates.month(x) == 10 && Dates.day(x) >= 25) || 
-           (Dates.month(x) == 11 && Dates.day(x) <= 15)
+    return (is_october(x) && Dates.day(x) >= 25) || (is_november(x) && Dates.day(x) <= 15)
 end
 
 """
@@ -221,8 +221,7 @@ Simplified approximation.
 """
 function is_ganesh_chaturthi(x::TimeType)
     # Simplified approximation - usually in late August or early September
-    return (Dates.month(x) == 8 && Dates.day(x) >= 20) || 
-           (Dates.month(x) == 9 && Dates.day(x) <= 15)
+    return (is_august(x) && Dates.day(x) >= 20) || (is_september(x) && Dates.day(x) <= 15)
 end
 
 end

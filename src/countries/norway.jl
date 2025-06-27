@@ -16,7 +16,7 @@ function is_maundy_thursday(x::TimeType)
 end
 
 function is_constitution_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 17
+    return is_may(x) && Dates.day(x) == 17
 end
 
 function Holidays.fetch_holidays(::Type{Norway})

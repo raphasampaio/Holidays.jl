@@ -33,11 +33,11 @@ function is_nyepi(x::TimeType)
 end
 
 function is_pancasila_day(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 1
+    return is_june(x) && Dates.day(x) == 1
 end
 
-function is_independence_day_indonesia(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 17
+function is_independence_day(x::TimeType)
+    return is_august(x) && Dates.day(x) == 17
 end
 
 function is_isra_miraj(x::TimeType)
@@ -51,7 +51,7 @@ function is_isra_miraj(x::TimeType)
     return haskey(isra_miraj_dates, Dates.year(x)) && x == isra_miraj_dates[Dates.year(x)]
 end
 
-function is_eid_al_fitr_indonesia(x::TimeType)
+function is_eid_al_fitr(x::TimeType)
     # Eid al-Fitr (simplified dates)
     eid_dates = Dict(
         2024 => [Date(2024, 4, 10), Date(2024, 4, 11)],
@@ -73,7 +73,7 @@ function is_vesak_day(x::TimeType)
     return haskey(vesak_dates, Dates.year(x)) && x == vesak_dates[Dates.year(x)]
 end
 
-function is_eid_al_adha_indonesia(x::TimeType)
+function is_eid_al_adha(x::TimeType)
     # Eid al-Adha (simplified dates)
     eid_adha_dates = Dict(
         2024 => Date(2024, 6, 17),
@@ -84,7 +84,7 @@ function is_eid_al_adha_indonesia(x::TimeType)
     return haskey(eid_adha_dates, Dates.year(x)) && x == eid_adha_dates[Dates.year(x)]
 end
 
-function is_islamic_new_year_indonesia(x::TimeType)
+function is_islamic_new_year(x::TimeType)
     # Islamic New Year (simplified dates)
     islamic_new_year_dates = Dict(
         2024 => Date(2024, 7, 7),
@@ -95,7 +95,7 @@ function is_islamic_new_year_indonesia(x::TimeType)
     return haskey(islamic_new_year_dates, Dates.year(x)) && x == islamic_new_year_dates[Dates.year(x)]
 end
 
-function is_prophet_birthday_indonesia(x::TimeType)
+function is_prophet_birthday(x::TimeType)
     # Prophet Muhammad's Birthday (simplified dates)
     prophet_dates = Dict(
         2024 => Date(2024, 9, 15),
@@ -112,14 +112,14 @@ function Holidays.fetch_holidays(::Type{Indonesia})
         Holiday("Chinese New Year", is_chinese_new_year),
         Holiday("Isra and Mi'raj", is_isra_miraj),
         Holiday("Nyepi (Balinese New Year)", is_nyepi),
-        Holiday("Eid al-Fitr", is_eid_al_fitr_indonesia),
+        Holiday("Eid al-Fitr", is_eid_al_fitr),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Vesak Day", is_vesak_day),
         Holiday("Pancasila Day", is_pancasila_day),
-        Holiday("Eid al-Adha", is_eid_al_adha_indonesia),
-        Holiday("Islamic New Year", is_islamic_new_year_indonesia),
-        Holiday("Independence Day", is_independence_day_indonesia),
-        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday_indonesia),
+        Holiday("Eid al-Adha", is_eid_al_adha),
+        Holiday("Islamic New Year", is_islamic_new_year),
+        Holiday("Independence Day", is_independence_day),
+        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

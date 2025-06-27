@@ -10,11 +10,11 @@ const International = Holidays.International
 const Russia = Holidays.Russia
 
 function is_orthodox_christmas(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 7
+    return is_january(x) && Dates.day(x) == 7
 end
 
 function is_defender_of_fatherland_day(x::TimeType)
-    return Dates.month(x) == Dates.Feb && Dates.day(x) == 23
+    return is_february(x) && Dates.day(x) == 23
 end
 
 function is_womens_day_russia(x::TimeType)
@@ -26,15 +26,15 @@ function is_spring_and_labour_day(x::TimeType)
 end
 
 function is_victory_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 9
+    return is_may(x) && Dates.day(x) == 9
 end
 
 function is_russia_day(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 12
+    return is_june(x) && Dates.day(x) == 12
 end
 
 function is_unity_day(x::TimeType)
-    return Dates.month(x) == Dates.Nov && Dates.day(x) == 4
+    return is_november(x) && Dates.day(x) == 4
 end
 
 function Holidays.fetch_holidays(::Type{Russia})

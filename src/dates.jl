@@ -10,3 +10,11 @@ is_september(x::TimeType) = Dates.month(x) == Dates.Sep
 is_october(x::TimeType) = Dates.month(x) == Dates.Oct
 is_november(x::TimeType) = Dates.month(x) == Dates.Nov
 is_december(x::TimeType) = Dates.month(x) == Dates.Dec
+
+is_monday(x::TimeType) = Dates.dayofweek(x) == Dates.Mon
+is_tuesday(x::TimeType) = Dates.dayofweek(x) == Dates.Tue
+is_wednesday(x::TimeType) = Dates.dayofweek(x) == Dates.Wed
+is_thursday(x::TimeType) = Dates.dayofweek(x) == Dates.Thu
+is_friday(x::TimeType) = Dates.dayofweek(x) == Dates.Fri
+is_saturday(x::TimeType) = Dates.dayofweek(x) == Dates.Sat
+is_sunday(x::TimeType) = Dates.dayofweek(x) == Dates.Sun

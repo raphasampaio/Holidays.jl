@@ -163,8 +163,7 @@ function is_lantern_festival(x::TimeType)
         lantern_date = CHINESE_NEW_YEAR_DATES[year] + Dates.Day(14)
         return x == lantern_date
     else
-        # Fallback approximation
-        return Dates.month(x) == 2 && Dates.day(x) == 24
+        return is_february(x) && Dates.day(x) == 24
     end
 end
 

@@ -13,13 +13,13 @@ const Egypt = Holidays.Egypt
 function Holidays.fetch_holidays(::Type{Egypt})
     return [
         # fixed holidays
-        Holiday("Christmas Day", x -> Dates.month(x) == Dates.Jan && Dates.day(x) == 7),
-        Holiday("National Police Day", x -> Dates.year(x) >= 2009 && Dates.month(x) == Dates.Jan && Dates.day(x) == 25),
-        Holiday("Sinai Liberation Day", x -> Dates.year(x) >= 1983 && Dates.month(x) == Dates.Apr && Dates.day(x) == 25),
+        Holiday("Christmas Day", x -> is_january(x) && Dates.day(x) == 7),
+        Holiday("National Police Day", x -> Dates.year(x) >= 2009 && is_january(x) && Dates.day(x) == 25),
+        Holiday("Sinai Liberation Day", x -> Dates.year(x) >= 1983 && is_april(x) && Dates.day(x) == 25),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("30 June Day", x -> Dates.month(x) == Dates.Jun && Dates.day(x) == 30),
-        Holiday("Revolution Day", x -> Dates.month(x) == Dates.Jul && Dates.day(x) == 23),
-        Holiday("Armed Forces Day", x -> Dates.month(x) == Dates.Oct && Dates.day(x) == 6),
+        Holiday("30 June Day", x -> is_june(x) && Dates.day(x) == 30),
+        Holiday("Revolution Day", x -> is_july(x) && Dates.day(x) == 23),
+        Holiday("Armed Forces Day", x -> is_october(x) && Dates.day(x) == 6),
         # movable holidays
         Holiday("Eid Al-Fitr", Islamic.is_eid_al_fitr_day_one),
         Holiday("Eid Al-Fitr", Islamic.is_eid_al_fitr_day_two),

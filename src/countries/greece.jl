@@ -10,15 +10,15 @@ const International = Holidays.International
 const Greece = Holidays.Greece
 
 function is_epiphany(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 6
+    return is_january(x) && Dates.day(x) == 6
 end
 
 function is_independence_day(x::TimeType)
-    return Dates.month(x) == Dates.Mar && Dates.day(x) == 25
+    return is_march(x) && Dates.day(x) == 25
 end
 
 function is_ochi_day(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 28
+    return is_october(x) && Dates.day(x) == 28
 end
 
 # Orthodox Easter calculation (simplified - uses same as Western for now)

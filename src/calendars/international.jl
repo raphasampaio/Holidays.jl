@@ -1,13 +1,14 @@
 module International
 
 using Dates
+using Holidays
 
 function is_womens_day(x::TimeType)
-    return Dates.month(x) == Dates.Mar && Dates.day(x) == 8
+    return is_march(x) && Dates.day(x) == 8
 end
 
 function is_workers_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 1
+    return is_may(x) && Dates.day(x) == 1
 end
 
 end

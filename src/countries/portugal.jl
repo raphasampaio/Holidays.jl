@@ -10,23 +10,23 @@ const International = Holidays.International
 const Portugal = Holidays.Portugal
 
 function is_freedom_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 25
+    return is_april(x) && Dates.day(x) == 25
 end
 
 function is_portugal_day(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 10
+    return is_june(x) && Dates.day(x) == 10
 end
 
 function is_republic_day(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 5
+    return is_october(x) && Dates.day(x) == 5
 end
 
 function is_restoration_of_independence(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 1
+    return is_december(x) && Dates.day(x) == 1
 end
 
 function is_immaculate_conception(x::TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 8
+    return is_december(x) && Dates.day(x) == 8
 end
 
 function Holidays.fetch_holidays(::Type{Portugal})

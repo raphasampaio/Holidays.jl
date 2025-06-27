@@ -22,7 +22,7 @@ function is_general_prayer_day(x::TimeType)
 end
 
 function is_constitution_day(x::TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 5
+    return is_june(x) && Dates.day(x) == 5
 end
 
 function Holidays.fetch_holidays(::Type{Denmark})

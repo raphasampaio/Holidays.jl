@@ -10,15 +10,15 @@ const International = Holidays.International
 const France = Holidays.France
 
 function is_epiphany(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 6
+    return is_january(x) && Dates.day(x) == 6
 end
 
 function is_bastille_day(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 14
+    return is_july(x) && Dates.day(x) == 14
 end
 
 function is_armistice_day(x::TimeType)
-    return Dates.month(x) == Dates.Nov && Dates.day(x) == 11
+    return is_november(x) && Dates.day(x) == 11
 end
 
 function Holidays.fetch_holidays(::Type{France})
@@ -27,7 +27,7 @@ function Holidays.fetch_holidays(::Type{France})
         Holiday("Epiphany", is_epiphany),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("Victory in Europe Day", x -> Dates.month(x) == Dates.May && Dates.day(x) == 8),
+        Holiday("Victory in Europe Day", x -> is_may(x) && Dates.day(x) == 8),
         Holiday("Ascension Day", Christian.is_ascension_day),
         Holiday("Whit Monday", Christian.is_whit_monday),
         Holiday("Bastille Day", is_bastille_day),

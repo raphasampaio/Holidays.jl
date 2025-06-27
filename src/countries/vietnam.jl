@@ -32,11 +32,11 @@ function is_hung_kings_day(x::TimeType)
 end
 
 function is_reunification_day(x::TimeType)
-    return Dates.month(x) == Dates.Apr && Dates.day(x) == 30
+    return is_april(x) && Dates.day(x) == 30
 end
 
-function is_independence_day_vietnam(x::TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 2
+function is_independence_day(x::TimeType)
+    return is_september(x) && Dates.day(x) == 2
 end
 
 function Holidays.fetch_holidays(::Type{Vietnam})
@@ -46,7 +46,7 @@ function Holidays.fetch_holidays(::Type{Vietnam})
         Holiday("Hung Kings' Day", is_hung_kings_day),
         Holiday("Reunification Day", is_reunification_day),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("Independence Day", is_independence_day_vietnam),
+        Holiday("Independence Day", is_independence_day),
     ]
 end
 

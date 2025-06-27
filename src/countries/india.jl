@@ -11,15 +11,15 @@ const Hindu = Holidays.Hindu
 const India = Holidays.India
 
 function is_republic_day(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 26
+    return is_january(x) && Dates.day(x) == 26
 end
 
-function is_independence_day_india(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+function is_independence_day(x::TimeType)
+    return is_august(x) && Dates.day(x) == 15
 end
 
 function is_gandhi_jayanti(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 2
+    return is_october(x) && Dates.day(x) == 2
 end
 
 function Holidays.fetch_holidays(::Type{India})
@@ -28,7 +28,7 @@ function Holidays.fetch_holidays(::Type{India})
         Holiday("Republic Day", is_republic_day),
         Holiday("Holi", Hindu.is_holi),
         Holiday("Ram Navami", Hindu.is_ram_navami),
-        Holiday("Independence Day", is_independence_day_india),
+        Holiday("Independence Day", is_independence_day),
         Holiday("Janmashtami", Hindu.is_janmashtami),
         Holiday("Gandhi Jayanti", is_gandhi_jayanti),
         Holiday("Dussehra", Hindu.is_dussehra),

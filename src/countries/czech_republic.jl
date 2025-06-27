@@ -10,27 +10,27 @@ const International = Holidays.International
 const CzechRepublic = Holidays.CzechRepublic
 
 function is_liberation_day(x::TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 8
+    return is_may(x) && Dates.day(x) == 8
 end
 
 function is_st_cyril_and_methodius_day(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 5
+    return is_july(x) && Dates.day(x) == 5
 end
 
 function is_jan_hus_day(x::TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 6
+    return is_july(x) && Dates.day(x) == 6
 end
 
 function is_czech_statehood_day(x::TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 28
+    return is_september(x) && Dates.day(x) == 28
 end
 
 function is_independence_day(x::TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 28
+    return is_october(x) && Dates.day(x) == 28
 end
 
 function is_freedom_day(x::TimeType)
-    return Dates.month(x) == Dates.Nov && Dates.day(x) == 17
+    return is_november(x) && Dates.day(x) == 17
 end
 
 function Holidays.fetch_holidays(::Type{CzechRepublic})
@@ -44,7 +44,7 @@ function Holidays.fetch_holidays(::Type{CzechRepublic})
         Holiday("Czech Statehood Day", is_czech_statehood_day),
         Holiday("Independence Day", is_independence_day),
         Holiday("Freedom Day", is_freedom_day),
-        Holiday("Christmas Eve", x -> Dates.month(x) == Dates.Dec && Dates.day(x) == 24),
+        Holiday("Christmas Eve", x -> is_december(x) && Dates.day(x) == 24),
         Holiday("Christmas Day", Christian.is_christmas_day),
         Holiday("Boxing Day", Christian.is_boxing_day),
     ]

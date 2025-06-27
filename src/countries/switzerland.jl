@@ -10,11 +10,11 @@ const International = Holidays.International
 const Switzerland = Holidays.Switzerland
 
 function is_berchtoldstag(x::TimeType)
-    return Dates.month(x) == Dates.Jan && Dates.day(x) == 2
+    return is_january(x) && Dates.day(x) == 2
 end
 
 function is_swiss_national_day(x::TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 1
+    return is_august(x) && Dates.day(x) == 1
 end
 
 function Holidays.fetch_holidays(::Type{Switzerland})
