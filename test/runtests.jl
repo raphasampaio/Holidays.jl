@@ -9,9 +9,11 @@ include("aqua.jl")
 include("calendars/christian.jl")
 include("calendars/islamic.jl")
 
+include("countries/argentina.jl")
 include("countries/australia.jl")
 include("countries/brazil.jl")
 include("countries/canada.jl")
+include("countries/china.jl")
 include("countries/egypt.jl")
 include("countries/france.jl")
 include("countries/germany.jl")
@@ -20,9 +22,11 @@ include("countries/italy.jl")
 include("countries/japan.jl")
 include("countries/mexico.jl")
 include("countries/netherlands.jl")
+include("countries/poland.jl")
 include("countries/russia.jl")
 include("countries/south_korea.jl")
 include("countries/spain.jl")
+include("countries/turkey.jl")
 include("countries/united_kingdom.jl")
 include("countries/united_states.jl")
 
@@ -55,10 +59,13 @@ function test_all()
 
     @testset "Christian" begin
         test_christian()
+    end 
+       @testset "Islamic" begin
+        test_islamic()
     end
 
-    @testset "Islamic" begin
-        test_islamic()
+    @testset "Argentina" begin
+        test_argentina()
     end
 
     @testset "Australia" begin
@@ -67,15 +74,19 @@ function test_all()
 
     @testset "Brazil" begin
         test_brazil()
-    end
-
+    end    
+    
     @testset "Canada" begin
         test_canada()
     end
 
+    @testset "China" begin
+        test_china()
+    end
+
     @testset "Egypt" begin
         test_egypt()
-    end    
+    end
     
     @testset "France" begin
         test_france()
@@ -99,10 +110,14 @@ function test_all()
 
     @testset "Mexico" begin
         test_mexico()
-    end
-
+    end    
+    
     @testset "Netherlands" begin
         test_netherlands()
+    end
+
+    @testset "Poland" begin
+        test_poland()
     end
 
     @testset "Russia" begin
@@ -111,10 +126,14 @@ function test_all()
 
     @testset "South Korea" begin
         test_south_korea()
-    end
-
+    end   
+    
     @testset "Spain" begin
         test_spain()
+    end
+
+    @testset "Turkey" begin
+        test_turkey()
     end
 
     @testset "United Kingdom" begin

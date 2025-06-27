@@ -11,9 +11,11 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 
 ## Currently Supported Countries
 
+- Argentina
 - Australia
 - Brazil (including subdivisions)
 - Canada
+- China
 - Egypt
 - France
 - Germany (including subdivisions)
@@ -22,9 +24,11 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 - Japan
 - Mexico
 - Netherlands
+- Poland
 - Russia
 - South Korea
 - Spain
+- Turkey
 - United Kingdom
 - United States
 
@@ -69,38 +73,56 @@ rio_holidays = Holidays.Brazil(subdivision = Subdivision.RioDeJaneiro())
 @show Date(2024, 4, 23) in rio_holidays # true
 ```
 
-### Example 3: International Coverage
+### Example 3: Global Holiday Coverage
 
 ```julia
 using Holidays
 using Dates
 
-# Check New Year's Day across different countries
+# Check New Year's Day across different continents
 new_years = Date(2024, 1, 1)
 
+# North America
 @show new_years in Holidays.UnitedStates()  # true
 @show new_years in Holidays.Canada()        # true
+@show new_years in Holidays.Mexico()        # true
+
+# South America  
+@show new_years in Holidays.Brazil()        # true
+@show new_years in Holidays.Argentina()     # true
+
+# Europe
 @show new_years in Holidays.UnitedKingdom() # true
 @show new_years in Holidays.France()        # true
-@show new_years in Holidays.Australia()     # true
+@show new_years in Holidays.Germany()       # true
+@show new_years in Holidays.Italy()         # true
+@show new_years in Holidays.Spain()         # true
+@show new_years in Holidays.Netherlands()   # true
+@show new_years in Holidays.Poland()        # true
+@show new_years in Holidays.Russia()        # true
+@show new_years in Holidays.Turkey()        # true
+
+# Asia
+@show new_years in Holidays.China()         # true
 @show new_years in Holidays.Japan()         # true
+@show new_years in Holidays.India()         # true
+@show new_years in Holidays.SouthKorea()    # true
 
-# Check country-specific holidays
-@show Date(2024, 7, 4) in Holidays.UnitedStates()  # Independence Day - true
-@show Date(2024, 7, 1) in Holidays.Canada()        # Canada Day - true
-@show Date(2024, 7, 14) in Holidays.France()       # Bastille Day - true
-@show Date(2024, 1, 26) in Holidays.Australia()    # Australia Day - true
-@show Date(2024, 2, 23) in Holidays.Japan()        # Emperor's Birthday - true
+# Africa/Middle East
+@show new_years in Holidays.Egypt()         # true
 
-# European holidays
-@show Date(2024, 4, 27) in Holidays.Netherlands()  # King's Day - true
-@show Date(2024, 6, 2) in Holidays.Italy()         # Republic Day - true
-@show Date(2024, 10, 12) in Holidays.Spain()       # National Day - true
+# Oceania
+@show new_years in Holidays.Australia()     # true
 
-# Asian and other regions
-@show Date(2024, 3, 1) in Holidays.SouthKorea()    # Independence Movement Day - true
-@show Date(2024, 5, 9) in Holidays.Russia()        # Victory Day - true
-@show Date(2024, 9, 16) in Holidays.Mexico()       # Independence Day - true
+# Check region-specific holidays
+@show Date(2024, 7, 4) in Holidays.UnitedStates()   # Independence Day - true
+@show Date(2024, 7, 1) in Holidays.Canada()         # Canada Day - true
+@show Date(2024, 7, 14) in Holidays.France()        # Bastille Day - true
+@show Date(2024, 1, 26) in Holidays.Australia()     # Australia Day - true
+@show Date(2024, 10, 1) in Holidays.China()         # National Day - true
+@show Date(2024, 5, 5) in Holidays.Japan()          # Children's Day - true
+@show Date(2024, 8, 15) in Holidays.India()         # Independence Day - true
+@show Date(2024, 5, 9) in Holidays.Russia()         # Victory Day - true
 ```
 
 ### Example 4: Find Holidays in a Specific Year Range

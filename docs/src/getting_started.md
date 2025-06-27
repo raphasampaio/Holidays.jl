@@ -80,9 +80,11 @@ end
 
 Currently supported countries:
 
+- **Argentina** - National holidays
 - **Australia** - National holidays
 - **Brazil** - National and state holidays (26 states + Federal District)
 - **Canada** - National holidays  
+- **China** - Major national holidays (simplified lunar calendar dates)
 - **Egypt** - National holidays
 - **France** - National holidays
 - **Germany** - National and state holidays (16 states)
@@ -91,9 +93,11 @@ Currently supported countries:
 - **Japan** - National holidays
 - **Mexico** - National holidays
 - **Netherlands** - National holidays
+- **Poland** - National holidays
 - **Russia** - National holidays
 - **South Korea** - National holidays
 - **Spain** - National holidays
+- **Turkey** - National and religious holidays (simplified lunar calendar dates)
 - **United Kingdom** - National holidays
 - **United States** - Federal holidays
 

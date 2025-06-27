@@ -23,7 +23,7 @@ end
 # @country Andorra
 # @country Angola
 # @country AntiguaAndBarbuda
-# @country Argentina
+@country Argentina
 # @country Armenia
 @country Australia
 # @country Austria
@@ -52,7 +52,7 @@ end
 # @country CentralAfricanRepublic
 # @country Chad
 # @country Chile
-# @country China
+@country China
 # @country Colombia
 # @country Comoros
 # @country DemocraticRepublicOfTheCongo
@@ -157,7 +157,7 @@ end
 # @country Paraguay
 # @country Peru
 # @country Philippines
-# @country Poland
+@country Poland
 # @country Portugal
 # @country Qatar
 # @country Romania
@@ -196,7 +196,7 @@ end
 # @country Tonga
 # @country TrinidadAndTobago
 # @country Tunisia
-# @country Turkey
+@country Turkey
 # @country Turkmenistan
 # @country Tuvalu
 # @country Uganda
