@@ -1,4 +1,12 @@
-function test_canada()
+module TestCanada
+
+using Dates
+using Holidays
+using Test
+
+include("../util.jl")
+
+@testset "Canada" begin
     calendar = Holidays.Canada()
 
     holidays = [
@@ -19,4 +27,6 @@ function test_canada()
     test_holidays(calendar, 2024, holidays)
 
     return nothing
+end
+
 end

@@ -1,4 +1,12 @@
-function test_islamic()
+module TestIslamic
+
+using Dates
+using Holidays
+using Test
+
+include("../util.jl")
+
+@testset "Islamic" begin
     # 1445 AH
     @test Holidays.Islamic.is_eid_al_fitr_day_one(Date(2024, 4, 10)) == true
     @test Holidays.Islamic.is_eid_al_fitr_day_two(Date(2024, 4, 11)) == true
@@ -69,6 +77,6 @@ function test_islamic()
     @test Holidays.Islamic.is_eid_al_adha_day_two(Date(2031, 4, 3)) == true
     @test Holidays.Islamic.is_eid_al_adha_day_three(Date(2031, 4, 4)) == true
     # @test Holidays.Islamic.is_sham_el_nessim(Date(2031, )) == true
+end
 
-    return nothing
 end

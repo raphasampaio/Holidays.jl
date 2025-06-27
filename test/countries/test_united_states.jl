@@ -1,4 +1,12 @@
-function test_united_states()
+module TestUnitedStates
+
+using Dates
+using Holidays
+using Test
+
+include("../util.jl")
+
+@testset "UnitedStates" begin
     calendar = Holidays.UnitedStates()
 
     # Federal holidays for the United States in 2024
@@ -64,4 +72,5 @@ function test_united_states()
     # end
 
     return nothing
+end
 end
