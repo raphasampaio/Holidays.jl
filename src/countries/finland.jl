@@ -46,7 +46,8 @@ end
 function Holidays.fetch_holidays(::Type{Finland})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Epiphany", is_epiphany),        Holiday("Good Friday", Christian.is_good_friday),
+        Holiday("Epiphany", is_epiphany),
+        Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Sunday", Christian.is_easter),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("May Day", International.is_workers_day),
@@ -56,7 +57,7 @@ function Holidays.fetch_holidays(::Type{Finland})
         Holiday("Midsummer Day", is_midsummer_day),
         Holiday("All Saints' Day", is_all_saints_day),
         Holiday("Independence Day", is_independence_day),
-        Holiday("Christmas Eve", x -> is_december(x) && Dates.day(x) == 24),
+        Holiday("Christmas Eve", x -> Christian.is_christmas_eve),
         Holiday("Christmas Day", Christian.is_christmas_day),
         Holiday("Boxing Day", Christian.is_boxing_day),
     ]
