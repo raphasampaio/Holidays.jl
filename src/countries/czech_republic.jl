@@ -3,6 +3,8 @@ module CzechRepublicHolidays
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
@@ -44,7 +46,7 @@ function Holidays.fetch_holidays(::Type{CzechRepublic})
         Holiday("Czech Statehood Day", is_czech_statehood_day),
         Holiday("Independence Day", is_independence_day),
         Holiday("Freedom Day", is_freedom_day),
-        Holiday("Christmas Eve", x -> Christian.is_christmas_eve),
+        Holiday("Christmas Eve", Christian.is_christmas_eve),
         Holiday("Christmas Day", Christian.is_christmas_day),
         Holiday("Boxing Day", Christian.is_boxing_day),
     ]

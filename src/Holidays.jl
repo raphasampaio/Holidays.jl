@@ -4,25 +4,6 @@ using Dates
 
 export
     is_holiday,
-    is_january,
-    is_february,
-    is_march,
-    is_april,
-    is_may,
-    is_june,
-    is_july,
-    is_august,
-    is_september,
-    is_october,
-    is_november,
-    is_december,
-    is_monday,
-    is_tuesday,
-    is_wednesday,
-    is_thursday,
-    is_friday,
-    is_saturday,
-    is_sunday,
     fetch_holidays,
     Holiday,
     AbstractHolidayCalendar,
@@ -33,8 +14,6 @@ include("Subdivision.jl")
 include("calendar.jl")
 include("holiday.jl")
 include("country.jl")
-include("dates.jl")
-
 include("calendars/christian.jl")
 include("calendars/gregorian.jl")
 include("calendars/international.jl")

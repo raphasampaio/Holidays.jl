@@ -2,6 +2,8 @@ module Chinese
 
 using Dates
 
+include("../dates.jl")
+
 # Chinese Lunar Calendar Functions
 # Note: These are simplified approximations. Actual lunar calendar calculations
 # require complex astronomical computations.

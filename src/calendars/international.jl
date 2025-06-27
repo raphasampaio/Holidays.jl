@@ -3,6 +3,8 @@ module International
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 function is_womens_day(x::TimeType)
     return is_march(x) && Dates.day(x) == 8
 end

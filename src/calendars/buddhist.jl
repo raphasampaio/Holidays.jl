@@ -2,6 +2,8 @@ module Buddhist
 
 using Dates
 
+include("../dates.jl")
+
 # Buddhist Calendar Functions
 # The Buddhist calendar is used in various Southeast Asian countries
 # and is based on the Buddha's birth year (traditionally 543 BCE in Thailand)

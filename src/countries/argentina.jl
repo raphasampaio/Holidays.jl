@@ -3,6 +3,8 @@ module ArgentinaHolidays
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
@@ -48,6 +50,10 @@ function is_national_sovereignty_day(x::TimeType)
     return is_november(x) && Dates.dayofweekofmonth(x) == 4 && is_monday(x)
 end
 
+function is_immaculate_conception(x::TimeType)
+    return is_december(x) && Dates.day(x) == 8
+end
+
 function Holidays.fetch_holidays(::Type{Argentina})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
@@ -62,7 +68,7 @@ function Holidays.fetch_holidays(::Type{Argentina})
         Holiday("San Martín Day", is_san_martin_day),
         Holiday("Respect for Cultural Diversity Day", is_respect_for_cultural_diversity_day),
         Holiday("National Sovereignty Day", is_national_sovereignty_day),
-        Holiday("Immaculate Conception", x -> is_december(x) && Dates.day(x) == 8),
+        Holiday("Immaculate Conception", is_immaculate_conception),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

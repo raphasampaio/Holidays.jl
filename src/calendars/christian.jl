@@ -2,6 +2,8 @@ module Christian
 
 using Dates
 
+include("../dates.jl")
+
 is_shrove_sunday(x::TimeType) = x == shrove_sunday(Dates.year(x))
 function shrove_sunday(year::Integer)
     return easter(year) - Dates.Day(49)
@@ -30,15 +32,20 @@ function easter(year::Integer)
     i = h - div(h, 28) * (1 - div(h, 28) * div(29, h + 1) * div(21 - g, 11))
     j = (year + div(year, 4) + i + 2 - c + div(c, 4)) % 7
     p = i - j
-    day = 1 + (p + 27 + div(p + 6, 40)) % 31
-    month = 3 + div(p + 26, 30)
+    d = 1 + (p + 27 + div(p + 6, 40)) % 31
+    m = 3 + div(p + 26, 30)
 
-    return Date(year, month, day)
+    return Date(year, m, d)
 end
 
 is_good_friday(x::TimeType) = x == good_friday(Dates.year(x))
 function good_friday(year::Integer)
     return easter(year) - Dates.Day(2)
+end
+
+is_easter_saturday(x::TimeType) = x == easter_saturday(Dates.year(x))
+function easter_saturday(year::Integer)
+    return easter(year) - Dates.Day(1)
 end
 
 is_easter_monday(x::TimeType) = x == easter_monday(Dates.year(x))

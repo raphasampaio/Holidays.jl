@@ -3,6 +3,8 @@ module Hindu
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 # Hindu Calendar Functions
 # The Hindu calendar is a lunisolar calendar with various regional variations
 # These are simplified approximations for major festivals

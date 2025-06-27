@@ -3,6 +3,8 @@ module FinlandHolidays
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
@@ -58,7 +60,7 @@ function Holidays.fetch_holidays(::Type{Finland})
         Holiday("Midsummer Day", is_midsummer_day),
         Holiday("All Saints' Day", is_all_saints_day),
         Holiday("Independence Day", is_independence_day),
-        Holiday("Christmas Eve", x -> Christian.is_christmas_eve),
+        Holiday("Christmas Eve", Christian.is_christmas_eve),
         Holiday("Christmas Day", Christian.is_christmas_day),
         Holiday("Boxing Day", Christian.is_boxing_day),
     ]

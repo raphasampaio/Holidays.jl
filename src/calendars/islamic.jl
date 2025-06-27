@@ -3,6 +3,8 @@ module Islamic
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 const Christian = Holidays.Christian
 
 # from https://github.com/vacanza/holidays

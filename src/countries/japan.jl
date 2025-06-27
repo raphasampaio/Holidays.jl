@@ -3,6 +3,8 @@ module JapanHolidays
 using Dates
 using Holidays
 
+include("../dates.jl")
+
 const Gregorian = Holidays.Gregorian
 
 const Japan = Holidays.Japan
