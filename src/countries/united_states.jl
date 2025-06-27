@@ -28,7 +28,7 @@ function is_memorial_day(x::TimeType)
     return Dates.year(x) >= 1971 && Dates.month(x) == Dates.May && Dates.dayofweek(x) == Dates.Mon && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 end
 
-function is_indenpendence_day(x::TimeType)
+function is_independence_day(x::TimeType)
     return Dates.year(x) >= 1871 && Dates.month(x) == Dates.Jul && Dates.day(x) == 4
 end
 
@@ -55,7 +55,7 @@ function Holidays.fetch_holidays(::Type{UnitedStates})
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
         Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day),
-        Holiday("Independence Day", is_indenpendence_day),
+        Holiday("Independence Day", is_independence_day),
         Holiday("Labor Day", is_labor_day),
         Holiday("Columbus Day", is_columbus_day),
         Holiday("Veterans Day", is_veterans_day),
