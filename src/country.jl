@@ -100,7 +100,7 @@ end
 # @country Iraq
 # @country Ireland
 # @country Israel
-# @country Italy
+@country Italy
 # @country Jamaica
 @country Japan
 # @country Jordan
@@ -108,7 +108,7 @@ end
 # @country Kenya
 # @country Kiribati
 # @country NorthKorea
-# @country SouthKorea
+@country SouthKorea
 # @country Kosovo
 # @country Kuwait
 # @country Kyrgyzstan
@@ -130,7 +130,7 @@ end
 # @country MarshallIslands
 # @country Mauritania
 # @country Mauritius
-# @country Mexico
+@country Mexico
 # @country Micronesia
 # @country Moldova
 # @country Monaco
@@ -142,7 +142,7 @@ end
 # @country Namibia
 # @country Nauru
 # @country Nepal
-# @country Netherlands
+@country Netherlands
 # @country NewZealand
 # @country Nicaragua
 # @country Niger
@@ -161,7 +161,7 @@ end
 # @country Portugal
 # @country Qatar
 # @country Romania
-# @country Russia
+@country Russia
 # @country Rwanda
 # @country SaintKittsAndNevis
 # @country SaintLucia
@@ -180,7 +180,7 @@ end
 # @country SolomonIslands
 # @country Somalia
 # @country SouthAfrica
-# @country Spain
+@country Spain
 # @country SriLanka
 # @country Sudan
 # @country SouthSudan

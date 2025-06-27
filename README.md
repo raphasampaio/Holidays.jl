@@ -18,7 +18,13 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 - France
 - Germany (including subdivisions)
 - India
+- Italy
 - Japan
+- Mexico
+- Netherlands
+- Russia
+- South Korea
+- Spain
 - United Kingdom
 - United States
 
@@ -85,6 +91,16 @@ new_years = Date(2024, 1, 1)
 @show Date(2024, 7, 14) in Holidays.France()       # Bastille Day - true
 @show Date(2024, 1, 26) in Holidays.Australia()    # Australia Day - true
 @show Date(2024, 2, 23) in Holidays.Japan()        # Emperor's Birthday - true
+
+# European holidays
+@show Date(2024, 4, 27) in Holidays.Netherlands()  # King's Day - true
+@show Date(2024, 6, 2) in Holidays.Italy()         # Republic Day - true
+@show Date(2024, 10, 12) in Holidays.Spain()       # National Day - true
+
+# Asian and other regions
+@show Date(2024, 3, 1) in Holidays.SouthKorea()    # Independence Movement Day - true
+@show Date(2024, 5, 9) in Holidays.Russia()        # Victory Day - true
+@show Date(2024, 9, 16) in Holidays.Mexico()       # Independence Day - true
 ```
 
 ### Example 4: Find Holidays in a Specific Year Range

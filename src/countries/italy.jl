@@ -1,0 +1,52 @@
+module ItalyHolidays
+
+using Dates
+using Holidays
+
+const Christian = Holidays.Christian
+const Gregorian = Holidays.Gregorian
+const International = Holidays.International
+
+const Italy = Holidays.Italy
+
+function is_epiphany(x::TimeType)
+    return Dates.month(x) == Dates.Jan && Dates.day(x) == 6
+end
+
+function is_liberation_day(x::TimeType)
+    return Dates.month(x) == Dates.Apr && Dates.day(x) == 25
+end
+
+function is_republic_day_italy(x::TimeType)
+    return Dates.month(x) == Dates.Jun && Dates.day(x) == 2
+end
+
+function is_ferragosto(x::TimeType)
+    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+end
+
+function is_immaculate_conception(x::TimeType)
+    return Dates.month(x) == Dates.Dec && Dates.day(x) == 8
+end
+
+function is_st_stephens_day(x::TimeType)
+    return Dates.month(x) == Dates.Dec && Dates.day(x) == 26
+end
+
+function Holidays.fetch_holidays(::Type{Italy})
+    return [
+        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("Epiphany", is_epiphany),
+        Holiday("Easter Monday", Christian.is_easter_monday),
+        Holiday("Liberation Day", is_liberation_day),
+        Holiday("Labour Day", International.is_workers_day),
+        Holiday("Republic Day", is_republic_day_italy),
+        Holiday("Ferragosto", is_ferragosto),
+        Holiday("All Saints' Day", Christian.is_all_saints_day),
+        Holiday("Immaculate Conception", is_immaculate_conception),
+        Holiday("Christmas Day", Christian.is_christmas_day),
+        Holiday("St. Stephen's Day", is_st_stephens_day),
+    ]
+end
+
+end

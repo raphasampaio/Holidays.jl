@@ -87,7 +87,13 @@ Currently supported countries:
 - **France** - National holidays
 - **Germany** - National and state holidays (16 states)
 - **India** - Major national holidays
+- **Italy** - National holidays
 - **Japan** - National holidays
+- **Mexico** - National holidays
+- **Netherlands** - National holidays
+- **Russia** - National holidays
+- **South Korea** - National holidays
+- **Spain** - National holidays
 - **United Kingdom** - National holidays
 - **United States** - Federal holidays
 

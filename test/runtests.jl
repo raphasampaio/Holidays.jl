@@ -16,7 +16,13 @@ include("countries/egypt.jl")
 include("countries/france.jl")
 include("countries/germany.jl")
 include("countries/india.jl")
+include("countries/italy.jl")
 include("countries/japan.jl")
+include("countries/mexico.jl")
+include("countries/netherlands.jl")
+include("countries/russia.jl")
+include("countries/south_korea.jl")
+include("countries/spain.jl")
 include("countries/united_kingdom.jl")
 include("countries/united_states.jl")
 
@@ -69,8 +75,8 @@ function test_all()
 
     @testset "Egypt" begin
         test_egypt()
-    end
-
+    end    
+    
     @testset "France" begin
         test_france()
     end
@@ -83,8 +89,32 @@ function test_all()
         test_india()
     end
 
+    @testset "Italy" begin
+        test_italy()
+    end
+
     @testset "Japan" begin
         test_japan()
+    end
+
+    @testset "Mexico" begin
+        test_mexico()
+    end
+
+    @testset "Netherlands" begin
+        test_netherlands()
+    end
+
+    @testset "Russia" begin
+        test_russia()
+    end
+
+    @testset "South Korea" begin
+        test_south_korea()
+    end
+
+    @testset "Spain" begin
+        test_spain()
     end
 
     @testset "United Kingdom" begin
