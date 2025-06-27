@@ -12,7 +12,7 @@ const Netherlands = Holidays.Netherlands
 function is_kings_day(x::TimeType)
     # King's Day (April 27, or April 26 if 27th is Sunday)
     year = Dates.year(x)
-    if is_april(x) && Dates.day(x) == 27 && Dates.dayofweek(x) != Dates.Sun
+    if is_april(x) && Dates.day(x) == 27 && !is_sunday(x)
         return true
     elseif is_april(x) && Dates.day(x) == 26 && Dates.dayofweek(Date(year, 4, 27)) == Dates.Sun
         return true

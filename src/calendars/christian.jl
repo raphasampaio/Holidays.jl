@@ -93,6 +93,11 @@ function advent_sunday(year::Integer)
     return first_advent - Dates.Day(day_of_week % 7)
 end
 
+is_christmas_eve(x::TimeType) = x == christmas_eve(Dates.year(x))
+function christmas_eve(year::Integer)
+    return Date(year, 12, 24)
+end
+
 is_christmas_day(x::TimeType) = x == christmas_day(Dates.year(x))
 function christmas_day(year::Integer)
     return Date(year, 12, 25)
