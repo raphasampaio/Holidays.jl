@@ -25,7 +25,7 @@ end
 # @country AntiguaAndBarbuda
 # @country Argentina
 # @country Armenia
-# @country Australia
+@country Australia
 # @country Austria
 # @country Azerbaijan
 # @country TheBahamas
@@ -48,7 +48,7 @@ end
 # @country CaboVerde
 # @country Cambodia
 # @country Cameroon
-# @country Canada
+@country Canada
 # @country CentralAfricanRepublic
 # @country Chad
 # @country Chile
@@ -78,7 +78,7 @@ end
 # @country Ethiopia
 # @country Fiji
 # @country Finland
-# @country France
+@country France
 # @country Gabon
 # @country TheGambia
 # @country Georgia
@@ -94,7 +94,7 @@ end
 # @country Honduras
 # @country Hungary
 # @country Iceland
-# @country India
+@country India
 # @country Indonesia
 # @country Iran
 # @country Iraq
@@ -102,7 +102,7 @@ end
 # @country Israel
 # @country Italy
 # @country Jamaica
-# @country Japan
+@country Japan
 # @country Jordan
 # @country Kazakhstan
 # @country Kenya
@@ -202,7 +202,7 @@ end
 # @country Uganda
 # @country Ukraine
 # @country UnitedArabEmirates
-# @country UnitedKingdom
+@country UnitedKingdom
 @country UnitedStates
 # @country Uruguay
 # @country Uzbekistan

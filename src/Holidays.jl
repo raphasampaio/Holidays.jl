@@ -20,9 +20,15 @@ include("calendars/gregorian.jl")
 include("calendars/international.jl")
 include("calendars/islamic.jl")
 
+include("countries/australia.jl")
 include("countries/brazil.jl")
+include("countries/canada.jl")
 include("countries/egypt.jl")
+include("countries/france.jl")
 include("countries/germany.jl")
+include("countries/india.jl")
+include("countries/japan.jl")
+include("countries/united_kingdom.jl")
 include("countries/united_states.jl")
 
 end
