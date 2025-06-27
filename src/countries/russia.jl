@@ -19,14 +19,6 @@ function is_defender_of_fatherland_day(x::TimeType)
     return is_february(x) && Dates.day(x) == 23
 end
 
-function is_womens_day_russia(x::TimeType)
-    return International.is_womens_day(x)
-end
-
-function is_spring_and_labour_day(x::TimeType)
-    return International.is_workers_day(x)
-end
-
 function is_victory_day(x::TimeType)
     return is_may(x) && Dates.day(x) == 9
 end
@@ -44,8 +36,8 @@ function Holidays.fetch_holidays(::Type{Russia})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Orthodox Christmas", is_orthodox_christmas),
         Holiday("Defender of the Fatherland Day", is_defender_of_fatherland_day),
-        Holiday("International Women's Day", is_womens_day_russia),
-        Holiday("Spring and Labour Day", is_spring_and_labour_day),
+        Holiday("International Women's Day", International.is_womens_day),
+        Holiday("Spring and Labour Day", International.is_workers_day),
         Holiday("Victory Day", is_victory_day),
         Holiday("Russia Day", is_russia_day),
         Holiday("Unity Day", is_unity_day),

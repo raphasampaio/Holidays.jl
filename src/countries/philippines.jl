@@ -5,6 +5,7 @@ using Holidays
 
 include("../dates.jl")
 
+const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
@@ -43,17 +44,6 @@ function is_rizal_day(x::TimeType)
     return is_december(x) && Dates.day(x) == 30
 end
 
-function is_chinese_new_year(x::TimeType)
-    # Simplified - using fixed dates for common years
-    chinese_new_years = Dict(
-        2024 => Date(2024, 2, 10),
-        2025 => Date(2025, 1, 29),
-        2026 => Date(2026, 2, 17),
-        2027 => Date(2027, 2, 6),
-    )
-    return haskey(chinese_new_years, Dates.year(x)) && x == chinese_new_years[Dates.year(x)]
-end
-
 function is_eid_al_fitr(x::TimeType)
     # Eid al-Fitr (simplified dates)
     eid_dates = Dict(
@@ -68,7 +58,7 @@ end
 function Holidays.fetch_holidays(::Type{Philippines})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Chinese New Year", is_chinese_new_year),
+        Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         Holiday("People Power Anniversary", is_peoples_power_anniversary),
         Holiday("Araw ng Kagitingan", is_araw_ng_kagitingan),
         Holiday("Maundy Thursday", x -> x == (Christian.easter(Dates.year(x)) - Dates.Day(3))),

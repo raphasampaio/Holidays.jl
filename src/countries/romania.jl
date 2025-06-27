@@ -15,16 +15,6 @@ function is_epiphany_romania(x::TimeType)
     return is_january(x) && Dates.day(x) == 6
 end
 
-function is_orthodox_easter_romania(x::TimeType)
-    # Simplified - using Western Easter for now
-    # In reality, Orthodox Easter follows different calculation
-    return Christian.is_easter(x)
-end
-
-function is_orthodox_easter_monday_romania(x::TimeType)
-    return Christian.is_easter_monday(x)
-end
-
 function is_childrens_day_romania(x::TimeType)
     return is_june(x) && Dates.day(x) == 1
 end
@@ -50,8 +40,8 @@ function Holidays.fetch_holidays(::Type{Romania})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Day after New Year's Day", x -> is_january(x) && Dates.day(x) == 2),
         Holiday("Epiphany", is_epiphany_romania),
-        Holiday("Orthodox Easter", is_orthodox_easter_romania),
-        Holiday("Orthodox Easter Monday", is_orthodox_easter_monday_romania),
+        Holiday("Orthodox Easter", Christian.is_easter),
+        Holiday("Orthodox Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Children's Day", is_childrens_day_romania),
         Holiday("Assumption of Mary", is_assumption_romania),

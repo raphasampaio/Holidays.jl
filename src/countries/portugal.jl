@@ -32,7 +32,8 @@ function is_immaculate_conception(x::TimeType)
 end
 
 function Holidays.fetch_holidays(::Type{Portugal})
-    return [Holiday("New Year's Day", Gregorian.is_new_years_day),
+    return [
+        Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Sunday", Christian.is_easter),
         Holiday("Freedom Day", is_freedom_day),

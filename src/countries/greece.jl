@@ -23,23 +23,10 @@ function is_ochi_day(x::TimeType)
     return is_october(x) && Dates.day(x) == 28
 end
 
-# Orthodox Easter calculation (simplified - uses same as Western for now)
-function is_orthodox_easter(x::TimeType)
-    return Christian.is_easter(x)
-end
-
-function is_orthodox_easter_monday(x::TimeType)
-    return Christian.is_easter_monday(x)
-end
-
 function is_clean_monday(x::TimeType)
     # Monday before Orthodox Easter (48 days before)
     easter = Christian.easter(Dates.year(x))
     return x == easter - Dates.Day(48)
-end
-
-function is_orthodox_good_friday(x::TimeType)
-    return Christian.is_good_friday(x)
 end
 
 function Holidays.fetch_holidays(::Type{Greece})
@@ -48,9 +35,9 @@ function Holidays.fetch_holidays(::Type{Greece})
         Holiday("Epiphany", is_epiphany),
         Holiday("Clean Monday", is_clean_monday),
         Holiday("Independence Day", is_independence_day),
-        Holiday("Orthodox Good Friday", is_orthodox_good_friday),
-        Holiday("Orthodox Easter", is_orthodox_easter),
-        Holiday("Orthodox Easter Monday", is_orthodox_easter_monday),
+        Holiday("Orthodox Good Friday", Christian.is_good_friday),
+        Holiday("Orthodox Easter", Christian.is_easter),
+        Holiday("Orthodox Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Whit Monday", Christian.is_whit_monday),
         Holiday("Assumption Day", Christian.is_assumption_day),

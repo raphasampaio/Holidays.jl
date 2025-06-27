@@ -5,23 +5,12 @@ using Holidays
 
 include("../dates.jl")
 
+const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 const Indonesia = Holidays.Indonesia
-
-function is_chinese_new_year(x::TimeType)
-    # Simplified - using fixed dates for common years
-    # In reality this is lunar calendar based
-    chinese_new_years = Dict(
-        2024 => Date(2024, 2, 10),
-        2025 => Date(2025, 1, 29),
-        2026 => Date(2026, 2, 17),
-        2027 => Date(2027, 2, 6),
-    )
-    return haskey(chinese_new_years, Dates.year(x)) && x == chinese_new_years[Dates.year(x)]
-end
 
 function is_nyepi(x::TimeType)
     # Balinese New Year - simplified dates
@@ -111,7 +100,7 @@ end
 function Holidays.fetch_holidays(::Type{Indonesia})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Chinese New Year", is_chinese_new_year),
+        Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         Holiday("Isra and Mi'raj", is_isra_miraj),
         Holiday("Nyepi (Balinese New Year)", is_nyepi),
         Holiday("Eid al-Fitr", is_eid_al_fitr),
