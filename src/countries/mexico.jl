@@ -12,13 +12,11 @@ const International = Holidays.International
 const Mexico = Holidays.Mexico
 
 function is_constitution_day(x::TimeType)
-    # First Monday in February
-    return is_february(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
+    return is_february(x) && is_first_monday_of_month(x)
 end
 
 function is_benito_juarez_birthday(x::TimeType)
-    # Third Monday in March
-    return is_march(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
+    return is_march(x) && is_third_monday_of_month(x)
 end
 
 function is_independence_day(x::TimeType)
@@ -26,8 +24,7 @@ function is_independence_day(x::TimeType)
 end
 
 function is_revolution_day(x::TimeType)
-    # Third Monday in November
-    return is_november(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
+    return is_november(x) && is_third_monday_of_month(x)
 end
 
 function Holidays.fetch_holidays(::Type{Mexico})

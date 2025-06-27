@@ -32,10 +32,10 @@ function easter(year::Integer)
     i = h - div(h, 28) * (1 - div(h, 28) * div(29, h + 1) * div(21 - g, 11))
     j = (year + div(year, 4) + i + 2 - c + div(c, 4)) % 7
     p = i - j
-    d = 1 + (p + 27 + div(p + 6, 40)) % 31
-    m = 3 + div(p + 26, 30)
+    day = 1 + (p + 27 + div(p + 6, 40)) % 31
+    month = 3 + div(p + 26, 30)
 
-    return Date(year, m, d)
+    return Date(year, month, day)
 end
 
 is_good_friday(x::TimeType) = x == good_friday(Dates.year(x))

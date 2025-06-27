@@ -12,7 +12,7 @@ const International = Holidays.International
 const Canada = Holidays.Canada
 
 function is_family_day(x::TimeType)
-    return Dates.year(x) >= 2008 && is_february(x) && Dates.dayofweekofmonth(x) == 3 && is_monday(x)
+    return Dates.year(x) >= 2008 && is_february(x) && is_third_monday_of_month(x)
 end
 
 function is_victoria_day(x::TimeType)
@@ -25,15 +25,15 @@ function is_canada_day(x::TimeType)
 end
 
 function is_civic_holiday(x::TimeType)
-    return is_august(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
+    return is_august(x) && is_first_monday_of_month(x)
 end
 
 function is_labour_day_canada(x::TimeType)
-    return is_september(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
+    return is_september(x) && is_first_monday_of_month(x)
 end
 
 function is_thanksgiving_canada(x::TimeType)
-    return is_october(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
+    return is_october(x) && is_second_monday_of_month(x)
 end
 
 function is_remembrance_day(x::TimeType)

@@ -20,13 +20,11 @@ function is_anzac_day(x::TimeType)
 end
 
 function is_queens_birthday(x::TimeType)
-    # Second Monday in June (varies by state but this is common)
-    return is_june(x) && Dates.dayofweekofmonth(x) == 2 && is_monday(x)
+    return is_june(x) && is_second_monday_of_month(x)
 end
 
 function is_labour_day_october(x::TimeType)
-    # First Monday in October (varies by state)
-    return is_october(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
+    return is_october(x) && is_first_monday_of_month(x)
 end
 
 function Holidays.fetch_holidays(::Type{Australia})

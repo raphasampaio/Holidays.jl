@@ -24,8 +24,7 @@ function is_anzac_day(x::TimeType)
 end
 
 function is_queens_birthday(x::TimeType)
-    # First Monday in June
-    return is_june(x) && Dates.dayofweekofmonth(x) == 1 && is_monday(x)
+    return is_june(x) && is_first_monday_of_month(x)
 end
 
 function is_matariki(x::TimeType)
@@ -39,8 +38,7 @@ function is_matariki(x::TimeType)
 end
 
 function is_labour_day(x::TimeType)
-    # Fourth Monday in October
-    return is_october(x) && Dates.dayofweekofmonth(x) == 4 && is_monday(x)
+    return is_october(x) && is_fourth_monday_of_month(x)
 end
 
 function Holidays.fetch_holidays(::Type{NewZealand})

@@ -58,3 +58,11 @@ is_fifth_thursday_of_month(x::TimeType) = is_thursday(x) && Dates.dayofweekofmon
 is_fifth_friday_of_month(x::TimeType) = is_friday(x) && Dates.dayofweekofmonth(x) == 5
 is_fifth_saturday_of_month(x::TimeType) = is_saturday(x) && Dates.dayofweekofmonth(x) == 5
 is_fifth_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x) == 5
+
+is_last_monday_of_month(x::TimeType) = is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_tuesday_of_month(x::TimeType) = is_tuesday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_wednesday_of_month(x::TimeType) = is_wednesday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_thursday_of_month(x::TimeType) = is_thursday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_friday_of_month(x::TimeType) = is_friday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_saturday_of_month(x::TimeType) = is_saturday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+is_last_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)

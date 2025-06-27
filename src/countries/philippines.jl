@@ -28,8 +28,7 @@ function is_ninoy_aquino_day(x::TimeType)
 end
 
 function is_national_heroes_day(x::TimeType)
-    # Last Monday of August
-    return is_august(x) && is_monday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+    return is_august(x) && is_last_monday_of_month(x)
 end
 
 function is_all_saints_day(x::TimeType)
