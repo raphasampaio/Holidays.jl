@@ -63,7 +63,31 @@ rio_holidays = Holidays.Brazil(subdivision = Subdivision.RioDeJaneiro())
 @show Date(2024, 4, 23) in rio_holidays # true
 ```
 
-### Example 3: Find Holidays in a Specific Year Range
+### Example 3: International Coverage
+
+```julia
+using Holidays
+using Dates
+
+# Check New Year's Day across different countries
+new_years = Date(2024, 1, 1)
+
+@show new_years in Holidays.UnitedStates()  # true
+@show new_years in Holidays.Canada()        # true
+@show new_years in Holidays.UnitedKingdom() # true
+@show new_years in Holidays.France()        # true
+@show new_years in Holidays.Australia()     # true
+@show new_years in Holidays.Japan()         # true
+
+# Check country-specific holidays
+@show Date(2024, 7, 4) in Holidays.UnitedStates()  # Independence Day - true
+@show Date(2024, 7, 1) in Holidays.Canada()        # Canada Day - true
+@show Date(2024, 7, 14) in Holidays.France()       # Bastille Day - true
+@show Date(2024, 1, 26) in Holidays.Australia()    # Australia Day - true
+@show Date(2024, 2, 23) in Holidays.Japan()        # Emperor's Birthday - true
+```
+
+### Example 4: Find Holidays in a Specific Year Range
 
 ```julia
 using Holidays

@@ -49,7 +49,9 @@ function test_all()
 
     @testset "Christian" begin
         test_christian()
-    end    @testset "Islamic" begin
+    end
+
+    @testset "Islamic" begin
         test_islamic()
     end
 
