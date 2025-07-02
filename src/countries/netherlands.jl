@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Netherlands = Holidays.Netherlands
-
 function is_kings_day(x::TimeType)
     # King's Day (April 27, or April 26 if 27th is Sunday)
     year = Dates.year(x)
@@ -27,7 +25,7 @@ function is_liberation_day(x::TimeType)
     return is_may(x) && Dates.day(x) == 5
 end
 
-function Holidays.fetch_holidays(::Type{Netherlands})
+function Holidays.fetch_holidays(::Type{Holidays.Netherlands})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),

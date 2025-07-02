@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Australia = Holidays.Australia
-
 function is_australia_day(x::TimeType)
     return is_january(x) && Dates.day(x) == 26
 end
@@ -27,7 +25,7 @@ function is_labour_day_october(x::TimeType)
     return is_october(x) && is_first_monday_of_month(x)
 end
 
-function Holidays.fetch_holidays(::Type{Australia})
+function Holidays.fetch_holidays(::Type{Holidays.Holidays.Australia})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Australia Day", is_australia_day),

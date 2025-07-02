@@ -10,8 +10,6 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 const Buddhist = Holidays.Buddhist
 
-const Thailand = Holidays.Thailand
-
 function is_chakri_day(x::TimeType)
     return is_april(x) && Dates.day(x) == 6
 end
@@ -44,7 +42,7 @@ function is_constitution_day(x::TimeType)
     return is_december(x) && Dates.day(x) == 10
 end
 
-function Holidays.fetch_holidays(::Type{Thailand})
+function Holidays.fetch_holidays(::Type{Holidays.Thailand})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Makha Bucha Day", Buddhist.is_magha_puja),

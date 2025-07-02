@@ -8,8 +8,6 @@ include("../dates.jl")
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Turkey = Holidays.Turkey
-
 function is_national_sovereignty_day_turkey(x::TimeType)
     return is_april(x) && Dates.day(x) == 23
 end
@@ -62,7 +60,7 @@ function is_sacrifice_feast_day_four(x::TimeType)
     return is_june(x) && Dates.day(x) == 19
 end
 
-function Holidays.fetch_holidays(::Type{Turkey})
+function Holidays.fetch_holidays(::Type{Holidays.Turkey})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("National Sovereignty and Children's Day", is_national_sovereignty_day_turkey),

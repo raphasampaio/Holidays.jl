@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Colombia = Holidays.Colombia
-
 function is_epiphany(x::TimeType)
     # Moved to first Monday after January 6
     if is_january(x) && Dates.day(x) >= 7 && Dates.day(x) <= 13 && is_monday(x)
@@ -78,7 +76,7 @@ function is_independence_cartagena(x::TimeType)
     return false
 end
 
-function Holidays.fetch_holidays(::Type{Colombia})
+function Holidays.fetch_holidays(::Type{Holidays.Colombia})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),

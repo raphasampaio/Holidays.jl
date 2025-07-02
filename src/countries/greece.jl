@@ -29,7 +29,7 @@ function is_clean_monday(x::TimeType)
     return x == easter - Dates.Day(48)
 end
 
-function Holidays.fetch_holidays(::Type{Greece})
+function Holidays.fetch_holidays(::Type{Holidays.Greece})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),

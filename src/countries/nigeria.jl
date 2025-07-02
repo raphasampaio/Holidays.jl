@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Nigeria = Holidays.Nigeria
-
 function is_independence_day(x::TimeType)
     return is_october(x) && Dates.day(x) == 1
 end
@@ -67,7 +65,7 @@ function is_prophet_birthday(x::TimeType)
     return haskey(prophet_dates, Dates.year(x)) && x == prophet_dates[Dates.year(x)]
 end
 
-function Holidays.fetch_holidays(::Type{Nigeria})
+function Holidays.fetch_holidays(::Type{Holidays.Nigeria})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),

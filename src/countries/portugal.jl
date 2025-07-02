@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Portugal = Holidays.Portugal
-
 function is_freedom_day(x::TimeType)
     return is_april(x) && Dates.day(x) == 25
 end
@@ -31,7 +29,7 @@ function is_immaculate_conception(x::TimeType)
     return is_december(x) && Dates.day(x) == 8
 end
 
-function Holidays.fetch_holidays(::Type{Portugal})
+function Holidays.fetch_holidays(::Type{Holidays.Portugal})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),

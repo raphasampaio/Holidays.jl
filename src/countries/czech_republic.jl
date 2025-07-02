@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const CzechRepublic = Holidays.CzechRepublic
-
 function is_liberation_day(x::TimeType)
     return is_may(x) && Dates.day(x) == 8
 end
@@ -35,7 +33,7 @@ function is_freedom_day(x::TimeType)
     return is_november(x) && Dates.day(x) == 17
 end
 
-function Holidays.fetch_holidays(::Type{CzechRepublic})
+function Holidays.fetch_holidays(::Type{Holidays.CzechRepublic})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Easter Monday", Christian.is_easter_monday),

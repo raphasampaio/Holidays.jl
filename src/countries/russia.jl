@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Russia = Holidays.Russia
-
 function is_orthodox_christmas(x::TimeType)
     return is_january(x) && Dates.day(x) == 7
 end
@@ -31,7 +29,7 @@ function is_unity_day(x::TimeType)
     return is_november(x) && Dates.day(x) == 4
 end
 
-function Holidays.fetch_holidays(::Type{Russia})
+function Holidays.fetch_holidays(::Type{Holidays.Russia})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Orthodox Christmas", is_orthodox_christmas),

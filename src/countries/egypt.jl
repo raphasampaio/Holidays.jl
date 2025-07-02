@@ -10,9 +10,7 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 const Islamic = Holidays.Islamic
 
-const Egypt = Holidays.Egypt
-
-function Holidays.fetch_holidays(::Type{Egypt})
+function Holidays.fetch_holidays(::Type{Holidays.Egypt})
     return [
         # fixed holidays
         Holiday("Christmas Day", x -> is_january(x) && Dates.day(x) == 7),

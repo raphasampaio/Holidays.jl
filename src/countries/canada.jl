@@ -40,7 +40,7 @@ function is_remembrance_day(x::TimeType)
     return is_november(x) && Dates.day(x) == 11
 end
 
-function Holidays.fetch_holidays(::Type{Canada})
+function Holidays.fetch_holidays(::Type{Holidays.Canada})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Family Day", is_family_day),

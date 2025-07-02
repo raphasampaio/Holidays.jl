@@ -9,13 +9,11 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 const Chinese = Holidays.Chinese
 
-const China = Holidays.China
-
 function is_national_day(x::TimeType)
     return is_october(x) && Dates.day(x) == 1
 end
 
-function Holidays.fetch_holidays(::Type{China})
+function Holidays.fetch_holidays(::Type{Holidays.China})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Spring Festival", Chinese.is_chinese_new_year),

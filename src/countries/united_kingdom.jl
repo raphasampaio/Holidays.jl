@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const UnitedKingdom = Holidays.UnitedKingdom
-
 function is_early_may_bank_holiday(x::TimeType)
     return is_may(x) && is_first_monday_of_month(x)
 end
@@ -23,7 +21,7 @@ function is_summer_bank_holiday(x::TimeType)
     return is_august(x) && is_last_monday_of_month(x)
 end
 
-function Holidays.fetch_holidays(::Type{UnitedKingdom})
+function Holidays.fetch_holidays(::Type{Holidays.UnitedKingdom})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),

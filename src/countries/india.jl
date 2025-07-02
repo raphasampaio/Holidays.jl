@@ -10,8 +10,6 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 const Hindu = Holidays.Hindu
 
-const India = Holidays.India
-
 function is_republic_day(x::TimeType)
     return is_january(x) && Dates.day(x) == 26
 end
@@ -24,7 +22,7 @@ function is_gandhi_jayanti(x::TimeType)
     return is_october(x) && Dates.day(x) == 2
 end
 
-function Holidays.fetch_holidays(::Type{India})
+function Holidays.fetch_holidays(::Type{Holidays.India})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Republic Day", is_republic_day),

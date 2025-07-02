@@ -7,8 +7,6 @@ include("../dates.jl")
 
 const Gregorian = Holidays.Gregorian
 
-const Japan = Holidays.Japan
-
 function is_coming_of_age_day(x::TimeType)
     return Dates.year(x) >= 2000 && is_january(x) && is_second_monday_of_month(x)
 end
@@ -74,7 +72,7 @@ function is_labour_thanksgiving_day(x::TimeType)
     return is_november(x) && Dates.day(x) == 23
 end
 
-function Holidays.fetch_holidays(::Type{Japan})
+function Holidays.fetch_holidays(::Type{Holidays.Japan})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Coming-of-Age Day", is_coming_of_age_day),

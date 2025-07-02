@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const SouthAfrica = Holidays.SouthAfrica
-
 function is_human_rights_day(x::TimeType)
     return is_march(x) && Dates.day(x) == 21
 end
@@ -35,7 +33,7 @@ function is_day_of_reconciliation(x::TimeType)
     return is_december(x) && Dates.day(x) == 16
 end
 
-function Holidays.fetch_holidays(::Type{SouthAfrica})
+function Holidays.fetch_holidays(::Type{Holidays.SouthAfrica})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Human Rights Day", is_human_rights_day),

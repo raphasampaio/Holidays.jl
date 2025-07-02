@@ -41,7 +41,7 @@ function is_independence_day(x::TimeType)
     return is_september(x) && Dates.day(x) == 2
 end
 
-function Holidays.fetch_holidays(::Type{Vietnam})
+function Holidays.fetch_holidays(::Type{Holidays.Vietnam})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Tet Holiday", is_tet_holiday),

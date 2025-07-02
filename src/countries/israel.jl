@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Israel = Holidays.Israel
-
 function is_independence_day(x::TimeType)
     # Independence Day is on the 5th of Iyar in the Hebrew calendar
     # For simplicity, we use a fixed date (actual date varies)
@@ -48,7 +46,7 @@ function is_simchat_torah(x::TimeType)
     return is_october(x) && Dates.day(x) == 7
 end
 
-function Holidays.fetch_holidays(::Type{Israel})
+function Holidays.fetch_holidays(::Type{Holidays.Israel})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Holocaust Remembrance Day", is_holocaust_remembrance_day),

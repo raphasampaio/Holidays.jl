@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Ireland = Holidays.Ireland
-
 function is_st_patricks_day(x::TimeType)
     return is_march(x) && Dates.day(x) == 17
 end
@@ -27,7 +25,7 @@ function is_october_bank(x::TimeType)
     return is_october(x) && is_last_monday_of_month(x)
 end
 
-function Holidays.fetch_holidays(::Type{Ireland})
+function Holidays.fetch_holidays(::Type{Holidays.Ireland})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("St. Patrick's Day", is_st_patricks_day),

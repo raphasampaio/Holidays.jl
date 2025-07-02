@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Sweden = Holidays.Sweden
-
 function is_epiphany(x::TimeType)
     return is_january(x) && Dates.day(x) == 6
 end
@@ -37,7 +35,7 @@ function is_all_saints_day(x::TimeType)
     return false
 end
 
-function Holidays.fetch_holidays(::Type{Sweden})
+function Holidays.fetch_holidays(::Type{Holidays.Sweden})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),

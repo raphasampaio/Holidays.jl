@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const France = Holidays.France
-
 function is_epiphany(x::TimeType)
     return is_january(x) && Dates.day(x) == 6
 end
@@ -23,7 +21,7 @@ function is_armistice_day(x::TimeType)
     return is_november(x) && Dates.day(x) == 11
 end
 
-function Holidays.fetch_holidays(::Type{France})
+function Holidays.fetch_holidays(::Type{Holidays.France})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),

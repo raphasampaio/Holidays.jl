@@ -10,8 +10,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Indonesia = Holidays.Indonesia
-
 function is_nyepi(x::TimeType)
     # Balinese New Year - simplified dates
     nyepi_dates = Dict(
@@ -97,7 +95,7 @@ function is_prophet_birthday(x::TimeType)
     return haskey(prophet_dates, Dates.year(x)) && x == prophet_dates[Dates.year(x)]
 end
 
-function Holidays.fetch_holidays(::Type{Indonesia})
+function Holidays.fetch_holidays(::Type{Holidays.Indonesia})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Chinese New Year", Chinese.is_chinese_new_year),

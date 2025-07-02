@@ -7,8 +7,6 @@ include("../dates.jl")
 
 const Gregorian = Holidays.Gregorian
 
-const SouthKorea = Holidays.SouthKorea
-
 function is_independence_movement_day(x::TimeType)
     return is_march(x) && Dates.day(x) == 1
 end
@@ -43,7 +41,7 @@ function is_hangeul_day(x::TimeType)
     return is_october(x) && Dates.day(x) == 9
 end
 
-function Holidays.fetch_holidays(::Type{SouthKorea})
+function Holidays.fetch_holidays(::Type{Holidays.SouthKorea})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Independence Movement Day", is_independence_movement_day),

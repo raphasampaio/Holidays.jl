@@ -9,13 +9,11 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Norway = Holidays.Norway
-
 function is_constitution_day(x::TimeType)
     return is_may(x) && Dates.day(x) == 17
 end
 
-function Holidays.fetch_holidays(::Type{Norway})
+function Holidays.fetch_holidays(::Type{Holidays.Norway})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Maundy Thursday", Christian.is_maundy_thursday),

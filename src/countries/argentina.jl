@@ -51,7 +51,7 @@ function is_immaculate_conception(x::TimeType)
     return is_december(x) && Dates.day(x) == 8
 end
 
-function Holidays.fetch_holidays(::Type{Argentina})
+function Holidays.fetch_holidays(::Type{Holidays.Holidays.Holidays.Holidays.Holidays.Argentina})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Truth and Justice Day", is_truth_and_justice_day),

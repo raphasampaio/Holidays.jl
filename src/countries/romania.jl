@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Romania = Holidays.Romania
-
 function is_epiphany_romania(x::TimeType)
     return is_january(x) && Dates.day(x) == 6
 end
@@ -35,7 +33,7 @@ function is_st_nicholas_day(x::TimeType)
     return is_december(x) && Dates.day(x) == 6
 end
 
-function Holidays.fetch_holidays(::Type{Romania})
+function Holidays.fetch_holidays(::Type{Holidays.Romania})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Day after New Year's Day", x -> is_january(x) && Dates.day(x) == 2),

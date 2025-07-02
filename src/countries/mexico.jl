@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Mexico = Holidays.Mexico
-
 function is_constitution_day(x::TimeType)
     return is_february(x) && is_first_monday_of_month(x)
 end
@@ -27,7 +25,7 @@ function is_revolution_day(x::TimeType)
     return is_november(x) && is_third_monday_of_month(x)
 end
 
-function Holidays.fetch_holidays(::Type{Mexico})
+function Holidays.fetch_holidays(::Type{Holidays.Mexico})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Constitution Day", is_constitution_day),

@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const NewZealand = Holidays.NewZealand
-
 function is_day_after_new_years(x::TimeType)
     return is_january(x) && Dates.day(x) == 2
 end
@@ -41,7 +39,7 @@ function is_labour_day(x::TimeType)
     return is_october(x) && is_fourth_monday_of_month(x)
 end
 
-function Holidays.fetch_holidays(::Type{NewZealand})
+function Holidays.fetch_holidays(::Type{Holidays.NewZealand})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Day after New Year's Day", is_day_after_new_years),
