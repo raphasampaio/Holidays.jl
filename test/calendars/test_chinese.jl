@@ -6,7 +6,7 @@ using Test
 
 include("../util.jl")
 
-@testset "Chinese Calendar" begin
+@testset "Chinese" begin
     @test Holidays.Chinese.is_chinese_new_year(Date(2024, 2, 10)) == true
     @test Holidays.Chinese.is_chinese_new_year(Date(2025, 1, 29)) == true
     @test Holidays.Chinese.is_chinese_new_year(Date(2026, 2, 17)) == true

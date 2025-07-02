@@ -6,7 +6,7 @@ using Test
 
 include("../util.jl")
 
-@testset "Buddhist Calendar" begin
+@testset "Buddhist" begin
     # Test Buddhist Era year conversion
     @test Holidays.Buddhist.gregorian_to_buddhist_year(2024) == 2567
     @test Holidays.Buddhist.buddhist_to_gregorian_year(2567) == 2024

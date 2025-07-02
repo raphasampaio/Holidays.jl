@@ -9,8 +9,6 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-const Argentina = Holidays.Argentina
-
 function is_truth_and_justice_day(x::TimeType)
     return is_march(x) && Dates.day(x) == 24
 end
@@ -51,7 +49,7 @@ function is_immaculate_conception(x::TimeType)
     return is_december(x) && Dates.day(x) == 8
 end
 
-function Holidays.fetch_holidays(::Type{Holidays.Holidays.Holidays.Holidays.Holidays.Argentina})
+function Holidays.fetch_holidays(::Type{Holidays.Argentina})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Truth and Justice Day", is_truth_and_justice_day),

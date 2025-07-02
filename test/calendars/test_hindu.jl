@@ -6,7 +6,7 @@ using Test
 
 include("../util.jl")
 
-@testset "Hindu Calendar" begin
+@testset "Hindu" begin
     # Test Diwali dates
     @test Holidays.Hindu.is_diwali(Date(2024, 11, 1)) == true
     @test Holidays.Hindu.is_diwali(Date(2025, 10, 20)) == true

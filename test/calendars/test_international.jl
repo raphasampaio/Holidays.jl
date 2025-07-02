@@ -4,7 +4,7 @@ using Dates
 using Holidays
 using Test
 
-@testset "International Calendar" begin
+@testset "International" begin
     @test Holidays.International.is_womens_day(Date(2024, 3, 7)) == false
     @test Holidays.International.is_womens_day(Date(2024, 3, 8)) == true
     @test Holidays.International.is_womens_day(Date(2024, 3, 9)) == false
