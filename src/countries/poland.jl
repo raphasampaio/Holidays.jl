@@ -34,7 +34,7 @@ function Holidays.fetch_holidays(::Type{Poland})
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Constitution Day", is_constitution_day),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Assumption of Mary", is_assumption_day),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
         Holiday("Independence Day", is_independence_day),

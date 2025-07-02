@@ -31,7 +31,7 @@ function Holidays.fetch_holidays(::Type{Austria})
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Ascension Day", Christian.is_ascension_day),
         Holiday("Whit Monday", Christian.is_whit_monday),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Assumption Day", Christian.is_assumption_day),
         Holiday("National Day", is_national_day),
         Holiday("All Saints' Day", Christian.is_all_saints_day),

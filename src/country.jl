@@ -59,7 +59,7 @@ end
 @country DemocraticRepublicOfTheCongo
 @country RepublicOfTheCongo
 @country CostaRica
-@country CôteDIvoire
+@country CoteDIvoire
 @country Croatia
 @country Cuba
 @country Cyprus

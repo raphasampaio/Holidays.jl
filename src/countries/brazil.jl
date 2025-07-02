@@ -20,7 +20,7 @@ function Holidays.fetch_holidays(::Type{Brazil})
         Holiday("Sexta Feira Santa", Christian.is_good_friday),
         Holiday("Tiradentes", x -> is_april(x) && Dates.day(x) == 21),
         Holiday("Dia do Trabalhador", International.is_workers_day),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Independência do Brasil", x -> is_september(x) && Dates.day(x) == 7),
         Holiday("Nossa Senhora Aparecida", x -> is_october(x) && Dates.day(x) == 12),
         Holiday("Finados", Christian.is_all_souls_day),

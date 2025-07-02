@@ -29,7 +29,7 @@ function Holidays.fetch_holidays(::Type{Germany{Subdivision.BadenWurttemberg}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Epiphany", x -> is_january(x) && Dates.day(x) == 6),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
     ]
 end
@@ -38,7 +38,7 @@ function Holidays.fetch_holidays(::Type{Germany{Subdivision.Bavaria}})
     return [
         fetch_holidays(Germany)...,
         Holiday("Epiphany", x -> is_january(x) && Dates.day(x) == 6),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Assumption Day", Christian.is_assumption_day),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
     ]
@@ -75,7 +75,7 @@ end
 function Holidays.fetch_holidays(::Type{Germany{Subdivision.Hesse}})
     return [
         fetch_holidays(Germany)...,
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
     ]
 end
 
@@ -97,7 +97,7 @@ end
 function Holidays.fetch_holidays(::Type{Germany{Subdivision.NorthRhineWestphalia}})
     return [
         fetch_holidays(Germany)...,
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
     ]
 end
@@ -105,7 +105,7 @@ end
 function Holidays.fetch_holidays(::Type{Germany{Subdivision.RhinelandPalatinate}})
     return [
         fetch_holidays(Germany)...,
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
     ]
 end
@@ -113,7 +113,7 @@ end
 function Holidays.fetch_holidays(::Type{Germany{Subdivision.Saarland}})
     return [
         fetch_holidays(Germany)...,
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Assumption Day", Christian.is_assumption_day),
         Holiday("All Saints' Day", Christian.is_all_saints_day),
     ]

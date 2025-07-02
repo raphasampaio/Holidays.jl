@@ -39,7 +39,7 @@ function Holidays.fetch_holidays(::Type{Portugal})
         Holiday("Freedom Day", is_freedom_day),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Portugal Day", is_portugal_day),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Assumption Day", Christian.is_assumption_day),
         Holiday("Republic Day", is_republic_day),
         Holiday("All Saints' Day", Christian.is_all_saints_day),

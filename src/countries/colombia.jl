@@ -87,7 +87,7 @@ function Holidays.fetch_holidays(::Type{Colombia})
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Ascension Day", Christian.is_ascension_day),
-        Holiday("Corpus Christi", Christian.is_chorus_christi),
+        Holiday("Corpus Christi", Christian.is_corpus_christi),
         Holiday("Sacred Heart", x -> x == (Christian.easter(Dates.year(x)) + Dates.Day(68))),
         Holiday("Independence Day", is_independence_day),
         Holiday("Battle of Boyacá", is_battle_of_boyaca),

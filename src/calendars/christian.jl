@@ -38,6 +38,11 @@ function easter(year::Integer)
     return Date(year, month, day)
 end
 
+is_maundy_thursday(x::TimeType) = x == maundy_thursday(Dates.year(x))
+function maundy_thursday(year::Integer)
+    return easter(year) - Dates.Day(3)
+end
+
 is_good_friday(x::TimeType) = x == good_friday(Dates.year(x))
 function good_friday(year::Integer)
     return easter(year) - Dates.Day(2)
@@ -53,8 +58,8 @@ function easter_monday(year::Integer)
     return easter(year) + Dates.Day(1)
 end
 
-is_chorus_christi(x::TimeType) = x == chorus_christi(Dates.year(x))
-function chorus_christi(year::Integer)
+is_corpus_christi(x::TimeType) = x == corpus_christi(Dates.year(x))
+function corpus_christi(year::Integer)
     return easter(year) + Dates.Day(60)
 end
 
