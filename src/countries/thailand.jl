@@ -15,7 +15,7 @@ function is_chakri_day(x::TimeType)
 end
 
 function is_songkran_day(x::TimeType)
-    return is_april(x) && (Dates.day(x) >= 13 && Dates.day(x) <= 15)
+    return is_april(x) && is_day_between(x, 13, 15)
 end
 
 function is_coronation_day(x::TimeType)

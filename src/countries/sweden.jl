@@ -18,11 +18,11 @@ function is_national_day(x::TimeType)
 end
 
 function is_midsummer_eve(x::TimeType)
-    return is_june(x) && is_friday(x) && Dates.day(x) >= 19 && Dates.day(x) <= 25
+    return is_june(x) && is_friday(x) && is_day_between(x, 19, 25)
 end
 
 function is_midsummer_day(x::TimeType)
-    return is_june(x) && is_saturday(x) && Dates.day(x) >= 20 && Dates.day(x) <= 26
+    return is_june(x) && is_saturday(x) && is_day_between(x, 20, 26)
 end
 
 function is_all_saints_day(x::TimeType)

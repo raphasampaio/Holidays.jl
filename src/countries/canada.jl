@@ -17,7 +17,7 @@ end
 
 function is_victoria_day(x::TimeType)
     # Monday preceding May 25
-    return is_may(x) && is_monday(x) && Dates.day(x) >= 18 && Dates.day(x) <= 24
+    return is_may(x) && is_monday(x) && is_day_between(x, 18, 24)
 end
 
 function is_canada_day(x::TimeType)

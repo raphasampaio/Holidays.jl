@@ -20,19 +20,11 @@ function is_independence_day(x::TimeType)
 end
 
 function is_midsummer_eve(x::TimeType)
-    # Friday between June 19-25
-    if is_june(x) && is_friday(x)
-        return Dates.day(x) >= 19 && Dates.day(x) <= 25
-    end
-    return false
+    return is_june(x) && is_friday(x) && is_day_between(x, 19, 25)
 end
 
 function is_midsummer_day(x::TimeType)
-    # Saturday between June 20-26
-    if is_june(x) && is_saturday(x)
-        return Dates.day(x) >= 20 && Dates.day(x) <= 26
-    end
-    return false
+    return is_june(x) && is_saturday(x) && is_day_between(x, 20, 26)
 end
 
 function is_all_saints_day(x::TimeType)

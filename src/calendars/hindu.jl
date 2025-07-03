@@ -131,7 +131,7 @@ end
 
 function is_maha_shivratri(x::TimeType)
     # Simplified approximation - actual date varies by lunar calendar
-    return is_february(x) && (Dates.day(x) >= 20 && Dates.day(x) <= 22)
+    return is_february(x) && is_day_between(x, 20, 22)
 end
 
 function is_karva_chauth(x::TimeType)
