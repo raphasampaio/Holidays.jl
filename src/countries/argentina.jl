@@ -10,27 +10,27 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_truth_and_justice_day(x::TimeType)
-    return is_march(x) && Dates.day(x) == 24
+    return is_march(x) && is_day(x, 24)
 end
 
 function is_veterans_day(x::TimeType)
-    return is_april(x) && Dates.day(x) == 2
+    return is_april(x) && is_day(x, 2)
 end
 
 function is_revolution_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 25
+    return is_may(x) && is_day(x, 25)
 end
 
 function is_martin_guemes_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 17
+    return is_june(x) && is_day(x, 17)
 end
 
 function is_flag_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 20
+    return is_june(x) && is_day(x, 20)
 end
 
 function is_independence_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 9
+    return is_july(x) && is_day(x, 9)
 end
 
 function is_san_martin_day(x::TimeType)
@@ -46,7 +46,7 @@ function is_national_sovereignty_day(x::TimeType)
 end
 
 function is_immaculate_conception(x::TimeType)
-    return is_december(x) && Dates.day(x) == 8
+    return is_december(x) && is_day(x, 8)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Argentina})

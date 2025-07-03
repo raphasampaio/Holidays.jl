@@ -10,7 +10,7 @@ const International = Holidays.International
 const Chinese = Holidays.Chinese
 
 function is_national_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 1
+    return is_october(x) && is_day(x, 1)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.China})

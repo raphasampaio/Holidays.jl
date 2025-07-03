@@ -11,15 +11,15 @@ const International = Holidays.International
 const Hindu = Holidays.Hindu
 
 function is_republic_day(x::TimeType)
-    return is_january(x) && Dates.day(x) == 26
+    return is_january(x) && is_day(x, 26)
 end
 
 function is_independence_day(x::TimeType)
-    return is_august(x) && Dates.day(x) == 15
+    return is_august(x) && is_day(x, 15)
 end
 
 function is_gandhi_jayanti(x::TimeType)
-    return is_october(x) && Dates.day(x) == 2
+    return is_october(x) && is_day(x, 2)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.India})

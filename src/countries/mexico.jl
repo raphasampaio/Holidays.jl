@@ -18,7 +18,7 @@ function is_benito_juarez_birthday(x::TimeType)
 end
 
 function is_independence_day(x::TimeType)
-    return is_september(x) && Dates.day(x) == 16
+    return is_september(x) && is_day(x, 16)
 end
 
 function is_revolution_day(x::TimeType)

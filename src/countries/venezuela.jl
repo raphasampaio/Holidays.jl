@@ -10,23 +10,23 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_declaration_of_independence(x::TimeType)
-    return is_april(x) && Dates.day(x) == 19
+    return is_april(x) && is_day(x, 19)
 end
 
 function is_battle_of_carabobo(x::TimeType)
-    return is_june(x) && Dates.day(x) == 24
+    return is_june(x) && is_day(x, 24)
 end
 
 function is_independence_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 5
+    return is_july(x) && is_day(x, 5)
 end
 
 function is_birthday_of_bolivar(x::TimeType)
-    return is_july(x) && Dates.day(x) == 24
+    return is_july(x) && is_day(x, 24)
 end
 
 function is_indigenous_resistance_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 12
+    return is_october(x) && is_day(x, 12)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Venezuela})

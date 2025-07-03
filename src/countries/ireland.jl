@@ -10,7 +10,7 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_st_patricks_day(x::TimeType)
-    return is_march(x) && Dates.day(x) == 17
+    return is_march(x) && is_day(x, 17)
 end
 
 function is_june_bank(x::TimeType)

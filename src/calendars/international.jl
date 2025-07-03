@@ -6,11 +6,11 @@ using Holidays
 include("../dates.jl")
 
 function is_womens_day(x::TimeType)
-    return is_march(x) && Dates.day(x) == 8
+    return is_march(x) && is_day(x, 8)
 end
 
 function is_workers_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 1
+    return is_may(x) && is_day(x, 1)
 end
 
 end

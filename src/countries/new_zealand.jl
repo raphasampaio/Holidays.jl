@@ -10,15 +10,15 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_day_after_new_years(x::TimeType)
-    return is_january(x) && Dates.day(x) == 2
+    return is_january(x) && is_day(x, 2)
 end
 
 function is_waitangi_day(x::TimeType)
-    return is_february(x) && Dates.day(x) == 6
+    return is_february(x) && is_day(x, 6)
 end
 
 function is_anzac_day(x::TimeType)
-    return is_april(x) && Dates.day(x) == 25
+    return is_april(x) && is_day(x, 25)
 end
 
 function is_queens_birthday(x::TimeType)

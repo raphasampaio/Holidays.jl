@@ -10,43 +10,43 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_battle_of_arica(x::TimeType)
-    return is_june(x) && Dates.day(x) == 7
+    return is_june(x) && is_day(x, 7)
 end
 
 function is_st_peter_and_st_paul(x::TimeType)
-    return is_june(x) && Dates.day(x) == 29
+    return is_june(x) && is_day(x, 29)
 end
 
 function is_peruvian_air_force_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 23
+    return is_july(x) && is_day(x, 23)
 end
 
 function is_independence_day(x::TimeType)
-    return is_july(x) && (Dates.day(x) == 28 || Dates.day(x) == 29)
+    return is_july(x) && (is_day(x, 28) || is_day(x, 29))
 end
 
 function is_battle_of_junin(x::TimeType)
-    return is_august(x) && Dates.day(x) == 6
+    return is_august(x) && is_day(x, 6)
 end
 
 function is_santa_rosa_de_lima(x::TimeType)
-    return is_august(x) && Dates.day(x) == 30
+    return is_august(x) && is_day(x, 30)
 end
 
 function is_battle_of_angamos(x::TimeType)
-    return is_october(x) && Dates.day(x) == 8
+    return is_october(x) && is_day(x, 8)
 end
 
 function is_all_saints(x::TimeType)
-    return is_november(x) && Dates.day(x) == 1
+    return is_november(x) && is_day(x, 1)
 end
 
 function is_immaculate_conception(x::TimeType)
-    return is_december(x) && Dates.day(x) == 8
+    return is_december(x) && is_day(x, 8)
 end
 
 function is_battle_of_ayacucho(x::TimeType)
-    return is_december(x) && Dates.day(x) == 9
+    return is_december(x) && is_day(x, 9)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Peru})

@@ -11,19 +11,19 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_peoples_power_anniversary(x::TimeType)
-    return is_february(x) && Dates.day(x) == 25
+    return is_february(x) && is_day(x, 25)
 end
 
 function is_araw_ng_kagitingan(x::TimeType)
-    return is_april(x) && Dates.day(x) == 9
+    return is_april(x) && is_day(x, 9)
 end
 
 function is_independence_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 12
+    return is_june(x) && is_day(x, 12)
 end
 
 function is_ninoy_aquino_day(x::TimeType)
-    return is_august(x) && Dates.day(x) == 21
+    return is_august(x) && is_day(x, 21)
 end
 
 function is_national_heroes_day(x::TimeType)
@@ -31,15 +31,15 @@ function is_national_heroes_day(x::TimeType)
 end
 
 function is_all_saints_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 1
+    return is_november(x) && is_day(x, 1)
 end
 
 function is_bonifacio_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 30
+    return is_november(x) && is_day(x, 30)
 end
 
 function is_rizal_day(x::TimeType)
-    return is_december(x) && Dates.day(x) == 30
+    return is_december(x) && is_day(x, 30)
 end
 
 function is_eid_al_fitr(x::TimeType)

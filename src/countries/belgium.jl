@@ -10,11 +10,11 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_belgian_national_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 21
+    return is_july(x) && is_day(x, 21)
 end
 
 function is_armistice_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 11
+    return is_november(x) && is_day(x, 11)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Belgium})

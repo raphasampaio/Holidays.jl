@@ -12,11 +12,11 @@ const International = Holidays.International
 const day = Dates.day
 
 function is_epiphany(x::TimeType)
-    return is_january(x) && Dates.day(x) == 6
+    return is_january(x) && is_day(x, 6)
 end
 
 function is_independence_day(x::TimeType)
-    return is_december(x) && Dates.day(x) == 6
+    return is_december(x) && is_day(x, 6)
 end
 
 function is_midsummer_eve(x::TimeType)
@@ -37,7 +37,7 @@ end
 
 function is_all_saints_day(x::TimeType)
     # Saturday between October 31 and November 6
-    if is_october(x) && is_saturday(x) && Dates.day(x) == 31
+    if is_october(x) && is_saturday(x) && is_day(x, 31)
         return true
     elseif is_november(x) && is_saturday(x)
         return Dates.day(x) <= 6

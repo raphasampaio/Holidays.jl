@@ -10,23 +10,23 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_orthodox_christmas(x::TimeType)
-    return is_january(x) && Dates.day(x) == 7
+    return is_january(x) && is_day(x, 7)
 end
 
 function is_defender_of_fatherland_day(x::TimeType)
-    return is_february(x) && Dates.day(x) == 23
+    return is_february(x) && is_day(x, 23)
 end
 
 function is_victory_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 9
+    return is_may(x) && is_day(x, 9)
 end
 
 function is_russia_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 12
+    return is_june(x) && is_day(x, 12)
 end
 
 function is_unity_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 4
+    return is_november(x) && is_day(x, 4)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Russia})

@@ -10,33 +10,33 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_landing_of_33_orientals(x::TimeType)
-    return is_april(x) && Dates.day(x) == 19
+    return is_april(x) && is_day(x, 19)
 end
 
 function is_battle_of_las_piedras(x::TimeType)
-    return is_may(x) && Dates.day(x) == 18
+    return is_may(x) && is_day(x, 18)
 end
 
 function is_birthday_artigas(x::TimeType)
-    return is_june(x) && Dates.day(x) == 19
+    return is_june(x) && is_day(x, 19)
 end
 
 function is_constitution_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 18
+    return is_july(x) && is_day(x, 18)
 end
 
 function is_independence_day(x::TimeType)
-    return is_august(x) && Dates.day(x) == 25
+    return is_august(x) && is_day(x, 25)
 end
 
 function is_diversity_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 12
+    return is_october(x) && is_day(x, 12)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Uruguay})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Epiphany", x -> is_january(x) && Dates.day(x) == 6),
+        Holiday("Epiphany", x -> is_january(x) && is_day(x, 6)),
         Holiday("Carnival Monday", Christian.is_shrove_monday),
         Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
         Holiday("Tourism Week - Easter Thursday", Christian.is_maundy_thursday),

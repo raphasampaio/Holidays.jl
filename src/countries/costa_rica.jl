@@ -10,27 +10,27 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_juan_santamaria_day(x::Dates.TimeType)
-    return is_april(x) && Dates.day(x) == 11
+    return is_april(x) && is_day(x, 11)
 end
 
 function is_guanacaste_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 25
+    return Dates.month(x) == Dates.Jul && is_day(x, 25)
 end
 
 function is_lady_of_the_angels_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 2
+    return Dates.month(x) == Dates.Aug && is_day(x, 2)
 end
 
 function is_mothers_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+    return Dates.month(x) == Dates.Aug && is_day(x, 15)
 end
 
 function is_independence_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 15
+    return Dates.month(x) == Dates.Sep && is_day(x, 15)
 end
 
 function is_army_abolition_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 1
+    return Dates.month(x) == Dates.Dec && is_day(x, 1)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.CostaRica})

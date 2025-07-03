@@ -31,7 +31,7 @@ function is_memorial_day(x::TimeType)
 end
 
 function is_independence_day(x::TimeType)
-    return Dates.year(x) >= 1871 && is_july(x) && Dates.day(x) == 4
+    return Dates.year(x) >= 1871 && is_july(x) && is_day(x, 4)
 end
 
 function is_labor_day(x::TimeType)
@@ -43,11 +43,11 @@ function is_thanksgiving_day(x::TimeType)
 end
 
 function is_veterans_day(x::TimeType)
-    return Dates.year(x) >= 1954 && is_november(x) && Dates.day(x) == 11
+    return Dates.year(x) >= 1954 && is_november(x) && is_day(x, 11)
 end
 
 function is_juneteenth_national_independence_day(x::TimeType)
-    return Dates.year(x) >= 2021 && is_june(x) && Dates.day(x) == 19
+    return Dates.year(x) >= 2021 && is_june(x) && is_day(x, 19)
 end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})

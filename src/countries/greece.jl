@@ -12,15 +12,15 @@ const International = Holidays.International
 const Greece = Holidays.Greece
 
 function is_epiphany(x::TimeType)
-    return is_january(x) && Dates.day(x) == 6
+    return is_january(x) && is_day(x, 6)
 end
 
 function is_independence_day(x::TimeType)
-    return is_march(x) && Dates.day(x) == 25
+    return is_march(x) && is_day(x, 25)
 end
 
 function is_ochi_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 28
+    return is_october(x) && is_day(x, 28)
 end
 
 function is_clean_monday(x::TimeType)

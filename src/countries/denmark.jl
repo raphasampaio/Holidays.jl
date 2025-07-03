@@ -16,7 +16,7 @@ function is_general_prayer_day(x::TimeType)
 end
 
 function is_constitution_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 5
+    return is_june(x) && is_day(x, 5)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Denmark})

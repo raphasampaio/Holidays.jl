@@ -10,11 +10,11 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_epiphany(x::TimeType)
-    return is_january(x) && Dates.day(x) == 6
+    return is_january(x) && is_day(x, 6)
 end
 
 function is_national_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 6
+    return is_june(x) && is_day(x, 6)
 end
 
 function is_midsummer_eve(x::TimeType)

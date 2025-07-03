@@ -10,15 +10,15 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_independence_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 1
+    return is_october(x) && is_day(x, 1)
 end
 
 function is_democracy_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 12
+    return is_june(x) && is_day(x, 12)
 end
 
 function is_childrens_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 27
+    return is_may(x) && is_day(x, 27)
 end
 
 function is_eid_al_fitr(x::TimeType)

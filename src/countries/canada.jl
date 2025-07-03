@@ -21,7 +21,7 @@ function is_victoria_day(x::TimeType)
 end
 
 function is_canada_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 1
+    return is_july(x) && is_day(x, 1)
 end
 
 function is_civic_holiday(x::TimeType)
@@ -37,7 +37,7 @@ function is_thanksgiving_canada(x::TimeType)
 end
 
 function is_remembrance_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 11
+    return is_november(x) && is_day(x, 11)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Canada})

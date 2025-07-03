@@ -12,33 +12,33 @@ function is_coming_of_age_day(x::TimeType)
 end
 
 function is_national_foundation_day(x::TimeType)
-    return is_february(x) && Dates.day(x) == 11
+    return is_february(x) && is_day(x, 11)
 end
 
 function is_emperors_birthday(x::TimeType)
     # Current Emperor's birthday (Emperor Naruhito, born February 23, 1960)
-    return Dates.year(x) >= 2020 && is_february(x) && Dates.day(x) == 23
+    return Dates.year(x) >= 2020 && is_february(x) && is_day(x, 23)
 end
 
 function is_vernal_equinox_day(x::TimeType)
     # Approximately March 20/21 - using March 20 as approximation
-    return is_march(x) && Dates.day(x) == 20
+    return is_march(x) && is_day(x, 20)
 end
 
 function is_golden_week_start(x::TimeType)
-    return is_april(x) && Dates.day(x) == 29
+    return is_april(x) && is_day(x, 29)
 end
 
 function is_constitution_memorial_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 3
+    return is_may(x) && is_day(x, 3)
 end
 
 function is_greenery_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 4
+    return is_may(x) && is_day(x, 4)
 end
 
 function is_childrens_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 5
+    return is_may(x) && is_day(x, 5)
 end
 
 function is_marine_day(x::TimeType)
@@ -47,7 +47,7 @@ function is_marine_day(x::TimeType)
 end
 
 function is_mountain_day(x::TimeType)
-    return Dates.year(x) >= 2016 && is_august(x) && Dates.day(x) == 11
+    return Dates.year(x) >= 2016 && is_august(x) && is_day(x, 11)
 end
 
 function is_respect_for_the_aged_day(x::TimeType)
@@ -57,7 +57,7 @@ end
 
 function is_autumnal_equinox_day(x::TimeType)
     # Approximately September 23 - using as approximation
-    return is_september(x) && Dates.day(x) == 23
+    return is_september(x) && is_day(x, 23)
 end
 
 function is_sports_day(x::TimeType)
@@ -65,11 +65,11 @@ function is_sports_day(x::TimeType)
 end
 
 function is_culture_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 3
+    return is_november(x) && is_day(x, 3)
 end
 
 function is_labour_thanksgiving_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 23
+    return is_november(x) && is_day(x, 23)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Japan})

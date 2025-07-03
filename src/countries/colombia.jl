@@ -29,11 +29,11 @@ function is_st_joseph_day(x::TimeType)
 end
 
 function is_independence_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 20
+    return is_july(x) && is_day(x, 20)
 end
 
 function is_battle_of_boyaca(x::TimeType)
-    return is_august(x) && Dates.day(x) == 7
+    return is_august(x) && is_day(x, 7)
 end
 
 function is_assumption(x::TimeType)
@@ -93,7 +93,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Colombia})
         Holiday("Columbus Day", is_columbus_day),
         Holiday("All Saints' Day", is_all_saints),
         Holiday("Independence of Cartagena", is_independence_cartagena),
-        Holiday("Immaculate Conception", x -> is_december(x) && Dates.day(x) == 8),
+        Holiday("Immaculate Conception", x -> is_december(x) && is_day(x, 8)),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

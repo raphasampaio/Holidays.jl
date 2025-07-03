@@ -22,11 +22,11 @@ function is_nyepi(x::TimeType)
 end
 
 function is_pancasila_day(x::TimeType)
-    return is_june(x) && Dates.day(x) == 1
+    return is_june(x) && is_day(x, 1)
 end
 
 function is_independence_day(x::TimeType)
-    return is_august(x) && Dates.day(x) == 17
+    return is_august(x) && is_day(x, 17)
 end
 
 function is_isra_miraj(x::TimeType)

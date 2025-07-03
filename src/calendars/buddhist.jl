@@ -98,7 +98,7 @@ function is_khao_phansa(x::TimeType)
         khao_phansa_date = ASALHA_PUJA_DATES[year] + Dates.Day(1)
         return x == khao_phansa_date
     else
-        return is_july(x) && Dates.day(x) == 20
+        return is_july(x) && is_day(x, 20)
     end
 end
 
@@ -108,7 +108,7 @@ function is_ok_phansa(x::TimeType)
         ok_phansa_date = ASALHA_PUJA_DATES[year] + Dates.Day(91) # Approximately 3 months
         return x == ok_phansa_date
     else
-        return is_october(x) && Dates.day(x) == 19
+        return is_october(x) && is_day(x, 19)
     end
 end
 

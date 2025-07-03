@@ -10,27 +10,27 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_liberation_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 8
+    return is_may(x) && is_day(x, 8)
 end
 
 function is_st_cyril_and_methodius_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 5
+    return is_july(x) && is_day(x, 5)
 end
 
 function is_jan_hus_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 6
+    return is_july(x) && is_day(x, 6)
 end
 
 function is_czech_statehood_day(x::TimeType)
-    return is_september(x) && Dates.day(x) == 28
+    return is_september(x) && is_day(x, 28)
 end
 
 function is_independence_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 28
+    return is_october(x) && is_day(x, 28)
 end
 
 function is_freedom_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 17
+    return is_november(x) && is_day(x, 17)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.CzechRepublic})

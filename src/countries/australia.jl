@@ -10,11 +10,11 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_australia_day(x::TimeType)
-    return is_january(x) && Dates.day(x) == 26
+    return is_january(x) && is_day(x, 26)
 end
 
 function is_anzac_day(x::TimeType)
-    return is_april(x) && Dates.day(x) == 25
+    return is_april(x) && is_day(x, 25)
 end
 
 function is_queens_birthday(x::TimeType)

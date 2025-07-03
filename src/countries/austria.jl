@@ -10,15 +10,15 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_epiphany(x::TimeType)
-    return is_january(x) && Dates.day(x) == 6
+    return is_january(x) && is_day(x, 6)
 end
 
 function is_national_day(x::TimeType)
-    return is_october(x) && Dates.day(x) == 26
+    return is_october(x) && is_day(x, 26)
 end
 
 function is_immaculate_conception(x::TimeType)
-    return is_december(x) && Dates.day(x) == 8
+    return is_december(x) && is_day(x, 8)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Austria})

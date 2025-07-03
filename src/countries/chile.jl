@@ -10,47 +10,47 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_navy_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.May && Dates.day(x) == 21
+    return Dates.month(x) == Dates.May && is_day(x, 21)
 end
 
 function is_national_day_of_indigenous_peoples(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 20
+    return Dates.month(x) == Dates.Jun && is_day(x, 20)
 end
 
 function is_saints_peter_and_paul(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Jun && Dates.day(x) == 29
+    return Dates.month(x) == Dates.Jun && is_day(x, 29)
 end
 
 function is_our_lady_of_mount_carmel(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Jul && Dates.day(x) == 16
+    return Dates.month(x) == Dates.Jul && is_day(x, 16)
 end
 
 function is_assumption_of_mary(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Aug && Dates.day(x) == 15
+    return Dates.month(x) == Dates.Aug && is_day(x, 15)
 end
 
 function is_independence_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 18
+    return Dates.month(x) == Dates.Sep && is_day(x, 18)
 end
 
 function is_army_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Sep && Dates.day(x) == 19
+    return Dates.month(x) == Dates.Sep && is_day(x, 19)
 end
 
 function is_columbus_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 12
+    return Dates.month(x) == Dates.Oct && is_day(x, 12)
 end
 
 function is_reformation_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Oct && Dates.day(x) == 31
+    return Dates.month(x) == Dates.Oct && is_day(x, 31)
 end
 
 function is_all_saints_day(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Nov && Dates.day(x) == 1
+    return Dates.month(x) == Dates.Nov && is_day(x, 1)
 end
 
 function is_immaculate_conception(x::Dates.TimeType)
-    return Dates.month(x) == Dates.Dec && Dates.day(x) == 8
+    return Dates.month(x) == Dates.Dec && is_day(x, 8)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Chile})

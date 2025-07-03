@@ -10,15 +10,15 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_epiphany(x::TimeType)
-    return is_january(x) && Dates.day(x) == 6
+    return is_january(x) && is_day(x, 6)
 end
 
 function is_bastille_day(x::TimeType)
-    return is_july(x) && Dates.day(x) == 14
+    return is_july(x) && is_day(x, 14)
 end
 
 function is_armistice_day(x::TimeType)
-    return is_november(x) && Dates.day(x) == 11
+    return is_november(x) && is_day(x, 11)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.France})
@@ -27,7 +27,7 @@ function Holidays.fetch_holidays(::Type{Holidays.France})
         Holiday("Epiphany", is_epiphany),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("Victory in Europe Day", x -> is_may(x) && Dates.day(x) == 8),
+        Holiday("Victory in Europe Day", x -> is_may(x) && is_day(x, 8)),
         Holiday("Ascension Day", Christian.is_ascension_day),
         Holiday("Whit Monday", Christian.is_whit_monday),
         Holiday("Bastille Day", is_bastille_day),

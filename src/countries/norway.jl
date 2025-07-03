@@ -10,7 +10,7 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_constitution_day(x::TimeType)
-    return is_may(x) && Dates.day(x) == 17
+    return is_may(x) && is_day(x, 17)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Norway})
