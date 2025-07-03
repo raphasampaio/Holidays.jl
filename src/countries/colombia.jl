@@ -11,10 +11,7 @@ const International = Holidays.International
 
 function is_epiphany(x::TimeType)
     # Moved to first Monday after January 6
-    if is_january(x) && is_monday(x) && is_day_between(x, 7, 13)
-        return true
-    end
-    return false
+    return is_january(x) && is_monday(x) && is_day_between(x, 7, 13)
 end
 
 function is_st_joseph_day(x::TimeType)
