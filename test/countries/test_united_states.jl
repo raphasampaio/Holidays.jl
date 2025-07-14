@@ -27,7 +27,7 @@ include("../util.jl")
 
     @testset "Alabama" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Alabama())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 6, 3)])
     end
 
     @testset "Alaska" begin
@@ -42,7 +42,7 @@ include("../util.jl")
 
     @testset "Arkansas" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Arkansas())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 2, 19)])
     end
 
     @testset "California" begin
@@ -62,17 +62,17 @@ include("../util.jl")
 
     @testset "Delaware" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Delaware())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
     end
 
     @testset "Florida" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Florida())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 2, 15), Date(2024, 4, 2)])
     end
 
     @testset "Georgia" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Georgia())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 12, 24)])
     end
 
     @testset "Hawaii" begin
@@ -97,12 +97,12 @@ include("../util.jl")
 
     @testset "Iowa" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Iowa())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 2, 12)])
     end
 
     @testset "Kansas" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Kansas())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)]) # Good Friday
     end
 
     @testset "Kentucky" begin
@@ -122,7 +122,7 @@ include("../util.jl")
 
     @testset "Maryland" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Maryland())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 25)])
     end
 
     @testset "Massachusetts" begin
@@ -132,7 +132,8 @@ include("../util.jl")
 
     @testset "Michigan" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Michigan())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 11, 5)])
+        
     end
 
     @testset "Minnesota" begin
@@ -152,7 +153,8 @@ include("../util.jl")
 
     @testset "Montana" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Montana())
-        test_holidays(calendar, 2024, holidays, Date[])
+        test_holidays(calendar, 2024, holidays, [Date(2024, 11, 5)])
+        
     end
 
     @testset "Nebraska" begin
@@ -163,6 +165,117 @@ include("../util.jl")
     @testset "Nevada" begin
         calendar = Holidays.UnitedStates(subdivision = Subdivision.Nevada())
         test_holidays(calendar, 2024, holidays, [Date(2024, 11, 29)])
+    end
+
+    @testset "NewHampshire" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewHampshire())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 11, 5)])
+    end
+
+    @testset "NewJersey" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewJersey())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29), Date(2024, 11, 5)])
+    end
+
+    @testset "NewMexico" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewMexico())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 31)]) # Cesar Chavez Day
+    end
+
+    @testset "NewYork" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewYork())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 2, 12), Date(2024, 11, 5)])
+    end
+
+    @testset "NorthCarolina" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NorthCarolina())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "NorthDakota" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.NorthDakota())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "Ohio" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Ohio())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "Oklahoma" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Oklahoma())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 11, 16)])
+    end
+
+    @testset "Oregon" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Oregon())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "Pennsylvania" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Pennsylvania())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "RhodeIsland" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.RhodeIsland())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 8, 12)])
+    end
+
+    @testset "SouthCarolina" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.SouthCarolina())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 5, 10)])
+    end
+
+    @testset "SouthDakota" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.SouthDakota())
+        test_holidays(calendar, 2024, holidays, Date[])
+        
+    end
+
+    @testset "Tennessee" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Tennessee())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)])
+    end
+
+    @testset "Texas" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Texas())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 2), Date(2024, 4, 21), Date(2024, 8, 27)])
+    end
+
+    @testset "Utah" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Utah())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 7, 24)])
+    end
+
+    @testset "Vermont" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Vermont())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 5), Date(2024, 8, 16)]) # Town Meeting Day, Bennington Battle Day
+    end
+
+    @testset "Virginia" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Virginia())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 1, 19)]) # Lee-Jackson Day
+    end
+
+    @testset "Washington" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Washington())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)]) # Good Friday
+    end
+
+    @testset "WestVirginia" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.WestVirginia())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 6, 20)]) # West Virginia Day
+    end
+
+    @testset "Wisconsin" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Wisconsin())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 3, 29)]) # Good Friday
+    end
+
+    @testset "Wyoming" begin
+        calendar = Holidays.UnitedStates(subdivision = Subdivision.Wyoming())
+        test_holidays(calendar, 2024, holidays, [Date(2024, 12, 10)]) # Equality Day
     end
 
     return nothing
