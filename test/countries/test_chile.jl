@@ -28,7 +28,7 @@ include("../util.jl")
         Date(2025, 12, 25), # Christmas Day
     ]
 
-    test_holidays(calendar, 2025, holidays)
+    test_holidays(calendar, holidays)
 
     return nothing
 end

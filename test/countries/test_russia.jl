@@ -20,7 +20,7 @@ include("../util.jl")
         Date(2024, 11, 4),  # Unity Day
     ]
 
-    test_holidays(calendar, 2024, holidays)
+    test_holidays(calendar, holidays)
 
     return nothing
 end

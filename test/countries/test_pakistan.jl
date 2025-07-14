@@ -11,7 +11,7 @@ include("../util.jl")
 
     holidays = Date[]
 
-    test_holidays(calendar, 2024, holidays)
+    test_holidays(calendar, holidays)
 
     return nothing
 end

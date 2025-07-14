@@ -28,7 +28,7 @@ include("../util.jl")
         Date(2024, 11, 23), # Labour Thanksgiving Day
     ]
 
-    test_holidays(calendar, 2024, holidays)
+    test_holidays(calendar, holidays)
 
     return nothing
 end

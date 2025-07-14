@@ -21,7 +21,7 @@ include("../util.jl")
         Date(2024, 10, 7),  # Simchat Torah
     ]
 
-    test_holidays(calendar, 2024, holidays)
+    test_holidays(calendar, holidays)
 end
 
 end

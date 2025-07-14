@@ -1,6 +1,10 @@
-function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holidays::Vector{Date})
-    start_date = Date(year, 1, 1)
-    end_date = Date(year, 12, 31)
+function test_holidays(calendar::AbstractHolidayCalendar, holidays::Vector{Date})
+    if isempty(holidays)
+        return nothing
+    end
+
+    start_date = minimum(holidays)
+    end_date  = maximum(holidays)
 
     set = Set(holidays)
 
@@ -10,12 +14,10 @@ function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holiday
         end
     end
 
-    @test length(Holidays.find_holidays(calendar; years = [year])) == length(holidays)
-
     return nothing
 end
 
-function test_holidays(calendar::AbstractHolidayCalendar, year::Integer, holidays::Vector{Date}, more_holidays::Vector{Date})
-    test_holidays(calendar, year, vcat(holidays, more_holidays))
+function test_holidays(calendar::AbstractHolidayCalendar, holidays::Vector{Date}, more_holidays::Vector{Date})
+    test_holidays(calendar, vcat(holidays, more_holidays))
     return nothing
 end

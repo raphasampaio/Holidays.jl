@@ -27,7 +27,7 @@ include("../util.jl")
         Date(2024, 12, 10), # Constitution Day
     ]
 
-    test_holidays(calendar, 2024, holidays)
+    test_holidays(calendar, holidays)
 end
 
 end
