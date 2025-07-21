@@ -339,6 +339,141 @@ include("../util.jl")
 
     test_holidays(calendar, holidays)
 
+    @testset "Acre" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Acre())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Alagoas" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Alagoas())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Amapa" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Amapa())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Amazonas" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Amazonas())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Bahia" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Bahia())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Brasilia" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Brasilia())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Ceara" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Ceara())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Espirito Santo" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.EspiritoSanto())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Goias" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Goias())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Maranhao" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Maranhao())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Mato Grosso" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.MatoGrosso())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Mato Grosso do Sul" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.MatoGrossoDoSul())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Minas Gerais" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.MinasGerais())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Para" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Para())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Paraiba" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Paraiba())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Parana" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Parana())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Pernambuco" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Pernambuco())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Piaui" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Piaui())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Rio de Janeiro" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.RioDeJaneiro())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Rio Grande do Norte" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoNorte())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Rio Grande do Sul" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.RioGrandeDoSul())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Rondonia" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Rondonia())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Roraima" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Roraima())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Santa Catarina" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.SantaCatarina())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Sao Paulo" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.SaoPaulo())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Sergipe" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Sergipe())
+        test_holidays(calendar, holidays, Date[])
+    end
+
+    @testset "Tocantins" begin
+        calendar = Holidays.Brazil(subdivision = Subdivision.Tocantins())
+        test_holidays(calendar, holidays, Date[])
+    end
+
     return nothing
 end
 
