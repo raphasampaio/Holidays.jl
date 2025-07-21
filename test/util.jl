@@ -4,7 +4,7 @@ function test_holidays(calendar::AbstractHolidayCalendar, holidays::Vector{Date}
     end
 
     start_date = minimum(holidays)
-    end_date  = maximum(holidays)
+    end_date = maximum(holidays)
 
     set = Set(holidays)
 
