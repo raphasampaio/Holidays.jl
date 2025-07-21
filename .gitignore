@@ -24,5 +24,3 @@ docs/site/
 Manifest.toml
 
 *.DS_Store
-
-generator.txt

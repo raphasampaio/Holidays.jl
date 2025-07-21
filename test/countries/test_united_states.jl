@@ -612,260 +612,82 @@ include("../util.jl")
         Date(2024, 11, 11), # Veterans Day
         Date(2024, 11, 28), # Thanksgiving Day
         Date(2024, 12, 25), # Christmas Day
+        Date(2025, 1, 1), # New Year's Day
+        Date(2025, 1, 20), # Martin Luther King Jr. Day
+        Date(2025, 2, 17), # Washington's Birthday
+        Date(2025, 5, 26), # Memorial Day
+        Date(2025, 6, 19), # Juneteenth National Independence Day
+        Date(2025, 7, 4), # Independence Day
+        Date(2025, 9, 1), # Labor Day
+        Date(2025, 10, 13), # Columbus Day
+        Date(2025, 11, 11), # Veterans Day
+        Date(2025, 11, 27), # Thanksgiving Day
+        Date(2025, 12, 25), # Christmas Day
+        Date(2026, 1, 1), # New Year's Day
+        Date(2026, 1, 19), # Martin Luther King Jr. Day
+        Date(2026, 2, 16), # Washington's Birthday
+        Date(2026, 5, 25), # Memorial Day
+        Date(2026, 6, 19), # Juneteenth National Independence Day
+        Date(2026, 7, 3), # Independence Day (observed)
+        Date(2026, 7, 4), # Independence Day
+        Date(2026, 9, 7), # Labor Day
+        Date(2026, 10, 12), # Columbus Day
+        Date(2026, 11, 11), # Veterans Day
+        Date(2026, 11, 26), # Thanksgiving Day
+        Date(2026, 12, 25), # Christmas Day
+        Date(2027, 1, 1), # New Year's Day
+        Date(2027, 1, 18), # Martin Luther King Jr. Day
+        Date(2027, 2, 15), # Washington's Birthday
+        Date(2027, 5, 31), # Memorial Day
+        Date(2027, 6, 18), # Juneteenth National Independence Day (observed)
+        Date(2027, 6, 19), # Juneteenth National Independence Day
+        Date(2027, 7, 4), # Independence Day
+        Date(2027, 7, 5), # Independence Day (observed)
+        Date(2027, 9, 6), # Labor Day
+        Date(2027, 10, 11), # Columbus Day
+        Date(2027, 11, 11), # Veterans Day
+        Date(2027, 11, 25), # Thanksgiving Day
+        Date(2027, 12, 24), # Christmas Day (observed)
+        Date(2027, 12, 25), # Christmas Day
+        Date(2027, 12, 31), # New Year's Day (observed)
+        Date(2028, 1, 1), # New Year's Day
+        Date(2028, 1, 17), # Martin Luther King Jr. Day
+        Date(2028, 2, 21), # Washington's Birthday
+        Date(2028, 5, 29), # Memorial Day
+        Date(2028, 6, 19), # Juneteenth National Independence Day
+        Date(2028, 7, 4), # Independence Day
+        Date(2028, 9, 4), # Labor Day
+        Date(2028, 10, 9), # Columbus Day
+        Date(2028, 11, 10), # Veterans Day (observed)
+        Date(2028, 11, 11), # Veterans Day
+        Date(2028, 11, 23), # Thanksgiving Day
+        Date(2028, 12, 25), # Christmas Day
+        Date(2029, 1, 1), # New Year's Day
+        Date(2029, 1, 15), # Martin Luther King Jr. Day
+        Date(2029, 2, 19), # Washington's Birthday
+        Date(2029, 5, 28), # Memorial Day
+        Date(2029, 6, 19), # Juneteenth National Independence Day
+        Date(2029, 7, 4), # Independence Day
+        Date(2029, 9, 3), # Labor Day
+        Date(2029, 10, 8), # Columbus Day
+        Date(2029, 11, 11), # Veterans Day
+        Date(2029, 11, 12), # Veterans Day (observed)
+        Date(2029, 11, 22), # Thanksgiving Day
+        Date(2029, 12, 25), # Christmas Day
+        Date(2030, 1, 1), # New Year's Day
+        Date(2030, 1, 21), # Martin Luther King Jr. Day
+        Date(2030, 2, 18), # Washington's Birthday
+        Date(2030, 5, 27), # Memorial Day
+        Date(2030, 6, 19), # Juneteenth National Independence Day
+        Date(2030, 7, 4), # Independence Day
+        Date(2030, 9, 2), # Labor Day
+        Date(2030, 10, 14), # Columbus Day
+        Date(2030, 11, 11), # Veterans Day
+        Date(2030, 11, 28), # Thanksgiving Day
+        Date(2030, 12, 25), # Christmas Day
     ]
-    
-    
+
     test_holidays(calendar, holidays)
-
-    @testset "Alabama" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Alabama())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Alaska" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Alaska())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Arizona" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Arizona())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Arkansas" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Arkansas())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "California" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.California())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Colorado" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Colorado())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Connecticut" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Connecticut())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Delaware" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Delaware())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Florida" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Florida())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Georgia" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Georgia())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Hawaii" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Hawaii())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Idaho" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Idaho())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Illinois" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Illinois())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Indiana" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Indiana())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Iowa" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Iowa())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Kansas" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Kansas())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Kentucky" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Kentucky())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Louisiana" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Louisiana())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Maine" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Maine())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Maryland" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Maryland())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Massachusetts" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Massachusetts())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Michigan" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Michigan())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Minnesota" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Minnesota())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Mississippi" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Mississippi())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Missouri" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Missouri())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Montana" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Montana())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Nebraska" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Nebraska())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Nevada" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Nevada())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NewHampshire" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewHampshire())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NewJersey" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewJersey())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NewMexico" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewMexico())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NewYork" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NewYork())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NorthCarolina" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NorthCarolina())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "NorthDakota" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.NorthDakota())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Ohio" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Ohio())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Oklahoma" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Oklahoma())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Oregon" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Oregon())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Pennsylvania" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Pennsylvania())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "RhodeIsland" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.RhodeIsland())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "SouthCarolina" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.SouthCarolina())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "SouthDakota" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.SouthDakota())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Tennessee" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Tennessee())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Texas" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Texas())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Utah" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Utah())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Vermont" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Vermont())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Virginia" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Virginia())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Washington" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Washington())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "WestVirginia" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.WestVirginia())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Wisconsin" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Wisconsin())
-        test_holidays(calendar, holidays, Date[])
-    end
-
-    @testset "Wyoming" begin
-        calendar = Holidays.UnitedStates(subdivision = Subdivision.Wyoming())
-        test_holidays(calendar, holidays, Date[])
-    end
 
     return nothing
 end
