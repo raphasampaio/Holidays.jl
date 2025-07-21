@@ -10,6 +10,19 @@ include("../util.jl")
     calendar = Holidays.UnitedStates()
 
     holidays = [
+        Date(2023, 1, 1), # New Year's Day
+        Date(2023, 1, 2), # New Year's Day (observed)
+        Date(2023, 1, 16), # Martin Luther King Jr. Day
+        Date(2023, 2, 20), # Washington's Birthday
+        Date(2023, 5, 29), # Memorial Day
+        Date(2023, 6, 19), # Juneteenth National Independence Day
+        Date(2023, 7, 4), # Independence Day
+        Date(2023, 9, 4), # Labor Day
+        Date(2023, 10, 9), # Columbus Day
+        Date(2023, 11, 10), # Veterans Day (observed)
+        Date(2023, 11, 11), # Veterans Day
+        Date(2023, 11, 23), # Thanksgiving Day
+        Date(2023, 12, 25), # Christmas Day
         Date(2024, 1, 1), # New Year's Day
         Date(2024, 1, 15), # Martin Luther King Jr. Day
         Date(2024, 2, 19), # Washington's Birthday
