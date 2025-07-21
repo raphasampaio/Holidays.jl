@@ -10,9 +10,9 @@ function test_holidays(calendar::AbstractHolidayCalendar, holidays::Vector{Date}
 
     for date in start_date:Day(1):end_date
         if date in set
-            @test in(date, calendar)
+            @test date ∈ calendar
         else
-            @test !in(date, calendar)
+            @test date ∉ calendar
         end
     end
 
