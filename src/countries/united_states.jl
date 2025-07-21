@@ -25,11 +25,20 @@ function is_new_years_day_observed(x::TimeType)
     end
     
     # Check if it's the observed date when NYD falls on weekend
+    # For current year's January 1
     jan_1 = Date(Dates.year(x), 1, 1)
-    if is_saturday(jan_1) && x == jan_1 - Day(1)  # Observed on Friday
+    if is_saturday(jan_1) && x == jan_1 - Day(1)  # Observed on Friday (Dec 31 of previous year)
         return true
-    elseif is_sunday(jan_1) && x == jan_1 + Day(1)  # Observed on Monday
+    elseif is_sunday(jan_1) && x == jan_1 + Day(1)  # Observed on Monday (Jan 2)
         return true
+    end
+    
+    # Check if it's Dec 31 and the next year's Jan 1 falls on Saturday
+    if is_december(x) && is_day(x, 31) && Dates.year(x) >= 1870
+        next_jan_1 = Date(Dates.year(x) + 1, 1, 1)
+        if is_saturday(next_jan_1)  # NYD of next year falls on Saturday, so observed on this Dec 31
+            return true
+        end
     end
     
     return false
