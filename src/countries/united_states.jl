@@ -49,15 +49,42 @@ function is_martin_luther_king_birthday(x::TimeType)
 end
 
 function is_washington_birthday(x::TimeType)
-    return Dates.year(x) >= 1971 && is_february(x) && is_third_monday_of_month(x)
+    year = Dates.year(x)
+    if year < 1871
+        return false
+    elseif year == 1970
+        # In 1970, Washington's Birthday was still celebrated on February 22
+        return is_february(x) && is_day(x, 22)
+    else
+        # From 1971 onwards, it's the third Monday of February
+        return is_february(x) && is_third_monday_of_month(x)
+    end
 end
 
 function is_columbus_day(x::TimeType)
-    return Dates.year(x) >= 1971 && is_october(x) && is_second_monday_of_month(x)
+    year = Dates.year(x)
+    if year < 1968
+        return false
+    elseif year == 1970
+        # In 1970, Columbus Day was still celebrated on October 12
+        return is_october(x) && is_day(x, 12)
+    else
+        # From 1971 onwards, it's the second Monday of October
+        return is_october(x) && is_second_monday_of_month(x)
+    end
 end
 
 function is_memorial_day(x::TimeType)
-    return Dates.year(x) >= 1971 && is_may(x) && is_last_monday_of_month(x)
+    year = Dates.year(x)
+    if year < 1888
+        return false
+    elseif year == 1970
+        # In 1970, Memorial Day was still celebrated on May 30
+        return is_may(x) && is_day(x, 30)
+    else
+        # From 1971 onwards, it's the last Monday of May
+        return is_may(x) && is_last_monday_of_month(x)
+    end
 end
 
 function is_independence_day(x::TimeType)
@@ -94,28 +121,42 @@ function is_thanksgiving_day(x::TimeType)
 end
 
 function is_veterans_day(x::TimeType)
-    return Dates.year(x) >= 1954 && is_november(x) && is_day(x, 11)
+    year = Dates.year(x)
+    if year < 1954
+        return false
+    elseif year >= 1971 && year <= 1977
+        # From 1971-1977, Veterans Day was moved to the fourth Monday of October
+        return is_october(x) && is_fourth_monday_of_month(x)
+    else
+        # Before 1971 and from 1978 onwards, it's November 11
+        return is_november(x) && is_day(x, 11)
+    end
 end
 
 function is_veterans_day_observed(x::TimeType)
-    if Dates.year(x) < 1954
+    year = Dates.year(x)
+    if year < 1954
+        return false
+    elseif year >= 1971 && year <= 1977
+        # From 1971-1977, Veterans Day was the fourth Monday of October (no observation needed)
+        return is_october(x) && is_fourth_monday_of_month(x)
+    else
+        # Before 1971 and from 1978 onwards, it's November 11 with weekend observation
+        # Check if it's Veterans Day itself
+        if is_november(x) && is_day(x, 11)
+            return true
+        end
+        
+        # Check if it's the observed date when November 11th falls on weekend
+        nov_11 = Date(year, 11, 11)
+        if is_saturday(nov_11) && x == nov_11 - Day(1)  # Observed on Friday
+            return true
+        elseif is_sunday(nov_11) && x == nov_11 + Day(1)  # Observed on Monday
+            return true
+        end
+        
         return false
     end
-    
-    # Check if it's Veterans Day itself
-    if is_november(x) && is_day(x, 11)
-        return true
-    end
-    
-    # Check if it's the observed date when November 11th falls on weekend
-    nov_11 = Date(Dates.year(x), 11, 11)
-    if is_saturday(nov_11) && x == nov_11 - Day(1)  # Observed on Friday
-        return true
-    elseif is_sunday(nov_11) && x == nov_11 + Day(1)  # Observed on Monday
-        return true
-    end
-    
-    return false
 end
 
 function is_juneteenth_national_independence_day(x::TimeType)

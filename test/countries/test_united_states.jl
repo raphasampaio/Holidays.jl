@@ -9,7 +9,325 @@ include("../util.jl")
 @testset "UnitedStates" begin
     calendar = Holidays.UnitedStates()
 
-        holidays = [
+    holidays = [
+        Date(1970, 1, 1), # New Year's Day
+        Date(1970, 2, 22), # Washington's Birthday
+        Date(1970, 5, 30), # Memorial Day
+        Date(1970, 7, 3), # Independence Day (observed)
+        Date(1970, 7, 4), # Independence Day
+        Date(1970, 9, 7), # Labor Day
+        Date(1970, 10, 12), # Columbus Day
+        Date(1970, 11, 11), # Veterans Day
+        Date(1970, 11, 26), # Thanksgiving Day
+        Date(1970, 12, 25), # Christmas Day
+        Date(1971, 1, 1), # New Year's Day
+        Date(1971, 2, 15), # Washington's Birthday
+        Date(1971, 5, 31), # Memorial Day
+        Date(1971, 7, 4), # Independence Day
+        Date(1971, 7, 5), # Independence Day (observed)
+        Date(1971, 9, 6), # Labor Day
+        Date(1971, 10, 11), # Columbus Day
+        Date(1971, 10, 25), # Veterans Day
+        Date(1971, 11, 25), # Thanksgiving Day
+        Date(1971, 12, 24), # Christmas Day (observed)
+        Date(1971, 12, 25), # Christmas Day
+        Date(1971, 12, 31), # New Year's Day (observed)
+        Date(1972, 1, 1), # New Year's Day
+        Date(1972, 2, 21), # Washington's Birthday
+        Date(1972, 5, 29), # Memorial Day
+        Date(1972, 7, 4), # Independence Day
+        Date(1972, 9, 4), # Labor Day
+        Date(1972, 10, 9), # Columbus Day
+        Date(1972, 10, 23), # Veterans Day
+        Date(1972, 11, 23), # Thanksgiving Day
+        Date(1972, 12, 25), # Christmas Day
+        Date(1973, 1, 1), # New Year's Day
+        Date(1973, 2, 19), # Washington's Birthday
+        Date(1973, 5, 28), # Memorial Day
+        Date(1973, 7, 4), # Independence Day
+        Date(1973, 9, 3), # Labor Day
+        Date(1973, 10, 8), # Columbus Day
+        Date(1973, 10, 22), # Veterans Day
+        Date(1973, 11, 22), # Thanksgiving Day
+        Date(1973, 12, 25), # Christmas Day
+        Date(1974, 1, 1), # New Year's Day
+        Date(1974, 2, 18), # Washington's Birthday
+        Date(1974, 5, 27), # Memorial Day
+        Date(1974, 7, 4), # Independence Day
+        Date(1974, 9, 2), # Labor Day
+        Date(1974, 10, 14), # Columbus Day
+        Date(1974, 10, 28), # Veterans Day
+        Date(1974, 11, 28), # Thanksgiving Day
+        Date(1974, 12, 25), # Christmas Day
+        Date(1975, 1, 1), # New Year's Day
+        Date(1975, 2, 17), # Washington's Birthday
+        Date(1975, 5, 26), # Memorial Day
+        Date(1975, 7, 4), # Independence Day
+        Date(1975, 9, 1), # Labor Day
+        Date(1975, 10, 13), # Columbus Day
+        Date(1975, 10, 27), # Veterans Day
+        Date(1975, 11, 27), # Thanksgiving Day
+        Date(1975, 12, 25), # Christmas Day
+        Date(1976, 1, 1), # New Year's Day
+        Date(1976, 2, 16), # Washington's Birthday
+        Date(1976, 5, 31), # Memorial Day
+        Date(1976, 7, 4), # Independence Day
+        Date(1976, 7, 5), # Independence Day (observed)
+        Date(1976, 9, 6), # Labor Day
+        Date(1976, 10, 11), # Columbus Day
+        Date(1976, 10, 25), # Veterans Day
+        Date(1976, 11, 25), # Thanksgiving Day
+        Date(1976, 12, 24), # Christmas Day (observed)
+        Date(1976, 12, 25), # Christmas Day
+        Date(1976, 12, 31), # New Year's Day (observed)
+        Date(1977, 1, 1), # New Year's Day
+        Date(1977, 2, 21), # Washington's Birthday
+        Date(1977, 5, 30), # Memorial Day
+        Date(1977, 7, 4), # Independence Day
+        Date(1977, 9, 5), # Labor Day
+        Date(1977, 10, 10), # Columbus Day
+        Date(1977, 10, 24), # Veterans Day
+        Date(1977, 11, 24), # Thanksgiving Day
+        Date(1977, 12, 25), # Christmas Day
+        Date(1977, 12, 26), # Christmas Day (observed)
+        Date(1978, 1, 1), # New Year's Day
+        Date(1978, 1, 2), # New Year's Day (observed)
+        Date(1978, 2, 20), # Washington's Birthday
+        Date(1978, 5, 29), # Memorial Day
+        Date(1978, 7, 4), # Independence Day
+        Date(1978, 9, 4), # Labor Day
+        Date(1978, 10, 9), # Columbus Day
+        Date(1978, 11, 10), # Veterans Day (observed)
+        Date(1978, 11, 11), # Veterans Day
+        Date(1978, 11, 23), # Thanksgiving Day
+        Date(1978, 12, 25), # Christmas Day
+        Date(1979, 1, 1), # New Year's Day
+        Date(1979, 2, 19), # Washington's Birthday
+        Date(1979, 5, 28), # Memorial Day
+        Date(1979, 7, 4), # Independence Day
+        Date(1979, 9, 3), # Labor Day
+        Date(1979, 10, 8), # Columbus Day
+        Date(1979, 11, 11), # Veterans Day
+        Date(1979, 11, 12), # Veterans Day (observed)
+        Date(1979, 11, 22), # Thanksgiving Day
+        Date(1979, 12, 25), # Christmas Day
+        Date(1980, 1, 1), # New Year's Day
+        Date(1980, 2, 18), # Washington's Birthday
+        Date(1980, 5, 26), # Memorial Day
+        Date(1980, 7, 4), # Independence Day
+        Date(1980, 9, 1), # Labor Day
+        Date(1980, 10, 13), # Columbus Day
+        Date(1980, 11, 11), # Veterans Day
+        Date(1980, 11, 27), # Thanksgiving Day
+        Date(1980, 12, 25), # Christmas Day
+        Date(1981, 1, 1), # New Year's Day
+        Date(1981, 2, 16), # Washington's Birthday
+        Date(1981, 5, 25), # Memorial Day
+        Date(1981, 7, 3), # Independence Day (observed)
+        Date(1981, 7, 4), # Independence Day
+        Date(1981, 9, 7), # Labor Day
+        Date(1981, 10, 12), # Columbus Day
+        Date(1981, 11, 11), # Veterans Day
+        Date(1981, 11, 26), # Thanksgiving Day
+        Date(1981, 12, 25), # Christmas Day
+        Date(1982, 1, 1), # New Year's Day
+        Date(1982, 2, 15), # Washington's Birthday
+        Date(1982, 5, 31), # Memorial Day
+        Date(1982, 7, 4), # Independence Day
+        Date(1982, 7, 5), # Independence Day (observed)
+        Date(1982, 9, 6), # Labor Day
+        Date(1982, 10, 11), # Columbus Day
+        Date(1982, 11, 11), # Veterans Day
+        Date(1982, 11, 25), # Thanksgiving Day
+        Date(1982, 12, 24), # Christmas Day (observed)
+        Date(1982, 12, 25), # Christmas Day
+        Date(1982, 12, 31), # New Year's Day (observed)
+        Date(1983, 1, 1), # New Year's Day
+        Date(1983, 2, 21), # Washington's Birthday
+        Date(1983, 5, 30), # Memorial Day
+        Date(1983, 7, 4), # Independence Day
+        Date(1983, 9, 5), # Labor Day
+        Date(1983, 10, 10), # Columbus Day
+        Date(1983, 11, 11), # Veterans Day
+        Date(1983, 11, 24), # Thanksgiving Day
+        Date(1983, 12, 25), # Christmas Day
+        Date(1983, 12, 26), # Christmas Day (observed)
+        Date(1984, 1, 1), # New Year's Day
+        Date(1984, 1, 2), # New Year's Day (observed)
+        Date(1984, 2, 20), # Washington's Birthday
+        Date(1984, 5, 28), # Memorial Day
+        Date(1984, 7, 4), # Independence Day
+        Date(1984, 9, 3), # Labor Day
+        Date(1984, 10, 8), # Columbus Day
+        Date(1984, 11, 11), # Veterans Day
+        Date(1984, 11, 12), # Veterans Day (observed)
+        Date(1984, 11, 22), # Thanksgiving Day
+        Date(1984, 12, 25), # Christmas Day
+        Date(1985, 1, 1), # New Year's Day
+        Date(1985, 2, 18), # Washington's Birthday
+        Date(1985, 5, 27), # Memorial Day
+        Date(1985, 7, 4), # Independence Day
+        Date(1985, 9, 2), # Labor Day
+        Date(1985, 10, 14), # Columbus Day
+        Date(1985, 11, 11), # Veterans Day
+        Date(1985, 11, 28), # Thanksgiving Day
+        Date(1985, 12, 25), # Christmas Day
+        Date(1986, 1, 1), # New Year's Day
+        Date(1986, 1, 20), # Martin Luther King Jr. Day
+        Date(1986, 2, 17), # Washington's Birthday
+        Date(1986, 5, 26), # Memorial Day
+        Date(1986, 7, 4), # Independence Day
+        Date(1986, 9, 1), # Labor Day
+        Date(1986, 10, 13), # Columbus Day
+        Date(1986, 11, 11), # Veterans Day
+        Date(1986, 11, 27), # Thanksgiving Day
+        Date(1986, 12, 25), # Christmas Day
+        Date(1987, 1, 1), # New Year's Day
+        Date(1987, 1, 19), # Martin Luther King Jr. Day
+        Date(1987, 2, 16), # Washington's Birthday
+        Date(1987, 5, 25), # Memorial Day
+        Date(1987, 7, 3), # Independence Day (observed)
+        Date(1987, 7, 4), # Independence Day
+        Date(1987, 9, 7), # Labor Day
+        Date(1987, 10, 12), # Columbus Day
+        Date(1987, 11, 11), # Veterans Day
+        Date(1987, 11, 26), # Thanksgiving Day
+        Date(1987, 12, 25), # Christmas Day
+        Date(1988, 1, 1), # New Year's Day
+        Date(1988, 1, 18), # Martin Luther King Jr. Day
+        Date(1988, 2, 15), # Washington's Birthday
+        Date(1988, 5, 30), # Memorial Day
+        Date(1988, 7, 4), # Independence Day
+        Date(1988, 9, 5), # Labor Day
+        Date(1988, 10, 10), # Columbus Day
+        Date(1988, 11, 11), # Veterans Day
+        Date(1988, 11, 24), # Thanksgiving Day
+        Date(1988, 12, 25), # Christmas Day
+        Date(1988, 12, 26), # Christmas Day (observed)
+        Date(1989, 1, 1), # New Year's Day
+        Date(1989, 1, 2), # New Year's Day (observed)
+        Date(1989, 1, 16), # Martin Luther King Jr. Day
+        Date(1989, 2, 20), # Washington's Birthday
+        Date(1989, 5, 29), # Memorial Day
+        Date(1989, 7, 4), # Independence Day
+        Date(1989, 9, 4), # Labor Day
+        Date(1989, 10, 9), # Columbus Day
+        Date(1989, 11, 10), # Veterans Day (observed)
+        Date(1989, 11, 11), # Veterans Day
+        Date(1989, 11, 23), # Thanksgiving Day
+        Date(1989, 12, 25), # Christmas Day
+        Date(1990, 1, 1), # New Year's Day
+        Date(1990, 1, 15), # Martin Luther King Jr. Day
+        Date(1990, 2, 19), # Washington's Birthday
+        Date(1990, 5, 28), # Memorial Day
+        Date(1990, 7, 4), # Independence Day
+        Date(1990, 9, 3), # Labor Day
+        Date(1990, 10, 8), # Columbus Day
+        Date(1990, 11, 11), # Veterans Day
+        Date(1990, 11, 12), # Veterans Day (observed)
+        Date(1990, 11, 22), # Thanksgiving Day
+        Date(1990, 12, 25), # Christmas Day
+        Date(1991, 1, 1), # New Year's Day
+        Date(1991, 1, 21), # Martin Luther King Jr. Day
+        Date(1991, 2, 18), # Washington's Birthday
+        Date(1991, 5, 27), # Memorial Day
+        Date(1991, 7, 4), # Independence Day
+        Date(1991, 9, 2), # Labor Day
+        Date(1991, 10, 14), # Columbus Day
+        Date(1991, 11, 11), # Veterans Day
+        Date(1991, 11, 28), # Thanksgiving Day
+        Date(1991, 12, 25), # Christmas Day
+        Date(1992, 1, 1), # New Year's Day
+        Date(1992, 1, 20), # Martin Luther King Jr. Day
+        Date(1992, 2, 17), # Washington's Birthday
+        Date(1992, 5, 25), # Memorial Day
+        Date(1992, 7, 3), # Independence Day (observed)
+        Date(1992, 7, 4), # Independence Day
+        Date(1992, 9, 7), # Labor Day
+        Date(1992, 10, 12), # Columbus Day
+        Date(1992, 11, 11), # Veterans Day
+        Date(1992, 11, 26), # Thanksgiving Day
+        Date(1992, 12, 25), # Christmas Day
+        Date(1993, 1, 1), # New Year's Day
+        Date(1993, 1, 18), # Martin Luther King Jr. Day
+        Date(1993, 2, 15), # Washington's Birthday
+        Date(1993, 5, 31), # Memorial Day
+        Date(1993, 7, 4), # Independence Day
+        Date(1993, 7, 5), # Independence Day (observed)
+        Date(1993, 9, 6), # Labor Day
+        Date(1993, 10, 11), # Columbus Day
+        Date(1993, 11, 11), # Veterans Day
+        Date(1993, 11, 25), # Thanksgiving Day
+        Date(1993, 12, 24), # Christmas Day (observed)
+        Date(1993, 12, 25), # Christmas Day
+        Date(1993, 12, 31), # New Year's Day (observed)
+        Date(1994, 1, 1), # New Year's Day
+        Date(1994, 1, 17), # Martin Luther King Jr. Day
+        Date(1994, 2, 21), # Washington's Birthday
+        Date(1994, 5, 30), # Memorial Day
+        Date(1994, 7, 4), # Independence Day
+        Date(1994, 9, 5), # Labor Day
+        Date(1994, 10, 10), # Columbus Day
+        Date(1994, 11, 11), # Veterans Day
+        Date(1994, 11, 24), # Thanksgiving Day
+        Date(1994, 12, 25), # Christmas Day
+        Date(1994, 12, 26), # Christmas Day (observed)
+        Date(1995, 1, 1), # New Year's Day
+        Date(1995, 1, 2), # New Year's Day (observed)
+        Date(1995, 1, 16), # Martin Luther King Jr. Day
+        Date(1995, 2, 20), # Washington's Birthday
+        Date(1995, 5, 29), # Memorial Day
+        Date(1995, 7, 4), # Independence Day
+        Date(1995, 9, 4), # Labor Day
+        Date(1995, 10, 9), # Columbus Day
+        Date(1995, 11, 10), # Veterans Day (observed)
+        Date(1995, 11, 11), # Veterans Day
+        Date(1995, 11, 23), # Thanksgiving Day
+        Date(1995, 12, 25), # Christmas Day
+        Date(1996, 1, 1), # New Year's Day
+        Date(1996, 1, 15), # Martin Luther King Jr. Day
+        Date(1996, 2, 19), # Washington's Birthday
+        Date(1996, 5, 27), # Memorial Day
+        Date(1996, 7, 4), # Independence Day
+        Date(1996, 9, 2), # Labor Day
+        Date(1996, 10, 14), # Columbus Day
+        Date(1996, 11, 11), # Veterans Day
+        Date(1996, 11, 28), # Thanksgiving Day
+        Date(1996, 12, 25), # Christmas Day
+        Date(1997, 1, 1), # New Year's Day
+        Date(1997, 1, 20), # Martin Luther King Jr. Day
+        Date(1997, 2, 17), # Washington's Birthday
+        Date(1997, 5, 26), # Memorial Day
+        Date(1997, 7, 4), # Independence Day
+        Date(1997, 9, 1), # Labor Day
+        Date(1997, 10, 13), # Columbus Day
+        Date(1997, 11, 11), # Veterans Day
+        Date(1997, 11, 27), # Thanksgiving Day
+        Date(1997, 12, 25), # Christmas Day
+        Date(1998, 1, 1), # New Year's Day
+        Date(1998, 1, 19), # Martin Luther King Jr. Day
+        Date(1998, 2, 16), # Washington's Birthday
+        Date(1998, 5, 25), # Memorial Day
+        Date(1998, 7, 3), # Independence Day (observed)
+        Date(1998, 7, 4), # Independence Day
+        Date(1998, 9, 7), # Labor Day
+        Date(1998, 10, 12), # Columbus Day
+        Date(1998, 11, 11), # Veterans Day
+        Date(1998, 11, 26), # Thanksgiving Day
+        Date(1998, 12, 25), # Christmas Day
+        Date(1999, 1, 1), # New Year's Day
+        Date(1999, 1, 18), # Martin Luther King Jr. Day
+        Date(1999, 2, 15), # Washington's Birthday
+        Date(1999, 5, 31), # Memorial Day
+        Date(1999, 7, 4), # Independence Day
+        Date(1999, 7, 5), # Independence Day (observed)
+        Date(1999, 9, 6), # Labor Day
+        Date(1999, 10, 11), # Columbus Day
+        Date(1999, 11, 11), # Veterans Day
+        Date(1999, 11, 25), # Thanksgiving Day
+        Date(1999, 12, 24), # Christmas Day (observed)
+        Date(1999, 12, 25), # Christmas Day
+        Date(1999, 12, 31), # New Year's Day (observed)
         Date(2000, 1, 1), # New Year's Day
         Date(2000, 1, 17), # Martin Luther King Jr. Day
         Date(2000, 2, 21), # Washington's Birthday
@@ -295,7 +613,8 @@ include("../util.jl")
         Date(2024, 11, 28), # Thanksgiving Day
         Date(2024, 12, 25), # Christmas Day
     ]
-
+    
+    
     test_holidays(calendar, holidays)
 
     @testset "Alabama" begin
