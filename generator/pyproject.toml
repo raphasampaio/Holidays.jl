@@ -1,0 +1,12 @@
+[project]
+name = "holidays-jl"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "holidays>=0.76",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.12.2",
+]
