@@ -1,1 +1,0 @@
-uv run main.py %* >generator.txt 2>&1
