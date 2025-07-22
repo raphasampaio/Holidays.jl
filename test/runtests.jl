@@ -16,7 +16,7 @@ end
 
 @testset verbose = true failfast = true "Holidays" begin
     if length(ARGS) > 0
-        include(ARGS[1])
+        include(joinpath(@__DIR__, ARGS[1]))
     else
         recursive_include(@__DIR__)
     end
