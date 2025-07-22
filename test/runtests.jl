@@ -15,5 +15,9 @@ function recursive_include(path::String)
 end
 
 @testset verbose = true failfast = true "Holidays" begin
-    recursive_include(@__DIR__)
+    if length(ARGS) > 0
+        include(ARGS[1])
+    else
+        recursive_include(@__DIR__)
+    end
 end
