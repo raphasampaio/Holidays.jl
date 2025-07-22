@@ -42,7 +42,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Finland})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Sunday", Christian.is_easter),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("May Day", International.is_workers_day),
         Holiday("Ascension Day", Christian.is_ascension_day),

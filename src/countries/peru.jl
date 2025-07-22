@@ -44,9 +44,9 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Peru})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("Maundy Thursday", x -> x == (Christian.easter(Dates.year(x)) - Dates.Day(3))),
+        Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Sunday", Christian.is_easter),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("St. Peter and St. Paul", is_st_peter_and_st_paul),
         Holiday("Independence Day", is_independence_day),

@@ -25,7 +25,7 @@ end
 
 function is_clean_monday(x::TimeType)
     # Monday before Orthodox Easter (48 days before)
-    easter = Christian.easter(Dates.year(x))
+    easter = Christian.easter_sunday(Dates.year(x))
     return x == easter - Dates.Day(48)
 end
 
@@ -36,7 +36,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Greece})
         Holiday("Clean Monday", is_clean_monday),
         Holiday("Independence Day", is_independence_day),
         Holiday("Orthodox Good Friday", Christian.is_good_friday),
-        Holiday("Orthodox Easter", Christian.is_easter),
+        Holiday("Orthodox Easter", Christian.is_easter_sunday),
         Holiday("Orthodox Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Whit Monday", Christian.is_whit_monday),

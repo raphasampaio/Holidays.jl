@@ -148,10 +148,10 @@ function is_ascension_day_colombia(x::TimeType)
     
     if year < 1984
         # Before 1984: observed on actual date (Easter + 39 days)
-        return x == (Christian.easter(year) + Dates.Day(39))
+        return x == (Christian.easter_sunday(year) + Dates.Day(39))
     else
         # From 1984 onwards: moved to nearest Monday after Ascension Day
-        actual_date = Christian.easter(year) + Dates.Day(39)
+        actual_date = Christian.easter_sunday(year) + Dates.Day(39)
         if Dates.dayofweek(actual_date) == Dates.Mon
             return x == actual_date
         else
@@ -167,10 +167,10 @@ function is_corpus_christi_colombia(x::TimeType)
     
     if year < 1984
         # Before 1984: observed on actual date (Easter + 60 days)
-        return x == (Christian.easter(year) + Dates.Day(60))
+        return x == (Christian.easter_sunday(year) + Dates.Day(60))
     else
         # From 1984 onwards: moved to nearest Monday after Corpus Christi
-        actual_date = Christian.easter(year) + Dates.Day(60)
+        actual_date = Christian.easter_sunday(year) + Dates.Day(60)
         if Dates.dayofweek(actual_date) == Dates.Mon
             return x == actual_date
         else
@@ -189,7 +189,7 @@ function is_sacred_heart(x::TimeType)
         return false
     else
         # From 1984 onwards: moved to nearest Monday after Sacred Heart (Easter + 68)
-        actual_date = Christian.easter(year) + Dates.Day(68)
+        actual_date = Christian.easter_sunday(year) + Dates.Day(68)
         if Dates.dayofweek(actual_date) == Dates.Mon
             return x == actual_date
         else
@@ -226,7 +226,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Colombia})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Epiphany", is_epiphany),
         Holiday("St. Joseph's Day", is_st_joseph_day),
-        Holiday("Maundy Thursday", x -> x == (Christian.easter(Dates.year(x)) - Dates.Day(3))),
+        Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Ascension Day", is_ascension_day_colombia),

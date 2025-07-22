@@ -11,7 +11,7 @@ const International = Holidays.International
 
 function is_general_prayer_day(x::TimeType)
     # Fourth Friday after Easter
-    easter = Christian.easter(Dates.year(x))
+    easter = Christian.easter_sunday(Dates.year(x))
     return x == easter + Dates.Day(26)
 end
 
@@ -23,7 +23,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Denmark})
     return [Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Maundy Thursday", Christian.is_maundy_thursday),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Sunday", Christian.is_easter),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("General Prayer Day", is_general_prayer_day),
         Holiday("Ascension Day", Christian.is_ascension_day),

@@ -10,11 +10,11 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_carnival_monday(x::TimeType)
-    return x == (Christian.easter(Dates.year(x)) - Dates.Day(48))
+    return x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(48))
 end
 
 function is_carnival_tuesday(x::TimeType)
-    return x == (Christian.easter(Dates.year(x)) - Dates.Day(47))
+    return x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(47))
 end
 
 function is_battle_of_pichincha(x::TimeType)

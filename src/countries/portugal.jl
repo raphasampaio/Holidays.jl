@@ -33,7 +33,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Portugal})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Sunday", Christian.is_easter),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Freedom Day", is_freedom_day),
         Holiday("Labour Day", International.is_workers_day),
         Holiday("Portugal Day", is_portugal_day),

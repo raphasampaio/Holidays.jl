@@ -18,7 +18,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Norway})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Maundy Thursday", Christian.is_maundy_thursday),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Sunday", Christian.is_easter),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labor Day", International.is_workers_day),
         Holiday("Constitution Day", is_constitution_day),

@@ -6,26 +6,26 @@ include("../dates.jl")
 
 is_shrove_sunday(x::TimeType) = x == shrove_sunday(Dates.year(x))
 function shrove_sunday(year::Integer)
-    return easter(year) - Dates.Day(49)
+    return easter_sunday(year) - Dates.Day(49)
 end
 
 is_shrove_monday(x::TimeType) = x == shrove_monday(Dates.year(x))
 function shrove_monday(year::Integer)
-    return easter(year) - Dates.Day(48)
+    return easter_sunday(year) - Dates.Day(48)
 end
 
 is_shrove_tuesday(x::TimeType) = x == shrove_tuesday(Dates.year(x))
 function shrove_tuesday(year::Integer)
-    return easter(year) - Dates.Day(47)
+    return easter_sunday(year) - Dates.Day(47)
 end
 
 is_ash_wednesday(x::TimeType) = x == ash_wednesday(Dates.year(x))
 function ash_wednesday(year::Integer)
-    return easter(year) - Dates.Day(46)
+    return easter_sunday(year) - Dates.Day(46)
 end
 
-is_easter(x::TimeType) = x == easter(Dates.year(x))
-function easter(year::Integer)
+is_easter_sunday(x::TimeType) = x == easter_sunday(Dates.year(x))
+function easter_sunday(year::Integer)
     g = year % 19
     c = div(year, 100)
     h = (c - div(c, 4) - div(8 * c + 13, 25) + 19 * g + 15) % 30
@@ -40,42 +40,42 @@ end
 
 is_maundy_thursday(x::TimeType) = x == maundy_thursday(Dates.year(x))
 function maundy_thursday(year::Integer)
-    return easter(year) - Dates.Day(3)
+    return easter_sunday(year) - Dates.Day(3)
 end
 
 is_good_friday(x::TimeType) = x == good_friday(Dates.year(x))
 function good_friday(year::Integer)
-    return easter(year) - Dates.Day(2)
+    return easter_sunday(year) - Dates.Day(2)
 end
 
 is_holy_saturday(x::TimeType) = x == holy_saturday(Dates.year(x))
 function holy_saturday(year::Integer)
-    return easter(year) - Dates.Day(1)
+    return easter_sunday(year) - Dates.Day(1)
 end
 
 is_easter_monday(x::TimeType) = x == easter_monday(Dates.year(x))
 function easter_monday(year::Integer)
-    return easter(year) + Dates.Day(1)
+    return easter_sunday(year) + Dates.Day(1)
 end
 
 is_corpus_christi(x::TimeType) = x == corpus_christi(Dates.year(x))
 function corpus_christi(year::Integer)
-    return easter(year) + Dates.Day(60)
+    return easter_sunday(year) + Dates.Day(60)
 end
 
 is_ascension_day(x::TimeType) = x == ascension_day(Dates.year(x))
 function ascension_day(year::Integer)
-    return easter(year) + Dates.Day(39)
+    return easter_sunday(year) + Dates.Day(39)
 end
 
 is_whit_monday(x::TimeType) = x == whit_monday(Dates.year(x))
 function whit_monday(year::Integer)
-    return easter(year) + Dates.Day(50)
+    return easter_sunday(year) + Dates.Day(50)
 end
 
 is_whit_sunday(x::TimeType) = x == whit_sunday(Dates.year(x))
 function whit_sunday(year::Integer)
-    return easter(year) + Dates.Day(49)
+    return easter_sunday(year) + Dates.Day(49)
 end
 
 is_assumption_day(x::TimeType) = x == assumption_day(Dates.year(x))
