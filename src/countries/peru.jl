@@ -9,16 +9,8 @@ const Christian = Holidays.Christian
 const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
-function is_battle_of_arica(x::TimeType)
-    return is_june(x) && is_day(x, 7)
-end
-
 function is_st_peter_and_st_paul(x::TimeType)
     return is_june(x) && is_day(x, 29)
-end
-
-function is_peruvian_air_force_day(x::TimeType)
-    return is_july(x) && is_day(x, 23)
 end
 
 function is_independence_day(x::TimeType)
@@ -26,7 +18,7 @@ function is_independence_day(x::TimeType)
 end
 
 function is_battle_of_junin(x::TimeType)
-    return is_august(x) && is_day(x, 6)
+    return is_august(x) && is_day(x, 6) && Dates.year(x) >= 2022
 end
 
 function is_santa_rosa_de_lima(x::TimeType)
@@ -46,7 +38,7 @@ function is_immaculate_conception(x::TimeType)
 end
 
 function is_battle_of_ayacucho(x::TimeType)
-    return is_december(x) && is_day(x, 9)
+    return is_december(x) && is_day(x, 9) && Dates.year(x) >= 2022
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Peru})
@@ -54,10 +46,9 @@ function Holidays.fetch_holidays(::Type{Holidays.Peru})
         Holiday("New Year's Day", Gregorian.is_new_years_day),
         Holiday("Maundy Thursday", x -> x == (Christian.easter(Dates.year(x)) - Dates.Day(3))),
         Holiday("Good Friday", Christian.is_good_friday),
+        Holiday("Easter Sunday", Christian.is_easter),
         Holiday("Labour Day", International.is_workers_day),
-        Holiday("Battle of Arica", is_battle_of_arica),
         Holiday("St. Peter and St. Paul", is_st_peter_and_st_paul),
-        Holiday("Peruvian Air Force Day", is_peruvian_air_force_day),
         Holiday("Independence Day", is_independence_day),
         Holiday("Battle of Junín", is_battle_of_junin),
         Holiday("Santa Rosa de Lima", is_santa_rosa_de_lima),
