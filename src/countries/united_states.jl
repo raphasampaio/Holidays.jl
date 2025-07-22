@@ -18,12 +18,12 @@ function is_new_years_day_observed(x::TimeType)
     if Dates.year(x) < 1871
         return false
     end
-    
+
     # Check if it's New Year's Day itself
     if Gregorian.is_new_years_day(x)
         return true
     end
-    
+
     # Check if it's the observed date when NYD falls on weekend
     # For current year's January 1
     jan_1 = Date(Dates.year(x), 1, 1)
@@ -32,7 +32,7 @@ function is_new_years_day_observed(x::TimeType)
     elseif is_sunday(jan_1) && x == jan_1 + Day(1)  # Observed on Monday (Jan 2)
         return true
     end
-    
+
     # Check if it's Dec 31 and the next year's Jan 1 falls on Saturday
     if is_december(x) && is_day(x, 31) && Dates.year(x) >= 1870
         next_jan_1 = Date(Dates.year(x) + 1, 1, 1)
@@ -40,7 +40,7 @@ function is_new_years_day_observed(x::TimeType)
             return true
         end
     end
-    
+
     return false
 end
 
@@ -95,12 +95,12 @@ function is_independence_day_observed(x::TimeType)
     if Dates.year(x) < 1871
         return false
     end
-    
+
     # Check if it's Independence Day itself
     if is_july(x) && is_day(x, 4)
         return true
     end
-    
+
     # Check if it's the observed date when July 4th falls on weekend
     july_4 = Date(Dates.year(x), 7, 4)
     if is_saturday(july_4) && x == july_4 - Day(1)  # Observed on Friday
@@ -108,7 +108,7 @@ function is_independence_day_observed(x::TimeType)
     elseif is_sunday(july_4) && x == july_4 + Day(1)  # Observed on Monday
         return true
     end
-    
+
     return false
 end
 
@@ -146,7 +146,7 @@ function is_veterans_day_observed(x::TimeType)
         if is_november(x) && is_day(x, 11)
             return true
         end
-        
+
         # Check if it's the observed date when November 11th falls on weekend
         nov_11 = Date(year, 11, 11)
         if is_saturday(nov_11) && x == nov_11 - Day(1)  # Observed on Friday
@@ -154,7 +154,7 @@ function is_veterans_day_observed(x::TimeType)
         elseif is_sunday(nov_11) && x == nov_11 + Day(1)  # Observed on Monday
             return true
         end
-        
+
         return false
     end
 end
@@ -167,12 +167,12 @@ function is_juneteenth_national_independence_day_observed(x::TimeType)
     if Dates.year(x) < 2021
         return false
     end
-    
+
     # Check if it's Juneteenth itself
     if is_june(x) && is_day(x, 19)
         return true
     end
-    
+
     # Check if it's the observed date when June 19th falls on weekend
     june_19 = Date(Dates.year(x), 6, 19)
     if is_saturday(june_19) && x == june_19 - Day(1)  # Observed on Friday
@@ -180,7 +180,7 @@ function is_juneteenth_national_independence_day_observed(x::TimeType)
     elseif is_sunday(june_19) && x == june_19 + Day(1)  # Observed on Monday
         return true
     end
-    
+
     return false
 end
 
@@ -201,7 +201,7 @@ function is_christmas_day_observed(x::TimeType)
     if Christian.is_christmas_day(x)
         return true
     end
-    
+
     # Check if it's the observed date when December 25th falls on weekend
     dec_25 = Date(Dates.year(x), 12, 25)
     if is_saturday(dec_25) && x == dec_25 - Day(1)  # Observed on Friday
@@ -209,7 +209,7 @@ function is_christmas_day_observed(x::TimeType)
     elseif is_sunday(dec_25) && x == dec_25 + Day(1)  # Observed on Monday
         return true
     end
-    
+
     return false
 end
 

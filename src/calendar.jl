@@ -46,19 +46,19 @@ function Base.show(io::IO, calendar::AbstractHolidayCalendar)
     type_name = string(typeof(calendar))
     type_name = replace(type_name, r".*\." => "")  # Remove module prefix
     type_name = replace(type_name, r"\{.*\}" => "") # Remove type parameters
-    
+
     # Check if it has a subdivision
     subdivision_info = if hasproperty(calendar, :subdivision) && calendar.subdivision !== nothing
         " ($(calendar.subdivision))"
     else
         ""
     end
-    
+
     # Count holidays
     holiday_count = length(calendar.holidays)
-    
+
     print(io, "$(type_name)$(subdivision_info) with $(holiday_count) holiday$(holiday_count == 1 ? "" : "s")")
-    
+
     # If there are holidays, show them in a nice format
     if holiday_count > 0
         print(io, ":\n")
@@ -70,5 +70,5 @@ function Base.show(io::IO, calendar::AbstractHolidayCalendar)
 end
 
 function Base.show(io::IO, ::MIME"text/plain", calendar::AbstractHolidayCalendar)
-    show(io, calendar)
+    return show(io, calendar)
 end
