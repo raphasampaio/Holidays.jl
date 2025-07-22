@@ -11,7 +11,7 @@ const International = Holidays.International
 
 function is_epiphany(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_january(x) && is_day(x, 6)
@@ -32,7 +32,7 @@ end
 
 function is_st_joseph_day(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_march(x) && is_day(x, 19)
@@ -53,7 +53,7 @@ end
 
 function is_st_peter_and_st_paul_day(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_june(x) && is_day(x, 29)
@@ -82,7 +82,7 @@ end
 
 function is_assumption(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_august(x) && is_day(x, 15)
@@ -103,7 +103,7 @@ end
 
 function is_columbus_day(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_october(x) && is_day(x, 12)
@@ -124,7 +124,7 @@ end
 
 function is_all_saints(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_november(x) && is_day(x, 1)
@@ -145,7 +145,7 @@ end
 
 function is_ascension_day_colombia(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date (Easter + 39 days)
         return x == (Christian.easter_sunday(year) + Dates.Day(39))
@@ -164,7 +164,7 @@ end
 
 function is_corpus_christi_colombia(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date (Easter + 60 days)
         return x == (Christian.easter_sunday(year) + Dates.Day(60))
@@ -183,7 +183,7 @@ end
 
 function is_sacred_heart(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: not a holiday
         return false
@@ -202,7 +202,7 @@ end
 
 function is_independence_cartagena(x::TimeType)
     year = Dates.year(x)
-    
+
     if year < 1984
         # Before 1984: observed on actual date
         return is_november(x) && is_day(x, 11)

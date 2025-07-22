@@ -26,7 +26,7 @@ end
 
 function is_martyrs_day_observed(x::TimeType)
     year = Dates.year(x)
-    
+
     # Martyrs' Day started in 1972
     if year < 1972
         return false
@@ -93,12 +93,12 @@ end
 
 function is_colon_day_observed(x::TimeType)
     year = Dates.year(x)
-    
+
     # Colon Day started in 2002
     if year < 2002
         return false
     end
-    
+
     # Check if it's Colon Day itself
     if is_november(x) && is_day(x, 5)
         return true
@@ -115,7 +115,7 @@ end
 
 function is_independence_day_observed(x::TimeType)
     year = Dates.year(x)
-    
+
     # Check if it's Independence Day itself (November 28)
     if is_november(x) && is_day(x, 28)
         return true
@@ -153,14 +153,14 @@ end
 
 function is_presidential_inauguration_day_observed(x::TimeType)
     year = Dates.year(x)
-    
+
     # Presidential Inauguration Day occurs in specific years: 2014, 2019, 2024
     if year == 2014 || year == 2019 || year == 2024
         # Check if it's July 1st
         if is_july(x) && is_day(x, 1)
             return true
         end
-        
+
         # Check if it's the observed date when July 1 falls on Sunday
         jul_1 = Date(year, 7, 1)
         if is_sunday(jul_1) && x == jul_1 + Dates.Day(1)  # Observed on Monday
@@ -173,12 +173,12 @@ end
 
 function is_national_mourning_day_observed(x::TimeType)
     year = Dates.year(x)
-    
+
     # National Mourning Day started in 2022
     if year < 2022
         return false
     end
-    
+
     # Check if it's National Mourning Day itself (December 20)
     if is_december(x) && is_day(x, 20)
         return true
