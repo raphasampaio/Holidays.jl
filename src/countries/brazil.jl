@@ -18,7 +18,7 @@ function Holidays.fetch_holidays(::Type{Brazil})
         Holiday("Tiradentes' Day", x -> is_april(x) && is_day(x, 21)),
         Holiday("Worker's Day", International.is_workers_day),
         Holiday("Independence Day", x -> is_september(x) && is_day(x, 7)),
-        Holiday("Our Lady of Aparecida", x -> is_october(x) && is_day(x, 12)),
+        Holiday("Our Lady of Aparecida", x -> Dates.year(x) >= 1980 && is_october(x) && is_day(x, 12)),
         Holiday("All Souls' Day", Christian.is_all_souls_day),
         Holiday("Republic Proclamation Day", x -> is_november(x) && is_day(x, 15)),
         Holiday("National Day of Zumbi and Black Awareness", x -> Dates.year(x) >= 2024 && is_november(x) && is_day(x, 20)),
