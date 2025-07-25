@@ -3,7 +3,7 @@
 SET BASEPATH=%~dp0
 
 IF "%~1"=="" (
-    CALL "%JULIA_1115%" --project=%BASEPATH%\.. -e "import Pkg; Pkg.test()"
+    CALL julia +1.11.6 --project=%BASEPATH%\.. -e "import Pkg; Pkg.test()"
 ) ELSE (
-    CALL "%JULIA_1115%" --project=%BASEPATH%\.. %BASEPATH%\runtests.jl %1
+    CALL julia +1.11.6 --project=%BASEPATH%\.. %BASEPATH%\runtests.jl %1
 )
