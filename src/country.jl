@@ -1,16 +1,16 @@
 macro country(name)
     quote
         begin
-            struct $(esc(name)){T <: Union{Nothing, Subdivision.AbstractSubdivision}} <: AbstractHolidayCalendar
-                subdivision::T
+            struct $(esc(name)){S <: Union{Nothing, Subdivision.AbstractSubdivision}} <: AbstractHolidayCalendar
+                subdivision::S
                 holidays::Vector{Holiday}
 
-                function $(esc(name))(; subdivision::T = nothing) where {T <: Union{Nothing, Subdivision.AbstractSubdivision}}
+                function $(esc(name))(; subdivision::S = nothing) where {S <: Union{Nothing, Subdivision.AbstractSubdivision}}
                     if subdivision == nothing
-                        return new{T}(subdivision, fetch_holidays($(esc(name))))
+                        return new{S}(subdivision, fetch_holidays($(esc(name))))
                     else
                         CountryType = $(esc(name))
-                        return new{T}(subdivision, fetch_holidays(CountryType{T}))
+                        return new{S}(subdivision, fetch_holidays(CountryType{S}))
                     end
                 end
             end
