@@ -70,14 +70,6 @@ function is_st_peter_and_st_paul_day(x::TimeType)
     end
 end
 
-function is_independence_day(x::TimeType)
-    return is_july(x) && is_day(x, 20)
-end
-
-function is_battle_of_boyaca(x::TimeType)
-    return is_august(x) && is_day(x, 7)
-end
-
 function is_assumption(x::TimeType)
     year = Dates.year(x)
 
@@ -141,7 +133,7 @@ function is_all_saints(x::TimeType)
     end
 end
 
-function is_ascension_day_colombia(x::TimeType)
+function is_ascension_day(x::TimeType)
     year = Dates.year(x)
 
     if year < 1984
@@ -160,7 +152,7 @@ function is_ascension_day_colombia(x::TimeType)
     end
 end
 
-function is_corpus_christi_colombia(x::TimeType)
+function is_corpus_christi(x::TimeType)
     year = Dates.year(x)
 
     if year < 1984
@@ -182,19 +174,14 @@ end
 function is_sacred_heart(x::TimeType)
     year = Dates.year(x)
 
-    if year < 1984
-        # Before 1984: not a holiday
-        return false
+    # From 1984 onwards: moved to nearest Monday after Sacred Heart (Easter + 68)
+    actual_date = Christian.easter_sunday(year) + Dates.Day(68)
+    if is_monday(actual_date)
+        return x == actual_date
     else
-        # From 1984 onwards: moved to nearest Monday after Sacred Heart (Easter + 68)
-        actual_date = Christian.easter_sunday(year) + Dates.Day(68)
-        if is_monday(actual_date)
-            return x == actual_date
-        else
-            days_after = 8 - Dates.dayofweek(actual_date)
-            observed_date = actual_date + Dates.Day(days_after)
-            return x == observed_date
-        end
+        days_after = 8 - Dates.dayofweek(actual_date)
+        observed_date = actual_date + Dates.Day(days_after)
+        return x == observed_date
     end
 end
 
@@ -224,20 +211,20 @@ function Holidays.fetch_holidays(::Type{Holidays.Colombia})
         Holiday("New Year's Day", is_january_1st),
         Holiday("Epiphany", is_epiphany),
         Holiday("St. Joseph's Day", is_st_joseph_day),
-        Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),
+        Holiday("Maundy Thursday", Christian.is_maundy_thursday),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Labour Day", is_may_1st),
-        Holiday("Ascension Day", is_ascension_day_colombia),
-        Holiday("Corpus Christi", is_corpus_christi_colombia),
-        Holiday("Sacred Heart", is_sacred_heart),
+        Holiday("Ascension Day", is_ascension_day),
+        Holiday("Corpus Christi", is_corpus_christi),
+        Holiday("Sacred Heart", is_sacred_heart, start_year = 1984),
         Holiday("Saint Peter and Saint Paul's Day", is_st_peter_and_st_paul_day),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Battle of Boyacá", is_battle_of_boyaca),
+        Holiday("Independence Day", is_july_20th),
+        Holiday("Battle of Boyacá", is_august_7th),
         Holiday("Assumption of Mary", is_assumption),
         Holiday("Columbus Day", is_columbus_day),
         Holiday("All Saints' Day", is_all_saints),
         Holiday("Independence of Cartagena", is_independence_cartagena),
-        Holiday("Immaculate Conception", x -> is_december(x) && is_day(x, 8)),
+        Holiday("Immaculate Conception", is_december_8th),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

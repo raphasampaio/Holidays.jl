@@ -74,9 +74,40 @@ is_last_friday_of_month(x::TimeType) = is_friday(x) && Dates.dayofweekofmonth(x)
 is_last_saturday_of_month(x::TimeType) = is_saturday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 is_last_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 
+is_third_monday_of_january(x::TimeType) = is_january(x) && is_third_monday_of_month(x)
+is_first_monday_of_september(x::TimeType) = is_september(x) && is_first_monday_of_month(x)
+is_fourth_thursday_of_november(x::TimeType) = is_november(x) && is_fourth_thursday_of_month(x)
+
 is_january_1st(x::TimeType) = is_january(x) && is_day(x, 1)
 is_january_2nd(x::TimeType) = is_january(x) && is_day(x, 2)
+is_january_3rd(x::TimeType) = is_january(x) && is_day(x, 3)
+is_january_4th(x::TimeType) = is_january(x) && is_day(x, 4)
 
 is_march_8th(x::TimeType) = is_march(x) && is_day(x, 8)
 
+is_april_21st(x::TimeType) = is_april(x) && is_day(x, 21)
+
 is_may_1st(x::TimeType) = is_may(x) && is_day(x, 1)
+is_may_17th(x::TimeType) = is_may(x) && is_day(x, 17)
+
+is_june_29th(x::TimeType) = is_june(x) && is_day(x, 29)
+
+is_july_1st(x::TimeType) = is_july(x) && is_day(x, 1)
+is_july_4th(x::TimeType) = is_july(x) && is_day(x, 4)
+is_july_20th(x::TimeType) = is_july(x) && is_day(x, 20)
+
+is_august_6th(x::TimeType) = is_august(x) && is_day(x, 6)
+is_august_7th(x::TimeType) = is_august(x) && is_day(x, 7)
+is_august_30th(x::TimeType) = is_august(x) && is_day(x, 30)
+
+is_september_7th(x::TimeType) = is_september(x) && is_day(x, 7)
+
+is_october_8th(x::TimeType) = is_october(x) && is_day(x, 8)
+is_october_12th(x::TimeType) = is_october(x) && is_day(x, 12)
+
+is_november_1st(x::TimeType) = is_november(x) && is_day(x, 1)
+is_november_15th(x::TimeType) = is_november(x) && is_day(x, 15)
+is_november_20th(x::TimeType) = is_november(x) && is_day(x, 20)
+
+is_december_8th(x::TimeType) = is_december(x) && is_day(x, 8)
+is_december_9th(x::TimeType) = is_december(x) && is_day(x, 9)

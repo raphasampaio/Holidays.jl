@@ -65,7 +65,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Nigeria})
     return [
-        Holiday("New Year's Day", 1979, is_january_1st),
+        Holiday("New Year's Day", is_january_1st, start_year = 1979),
         # Holiday("Good Friday", Christian.is_good_friday),
         # Holiday("Easter Monday", Christian.is_easter_monday),
         # Holiday("Labour Day", International.is_workers_day),

@@ -9,14 +9,6 @@ const Christian = Holidays.Christian
 
 const UnitedStates = Holidays.UnitedStates
 
-function is_new_years_day(x::TimeType)
-    return Dates.year(x) >= 1871 && is_january_1st(x)
-end
-
-function is_martin_luther_king_birthday(x::TimeType)
-    return Dates.year(x) >= 1986 && is_january(x) && is_third_monday_of_month(x)
-end
-
 function is_washington_birthday(x::TimeType)
     year = Dates.year(x)
     if year < 1871
@@ -56,18 +48,6 @@ function is_memorial_day(x::TimeType)
     end
 end
 
-function is_independence_day(x::TimeType)
-    return Dates.year(x) >= 1871 && is_july(x) && is_day(x, 4)
-end
-
-function is_labor_day(x::TimeType)
-    return Dates.year(x) >= 1894 && is_september(x) && is_first_monday_of_month(x)
-end
-
-function is_thanksgiving_day(x::TimeType)
-    return Dates.year(x) >= 1871 && is_november(x) && is_fourth_thursday_of_month(x)
-end
-
 function is_veterans_day(x::TimeType)
     year = Dates.year(x)
     if year < 1954
@@ -99,16 +79,16 @@ end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", 1871, is_january_1st, observed = ClosestWeekday()),
-        Holiday("Martin Luther King Birthday", is_martin_luther_king_birthday),
+        Holiday("New Year's Day", is_january_1st, start_year = 1871, observed = ClosestWeekday()),
+        Holiday("Martin Luther King Birthday", is_third_monday_of_january, start_year = 1986),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
         Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = ClosestWeekday()),
-        Holiday("Independence Day", is_independence_day, observed = ClosestWeekday()),
-        Holiday("Labor Day", is_labor_day),
+        Holiday("Independence Day", is_july_4th, start_year = 1871, observed = ClosestWeekday()),
+        Holiday("Labor Day", is_first_monday_of_september, start_year = 1894),
         Holiday("Columbus Day", is_columbus_day),
         Holiday("Veterans Day", is_veterans_day, observed = ClosestWeekday()),
-        Holiday("Thanksgiving Day", is_thanksgiving_day),
+        Holiday("Thanksgiving Day", is_fourth_thursday_of_november, start_year = 1871),
         Holiday("Christmas Day", Christian.is_christmas_day, observed = ClosestWeekday()),
     ]
 end

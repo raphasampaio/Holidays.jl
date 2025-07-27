@@ -7,10 +7,6 @@ include("../dates.jl")
 
 const Christian = Holidays.Christian
 
-function is_constitution_day(x::TimeType)
-    return is_may(x) && is_day(x, 17)
-end
-
 function Holidays.fetch_holidays(::Type{Holidays.Norway})
     return [
         Holiday("New Year's Day", is_january_1st),
@@ -19,7 +15,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Norway})
         Holiday("Easter Sunday", Christian.is_easter_sunday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labor Day", is_may_1st),
-        Holiday("Constitution Day", is_constitution_day),
+        Holiday("Constitution Day", is_may_17th),
         Holiday("Ascension Day", Christian.is_ascension_day),
         Holiday("Whit Sunday", Christian.is_whit_sunday),
         Holiday("Whit Monday", Christian.is_whit_monday),

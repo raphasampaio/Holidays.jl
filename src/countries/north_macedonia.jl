@@ -7,7 +7,7 @@ include("../dates.jl")
 
 function Holidays.fetch_holidays(::Type{Holidays.NorthMacedonia})
     return [
-        Holiday("New Year's Day", 1999, is_january_1st),
+        Holiday("New Year's Day", is_january_1st, start_year = 1999),
     ]
 end
 

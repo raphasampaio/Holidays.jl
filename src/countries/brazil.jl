@@ -13,13 +13,13 @@ function Holidays.fetch_holidays(::Type{Brazil})
     return [
         Holiday("New Year's Day", is_january_1st),
         Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Tiradentes' Day", x -> is_april(x) && is_day(x, 21)),
+        Holiday("Tiradentes' Day", is_april_21st),
         Holiday("Worker's Day", is_may_1st),
-        Holiday("Independence Day", x -> is_september(x) && is_day(x, 7)),
-        Holiday("Our Lady of Aparecida", x -> Dates.year(x) >= 1980 && is_october(x) && is_day(x, 12)),
+        Holiday("Independence Day", is_september_7th),
+        Holiday("Our Lady of Aparecida", is_october_12th, start_year = 1980),
         Holiday("All Souls' Day", Christian.is_all_souls_day),
-        Holiday("Republic Proclamation Day", x -> is_november(x) && is_day(x, 15)),
-        Holiday("National Day of Zumbi and Black Awareness", x -> Dates.year(x) >= 2024 && is_november(x) && is_day(x, 20)),
+        Holiday("Republic Proclamation Day", is_november_15th),
+        Holiday("National Day of Zumbi and Black Awareness", is_november_20th, start_year = 2024),
         Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end

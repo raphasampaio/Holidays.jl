@@ -1,20 +1,12 @@
 struct Holiday
     label::String
+    handler::Function
     start_year::Union{Int, Nothing}
     end_year::Union{Int, Nothing}
-    handler::Function
     observed::AbstractObserved
 
-    function Holiday(label::String, handler::Function; observed::AbstractObserved = NoObservation())
-        return new(label, nothing, nothing, handler, observed)
-    end
-
-    function Holiday(label::String, start_year::Int, handler::Function; observed::AbstractObserved = NoObservation())
-        return new(label, start_year, nothing, handler, observed)
-    end
-
-    function Holiday(label::String, start_year::Int, end_year::Int, handler::Function; observed::AbstractObserved = NoObservation())
-        return new(label, start_year, end_year, handler, observed)
+    function Holiday(label::String, handler::Function; start_year::Union{Int, Nothing} = nothing, end_year::Union{Int, Nothing} = nothing, observed::AbstractObserved = Holidays.NoObservation())
+        return new(label, handler, start_year, end_year, observed)
     end
 end
 
