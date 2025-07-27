@@ -67,18 +67,18 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Nigeria})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Children's Day", is_childrens_day),
-        Holiday("Democracy Day", is_democracy_day),
-        Holiday("Eid al-Fitr", is_eid_al_fitr),
-        Holiday("Eid al-Adha", is_eid_al_adha),
-        Holiday("Islamic New Year", is_islamic_new_year),
-        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Children's Day", is_childrens_day),
+        # Holiday("Democracy Day", is_democracy_day),
+        # Holiday("Eid al-Fitr", is_eid_al_fitr),
+        # Holiday("Eid al-Adha", is_eid_al_adha),
+        # Holiday("Islamic New Year", is_islamic_new_year),
+        # Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 
