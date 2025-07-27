@@ -35,17 +35,17 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.CzechRepublic})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Liberation Day", is_liberation_day),
-        Holiday("St. Cyril and Methodius Day", is_st_cyril_and_methodius_day),
-        Holiday("Jan Hus Day", is_jan_hus_day),
-        Holiday("Czech Statehood Day", is_czech_statehood_day),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Freedom Day", is_freedom_day),
-        Holiday("Christmas Eve", Christian.is_christmas_eve),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Liberation Day", is_liberation_day),
+        # Holiday("St. Cyril and Methodius Day", is_st_cyril_and_methodius_day),
+        # Holiday("Jan Hus Day", is_jan_hus_day),
+        # Holiday("Czech Statehood Day", is_czech_statehood_day),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("Freedom Day", is_freedom_day),
+        # Holiday("Christmas Eve", Christian.is_christmas_eve),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 

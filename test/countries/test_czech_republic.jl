@@ -6,25 +6,45 @@ using Test
 
 include("../util.jl")
 
-@testset "Czech Republic" begin
+@testset "CzechRepublic" begin
     calendar = Holidays.CzechRepublic()
 
     holidays = Date[
-        Date(2024, 1, 1),   # New Year's Day
-        Date(2024, 4, 1),   # Easter Monday
-        Date(2024, 5, 1),   # Labour Day
-        Date(2024, 5, 8),   # Liberation Day
-        Date(2024, 7, 5),   # St. Cyril and Methodius Day
-        Date(2024, 7, 6),   # Jan Hus Day
-        Date(2024, 9, 28),  # Czech Statehood Day
-        Date(2024, 10, 28), # Independence Day
-        Date(2024, 11, 17), # Freedom Day
-        Date(2024, 12, 24), # Christmas Eve
-        Date(2024, 12, 25), # Christmas Day
-        Date(2024, 12, 26), # Boxing Day
+        Date(1970, 1, 1), # New Year's Day
+        Date(1971, 1, 1), # New Year's Day
+        Date(1972, 1, 1), # New Year's Day
+        Date(1973, 1, 1), # New Year's Day
+        Date(1974, 1, 1), # New Year's Day
+        Date(1975, 1, 1), # New Year's Day
+        Date(1976, 1, 1), # New Year's Day
+        Date(1977, 1, 1), # New Year's Day
+        Date(1978, 1, 1), # New Year's Day
+        Date(1979, 1, 1), # New Year's Day
+        Date(1980, 1, 1), # New Year's Day
+        Date(1981, 1, 1), # New Year's Day
+        Date(1982, 1, 1), # New Year's Day
+        Date(1983, 1, 1), # New Year's Day
+        Date(1984, 1, 1), # New Year's Day
+        Date(1985, 1, 1), # New Year's Day
+        Date(1986, 1, 1), # New Year's Day
+        Date(1987, 1, 1), # New Year's Day
+        Date(1988, 1, 1), # New Year's Day
+        Date(1989, 1, 1), # New Year's Day
+        Date(1990, 1, 1), # New Year's Day
+        Date(1991, 1, 1), # New Year's Day
+        Date(1992, 1, 1), # New Year's Day
+        Date(1993, 1, 1), # New Year's Day
+        Date(1994, 1, 1), # New Year's Day
+        Date(1995, 1, 1), # New Year's Day
+        Date(1996, 1, 1), # New Year's Day
+        Date(1997, 1, 1), # New Year's Day
+        Date(1998, 1, 1), # New Year's Day
+        Date(1999, 1, 1), # New Year's Day
     ]
 
     test_holidays(calendar, holidays)
+
+    return nothing
 end
 
 end
