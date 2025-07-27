@@ -18,7 +18,7 @@ function is_epiphany(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after January 6 (or on January 6 if it's already Monday)
         jan_6 = Date(year, 1, 6)
-        if Dates.dayofweek(jan_6) == Dates.Mon
+        if is_monday(jan_6)
             # If January 6 is already Monday, observe it on that day
             return x == jan_6
         else
@@ -39,7 +39,7 @@ function is_st_joseph_day(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after March 19 (or on March 19 if it's already Monday)
         mar_19 = Date(year, 3, 19)
-        if Dates.dayofweek(mar_19) == Dates.Mon
+        if is_monday(mar_19)
             # If March 19 is already Monday, observe it on that day
             return x == mar_19
         else
@@ -60,7 +60,7 @@ function is_st_peter_and_st_paul_day(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after June 29 (or on June 29 if it's already Monday)
         jun_29 = Date(year, 6, 29)
-        if Dates.dayofweek(jun_29) == Dates.Mon
+        if is_monday(jun_29)
             # If June 29 is already Monday, observe it on that day
             return x == jun_29
         else
@@ -89,7 +89,7 @@ function is_assumption(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after August 15 (or on August 15 if it's already Monday)
         aug_15 = Date(year, 8, 15)
-        if Dates.dayofweek(aug_15) == Dates.Mon
+        if is_monday(aug_15)
             # If August 15 is already Monday, observe it on that day
             return x == aug_15
         else
@@ -110,7 +110,7 @@ function is_columbus_day(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after October 12 (or on October 12 if it's already Monday)
         oct_12 = Date(year, 10, 12)
-        if Dates.dayofweek(oct_12) == Dates.Mon
+        if is_monday(oct_12)
             # If October 12 is already Monday, observe it on that day
             return x == oct_12
         else
@@ -131,7 +131,7 @@ function is_all_saints(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after November 1 (or on November 1 if it's already Monday)
         nov_1 = Date(year, 11, 1)
-        if Dates.dayofweek(nov_1) == Dates.Mon
+        if is_monday(nov_1)
             # If November 1 is already Monday, observe it on that day
             return x == nov_1
         else
@@ -152,7 +152,7 @@ function is_ascension_day_colombia(x::TimeType)
     else
         # From 1984 onwards: moved to nearest Monday after Ascension Day
         actual_date = Christian.easter_sunday(year) + Dates.Day(39)
-        if Dates.dayofweek(actual_date) == Dates.Mon
+        if is_monday(actual_date)
             return x == actual_date
         else
             days_after = 8 - Dates.dayofweek(actual_date)
@@ -171,7 +171,7 @@ function is_corpus_christi_colombia(x::TimeType)
     else
         # From 1984 onwards: moved to nearest Monday after Corpus Christi
         actual_date = Christian.easter_sunday(year) + Dates.Day(60)
-        if Dates.dayofweek(actual_date) == Dates.Mon
+        if is_monday(actual_date)
             return x == actual_date
         else
             days_after = 8 - Dates.dayofweek(actual_date)
@@ -190,7 +190,7 @@ function is_sacred_heart(x::TimeType)
     else
         # From 1984 onwards: moved to nearest Monday after Sacred Heart (Easter + 68)
         actual_date = Christian.easter_sunday(year) + Dates.Day(68)
-        if Dates.dayofweek(actual_date) == Dates.Mon
+        if is_monday(actual_date)
             return x == actual_date
         else
             days_after = 8 - Dates.dayofweek(actual_date)
@@ -209,7 +209,7 @@ function is_independence_cartagena(x::TimeType)
     else
         # From 1984 onwards: moved to Monday after November 11 (or on November 11 if it's already Monday)
         nov_11 = Date(year, 11, 11)
-        if Dates.dayofweek(nov_11) == Dates.Mon
+        if is_monday(nov_11)
             # If November 11 is already Monday, observe it on that day
             return x == nov_11
         else
