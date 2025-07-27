@@ -10,6 +10,7 @@ const Gregorian = Holidays.Gregorian
 function Holidays.fetch_holidays(::Type{Holidays.Armenia})
     return [
         Holiday("New Year's Day", x -> Dates.year(x) >= 1991 && Gregorian.is_new_years_day(x)),
+        Holiday("New Year's Day", x -> Dates.year(x) >= 1991 && is_january(x) && is_day(x, 2)),
     ]
 end
 
