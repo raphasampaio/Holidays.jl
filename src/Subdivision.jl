@@ -3,7 +3,7 @@ module Subdivision
 abstract type AbstractSubdivision end
 
 macro subdivision(name)
-    quote
+    return quote
         begin
             struct $(esc(name)) <: AbstractSubdivision end
         end
