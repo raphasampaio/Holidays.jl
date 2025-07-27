@@ -39,7 +39,7 @@ include("../util.jl")
         Date(1996, 1, 1), # New Year's Day
         Date(1997, 1, 1), # New Year's Day
         Date(1998, 1, 1), # New Year's Day
-        Date(1999, 1, 1), # New Year's Day                
+        Date(1999, 1, 1), # New Year's Day
         Date(2000, 1, 1), # New Year's Day
         Date(2001, 1, 1), # New Year's Day
         Date(2002, 1, 1), # New Year's Day
@@ -70,7 +70,7 @@ include("../util.jl")
         Date(2027, 1, 1), # New Year's Day
         Date(2028, 1, 1), # New Year's Day
         Date(2029, 1, 1), # New Year's Day
-        Date(2030, 1, 1), # New Year's Day        
+        Date(2030, 1, 1), # New Year's Day
     ]
 
     test_holidays(calendar, holidays)
