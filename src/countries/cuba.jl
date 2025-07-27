@@ -9,7 +9,7 @@ const Gregorian = Holidays.Gregorian
 
 function Holidays.fetch_holidays(::Type{Holidays.Cuba})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("Liberation Day", x -> is_january(x) && is_day(x, 1)),
     ]
 end
 

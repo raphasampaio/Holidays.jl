@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Estonia" begin
     calendar = Holidays.Estonia()
 
-    holidays = [
+    holidays = Date[
         Date(1970, 1, 1), # New Year's Day
         Date(1971, 1, 1), # New Year's Day
         Date(1972, 1, 1), # New Year's Day
