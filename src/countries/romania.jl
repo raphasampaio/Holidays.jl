@@ -35,18 +35,18 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Romania})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Day after New Year's Day", x -> is_january(x) && is_day(x, 2)),
-        Holiday("Epiphany", is_epiphany_romania),
-        Holiday("Orthodox Easter", Christian.is_easter_sunday),
-        Holiday("Orthodox Easter Monday", Christian.is_easter_monday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Children's Day", is_childrens_day_romania),
-        Holiday("Assumption of Mary", is_assumption_romania),
-        Holiday("St. Andrew's Day", is_st_andrew_day),
-        Holiday("National Day", is_national_day_romania),
-        Holiday("St. Nicholas Day", is_st_nicholas_day),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Day after New Year's Day", x -> is_january(x) && is_day(x, 2)),
+        # Holiday("Epiphany", is_epiphany_romania),
+        # Holiday("Orthodox Easter", Christian.is_easter_sunday),
+        # Holiday("Orthodox Easter Monday", Christian.is_easter_monday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Children's Day", is_childrens_day_romania),
+        # Holiday("Assumption of Mary", is_assumption_romania),
+        # Holiday("St. Andrew's Day", is_st_andrew_day),
+        # Holiday("National Day", is_national_day_romania),
+        # Holiday("St. Nicholas Day", is_st_nicholas_day),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 

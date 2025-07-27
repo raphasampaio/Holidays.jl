@@ -10,18 +10,37 @@ include("../util.jl")
     calendar = Holidays.Russia()
 
     holidays = Date[
-        Date(2024, 1, 1),   # New Year's Day
-        Date(2024, 1, 7),   # Orthodox Christmas
-        Date(2024, 2, 23),  # Defender of the Fatherland Day
-        Date(2024, 3, 8),   # International Women's Day
-        Date(2024, 5, 1),   # Spring and Labour Day
-        Date(2024, 5, 9),   # Victory Day
-        Date(2024, 6, 12),  # Russia Day
-        Date(2024, 11, 4),  # Unity Day
+        Date(1991, 1, 1), # New Year's Day
+        Date(1992, 1, 1), # New Year's Day
+        Date(1993, 1, 1), # New Year's Day
+        Date(1993, 1, 2), # New Year's Day
+        Date(1994, 1, 1), # New Year's Day
+        Date(1994, 1, 2), # New Year's Day
+        Date(1995, 1, 1), # New Year's Day
+        Date(1995, 1, 2), # New Year's Day
+        Date(1996, 1, 1), # New Year's Day
+        Date(1996, 1, 2), # New Year's Day
+        Date(1997, 1, 1), # New Year's Day
+        Date(1997, 1, 2), # New Year's Day
+        Date(1998, 1, 1), # New Year's Day
+        Date(1998, 1, 2), # New Year's Day
+        Date(1999, 1, 1), # New Year's Day
+        Date(1999, 1, 2), # New Year's Day
+        Date(2000, 1, 1), # New Year's Day
+        Date(2000, 1, 2), # New Year's Day
+        Date(2001, 1, 1), # New Year's Day
+        Date(2001, 1, 2), # New Year's Day
+        Date(2002, 1, 1), # New Year's Day
+        Date(2002, 1, 2), # New Year's Day
+        Date(2003, 1, 1), # New Year's Day
+        Date(2003, 1, 2), # New Year's Day
+        Date(2004, 1, 1), # New Year's Day
+        Date(2004, 1, 2), # New Year's Day
     ]
 
     test_holidays(calendar, holidays)
 
     return nothing
 end
+
 end

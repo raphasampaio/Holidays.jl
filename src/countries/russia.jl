@@ -31,13 +31,13 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Russia})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Orthodox Christmas", is_orthodox_christmas),
-        Holiday("Defender of the Fatherland Day", is_defender_of_fatherland_day),
-        Holiday("International Women's Day", International.is_womens_day),
-        Holiday("Spring and Labour Day", International.is_workers_day),
-        Holiday("Victory Day", is_victory_day),
-        Holiday("Russia Day", is_russia_day),
-        Holiday("Unity Day", is_unity_day),
+        # Holiday("Orthodox Christmas", is_orthodox_christmas),
+        # Holiday("Defender of the Fatherland Day", is_defender_of_fatherland_day),
+        # Holiday("International Women's Day", International.is_womens_day),
+        # Holiday("Spring and Labour Day", International.is_workers_day),
+        # Holiday("Victory Day", is_victory_day),
+        # Holiday("Russia Day", is_russia_day),
+        # Holiday("Unity Day", is_unity_day),
     ]
 end
 
