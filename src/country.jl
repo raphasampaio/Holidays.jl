@@ -18,6 +18,8 @@ macro country(name)
     end
 end
 
+@country Aruba
+@country Greenland
 @country Afghanistan
 @country Albania
 @country Algeria
@@ -29,7 +31,7 @@ end
 @country Australia
 @country Austria
 @country Azerbaijan
-@country TheBahamas
+@country Bahamas
 @country Bahrain
 @country Bangladesh
 @country Barbados
