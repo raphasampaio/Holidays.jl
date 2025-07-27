@@ -21,6 +21,8 @@ is_thursday(x::TimeType) = Dates.dayofweek(x) == Dates.Thu
 is_friday(x::TimeType) = Dates.dayofweek(x) == Dates.Fri
 is_saturday(x::TimeType) = Dates.dayofweek(x) == Dates.Sat
 is_sunday(x::TimeType) = Dates.dayofweek(x) == Dates.Sun
+is_weekday(x::TimeType) = is_monday(x) || is_tuesday(x) || is_wednesday(x) || is_thursday(x) || is_friday(x)
+is_weekend(x::TimeType) = is_saturday(x) || is_sunday(x)
 
 is_first_monday_of_month(x::TimeType) = is_monday(x) && Dates.dayofweekofmonth(x) == 1
 is_first_tuesday_of_month(x::TimeType) = is_tuesday(x) && Dates.dayofweekofmonth(x) == 1
