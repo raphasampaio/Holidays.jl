@@ -23,7 +23,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Canada})
     return [
-        Holiday("New Year's Day", International.is_new_years_day, observed = Holidays.NextWeekday()),
+        Holiday("New Year's Day", is_january_1st, observed = Holidays.NextWeekday()),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Dominion Day", is_dominion_day),
         Holiday("Canada Day", is_canada_day),
