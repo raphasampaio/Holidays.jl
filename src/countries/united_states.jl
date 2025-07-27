@@ -10,7 +10,7 @@ const Christian = Holidays.Christian
 const UnitedStates = Holidays.UnitedStates
 
 function is_new_years_day(x::TimeType)
-    return Dates.year(x) >= 1871 && International.is_new_years_day(x)
+    return Dates.year(x) >= 1871 && is_january_1st(x)
 end
 
 function is_martin_luther_king_birthday(x::TimeType)
@@ -99,7 +99,7 @@ end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", is_new_years_day, observed = ClosestWeekday()),
+        Holiday("New Year's Day", 1871, is_january_1st, observed = ClosestWeekday()),
         Holiday("Martin Luther King Birthday", is_martin_luther_king_birthday),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
