@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "New Zealand" begin
     calendar = Holidays.NewZealand()
 
-    holidays = [
+    holidays = Date[
         Date(2024, 1, 1),   # New Year's Day
         Date(2024, 1, 2),   # Day after New Year's Day
         Date(2024, 2, 6),   # Waitangi Day

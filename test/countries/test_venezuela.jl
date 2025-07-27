@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Venezuela" begin
     calendar = Holidays.Venezuela()
 
-    holidays = [
+    holidays = Date[
         Date(2024, 1, 1),   # New Year's Day
         Date(2024, 2, 12),  # Carnival Monday (48 days before Easter)
         Date(2024, 2, 13),  # Carnival Tuesday (47 days before Easter)

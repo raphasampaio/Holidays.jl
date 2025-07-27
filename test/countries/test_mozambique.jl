@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Mozambique" begin
     calendar = Holidays.Mozambique()
 
-    holidays = [
+    holidays = Date[
         Date(1975, 1, 1), # International Fraternalism Day
         Date(1976, 1, 1), # International Fraternalism Day
         Date(1977, 1, 1), # International Fraternalism Day

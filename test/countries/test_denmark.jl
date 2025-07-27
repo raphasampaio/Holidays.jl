@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Denmark" begin
     calendar = Holidays.Denmark()
 
-    holidays = [
+    holidays = Date[
         Date(2024, 1, 1),   # New Year's Day
         Date(2024, 3, 28),  # Maundy Thursday
         Date(2024, 3, 29),  # Good Friday

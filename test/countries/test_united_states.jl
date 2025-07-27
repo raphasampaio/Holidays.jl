@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "UnitedStates" begin
     calendar = Holidays.UnitedStates()
 
-    holidays = [
+    holidays = Date[
         Date(1970, 1, 1), # New Year's Day
         Date(1970, 2, 22), # Washington's Birthday
         Date(1970, 5, 30), # Memorial Day

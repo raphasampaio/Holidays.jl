@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Mexico" begin
     calendar = Holidays.Mexico()
 
-    holidays = [
+    holidays = Date[
         Date(1970, 1, 1), # New Year's Day
         Date(1970, 2, 5), # Constitution Day
         Date(1970, 3, 21), # Benito Juárez's birthday

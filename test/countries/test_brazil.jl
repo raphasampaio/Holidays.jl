@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Brazil" begin
     calendar = Holidays.Brazil()
 
-    holidays = [
+    holidays = Date[
         Date(1970, 1, 1), # Universal Fraternization Day
         Date(1970, 3, 27), # Good Friday
         Date(1970, 4, 21), # Tiradentes' Day
