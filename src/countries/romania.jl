@@ -34,7 +34,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Romania})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", x -> is_january_1st(x) || is_january_2nd(x)),
         # Holiday("Day after New Year's Day", x -> is_january(x) && is_day(x, 2)),
         # Holiday("Epiphany", is_epiphany_romania),
         # Holiday("Orthodox Easter", Christian.is_easter_sunday),
