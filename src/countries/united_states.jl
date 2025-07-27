@@ -4,6 +4,7 @@ using Dates
 using Holidays
 
 include("../dates.jl")
+include("../observed.jl")
 
 const Christian = Holidays.Christian
 
@@ -79,17 +80,17 @@ end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", is_january_1st, start_year = 1871, observed = ClosestWeekday()),
+        Holiday("New Year's Day", is_january_1st, start_year = 1871, observed = closest_weekday),
         Holiday("Martin Luther King Birthday", is_third_monday_of_january, start_year = 1986),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
-        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = ClosestWeekday()),
-        Holiday("Independence Day", is_july_4th, start_year = 1871, observed = ClosestWeekday()),
+        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = closest_weekday),
+        Holiday("Independence Day", is_july_4th, start_year = 1871, observed = closest_weekday),
         Holiday("Labor Day", is_first_monday_of_september, start_year = 1894),
         Holiday("Columbus Day", is_columbus_day),
-        Holiday("Veterans Day", is_veterans_day, observed = ClosestWeekday()),
+        Holiday("Veterans Day", is_veterans_day, observed = closest_weekday),
         Holiday("Thanksgiving Day", is_fourth_thursday_of_november, start_year = 1871),
-        Holiday("Christmas Day", Christian.is_christmas_day, observed = ClosestWeekday()),
+        Holiday("Christmas Day", Christian.is_christmas_day, observed = closest_weekday),
     ]
 end
 

@@ -7,15 +7,11 @@ export
     fetch_holidays,
     Holiday,
     AbstractHolidayCalendar,
-    ClosestWeekday,
-    NextMondayIfFallsOnWeekend,
-    NextMondayIfFallsOnSunday,
     Subdivision
 
 include("Subdivision.jl")
 
 include("dates.jl")
-include("observed.jl")
 include("calendar.jl")
 include("holiday.jl")
 include("country.jl")

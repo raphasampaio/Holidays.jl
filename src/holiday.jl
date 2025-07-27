@@ -1,12 +1,14 @@
+Optional{T} = Union{T, Nothing}
+
 struct Holiday
     label::String
     handler::Function
-    start_year::Union{Int, Nothing}
-    end_year::Union{Int, Nothing}
-    observed::AbstractObserved
+    observed::Optional{Function}
+    start_year::Optional{Int}
+    end_year::Optional{Int}
 
-    function Holiday(label::String, handler::Function; start_year::Union{Int, Nothing} = nothing, end_year::Union{Int, Nothing} = nothing, observed::AbstractObserved = Holidays.NoObservation())
-        return new(label, handler, start_year, end_year, observed)
+    function Holiday(label::String, handler::Function; observed::Optional{Function} = nothing, start_year::Optional{Int} = nothing, end_year::Optional{Int} = nothing)
+        return new(label, handler, observed, start_year, end_year)
     end
 end
 
@@ -23,7 +25,7 @@ function is_holiday(holiday::Holiday, date::TimeType)
         return true
     end
 
-    if is_observed(holiday.observed, holiday.handler, date)
+    if !isnothing(holiday.observed) && holiday.observed(holiday, date)
         return true
     end
 

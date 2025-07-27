@@ -4,6 +4,7 @@ using Dates
 using Holidays
 
 include("../dates.jl")
+include("../observed.jl")
 
 const Christian = Holidays.Christian
 
@@ -193,7 +194,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Panama})
     return [
-        Holiday("New Year's Day", is_january_1st, observed = NextMondayIfFallsOnSunday()),
+        Holiday("New Year's Day", is_january_1st, observed = next_monday_if_falls_on_sunday),
         Holiday("Martyrs' Day", is_martyrs_day_observed),
         Holiday("Constitution Day", x -> (Dates.year(x) == 1970 || Dates.year(x) == 1971) && is_march(x) && is_day(x, 1)),
         Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
