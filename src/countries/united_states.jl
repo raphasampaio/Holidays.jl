@@ -100,17 +100,17 @@ end
 
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
-        Holiday("New Year's Day", is_new_years_day, observed = true),
+        Holiday("New Year's Day", is_new_years_day, observed = ClosestWeekday()),
         Holiday("Martin Luther King Birthday", is_martin_luther_king_birthday),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
-        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = true),
-        Holiday("Independence Day", is_independence_day, observed = true),
+        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = ClosestWeekday()),
+        Holiday("Independence Day", is_independence_day, observed = ClosestWeekday()),
         Holiday("Labor Day", is_labor_day),
         Holiday("Columbus Day", is_columbus_day),
-        Holiday("Veterans Day", is_veterans_day, observed = true),
+        Holiday("Veterans Day", is_veterans_day, observed = ClosestWeekday()),
         Holiday("Thanksgiving Day", is_thanksgiving_day),
-        Holiday("Christmas Day", Christian.is_christmas_day, observed = true),
+        Holiday("Christmas Day", Christian.is_christmas_day, observed = ClosestWeekday()),
     ]
 end
 

@@ -1,9 +1,9 @@
 struct Holiday
     label::String
     handler::Function
-    observed::Bool
+    observed::AbstractObserved
 
-    function Holiday(label::String, handler::Function; observed::Bool = false)
+    function Holiday(label::String, handler::Function; observed::AbstractObserved = NoObservation())
         return new(label, handler, observed)
     end
 end
@@ -13,14 +13,8 @@ function is_holiday(holiday::Holiday, date::TimeType)
         return true
     end
 
-    if holiday.observed
-        if is_monday(date) && holiday.handler(date - Day(1))
-            return true
-        end
-
-        if is_friday(date) && holiday.handler(date + Day(1))
-            return true
-        end
+    if is_observed(holiday.observed, holiday.handler, date)
+        return true
     end
 
     return false

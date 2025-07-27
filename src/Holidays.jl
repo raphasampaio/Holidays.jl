@@ -7,11 +7,14 @@ export
     fetch_holidays,
     Holiday,
     AbstractHolidayCalendar,
+    ClosestWeekday,
+    NextWeekday,
     Subdivision
 
 include("Subdivision.jl")
 
 include("dates.jl")
+include("observed.jl")
 include("calendar.jl")
 include("holiday.jl")
 include("country.jl")
