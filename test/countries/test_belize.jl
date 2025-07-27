@@ -10,7 +10,6 @@ include("../util.jl")
     calendar = Holidays.Belize()
 
     holidays = Date[
-       
     ]
 
     test_holidays(calendar, holidays)
