@@ -40,16 +40,27 @@ include("../util.jl")
         Date(2018, 1, 1), # New Year's Day
         Date(2019, 1, 1), # New Year's Day
         Date(2020, 1, 1), # New Year's Day
+        Date(2020, 1, 2), # New Year's Day
         Date(2021, 1, 1), # New Year's Day
+        Date(2021, 1, 2), # New Year's Day
         Date(2022, 1, 1), # New Year's Day
+        Date(2022, 1, 2), # New Year's Day
         Date(2023, 1, 1), # New Year's Day
+        Date(2023, 1, 2), # New Year's Day
         Date(2024, 1, 1), # New Year's Day
+        Date(2024, 1, 2), # New Year's Day
         Date(2025, 1, 1), # New Year's Day
+        Date(2025, 1, 2), # New Year's Day
         Date(2026, 1, 1), # New Year's Day
+        Date(2026, 1, 2), # New Year's Day
         Date(2027, 1, 1), # New Year's Day
+        Date(2027, 1, 2), # New Year's Day
         Date(2028, 1, 1), # New Year's Day
+        Date(2028, 1, 2), # New Year's Day
         Date(2029, 1, 1), # New Year's Day
+        Date(2029, 1, 2), # New Year's Day
         Date(2030, 1, 1), # New Year's Day
+        Date(2030, 1, 2), # New Year's Day
     ]
 
     test_holidays(calendar, holidays)

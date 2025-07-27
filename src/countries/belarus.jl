@@ -7,6 +7,18 @@ include("../dates.jl")
 
 const International = Holidays.International
 
+function is_new_years_day(x::TimeType)
+    if Dates.year(x) >= 1991 && International.is_new_years_day(x)
+        return true
+    end
+
+    if Dates.year(x) >= 2020 && is_january(x) && is_day(x, 2)
+        return true
+    end
+
+    return false
+end
+
 function Holidays.fetch_holidays(::Type{Holidays.Belarus})
     return [
         Holiday("New Year's Day", x -> Dates.year(x) >= 1991 && International.is_new_years_day(x)),
