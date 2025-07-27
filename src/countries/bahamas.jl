@@ -9,7 +9,7 @@ const International = Holidays.International
 
 function Holidays.fetch_holidays(::Type{Holidays.Bahamas})
     return [
-        Holiday("New Year's Day", x -> Dates.year(x) >= 1974 && International.is_new_years_day(x)),
+        Holiday("New Year's Day", 1974, is_january_1st),
     ]
 end
 
