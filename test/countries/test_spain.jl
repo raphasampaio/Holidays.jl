@@ -63,6 +63,7 @@ include("../util.jl")
         Date(2020, 1, 1), # New Year's Day
         Date(2021, 1, 1), # New Year's Day
         Date(2022, 1, 1), # New Year's Day
+        Date(2023, 1, 1), # New Year's Day
         Date(2024, 1, 1), # New Year's Day
         Date(2025, 1, 1), # New Year's Day
         Date(2026, 1, 1), # New Year's Day

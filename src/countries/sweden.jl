@@ -8,6 +8,13 @@ include("../dates.jl")
 const Christian = Holidays.Christian
 const International = Holidays.International
 
+function is_new_years_day(x::TimeType)
+   if is_sunday(x)
+       return false
+   end
+   return is_january(x) && is_day(x, 1)
+end
+
 function is_epiphany(x::TimeType)
     return is_january(x) && is_day(x, 6)
 end
@@ -36,7 +43,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Sweden})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_new_years_day),
         # Holiday("Epiphany", is_epiphany),
         # Holiday("Good Friday", Christian.is_good_friday),
         # Holiday("Easter Sunday", Christian.is_easter_sunday),
