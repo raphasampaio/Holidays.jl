@@ -30,7 +30,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Venezuela})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Carnival Monday", Christian.is_shrove_monday),
         # Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
         # Holiday("Maundy Thursday", Christian.is_maundy_thursday),

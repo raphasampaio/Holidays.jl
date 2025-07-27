@@ -61,7 +61,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Turkey})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("National Sovereignty and Children's Day", is_national_sovereignty_day_turkey),
         # Holiday("Labour and Solidarity Day", International.is_workers_day),
         # Holiday("Commemoration of Atatürk, Youth and Sports Day", is_ataturk_commemoration_day),

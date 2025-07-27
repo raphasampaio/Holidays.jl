@@ -14,7 +14,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.China})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Spring Festival", Chinese.is_chinese_new_year),
         # Holiday("Lantern Festival", Chinese.is_lantern_festival),
         # Holiday("Tomb-Sweeping Day", Chinese.is_qingming_festival),

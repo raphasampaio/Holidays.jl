@@ -47,7 +47,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Israel})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Holocaust Remembrance Day", is_holocaust_remembrance_day),
         # Holiday("Memorial Day", is_memorial_day),
         # Holiday("Independence Day", is_independence_day),

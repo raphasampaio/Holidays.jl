@@ -38,7 +38,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Finland})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Epiphany", is_epiphany),
         # Holiday("Good Friday", Christian.is_good_friday),
         # Holiday("Easter Sunday", Christian.is_easter_sunday),

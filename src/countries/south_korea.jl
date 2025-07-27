@@ -43,7 +43,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.SouthKorea})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         Holiday("Independence Movement Day", is_independence_movement_day),
         Holiday("Children's Day", is_childrens_day_korea),
         Holiday("Buddha's Birthday", is_buddha_birthday),

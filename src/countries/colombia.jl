@@ -222,7 +222,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Colombia})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         Holiday("Epiphany", is_epiphany),
         Holiday("St. Joseph's Day", is_st_joseph_day),
         Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),

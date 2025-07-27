@@ -30,7 +30,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Holidays.Italy})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         Holiday("Epiphany", is_epiphany),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Liberation Day", is_liberation_day),

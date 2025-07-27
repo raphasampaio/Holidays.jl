@@ -50,7 +50,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Argentina})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Truth and Justice Day", is_truth_and_justice_day),
         # Holiday("Veterans Day", is_veterans_day),
         # Holiday("Good Friday", Christian.is_good_friday),

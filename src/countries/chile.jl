@@ -54,7 +54,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Chile})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Holy Saturday", Christian.is_holy_saturday),
         Holiday("Labour Day", International.is_workers_day),

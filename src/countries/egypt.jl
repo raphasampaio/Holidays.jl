@@ -11,7 +11,7 @@ const Islamic = Holidays.Islamic
 
 function Holidays.fetch_holidays(::Type{Holidays.Egypt})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # # fixed holidays
         # Holiday("Christmas Day", x -> is_january(x) && is_day(x, 7)),
         # Holiday("National Police Day", x -> Dates.year(x) >= 2009 && is_january(x) && is_day(x, 25)),

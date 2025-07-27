@@ -54,7 +54,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Philippines})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         # Holiday("People Power Anniversary", is_peoples_power_anniversary),
         # Holiday("Araw ng Kagitingan", is_araw_ng_kagitingan),

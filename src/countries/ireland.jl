@@ -26,7 +26,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Ireland})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("St. Patrick's Day", is_st_patricks_day),
         # Holiday("Easter Monday", Christian.is_easter_monday),
         # Holiday("May Bank Holiday", x -> is_may(x) && is_first_monday_of_month(x)),

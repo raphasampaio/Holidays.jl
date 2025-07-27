@@ -42,7 +42,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Vietnam})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Tet Holiday", is_tet_holiday),
         # Holiday("Hung Kings' Day", is_hung_kings_day),
         # Holiday("Reunification Day", is_reunification_day),

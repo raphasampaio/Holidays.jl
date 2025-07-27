@@ -26,7 +26,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Holidays.Australia})
     return [
-        Holiday("New Year's Day", International.is_new_years_day),
+        Holiday("New Year's Day", is_january_1st),
         # Holiday("Australia Day", is_australia_day),
         # Holiday("Good Friday", Christian.is_good_friday),
         # Holiday("Easter Saturday", Christian.is_holy_saturday),
