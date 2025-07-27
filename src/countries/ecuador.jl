@@ -10,7 +10,9 @@ const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function Holidays.fetch_holidays(::Type{Holidays.Ecuador})
-    return []
+    return [
+        Holiday("New Year's Day", Gregorian.is_new_years_day),
+    ]
 end
 
 end

@@ -59,7 +59,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Philippines})
         Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         Holiday("People Power Anniversary", is_peoples_power_anniversary),
         Holiday("Araw ng Kagitingan", is_araw_ng_kagitingan),
-        Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),
+        Holiday("Maundy Thursday", Christian.is_maundy_thursday),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Black Saturday", Christian.is_holy_saturday),
         Holiday("Easter Sunday", Christian.is_easter_sunday),
