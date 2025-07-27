@@ -18,8 +18,6 @@ macro country(name)
     end
 end
 
-@country Aruba
-@country Greenland
 @country Afghanistan
 @country Albania
 @country Algeria
@@ -28,6 +26,7 @@ end
 @country AntiguaAndBarbuda
 @country Argentina
 @country Armenia
+@country Aruba
 @country Australia
 @country Austria
 @country Azerbaijan
@@ -58,14 +57,13 @@ end
 @country China
 @country Colombia
 @country Comoros
-@country DemocraticRepublicOfTheCongo
-@country RepublicOfTheCongo
 @country CostaRica
 @country CoteDIvoire
 @country Croatia
 @country Cuba
 @country Cyprus
 @country CzechRepublic
+@country DemocraticRepublicOfTheCongo
 @country Denmark
 @country Djibouti
 @country Dominica
@@ -83,11 +81,11 @@ end
 @country Finland
 @country France
 @country Gabon
-@country TheGambia
 @country Georgia
 @country Germany
 @country Ghana
 @country Greece
+@country Greenland
 @country Grenada
 @country Guatemala
 @country Guinea
@@ -110,8 +108,6 @@ end
 @country Kazakhstan
 @country Kenya
 @country Kiribati
-@country NorthKorea
-@country SouthKorea
 @country Kosovo
 @country Kuwait
 @country Kyrgyzstan
@@ -150,6 +146,7 @@ end
 @country Nicaragua
 @country Niger
 @country Nigeria
+@country NorthKorea
 @country NorthMacedonia
 @country Norway
 @country Oman
@@ -163,6 +160,7 @@ end
 @country Poland
 @country Portugal
 @country Qatar
+@country RepublicOfTheCongo
 @country Romania
 @country Russia
 @country Rwanda
@@ -183,10 +181,11 @@ end
 @country SolomonIslands
 @country Somalia
 @country SouthAfrica
+@country SouthKorea
+@country SouthSudan
 @country Spain
 @country SriLanka
 @country Sudan
-@country SouthSudan
 @country Suriname
 @country Sweden
 @country Switzerland
@@ -195,6 +194,7 @@ end
 @country Tajikistan
 @country Tanzania
 @country Thailand
+@country TheGambia
 @country Togo
 @country Tonga
 @country TrinidadAndTobago
