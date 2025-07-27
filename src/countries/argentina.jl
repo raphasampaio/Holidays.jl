@@ -51,19 +51,19 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Argentina})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Truth and Justice Day", is_truth_and_justice_day),
-        Holiday("Veterans Day", is_veterans_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Revolution Day", is_revolution_day),
-        Holiday("Martín Güemes Day", is_martin_guemes_day),
-        Holiday("Flag Day", is_flag_day),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("San Martín Day", is_san_martin_day),
-        Holiday("Respect for Cultural Diversity Day", is_respect_for_cultural_diversity_day),
-        Holiday("National Sovereignty Day", is_national_sovereignty_day),
-        Holiday("Immaculate Conception", is_immaculate_conception),
-        Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Truth and Justice Day", is_truth_and_justice_day),
+        # Holiday("Veterans Day", is_veterans_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Revolution Day", is_revolution_day),
+        # Holiday("Martín Güemes Day", is_martin_guemes_day),
+        # Holiday("Flag Day", is_flag_day),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("San Martín Day", is_san_martin_day),
+        # Holiday("Respect for Cultural Diversity Day", is_respect_for_cultural_diversity_day),
+        # Holiday("National Sovereignty Day", is_national_sovereignty_day),
+        # Holiday("Immaculate Conception", is_immaculate_conception),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end
 
