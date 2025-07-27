@@ -9,7 +9,7 @@ const International = Holidays.International
 
 function Holidays.fetch_holidays(::Type{Holidays.Anguilla})
     return [
-        Holiday("New Year's Day", x -> Dates.year(x) >= 2001 && International.is_new_years_day(x)),
+        Holiday("New Year's Day", 2001, is_january_1st),
     ]
 end
 
