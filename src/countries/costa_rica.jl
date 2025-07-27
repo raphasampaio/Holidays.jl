@@ -35,16 +35,16 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.CostaRica})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Maundy Thursday", Christian.is_maundy_thursday),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Juan Santamaria Day", is_juan_santamaria_day),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Guanacaste Day", is_guanacaste_day),
-        Holiday("Lady of the Angels Day", is_lady_of_the_angels_day),
-        Holiday("Mother's Day", is_mothers_day),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Army Abolition Day", is_army_abolition_day),
-        Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Maundy Thursday", Christian.is_maundy_thursday),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Juan Santamaria Day", is_juan_santamaria_day),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Guanacaste Day", is_guanacaste_day),
+        # Holiday("Lady of the Angels Day", is_lady_of_the_angels_day),
+        # Holiday("Mother's Day", is_mothers_day),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("Army Abolition Day", is_army_abolition_day),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end
 
