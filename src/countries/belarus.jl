@@ -21,7 +21,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Belarus})
     return [
-        Holiday("New Year's Day", x -> Dates.year(x) >= 1991 && International.is_new_years_day(x)),
+        Holiday("New Year's Day", is_new_years_day),
     ]
 end
 
