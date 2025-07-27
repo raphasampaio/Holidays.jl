@@ -23,13 +23,13 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.UnitedKingdom})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Early May Bank Holiday", is_early_may_bank_holiday),
-        Holiday("Spring Bank Holiday", is_spring_bank_holiday),
-        Holiday("Summer Bank Holiday", is_summer_bank_holiday),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Early May Bank Holiday", is_early_may_bank_holiday),
+        # Holiday("Spring Bank Holiday", is_spring_bank_holiday),
+        # Holiday("Summer Bank Holiday", is_summer_bank_holiday),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 
