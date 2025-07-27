@@ -48,14 +48,14 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Israel})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Holocaust Remembrance Day", is_holocaust_remembrance_day),
-        Holiday("Memorial Day", is_memorial_day),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Rosh Hashanah (1st day)", x -> is_rosh_hashanah(x) && is_day(x, 15)),
-        Holiday("Rosh Hashanah (2nd day)", x -> is_rosh_hashanah(x) && is_day(x, 16)),
-        Holiday("Yom Kippur", is_yom_kippur),
-        Holiday("Sukkot", is_sukkot),
-        Holiday("Simchat Torah", is_simchat_torah),
+        # Holiday("Holocaust Remembrance Day", is_holocaust_remembrance_day),
+        # Holiday("Memorial Day", is_memorial_day),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("Rosh Hashanah (1st day)", x -> is_rosh_hashanah(x) && is_day(x, 15)),
+        # Holiday("Rosh Hashanah (2nd day)", x -> is_rosh_hashanah(x) && is_day(x, 16)),
+        # Holiday("Yom Kippur", is_yom_kippur),
+        # Holiday("Sukkot", is_sukkot),
+        # Holiday("Simchat Torah", is_simchat_torah),
     ]
 end
 

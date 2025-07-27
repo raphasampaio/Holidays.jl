@@ -27,14 +27,14 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Ireland})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("St. Patrick's Day", is_st_patricks_day),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("May Bank Holiday", x -> is_may(x) && is_first_monday_of_month(x)),
-        Holiday("June Bank Holiday", is_june_bank),
-        Holiday("August Bank Holiday", is_august_bank),
-        Holiday("October Bank Holiday", is_october_bank),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("St. Stephen's Day", Christian.is_boxing_day),
+        # Holiday("St. Patrick's Day", is_st_patricks_day),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("May Bank Holiday", x -> is_may(x) && is_first_monday_of_month(x)),
+        # Holiday("June Bank Holiday", is_june_bank),
+        # Holiday("August Bank Holiday", is_august_bank),
+        # Holiday("October Bank Holiday", is_october_bank),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("St. Stephen's Day", Christian.is_boxing_day),
     ]
 end
 
