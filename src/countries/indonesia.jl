@@ -97,18 +97,18 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Indonesia})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Chinese New Year", Chinese.is_chinese_new_year),
-        Holiday("Isra and Mi'raj", is_isra_miraj),
-        Holiday("Nyepi (Balinese New Year)", is_nyepi),
-        Holiday("Eid al-Fitr", is_eid_al_fitr),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Vesak Day", is_vesak_day),
-        Holiday("Pancasila Day", is_pancasila_day),
-        Holiday("Eid al-Adha", is_eid_al_adha),
-        Holiday("Islamic New Year", is_islamic_new_year),
-        Holiday("Independence Day", is_independence_day),
-        Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
-        Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Chinese New Year", Chinese.is_chinese_new_year),
+        # Holiday("Isra and Mi'raj", is_isra_miraj),
+        # Holiday("Nyepi (Balinese New Year)", is_nyepi),
+        # Holiday("Eid al-Fitr", is_eid_al_fitr),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Vesak Day", is_vesak_day),
+        # Holiday("Pancasila Day", is_pancasila_day),
+        # Holiday("Eid al-Adha", is_eid_al_adha),
+        # Holiday("Islamic New Year", is_islamic_new_year),
+        # Holiday("Independence Day", is_independence_day),
+        # Holiday("Prophet Muhammad's Birthday", is_prophet_birthday),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end
 
