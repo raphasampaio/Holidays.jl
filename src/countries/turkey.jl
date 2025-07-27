@@ -62,19 +62,19 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Turkey})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("National Sovereignty and Children's Day", is_national_sovereignty_day_turkey),
-        Holiday("Labour and Solidarity Day", International.is_workers_day),
-        Holiday("Commemoration of Atatürk, Youth and Sports Day", is_ataturk_commemoration_day),
-        Holiday("Democracy and National Unity Day", is_democracy_day),
-        Holiday("Victory Day", is_victory_day_turkey),
-        Holiday("Republic Day", is_republic_day_turkey),
-        Holiday("Ramadan Feast Day 1", is_ramadan_feast_day_one),
-        Holiday("Ramadan Feast Day 2", is_ramadan_feast_day_two),
-        Holiday("Ramadan Feast Day 3", is_ramadan_feast_day_three),
-        Holiday("Sacrifice Feast Day 1", is_sacrifice_feast_day_one),
-        Holiday("Sacrifice Feast Day 2", is_sacrifice_feast_day_two),
-        Holiday("Sacrifice Feast Day 3", is_sacrifice_feast_day_three),
-        Holiday("Sacrifice Feast Day 4", is_sacrifice_feast_day_four),
+        # Holiday("National Sovereignty and Children's Day", is_national_sovereignty_day_turkey),
+        # Holiday("Labour and Solidarity Day", International.is_workers_day),
+        # Holiday("Commemoration of Atatürk, Youth and Sports Day", is_ataturk_commemoration_day),
+        # Holiday("Democracy and National Unity Day", is_democracy_day),
+        # Holiday("Victory Day", is_victory_day_turkey),
+        # Holiday("Republic Day", is_republic_day_turkey),
+        # Holiday("Ramadan Feast Day 1", is_ramadan_feast_day_one),
+        # Holiday("Ramadan Feast Day 2", is_ramadan_feast_day_two),
+        # Holiday("Ramadan Feast Day 3", is_ramadan_feast_day_three),
+        # Holiday("Sacrifice Feast Day 1", is_sacrifice_feast_day_one),
+        # Holiday("Sacrifice Feast Day 2", is_sacrifice_feast_day_two),
+        # Holiday("Sacrifice Feast Day 3", is_sacrifice_feast_day_three),
+        # Holiday("Sacrifice Feast Day 4", is_sacrifice_feast_day_four),
     ]
 end
 

@@ -19,15 +19,15 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Switzerland})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Berchtoldstag", is_berchtoldstag),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Ascension Day", Christian.is_ascension_day),
-        Holiday("Whit Monday", Christian.is_whit_monday),
-        Holiday("Swiss National Day", is_swiss_national_day),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Berchtoldstag", is_berchtoldstag),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Ascension Day", Christian.is_ascension_day),
+        # Holiday("Whit Monday", Christian.is_whit_monday),
+        # Holiday("Swiss National Day", is_swiss_national_day),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 
