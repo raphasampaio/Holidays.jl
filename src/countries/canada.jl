@@ -25,16 +25,12 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Canada})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
-        Holiday("New Year's Day (Observed)", (x) -> is_monday(x) && is_january(x) && is_day(x, 2) && is_sunday(x - Day(1))),
-        Holiday("New Year's Day (Observed)", (x) -> is_monday(x) && is_january(x) && is_day(x, 3) && is_saturday(x - Day(2))),
+        Holiday("New Year's Day", Gregorian.is_new_years_day, observed = Holidays.NextWeekday()),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Dominion Day", is_dominion_day),
         Holiday("Canada Day", is_canada_day),
         Holiday("Labour Day", is_labour_day_canada),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Christmas Day (Observed)", (x) -> is_monday(x) && is_december(x) && is_day(x, 26) && is_sunday(x - Day(1))),
-        Holiday("Christmas Day (Observed)", (x) -> is_monday(x) && is_december(x) && is_day(x, 27) && is_saturday(x - Day(2))),
+        Holiday("Christmas Day", Christian.is_christmas_day, observed = Holidays.NextWeekday()),
     ]
 end
 
