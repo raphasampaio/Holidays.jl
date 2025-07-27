@@ -5,8 +5,10 @@ using Holidays
 
 include("../dates.jl")
 
+const Gregorian = Holidays.Gregorian
+
 function Holidays.fetch_holidays(::Type{Holidays.AlandIslands})
-    return Date[
+    return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
     ]
 end

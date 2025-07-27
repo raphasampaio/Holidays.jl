@@ -6,7 +6,7 @@ using Holidays
 include("../dates.jl")
 
 function Holidays.fetch_holidays(::Type{Holidays.WesternSahara})
-    return Date[]
+    return []
 end
 
 end
