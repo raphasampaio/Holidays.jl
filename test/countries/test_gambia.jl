@@ -1,4 +1,4 @@
-module TestTheGambia
+module TestGambia
 
 using Dates
 using Holidays
@@ -6,8 +6,8 @@ using Test
 
 include("../util.jl")
 
-@testset "TheGambia" begin
-    calendar = Holidays.TheGambia()
+@testset "Gambia" begin
+    calendar = Holidays.Gambia()
 
     holidays = Date[]
 
