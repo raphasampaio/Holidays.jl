@@ -239,7 +239,7 @@ end
 @country Tajikistan
 @country Tanzania
 @country Thailand
-@country Timor-Leste
+@country TimorLeste
 @country Togo
 @country Tokelau
 @country Tonga

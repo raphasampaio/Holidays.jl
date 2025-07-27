@@ -1,11 +1,11 @@
-module Timor-LesteHolidays
+module TimorLesteHolidays
 
 using Dates
 using Holidays
 
 include("../dates.jl")
 
-function Holidays.fetch_holidays(::Type{Holidays.Timor-Leste})
+function Holidays.fetch_holidays(::Type{Holidays.TimorLeste})
     return Date[]
 end
 

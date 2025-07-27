@@ -1,4 +1,4 @@
-module TestTimor-Leste
+module TestTimorLeste
 
 using Dates
 using Holidays
@@ -6,8 +6,8 @@ using Test
 
 include("../util.jl")
 
-@testset "Timor-Leste" begin
-    calendar = Holidays.Timor-Leste()
+@testset "TimorLeste" begin
+    calendar = Holidays.TimorLeste()
 
     holidays = Date[
         Date(2006, 1, 1), # New Year's Day
