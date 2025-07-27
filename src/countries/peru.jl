@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_st_peter_and_st_paul(x::TimeType)
     return is_june(x) && is_day(x, 29)
@@ -46,7 +45,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Peru})
         Holiday("Maundy Thursday", x -> x == (Christian.easter_sunday(Dates.year(x)) - Dates.Day(3))),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Sunday", Christian.is_easter_sunday),
-        Holiday("Labour Day", International.is_workers_day),
+        Holiday("Labour Day", is_may_1st),
         Holiday("St. Peter and St. Paul", is_st_peter_and_st_paul),
         Holiday("Independence Day", is_independence_day),
         Holiday("Battle of Junín", is_battle_of_junin),

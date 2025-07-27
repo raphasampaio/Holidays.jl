@@ -6,7 +6,7 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
+
 const Islamic = Holidays.Islamic
 
 function Holidays.fetch_holidays(::Type{Holidays.Egypt})

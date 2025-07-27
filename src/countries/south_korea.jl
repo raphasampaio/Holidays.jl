@@ -5,8 +5,6 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function is_independence_movement_day(x::TimeType)
     return is_march(x) && is_day(x, 1)
 end

@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_juan_santamaria_day(x::Dates.TimeType)
     return is_april(x) && is_day(x, 11)

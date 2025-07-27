@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_freedom_day(x::TimeType)
     return is_april(x) && is_day(x, 25)

@@ -5,8 +5,6 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function is_coming_of_age_day(x::TimeType)
     return Dates.year(x) >= 2000 && is_january(x) && is_second_monday_of_month(x)
 end

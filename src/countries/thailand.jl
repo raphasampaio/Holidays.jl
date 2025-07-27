@@ -6,7 +6,7 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
+
 const Buddhist = Holidays.Buddhist
 
 function is_chakri_day(x::TimeType)

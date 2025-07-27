@@ -6,7 +6,7 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
+
 const Hindu = Holidays.Hindu
 
 function is_republic_day(x::TimeType)

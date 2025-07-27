@@ -5,8 +5,6 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function is_new_years_day(x::TimeType)
     if Dates.year(x) >= 2007
         if International.is_new_years_day(x)

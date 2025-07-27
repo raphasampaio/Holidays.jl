@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_constitution_day(x::TimeType)
     y = year(x)
@@ -53,7 +52,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Mexico})
         Holiday("New Year's Day", is_january_1st),
         Holiday("Constitution Day", is_constitution_day),
         Holiday("Benito Juárez's Birthday", is_benito_juarez_birthday),
-        Holiday("Labour Day", International.is_workers_day),
+        Holiday("Labour Day", is_may_1st),
         Holiday("Independence Day", is_independence_day),
         Holiday("Revolution Day", is_revolution_day),
         Holiday("Change of Federal Government", is_change_of_federal_government),

@@ -5,8 +5,6 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function Holidays.fetch_holidays(::Type{Holidays.Macao})
     return [
         Holiday("New Year's Day", 1982, is_january_1st),

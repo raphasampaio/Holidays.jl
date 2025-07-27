@@ -5,14 +5,12 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function is_new_years_day(x::TimeType)
-    if Dates.year(x) >= 1991 && International.is_new_years_day(x)
+    if Dates.year(x) >= 1991 && is_january_1st(x)
         return true
     end
 
-    if Dates.year(x) >= 2020 && is_january(x) && is_day(x, 2)
+    if Dates.year(x) >= 2020 && is_january_2nd(x)
         return true
     end
 

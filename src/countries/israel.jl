@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_independence_day(x::TimeType)
     # Independence Day is on the 5th of Iyar in the Hebrew calendar

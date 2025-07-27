@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_general_prayer_day(x::TimeType)
     # Fourth Friday after Easter

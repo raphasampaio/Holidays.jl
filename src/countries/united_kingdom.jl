@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_early_may_bank_holiday(x::TimeType)
     return is_may(x) && is_first_monday_of_month(x)

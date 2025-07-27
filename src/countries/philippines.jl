@@ -7,7 +7,6 @@ include("../dates.jl")
 
 const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_peoples_power_anniversary(x::TimeType)
     return is_february(x) && is_day(x, 25)

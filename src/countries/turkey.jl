@@ -5,8 +5,6 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function is_national_sovereignty_day_turkey(x::TimeType)
     return is_april(x) && is_day(x, 23)
 end

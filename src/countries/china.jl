@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Chinese = Holidays.Chinese
-const International = Holidays.International
 
 function is_national_day(x::TimeType)
     return is_october(x) && is_day(x, 1)

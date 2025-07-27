@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_truth_and_justice_day(x::TimeType)
     return is_march(x) && is_day(x, 24)

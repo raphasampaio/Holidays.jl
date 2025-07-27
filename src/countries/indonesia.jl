@@ -7,7 +7,6 @@ include("../dates.jl")
 
 const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_nyepi(x::TimeType)
     # Balinese New Year - simplified dates

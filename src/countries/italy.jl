@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_epiphany(x::TimeType)
     return is_january(x) && is_day(x, 6)
@@ -34,7 +33,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Holidays.Italy})
         Holiday("Epiphany", is_epiphany),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Liberation Day", is_liberation_day),
-        Holiday("Labour Day", International.is_workers_day),
+        Holiday("Labour Day", is_may_1st),
         Holiday("Republic Day", is_republic_day),
         Holiday("Ferragosto", is_ferragosto),
         Holiday("All Saints' Day", Christian.is_all_saints_day),

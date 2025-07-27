@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const International = Holidays.International
 
 function is_kings_day(x::TimeType)
     # King's Day (April 27, or April 26 if 27th is Sunday)

@@ -76,3 +76,7 @@ is_last_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x)
 
 is_january_1st(x::TimeType) = is_january(x) && is_day(x, 1)
 is_january_2nd(x::TimeType) = is_january(x) && is_day(x, 2)
+
+is_march_8th(x::TimeType) = is_march(x) && is_day(x, 8)
+
+is_may_1st(x::TimeType) = is_may(x) && is_day(x, 1)
