@@ -236,6 +236,7 @@ end
 @country Switzerland
 @country Syria
 @country Taiwan
+@country Kosovo
 @country Tajikistan
 @country Tanzania
 @country Thailand
