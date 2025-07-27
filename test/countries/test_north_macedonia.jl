@@ -11,22 +11,14 @@ include("../util.jl")
 
     holidays = Date[
         Date(1999, 1, 1), # New Year's Day
-        Date(1999, 1, 2), # New Year's Day
         Date(2000, 1, 1), # New Year's Day
-        Date(2000, 1, 2), # New Year's Day
         Date(2001, 1, 1), # New Year's Day
-        Date(2001, 1, 2), # New Year's Day
         Date(2002, 1, 1), # New Year's Day
-        Date(2002, 1, 2), # New Year's Day
         Date(2003, 1, 1), # New Year's Day
-        Date(2003, 1, 2), # New Year's Day
         Date(2004, 1, 1), # New Year's Day
-        Date(2004, 1, 2), # New Year's Day
         Date(2005, 1, 1), # New Year's Day
-        Date(2005, 1, 2), # New Year's Day
         Date(2006, 1, 1), # New Year's Day
         Date(2007, 1, 1), # New Year's Day
-        Date(2007, 1, 2), # New Year's Day
         Date(2008, 1, 1), # New Year's Day
         Date(2009, 1, 1), # New Year's Day
         Date(2010, 1, 1), # New Year's Day

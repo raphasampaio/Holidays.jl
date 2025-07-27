@@ -5,11 +5,9 @@ using Holidays
 
 include("../dates.jl")
 
-const International = Holidays.International
-
 function Holidays.fetch_holidays(::Type{Holidays.NorthMacedonia})
     return [
-        Holiday("New Year's Day", x -> Dates.year(x) >= 1999 && (is_january_1st(x) || is_january_2nd(x))),
+        Holiday("New Year's Day", x -> Dates.year(x) >= 1999 && is_january_1st(x)),
     ]
 end
 
