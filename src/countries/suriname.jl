@@ -5,11 +5,11 @@ using Holidays
 
 include("../dates.jl")
 
-const Gregorian = Holidays.Gregorian
+const International = Holidays.International
 
 function Holidays.fetch_holidays(::Type{Holidays.Suriname})
     return [
-        Holiday("New Year's Day", x -> Dates.year(x) >= 1972 && Gregorian.is_new_years_day(x)),
+        Holiday("New Year's Day", x -> Dates.year(x) >= 1972 && International.is_new_years_day(x)),
     ]
 end
 

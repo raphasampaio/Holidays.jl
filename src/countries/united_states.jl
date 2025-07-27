@@ -6,12 +6,12 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
+const International = Holidays.International
 
 const UnitedStates = Holidays.UnitedStates
 
 function is_new_years_day(x::TimeType)
-    return Dates.year(x) >= 1871 && Gregorian.is_new_years_day(x)
+    return Dates.year(x) >= 1871 && International.is_new_years_day(x)
 end
 
 function is_martin_luther_king_birthday(x::TimeType)

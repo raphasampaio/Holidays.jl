@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_truth_and_justice_day(x::TimeType)
@@ -51,7 +50,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Argentina})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Truth and Justice Day", is_truth_and_justice_day),
         Holiday("Veterans Day", is_veterans_day),
         Holiday("Good Friday", Christian.is_good_friday),

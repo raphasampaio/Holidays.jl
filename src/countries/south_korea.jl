@@ -5,7 +5,7 @@ using Holidays
 
 include("../dates.jl")
 
-const Gregorian = Holidays.Gregorian
+const International = Holidays.International
 
 function is_independence_movement_day(x::TimeType)
     return is_march(x) && is_day(x, 1)
@@ -43,7 +43,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.SouthKorea})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Independence Movement Day", is_independence_movement_day),
         Holiday("Children's Day", is_childrens_day_korea),
         Holiday("Buddha's Birthday", is_buddha_birthday),

@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_human_rights_day(x::TimeType)
@@ -35,7 +34,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.SouthAfrica})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Human Rights Day", is_human_rights_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Monday", Christian.is_easter_monday),

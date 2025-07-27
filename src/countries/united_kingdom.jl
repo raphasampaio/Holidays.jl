@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_early_may_bank_holiday(x::TimeType)
@@ -23,7 +22,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.UnitedKingdom})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Early May Bank Holiday", is_early_may_bank_holiday),

@@ -5,9 +5,8 @@ using Holidays
 
 include("../dates.jl")
 
-const Gregorian = Holidays.Gregorian
-const International = Holidays.International
 const Chinese = Holidays.Chinese
+const International = Holidays.International
 
 function is_national_day(x::TimeType)
     return is_october(x) && is_day(x, 1)
@@ -15,7 +14,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.China})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Spring Festival", Chinese.is_chinese_new_year),
         Holiday("Lantern Festival", Chinese.is_lantern_festival),
         Holiday("Tomb-Sweeping Day", Chinese.is_qingming_festival),

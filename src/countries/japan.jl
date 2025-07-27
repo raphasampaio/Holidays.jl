@@ -5,7 +5,7 @@ using Holidays
 
 include("../dates.jl")
 
-const Gregorian = Holidays.Gregorian
+const International = Holidays.International
 
 function is_coming_of_age_day(x::TimeType)
     return Dates.year(x) >= 2000 && is_january(x) && is_second_monday_of_month(x)
@@ -74,7 +74,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Japan})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Coming-of-Age Day", is_coming_of_age_day),
         Holiday("National Foundation Day", is_national_foundation_day),
         Holiday("Emperor's Birthday", is_emperors_birthday),

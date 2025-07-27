@@ -7,7 +7,6 @@ include("../dates.jl")
 
 const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_nyepi(x::TimeType)
@@ -97,7 +96,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Indonesia})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         Holiday("Isra and Mi'raj", is_isra_miraj),
         Holiday("Nyepi (Balinese New Year)", is_nyepi),

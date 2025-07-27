@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_new_years_day_observed(x::TimeType)

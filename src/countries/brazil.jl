@@ -6,14 +6,13 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 const Brazil = Holidays.Brazil
 
 function Holidays.fetch_holidays(::Type{Brazil})
     return [
-        Holiday("Universal Fraternization Day", Gregorian.is_new_years_day),
+        Holiday("Universal Fraternization Day", International.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Tiradentes' Day", x -> is_april(x) && is_day(x, 21)),
         Holiday("Worker's Day", International.is_workers_day),

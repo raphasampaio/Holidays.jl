@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_juan_santamaria_day(x::Dates.TimeType)
@@ -35,7 +34,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.CostaRica})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Maundy Thursday", Christian.is_maundy_thursday),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Juan Santamaria Day", is_juan_santamaria_day),

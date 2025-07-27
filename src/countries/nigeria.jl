@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_independence_day(x::TimeType)
@@ -67,7 +66,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Nigeria})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labour Day", International.is_workers_day),

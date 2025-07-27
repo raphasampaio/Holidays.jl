@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_orthodox_christmas(x::TimeType)
@@ -31,7 +30,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Russia})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Orthodox Christmas", is_orthodox_christmas),
         Holiday("Defender of the Fatherland Day", is_defender_of_fatherland_day),
         Holiday("International Women's Day", International.is_womens_day),

@@ -7,7 +7,6 @@ include("../dates.jl")
 
 const Chinese = Holidays.Chinese
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_peoples_power_anniversary(x::TimeType)
@@ -55,7 +54,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Philippines})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Chinese New Year", Chinese.is_chinese_new_year),
         Holiday("People Power Anniversary", is_peoples_power_anniversary),
         Holiday("Araw ng Kagitingan", is_araw_ng_kagitingan),

@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_declaration_of_independence(x::TimeType)
@@ -31,7 +30,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Venezuela})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Carnival Monday", Christian.is_shrove_monday),
         Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
         Holiday("Maundy Thursday", Christian.is_maundy_thursday),

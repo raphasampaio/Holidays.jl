@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_bastille_day(x::TimeType)
@@ -19,7 +18,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.France})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Easter Monday", Christian.is_easter_monday),
         Holiday("Labor Day", International.is_workers_day),
         Holiday("Victory Day", x -> year(x) >= 1982 && is_may(x) && is_day(x, 8)),

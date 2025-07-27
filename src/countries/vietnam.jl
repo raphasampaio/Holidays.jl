@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 const Vietnam = Holidays.Vietnam
@@ -43,7 +42,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Vietnam})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Tet Holiday", is_tet_holiday),
         Holiday("Hung Kings' Day", is_hung_kings_day),
         Holiday("Reunification Day", is_reunification_day),

@@ -5,7 +5,7 @@ using Holidays
 
 include("../dates.jl")
 
-const Gregorian = Holidays.Gregorian
+const International = Holidays.International
 
 function Holidays.fetch_holidays(::Type{Holidays.Cuba})
     return [

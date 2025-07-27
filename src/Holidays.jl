@@ -20,7 +20,6 @@ include("holiday.jl")
 include("country.jl")
 
 include("calendars/christian.jl")
-include("calendars/gregorian.jl")
 include("calendars/international.jl")
 include("calendars/islamic.jl")
 include("calendars/chinese.jl")

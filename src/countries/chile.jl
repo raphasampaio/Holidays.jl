@@ -6,7 +6,6 @@ using Holidays
 include("../dates.jl")
 
 const Christian = Holidays.Christian
-const Gregorian = Holidays.Gregorian
 const International = Holidays.International
 
 function is_navy_day(x::Dates.TimeType)
@@ -55,7 +54,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Chile})
     return [
-        Holiday("New Year's Day", Gregorian.is_new_years_day),
+        Holiday("New Year's Day", International.is_new_years_day),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Holy Saturday", Christian.is_holy_saturday),
         Holiday("Labour Day", International.is_workers_day),
