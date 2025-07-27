@@ -9,7 +9,7 @@ include("../util.jl")
 @testset "Ecuador" begin
     calendar = Holidays.Ecuador()
 
-    holidays = []
+    holidays = Date[]
 
     test_holidays(calendar, holidays)
 
