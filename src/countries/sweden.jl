@@ -9,10 +9,10 @@ const Christian = Holidays.Christian
 const International = Holidays.International
 
 function is_new_years_day(x::TimeType)
-   if is_sunday(x)
-       return false
-   end
-   return is_january(x) && is_day(x, 1)
+    if is_sunday(x)
+        return false
+    end
+    return is_january(x) && is_day(x, 1)
 end
 
 function is_epiphany(x::TimeType)
