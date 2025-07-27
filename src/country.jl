@@ -216,3 +216,6 @@ end
 @country Yemen
 @country Zambia
 @country Zimbabwe
+@country AmericanSamoa
+@country Anguilla
+@country Antarctica
