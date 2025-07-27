@@ -225,5 +225,8 @@ include("countries/vietnam.jl")
 include("countries/yemen.jl")
 include("countries/zambia.jl")
 include("countries/zimbabwe.jl")
+include("countries/american_samoa.jl")
+include("countries/anguilla.jl")
+include("countries/antarctica.jl")
 
 end
