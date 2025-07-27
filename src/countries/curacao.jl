@@ -11,7 +11,6 @@ function Holidays.fetch_holidays(::Type{Holidays.Curacao})
     return [
         Holiday("New Year's Day", Gregorian.is_new_years_day),
     ]
-    
 end
 
 end

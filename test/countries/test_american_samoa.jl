@@ -10,7 +10,6 @@ include("../util.jl")
     calendar = Holidays.AmericanSamoa()
 
     holidays = Date[
-   
     ]
 
     test_holidays(calendar, holidays)
