@@ -27,16 +27,16 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Spain})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Epiphany", is_epiphany),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Labour Day", International.is_workers_day),
-        Holiday("Assumption of Mary", Christian.is_assumption_day),
-        Holiday("National Day", is_national_day_spain),
-        Holiday("All Saints' Day", Christian.is_all_saints_day),
-        Holiday("Constitution Day", is_constitution_day_spain),
-        Holiday("Immaculate Conception", is_immaculate_conception),
-        Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Epiphany", is_epiphany),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Labour Day", International.is_workers_day),
+        # Holiday("Assumption of Mary", Christian.is_assumption_day),
+        # Holiday("National Day", is_national_day_spain),
+        # Holiday("All Saints' Day", Christian.is_all_saints_day),
+        # Holiday("Constitution Day", is_constitution_day_spain),
+        # Holiday("Immaculate Conception", is_immaculate_conception),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
     ]
 end
 

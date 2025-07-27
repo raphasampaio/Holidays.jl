@@ -41,16 +41,16 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.NewZealand})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Day after New Year's Day", is_day_after_new_years),
-        Holiday("Waitangi Day", is_waitangi_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("ANZAC Day", is_anzac_day),
-        Holiday("Queen's Birthday", is_queens_birthday),
-        Holiday("Matariki", is_matariki),
-        Holiday("Labour Day", is_labour_day),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Day after New Year's Day", is_day_after_new_years),
+        # Holiday("Waitangi Day", is_waitangi_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("ANZAC Day", is_anzac_day),
+        # Holiday("Queen's Birthday", is_queens_birthday),
+        # Holiday("Matariki", is_matariki),
+        # Holiday("Labour Day", is_labour_day),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 

@@ -73,3 +73,6 @@ is_last_thursday_of_month(x::TimeType) = is_thursday(x) && Dates.dayofweekofmont
 is_last_friday_of_month(x::TimeType) = is_friday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 is_last_saturday_of_month(x::TimeType) = is_saturday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 is_last_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
+
+is_january_1st(x::TimeType) = is_january(x) && is_day(x, 1)
+is_january_2nd(x::TimeType) = is_january(x) && is_day(x, 2)

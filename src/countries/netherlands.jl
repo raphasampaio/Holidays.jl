@@ -27,14 +27,14 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.Netherlands})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("King's Day", is_kings_day),
-        Holiday("Liberation Day", is_liberation_day),
-        Holiday("Ascension Day", Christian.is_ascension_day),
-        Holiday("Whit Monday", Christian.is_whit_monday),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Boxing Day", Christian.is_boxing_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("King's Day", is_kings_day),
+        # Holiday("Liberation Day", is_liberation_day),
+        # Holiday("Ascension Day", Christian.is_ascension_day),
+        # Holiday("Whit Monday", Christian.is_whit_monday),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Boxing Day", Christian.is_boxing_day),
     ]
 end
 
