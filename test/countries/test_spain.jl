@@ -52,10 +52,12 @@ include("../util.jl")
         Date(2009, 1, 1), # New Year's Day
         Date(2010, 1, 1), # New Year's Day
         Date(2011, 1, 1), # New Year's Day
+        Date(2012, 1, 1), # New Year's Day
         Date(2013, 1, 1), # New Year's Day
         Date(2014, 1, 1), # New Year's Day
         Date(2015, 1, 1), # New Year's Day
         Date(2016, 1, 1), # New Year's Day
+        Date(2017, 1, 1), # New Year's Day
         Date(2018, 1, 1), # New Year's Day
         Date(2019, 1, 1), # New Year's Day
         Date(2020, 1, 1), # New Year's Day
