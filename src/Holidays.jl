@@ -8,7 +8,8 @@ export
     Holiday,
     AbstractHolidayCalendar,
     ClosestWeekday,
-    NextWeekday,
+    NextMondayIfFallsOnWeekend,
+    NextMondayIfFallsOnSunday,
     Subdivision
 
 include("Subdivision.jl")

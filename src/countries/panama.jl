@@ -7,21 +7,6 @@ include("../dates.jl")
 
 const Christian = Holidays.Christian
 
-function is_new_years_day_observed(x::TimeType)
-    # Check if it's New Year's Day itself
-    if is_january(x) && is_day(x, 1)
-        return true
-    end
-
-    # Check if it's the observed date when January 1 falls on Sunday
-    jan_1 = Date(Dates.year(x), 1, 1)
-    if is_sunday(jan_1) && x == jan_1 + Dates.Day(1)  # Observed on Monday
-        return true
-    end
-
-    return false
-end
-
 function is_martyrs_day_observed(x::TimeType)
     year = Dates.year(x)
 
@@ -208,7 +193,7 @@ end
 
 function Holidays.fetch_holidays(::Type{Holidays.Panama})
     return [
-        Holiday("New Year's Day", is_new_years_day_observed),
+        Holiday("New Year's Day", is_january_1st, observed = NextMondayIfFallsOnSunday()),
         Holiday("Martyrs' Day", is_martyrs_day_observed),
         Holiday("Constitution Day", x -> (Dates.year(x) == 1970 || Dates.year(x) == 1971) && is_march(x) && is_day(x, 1)),
         Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
