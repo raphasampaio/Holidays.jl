@@ -35,17 +35,17 @@ end
 function Holidays.fetch_holidays(::Type{Holidays.SouthAfrica})
     return [
         Holiday("New Year's Day", International.is_new_years_day),
-        Holiday("Human Rights Day", is_human_rights_day),
-        Holiday("Good Friday", Christian.is_good_friday),
-        Holiday("Easter Monday", Christian.is_easter_monday),
-        Holiday("Freedom Day", is_freedom_day),
-        Holiday("Workers' Day", International.is_workers_day),
-        Holiday("Youth Day", is_youth_day),
-        Holiday("National Women's Day", is_national_womens_day),
-        Holiday("Heritage Day", is_heritage_day),
-        Holiday("Day of Reconciliation", is_day_of_reconciliation),
-        Holiday("Christmas Day", Christian.is_christmas_day),
-        Holiday("Day of Goodwill", Christian.is_boxing_day),
+        # Holiday("Human Rights Day", is_human_rights_day),
+        # Holiday("Good Friday", Christian.is_good_friday),
+        # Holiday("Easter Monday", Christian.is_easter_monday),
+        # Holiday("Freedom Day", is_freedom_day),
+        # Holiday("Workers' Day", International.is_workers_day),
+        # Holiday("Youth Day", is_youth_day),
+        # Holiday("National Women's Day", is_national_womens_day),
+        # Holiday("Heritage Day", is_heritage_day),
+        # Holiday("Day of Reconciliation", is_day_of_reconciliation),
+        # Holiday("Christmas Day", Christian.is_christmas_day),
+        # Holiday("Day of Goodwill", Christian.is_boxing_day),
     ]
 end
 
