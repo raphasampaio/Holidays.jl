@@ -82,6 +82,7 @@ is_january_1st(x::TimeType) = is_january(x) && is_day(x, 1)
 is_january_2nd(x::TimeType) = is_january(x) && is_day(x, 2)
 is_january_3rd(x::TimeType) = is_january(x) && is_day(x, 3)
 is_january_4th(x::TimeType) = is_january(x) && is_day(x, 4)
+is_january_9th(x::TimeType) = is_january(x) && is_day(x, 9)
 
 is_march_8th(x::TimeType) = is_march(x) && is_day(x, 8)
 
@@ -106,8 +107,12 @@ is_october_8th(x::TimeType) = is_october(x) && is_day(x, 8)
 is_october_12th(x::TimeType) = is_october(x) && is_day(x, 12)
 
 is_november_1st(x::TimeType) = is_november(x) && is_day(x, 1)
+is_november_3rd(x::TimeType) = is_november(x) && is_day(x, 3)
+is_november_5th(x::TimeType) = is_november(x) && is_day(x, 5)
+is_november_10th(x::TimeType) = is_november(x) && is_day(x, 10)
 is_november_15th(x::TimeType) = is_november(x) && is_day(x, 15)
 is_november_20th(x::TimeType) = is_november(x) && is_day(x, 20)
 
 is_december_8th(x::TimeType) = is_december(x) && is_day(x, 8)
 is_december_9th(x::TimeType) = is_december(x) && is_day(x, 9)
+is_december_20th(x::TimeType) = is_december(x) && is_day(x, 20)
