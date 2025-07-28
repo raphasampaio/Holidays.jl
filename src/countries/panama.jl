@@ -31,24 +31,9 @@ function is_independence_day_observed(x::TimeType)
     return false
 end
 
-function is_presidential_inauguration_day_observed(x::TimeType)
+function is_presidential_inauguration_day(x::TimeType)
     year = Dates.year(x)
-
-    # Presidential Inauguration Day occurs in specific years: 2014, 2019, 2024
-    if year == 2014 || year == 2019 || year == 2024
-        # Check if it's July 1st
-        if is_july_1st(x)
-            return true
-        end
-
-        # Check if it's the observed date when July 1 falls on Sunday
-        jul_1 = Date(year, 7, 1)
-        if is_sunday(jul_1) && x == jul_1 + Dates.Day(1)  # Observed on Monday
-            return true
-        end
-    end
-
-    return false
+    return (year == 2014 || year == 2019 || year == 2024) && is_july_1st(x)
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Panama})
@@ -59,7 +44,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Panama})
         Holiday("Carnival Tuesday", Christian.is_shrove_tuesday),
         Holiday("Good Friday", Christian.is_good_friday),
         Holiday("Labor Day", is_may_1st, observed = next_monday_if_falls_on_sunday),
-        Holiday("Presidential Inauguration Day", is_presidential_inauguration_day_observed),
+        Holiday("Presidential Inauguration Day", is_presidential_inauguration_day, observed = next_monday_if_falls_on_sunday, start_year = 2014),
         Holiday("Separation Day", is_november_3rd, observed = next_monday_if_falls_on_sunday),
         Holiday("Colon Day", is_november_5th, observed = next_monday_if_falls_on_sunday, start_year = 2002),
         Holiday("Los Santos Uprising Day", is_november_10th, observed = next_monday_if_falls_on_sunday),

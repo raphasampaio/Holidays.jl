@@ -102,6 +102,7 @@ is_august_7th(x::TimeType) = is_august(x) && is_day(x, 7)
 is_august_30th(x::TimeType) = is_august(x) && is_day(x, 30)
 
 is_september_7th(x::TimeType) = is_september(x) && is_day(x, 7)
+is_september_16th(x::TimeType) = is_september(x) && is_day(x, 16)
 
 is_october_8th(x::TimeType) = is_october(x) && is_day(x, 8)
 is_october_12th(x::TimeType) = is_october(x) && is_day(x, 12)

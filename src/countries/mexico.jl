@@ -25,10 +25,6 @@ function is_benito_juarez_birthday(x::TimeType)
     end
 end
 
-function is_independence_day(x::TimeType)
-    return is_september(x) && is_day(x, 16)
-end
-
 function is_revolution_day(x::TimeType)
     y = year(x)
     if y >= 2006
@@ -53,7 +49,7 @@ function Holidays.fetch_holidays(::Type{Holidays.Mexico})
         Holiday("Constitution Day", is_constitution_day),
         Holiday("Benito Juárez's Birthday", is_benito_juarez_birthday),
         Holiday("Labour Day", is_may_1st),
-        Holiday("Independence Day", is_independence_day),
+        Holiday("Independence Day", is_september_16th),
         Holiday("Revolution Day", is_revolution_day),
         Holiday("Change of Federal Government", is_change_of_federal_government),
         Holiday("Christmas Day", Christian.is_christmas_day),
