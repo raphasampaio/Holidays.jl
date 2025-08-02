@@ -75,6 +75,7 @@ is_last_saturday_of_month(x::TimeType) = is_saturday(x) && Dates.dayofweekofmont
 is_last_sunday_of_month(x::TimeType) = is_sunday(x) && Dates.dayofweekofmonth(x) == Dates.daysofweekinmonth(x)
 
 is_third_monday_of_january(x::TimeType) = is_january(x) && is_third_monday_of_month(x)
+is_first_monday_of_june(x::TimeType) = is_june(x) && is_first_monday_of_month(x)
 is_first_monday_of_september(x::TimeType) = is_september(x) && is_first_monday_of_month(x)
 is_fourth_thursday_of_november(x::TimeType) = is_november(x) && is_fourth_thursday_of_month(x)
 
@@ -91,6 +92,7 @@ is_april_21st(x::TimeType) = is_april(x) && is_day(x, 21)
 is_may_1st(x::TimeType) = is_may(x) && is_day(x, 1)
 is_may_17th(x::TimeType) = is_may(x) && is_day(x, 17)
 
+is_june_19th(x::TimeType) = is_june(x) && is_day(x, 19)
 is_june_29th(x::TimeType) = is_june(x) && is_day(x, 29)
 
 is_july_1st(x::TimeType) = is_july(x) && is_day(x, 1)

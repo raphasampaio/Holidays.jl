@@ -62,29 +62,13 @@ function is_veterans_day(x::TimeType)
     end
 end
 
-function is_juneteenth_national_independence_day(x::TimeType)
-    return Dates.year(x) >= 2021 && is_june(x) && is_day(x, 19)
-end
-
-function is_patriot_day(x::TimeType)
-    return Dates.year(x) >= 1969 && is_april(x) && is_third_monday_of_month(x)
-end
-
-function is_jefferson_davis_birthday(x::TimeType)
-    return is_june(x) && is_first_monday_of_month(x)
-end
-
-function is_election_day(x::TimeType)
-    return is_november(x) && is_tuesday(x) && is_day_between(x, 2, 8)
-end
-
 function Holidays.fetch_holidays(::Type{UnitedStates})
     return [
         Holiday("New Year's Day", is_january_1st, start_year = 1871, observed = closest_weekday),
         Holiday("Martin Luther King Birthday", is_third_monday_of_january, start_year = 1986),
         Holiday("Washington Birthday", is_washington_birthday),
         Holiday("Memorial Day", is_memorial_day),
-        Holiday("Juneteenth National Independence Day", is_juneteenth_national_independence_day, observed = closest_weekday),
+        Holiday("Juneteenth National Independence Day", is_june_19th, observed = closest_weekday, start_year = 2021),
         Holiday("Independence Day", is_july_4th, start_year = 1871, observed = closest_weekday),
         Holiday("Labor Day", is_first_monday_of_september, start_year = 1894),
         Holiday("Columbus Day", is_columbus_day),
