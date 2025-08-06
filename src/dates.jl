@@ -91,10 +91,12 @@ is_april_21st(x::TimeType) = is_april(x) && is_day(x, 21)
 
 is_may_1st(x::TimeType) = is_may(x) && is_day(x, 1)
 is_may_15th(x::TimeType) = is_may(x) && is_day(x, 15)
+is_may_10th(x::TimeType) = is_may(x) && is_day(x, 10)
 is_may_17th(x::TimeType) = is_may(x) && is_day(x, 17)
 
 is_june_19th(x::TimeType) = is_june(x) && is_day(x, 19)
 is_june_29th(x::TimeType) = is_june(x) && is_day(x, 29)
+is_june_17th(x::TimeType) = is_june(x) && is_day(x, 17)
 
 is_july_1st(x::TimeType) = is_july(x) && is_day(x, 1)
 is_july_4th(x::TimeType) = is_july(x) && is_day(x, 4)
@@ -107,12 +109,14 @@ is_august_30th(x::TimeType) = is_august(x) && is_day(x, 30)
 
 is_september_7th(x::TimeType) = is_september(x) && is_day(x, 7)
 is_september_16th(x::TimeType) = is_september(x) && is_day(x, 16)
+is_september_15th(x::TimeType) = is_september(x) && is_day(x, 15)
 
 is_october_8th(x::TimeType) = is_october(x) && is_day(x, 8)
 is_october_12th(x::TimeType) = is_october(x) && is_day(x, 12)
 
 is_november_1st(x::TimeType) = is_november(x) && is_day(x, 1)
 is_november_3rd(x::TimeType) = is_november(x) && is_day(x, 3)
+is_november_2nd(x::TimeType) = is_november(x) && is_day(x, 2)
 is_november_5th(x::TimeType) = is_november(x) && is_day(x, 5)
 is_november_10th(x::TimeType) = is_november(x) && is_day(x, 10)
 is_november_15th(x::TimeType) = is_november(x) && is_day(x, 15)
