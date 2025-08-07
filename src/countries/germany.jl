@@ -12,14 +12,6 @@ const Germany = Holidays.Germany
 function Holidays.fetch_holidays(::Type{Germany})
     return [
         Holiday("New Year's Day", is_january_1st),
-        # Holiday("Good Friday", Christian.is_good_friday),
-        # Holiday("Easter Monday", Christian.is_easter_monday),
-        # Holiday("Labour Day", International.is_workers_day),
-        # Holiday("Ascension Day", Christian.is_ascension_day),
-        # Holiday("Whit Monday", Christian.is_whit_monday),
-        # Holiday("German Unity Day", x -> is_october(x) && is_day(x, 3)),
-        # Holiday("Christmas Day", Christian.is_christmas_day),
-        # Holiday("Second Day of Christmas", Christian.is_boxing_day),
     ]
 end
 

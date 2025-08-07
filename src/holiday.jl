@@ -6,7 +6,7 @@ struct Holiday
     observed::Optional{Function}
     start_year::Optional{Int}
     end_year::Optional{Int}
-    skip_years::Optional{Set{Int}}
+    skip_years::Set{Int}
 
     function Holiday(
         label::String,
@@ -14,13 +14,20 @@ struct Holiday
         observed::Optional{Function} = nothing,
         start_year::Optional{Int} = nothing,
         end_year::Optional{Int} = nothing,
-        skip_years::Optional{Vector{Int}} = nothing
+        skip_years::Vector{Int} = Int[],
     )
-        return new(label, handler, observed, start_year, end_year, Set{Int}(skip_years))
+        return new(
+            label,
+            handler,
+            observed,
+            start_year,
+            end_year,
+            Set{Int}(skip_years),
+        )
     end
 end
 
-function is_holiday(holiday::Holiday, date::TimeType)
+function is_holiday(holiday::Holiday, date::TimeType)::Bool
     year = Dates.year(date)
 
     if !isnothing(holiday.start_year) && year < holiday.start_year
@@ -31,7 +38,7 @@ function is_holiday(holiday::Holiday, date::TimeType)
         return false
     end
 
-    if !isnothing(holiday.skip_years) && year in holiday.skip_years
+    if year in holiday.skip_years
         return false
     end
 
