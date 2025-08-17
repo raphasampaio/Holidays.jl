@@ -1,7 +1,8 @@
 is_day(x::TimeType, day::Integer) = Dates.day(x) == day
 is_day_between(x::TimeType, day_start::Integer, day_end::Integer) = Dates.day(x) >= day_start && Dates.day(x) <= day_end
 
-is_year_between(x::TimeType, year_start::Integer, year_end::Integer) = Dates.year(x) >= year_start && Dates.year(x) <= year_end
+is_year_between(x::TimeType, year_start::Integer, year_end::Integer) =
+    Dates.year(x) >= year_start && Dates.year(x) <= year_end
 
 is_january(x::TimeType) = Dates.month(x) == Dates.Jan
 is_february(x::TimeType) = Dates.month(x) == Dates.Feb

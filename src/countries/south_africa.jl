@@ -7,7 +7,6 @@ include("../dates.jl")
 
 const Christian = Holidays.Christian
 
-
 function Holidays.fetch_holidays(::Type{Holidays.SouthAfrica})
     return [
         Holiday("New Year's Day", is_january_1st),
