@@ -10,8 +10,6 @@ const Hindu = Holidays.Hindu
 const Islamic = Holidays.Islamic
 const Buddhist = Holidays.Buddhist
 
-is_october_2nd(x::TimeType) = is_october(x) && is_day(x, 2)
-
 const ASHURA_DATES = Set{Date}([
     Date(1970, 3, 18), Date(1971, 3, 7), Date(1972, 2, 25), Date(1973, 2, 13), Date(1974, 2, 2),
     Date(1975, 1, 22), Date(1976, 1, 11), Date(1976, 12, 31), Date(1977, 12, 20), Date(1978, 12, 10),
