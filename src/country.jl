@@ -5,7 +5,9 @@ macro country(name)
                 subdivision::S
                 holidays::Vector{Holiday}
 
-                function $(esc(name))(; subdivision::S = nothing) where {S <: Union{Nothing, Subdivision.AbstractSubdivision}}
+                function $(esc(name))(;
+                    subdivision::S = nothing,
+                ) where {S <: Union{Nothing, Subdivision.AbstractSubdivision}}
                     if subdivision == nothing
                         return new{S}(subdivision, fetch_holidays($(esc(name))))
                     else

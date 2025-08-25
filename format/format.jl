@@ -3,10 +3,7 @@ Pkg.instantiate()
 
 using JuliaFormatter
 
-formatted = format(dirname(@__FILE__))
-
-if formatted
-    @info "All files have been formatted!"
+if format(dirname(@__DIR__))
     exit(0)
 else
     @error "Some files have not been formatted!"
