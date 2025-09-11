@@ -14,7 +14,7 @@ Holidays.jl is a lightweight Julia package designed for determining whether a sp
 ### Installation
 
 ```julia
-julia> ] add Holidays
+pkg> add Holidays
 ```
 
 ### Example 1: United States

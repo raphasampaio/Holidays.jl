@@ -3,7 +3,7 @@
 ## Installation
 
 ```julia
-julia> ] add Holidays
+pkg> add Holidays
 ```
 
 ## Basic Usage
