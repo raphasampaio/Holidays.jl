@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(julia:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(test\\test.bat:*)"
+    ],
+    "deny": [
+      "File(test/**)"
+    ],
+    "ask": []
+  }
+}
