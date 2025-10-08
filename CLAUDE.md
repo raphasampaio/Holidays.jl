@@ -76,4 +76,4 @@ The project uses JuliaFormatter for consistent code formatting. All contribution
 ## Julia Version Support
 
 Minimum Julia version: 1.9
-The project is designed to work with Julia 1.11+ as evidenced by the batch scripts using `julia +1.11`.
+The project is designed to work with Julia 1.11+ as evidenced by the batch scripts using `julia +1.12`.

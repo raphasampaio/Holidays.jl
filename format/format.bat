@@ -2,4 +2,4 @@
 
 SET BASEPATH=%~dp0
 
-julia +1.11 --project=%BASEPATH% %BASEPATH%\format.jl
+julia +1.12 --project=%BASEPATH% %BASEPATH%\format.jl
