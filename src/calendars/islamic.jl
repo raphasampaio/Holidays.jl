@@ -8,6 +8,7 @@ include("../dates.jl")
 include("islamic/ali_al_rida_death_dates.jl")
 include("islamic/ali_birthday_dates.jl")
 include("islamic/ali_death_dates.jl")
+include("islamic/arafah_day_dates.jl")
 include("islamic/arbaeen_dates.jl")
 include("islamic/ashura_dates.jl")
 include("islamic/eid_al_adha_dates.jl")
@@ -42,6 +43,8 @@ is_eid_al_adha_day_one(x::TimeType) = x in EID_AL_ADHA_DATES
 is_eid_al_adha_day_two(x::TimeType) = (x - Day(1)) in EID_AL_ADHA_DATES
 
 is_eid_al_adha_day_three(x::TimeType) = (x - Day(2)) in EID_AL_ADHA_DATES
+
+is_arafah_day(x::TimeType) = x in ARAFAH_DAY_DATES
 
 is_mawlid_day(x::TimeType) = x in MAWLID_DATES
 

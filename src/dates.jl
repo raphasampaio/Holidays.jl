@@ -402,6 +402,7 @@ is_november_10th(x::TimeType) = is_november(x) && is_day(x, 10)
 is_november_11th(x::TimeType) = is_november(x) && is_day(x, 11)
 is_november_15th(x::TimeType) = is_november(x) && is_day(x, 15)
 is_november_20th(x::TimeType) = is_november(x) && is_day(x, 20)
+is_november_23rd(x::TimeType) = is_november(x) && is_day(x, 23)
 is_november_30th(x::TimeType) = is_november(x) && is_day(x, 30)
 
 is_december_1st(x::TimeType) = is_december(x) && is_day(x, 1)
