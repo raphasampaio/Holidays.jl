@@ -21,15 +21,6 @@ function is_eid_al_fitr_day_zero(x::TimeType)
     return false
 end
 
-function is_eid_al_fitr_day_four(x::TimeType)
-    # 4 Shawwal (3 days after Eid al-Fitr day 1)
-    return (Date(x) - Day(3)) in Islamic.EID_AL_FITR_DATES
-end
-
-function is_eid_al_adha_day_four(x::TimeType)
-    return (x - Day(3)) in Islamic.EID_AL_ADHA_DATES
-end
-
 # Check if a date is a weekend day based on the year
 function is_saudi_weekend(date::Date)
     year = Dates.year(date)
@@ -196,7 +187,7 @@ function Holidays.fetch_holidays(::Type{SaudiArabia})
         Holiday("عطلة عيد الفطر", Islamic.is_eid_al_fitr_day_one),
         Holiday("عطلة عيد الفطر", Islamic.is_eid_al_fitr_day_two),
         Holiday("عطلة عيد الفطر", Islamic.is_eid_al_fitr_day_three),
-        Holiday("عطلة عيد الفطر", is_eid_al_fitr_day_four),
+        Holiday("عطلة عيد الفطر", Islamic.is_eid_al_fitr_day_four),
         
         # Arafah Day (9 Dhu al-Hijjah, one day before Eid al-Adha)
         Holiday("يوم عرفة", Islamic.is_arafah_day),

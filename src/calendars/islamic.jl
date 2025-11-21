@@ -38,11 +38,15 @@ is_eid_al_fitr_day_two(x::TimeType) = (x - Day(1)) in EID_AL_FITR_DATES
 
 is_eid_al_fitr_day_three(x::TimeType) = (x - Day(2)) in EID_AL_FITR_DATES
 
+is_eid_al_fitr_day_four(x::TimeType) = (x - Day(3)) in Islamic.EID_AL_FITR_DATES
+
 is_eid_al_adha_day_one(x::TimeType) = x in EID_AL_ADHA_DATES
 
 is_eid_al_adha_day_two(x::TimeType) = (x - Day(1)) in EID_AL_ADHA_DATES
 
 is_eid_al_adha_day_three(x::TimeType) = (x - Day(2)) in EID_AL_ADHA_DATES
+
+is_eid_al_adha_day_four(x::TimeType) = (x - Day(3)) in Islamic.EID_AL_ADHA_DATES
 
 is_arafah_day(x::TimeType) = x in ARAFAH_DAY_DATES
 
