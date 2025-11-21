@@ -160,4 +160,3 @@ const PROPHET_DEATH_DATES = Set{Date}([
     Date(2076, 02, 03),
     Date(2077, 01, 23),
 ])
-
