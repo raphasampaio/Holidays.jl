@@ -18,6 +18,7 @@ include("country.jl")
 
 include("calendars/christian.jl")
 include("calendars/islamic.jl")
+include("calendars/persian.jl")
 include("calendars/chinese.jl")
 include("calendars/buddhist.jl")
 include("calendars/hindu.jl")
