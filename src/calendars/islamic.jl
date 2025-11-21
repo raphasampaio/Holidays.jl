@@ -4,7 +4,30 @@ using Dates
 using Holidays
 
 include("../dates.jl")
-include("islamic_dates.jl")
+
+include("islamic/ali_al_rida_death_dates.jl")
+include("islamic/ali_birthday_dates.jl")
+include("islamic/ali_death_dates.jl")
+include("islamic/arbaeen_dates.jl")
+include("islamic/ashura_dates.jl")
+include("islamic/eid_al_adha_dates.jl")
+include("islamic/eid_al_fitr_dates.jl")
+include("islamic/eid_al_ghadir_dates.jl")
+include("islamic/fatima_death_dates.jl")
+include("islamic/hari_hol_johor_dates.jl")
+include("islamic/hasan_al_askari_death_dates.jl")
+include("islamic/hijri_new_year_dates.jl")
+include("islamic/imam_mahdi_birthday_dates.jl")
+include("islamic/isra_and_miraj_dates.jl")
+include("islamic/maldives_embraced_islam_day_dates.jl")
+include("islamic/mawlid_dates.jl")
+include("islamic/nuzul_al_quran_dates.jl")
+include("islamic/prophet_death_dates.jl")
+include("islamic/quamee_dhuvas_dates.jl")
+include("islamic/ramadan_beginning_dates.jl")
+include("islamic/sadiq_birthday_dates.jl")
+include("islamic/sadiq_death_dates.jl")
+include("islamic/tasua_dates.jl")
 
 const Christian = Holidays.Christian
 
@@ -25,5 +48,7 @@ is_mawlid_day(x::TimeType) = x in MAWLID_DATES
 is_hijri_new_year(x::TimeType) = x in HIJRI_NEW_YEAR_DATES
 
 is_sham_el_nessim(x::TimeType) = Christian.is_easter_monday(x)
+
+is_ramadan_beginning_day(x::TimeType) = x in RAMADAN_BEGINNING_DATES
 
 end
