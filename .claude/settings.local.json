@@ -4,10 +4,7 @@
       "Bash(julia:*)",
       "Bash(grep:*)",
       "Bash(sed:*)",
-      "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(testtest.bat countriestest_afghanistan.jl)",
-      "Bash(cmd /c \"test\\test.bat countries\\test_afghanistan.jl\")",
-      "Bash(cmd /c \"cd /d C:\\Development\\PersonalJulia\\Holidays.jl && test\\test.bat countries\\test_afghanistan.jl\")"
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [],
     "ask": []
