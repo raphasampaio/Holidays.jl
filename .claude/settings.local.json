@@ -4,7 +4,9 @@
       "Bash(julia:*)",
       "Bash(grep:*)",
       "Bash(sed:*)",
-      "WebFetch(domain:raw.githubusercontent.com)"
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(test\\test.bat:*)",
+      "Bash(cmd /c \"test\\test.bat:*)"
     ],
     "deny": [],
     "ask": []

@@ -58,4 +58,32 @@ is_sham_el_nessim(x::TimeType) = Christian.is_easter_monday(x)
 
 is_ramadan_beginning_day(x::TimeType) = x in RAMADAN_BEGINNING_DATES
 
+is_arbaeen(x::TimeType) = x in ARBAEEN_DATES
+
+is_tasua(x::TimeType) = x in TASUA_DATES
+
+is_ashura(x::TimeType) = x in ASHURA_DATES
+
+is_prophet_death_day(x::TimeType) = x in PROPHET_DEATH_DATES
+
+is_ali_al_rida_death(x::TimeType) = x in ALI_AL_RIDA_DEATH_DATES
+
+is_hasan_al_askari_death(x::TimeType) = x in HASAN_AL_ASKARI_DEATH_DATES
+
+is_sadiq_birthday(x::TimeType) = x in SADIQ_BIRTHDAY_DATES
+
+is_fatima_death(x::TimeType) = x in FATIMA_DEATH_DATES
+
+is_ali_birthday(x::TimeType) = x in ALI_BIRTHDAY_DATES
+
+is_isra_and_miraj(x::TimeType) = x in ISRA_AND_MIRAJ_DATES
+
+is_mahdi_birthday(x::TimeType) = x in IMAM_MAHDI_BIRTHDAY_DATES
+
+is_ali_death(x::TimeType) = x in ALI_DEATH_DATES
+
+is_sadiq_death(x::TimeType) = x in SADIQ_DEATH_DATES
+
+is_eid_al_ghadir(x::TimeType) = x in EID_AL_GHADIR_DATES
+
 end
