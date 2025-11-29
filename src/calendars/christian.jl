@@ -24,6 +24,11 @@ function ash_wednesday(year::Integer)
     return easter_sunday(year) - Dates.Day(46)
 end
 
+is_epiphany(x::TimeType) = x == epiphany(Dates.year(x))
+function epiphany(year::Integer)
+    return Date(year, 1, 6)
+end
+
 is_easter_sunday(x::TimeType) = x == easter_sunday(Dates.year(x))
 function easter_sunday(year::Integer)
     g = year % 19
@@ -108,6 +113,11 @@ function advent_sunday(year::Integer)
     # adjust backward to the nearest Sunday
     day_of_week = dayofweek(first_advent)
     return first_advent - Dates.Day(day_of_week % 7)
+end
+
+is_immaculate_conception(x::TimeType) = x == immaculate_conception(Dates.year(x))
+function immaculate_conception(year::Integer)
+    return Date(year, 12, 8)
 end
 
 is_christmas_eve(x::TimeType) = x == christmas_eve(Dates.year(x))
