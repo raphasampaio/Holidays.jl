@@ -8,9 +8,22 @@ include("../observed.jl")
 
 const Christian = Holidays.Christian
 
-# Check if Uruguay observed rule applies for a given year (for Workers' Day specifically)
-function uruguay_observed_applies_workers_day(year::Int)
-    return 1980 <= year <= 1983
+# Calculate the observed date for Uruguay's Tue-Fri -> Monday rule
+# Tuesday/Wednesday -> previous Monday, Thursday/Friday -> next Monday
+function uruguay_observed_date(base_date::Date)
+    day_of_week = Dates.dayofweek(base_date)
+
+    return if day_of_week == Dates.Tuesday
+        base_date - Day(1)  # Previous Monday
+    elseif day_of_week == Dates.Wednesday
+        base_date - Day(2)  # Previous Monday
+    elseif day_of_week == Dates.Thursday
+        base_date + Day(4)  # Next Monday
+    elseif day_of_week == Dates.Friday
+        base_date + Day(3)  # Next Monday
+    else
+        base_date  # Keep on same day (Mon/Sat/Sun)
+    end
 end
 
 # Workers' Day handler with built-in observed logic
@@ -19,34 +32,14 @@ function is_workers_day_uruguay(x::TimeType)
     year = Dates.year(x)
     may_first = Date(year, 5, 1)
 
-    # Check if observed rule applies for this year
-    if uruguay_observed_applies_workers_day(year)
-        day_of_week_may1 = Dates.dayofweek(may_first)
-
-        # If May 1 falls on Tue/Wed/Thu/Fri, the holiday is moved to Monday
-        if day_of_week_may1 in [Dates.Tuesday, Dates.Wednesday, Dates.Thursday, Dates.Friday]
-            # Calculate which Monday it should be
-            if day_of_week_may1 == Dates.Tuesday
-                # Tuesday -> previous Monday
-                return Date(x) == may_first - Day(1)
-            elseif day_of_week_may1 == Dates.Wednesday
-                # Wednesday -> previous Monday
-                return Date(x) == may_first - Day(2)
-            elseif day_of_week_may1 == Dates.Thursday
-                # Thursday -> next Monday
-                return Date(x) == may_first + Day(4)
-            elseif day_of_week_may1 == Dates.Friday
-                # Friday -> next Monday
-                return Date(x) == may_first + Day(3)
-            end
-        else
-            # May 1 falls on Sat/Sun/Mon, keep on May 1
-            return Date(x) == may_first
-        end
+    # In years 1980-1983, apply observed rule; otherwise use actual date
+    target_date = if 1980 <= year <= 1983
+        uruguay_observed_date(may_first)
     else
-        # Observed rule doesn't apply, holiday is on May 1
-        return Date(x) == may_first
+        may_first
     end
+
+    return Date(x) == target_date
 end
 
 function is_constitution_day(x::TimeType)
@@ -65,8 +58,10 @@ function is_presidential_inauguration(x::TimeType)
     year = Dates.year(x)
     month = Dates.month(x)
     day = Dates.day(x)
-    # Presidential inaugurations occur every 5 years starting 1985
-    return month == 3 && day == 1 && year in [1985, 1990, 1995, 2000, 2005, 2010, 2015, 2020]
+
+    # Presidential inaugurations on March 1, every 5 years starting from 1985
+    # Limited to 2020 based on historical data (future inaugurations may vary)
+    return month == 3 && day == 1 && year >= 1985 && year <= 2020 && (year - 1985) % 5 == 0
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Uruguay})

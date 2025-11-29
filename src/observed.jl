@@ -28,7 +28,7 @@ end
 # If falls on Tue/Wed -> previous Monday
 # If falls on Thu/Fri -> next Monday
 # Can be configured to apply only in specific years
-function to_monday_if_tue_to_fri(holiday::Holiday, x::TimeType; year_filter::Union{Nothing,Function}=nothing)
+function to_monday_if_tue_to_fri(holiday::Holiday, x::TimeType; year_filter::Union{Nothing, Function} = nothing)
     year = Dates.year(x)
 
     # If year_filter is provided, check if rule applies to this year
