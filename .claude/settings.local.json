@@ -6,7 +6,8 @@
       "Bash(sed:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(test\\test.bat:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(format.bat)"
     ],
     "deny": [],
     "ask": []
