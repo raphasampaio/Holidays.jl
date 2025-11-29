@@ -10,6 +10,16 @@ const Christian = Holidays.Christian
 function Holidays.fetch_holidays(::Type{Holidays.Denmark})
     return [
         Holiday("New Year's Day", is_january_1st),
+        Holiday("Maundy Thursday", Christian.is_maundy_thursday),
+        Holiday("Good Friday", Christian.is_good_friday),
+        Holiday("Easter Sunday", Christian.is_easter_sunday),
+        Holiday("Easter Monday", Christian.is_easter_monday),
+        Holiday("Great Prayer Day", Christian.is_great_prayer_day, end_year = 2023),
+        Holiday("Ascension Day", Christian.is_ascension_day),
+        Holiday("Whit Sunday", Christian.is_whit_sunday),
+        Holiday("Whit Monday", Christian.is_whit_monday),
+        Holiday("Christmas Day", Christian.is_christmas_day),
+        Holiday("Second Day of Christmas", Christian.is_boxing_day),
     ]
 end
 

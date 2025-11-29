@@ -78,6 +78,11 @@ function whit_sunday(year::Integer)
     return easter_sunday(year) + Dates.Day(49)
 end
 
+is_great_prayer_day(x::TimeType) = x == great_prayer_day(Dates.year(x))
+function great_prayer_day(year::Integer)
+    return easter_sunday(year) + Dates.Day(26)
+end
+
 is_assumption_day(x::TimeType) = x == assumption_day(Dates.year(x))
 function assumption_day(year::Integer)
     return Date(year, 8, 15)

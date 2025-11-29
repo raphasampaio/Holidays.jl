@@ -17,12 +17,6 @@ test\test.bat
 test\test.bat countries\test_united_states.jl
 ```
 
-### Code Formatting
-```bash
-# Format code (Windows)
-format\format.bat
-```
-
 ## Architecture
 
 ### Core Components
@@ -184,16 +178,6 @@ end
 The test suite uses a recursive inclusion system that automatically finds and runs all `test_*.jl` files. Individual country tests can be run by passing the test file name as an argument to the test runner.
 
 All tests must pass before committing changes. The test files are located in `test/countries/` and follow the naming convention `test_country_name.jl`.
-
-## Code Style
-
-The project uses JuliaFormatter for consistent code formatting. All contributions should be formatted using the provided format scripts before committing.
-
-Key style guidelines:
-- Use guard clauses for early returns
-- Prefer mathematical formulas over nested conditionals for date calculations
-- Add clear comments explaining complex observance logic
-- Keep functions focused and single-purpose
 
 ## Julia Version Support
 
