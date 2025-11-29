@@ -42,18 +42,6 @@ function is_workers_day_uruguay(x::TimeType)
     return Date(x) == target_date
 end
 
-function is_constitution_day(x::TimeType)
-    return is_july(x) && is_day(x, 18)
-end
-
-function is_independence_day(x::TimeType)
-    return is_august(x) && is_day(x, 25)
-end
-
-function is_beaches_day(x::TimeType)
-    return is_december(x) && is_day(x, 8)
-end
-
 function is_presidential_inauguration(x::TimeType)
     year = Dates.year(x)
     month = Dates.month(x)
@@ -76,13 +64,13 @@ function Holidays.fetch_holidays(::Type{Holidays.Uruguay})
         Holiday("Workers' Day", is_workers_day_uruguay),
 
         # Constitution Day
-        Holiday("Constitution Day", is_constitution_day),
+        Holiday("Constitution Day", is_july_18th),
 
         # Independence Day
-        Holiday("Independence Day", is_independence_day),
+        Holiday("Independence Day", is_august_25th),
 
         # Beaches Day (ended in 1979, was also present 1936-1979)
-        Holiday("Beaches Day", is_beaches_day, end_year = 1979),
+        Holiday("Beaches Day", is_december_8th, end_year = 1979),
 
         # Day of the Family (Christmas)
         Holiday("Day of the Family", Christian.is_christmas_day),
