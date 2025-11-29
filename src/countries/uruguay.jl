@@ -8,34 +8,32 @@ include("../observed.jl")
 
 const Christian = Holidays.Christian
 
-function is_july_18th(x::TimeType)
-    return is_july(x) && is_day(x, 18)
-end
-
-function is_august_25th(x::TimeType)
-    return is_august(x) && is_day(x, 25)
-end
-
-function is_december_8th(x::TimeType)
-    return is_december(x) && is_day(x, 8)
-end
-
-function is_presidential_inauguration(x::TimeType)
+# Workers' Day with observed rule for 1980-1983
+function is_workers_day_1980_to_1983(x::TimeType)
     year = Dates.year(x)
-    month = Dates.month(x)
-    day = Dates.day(x)
+    (1980 <= year <= 1983) || return false
 
-    # Presidential inaugurations on March 1, every 5 years starting from 1985
-    # Limited to 2020 based on historical data (future inaugurations may vary)
-    return month == 3 && day == 1 && year >= 1985 && year <= 2020 && (year - 1985) % 5 == 0
+    may_first = Date(year, 5, 1)
+    day_of_week = Dates.dayofweek(may_first)
+
+    # Calculate observed date based on day of week
+    observed = if day_of_week in [Dates.Tuesday, Dates.Wednesday]
+        may_first - Day(day_of_week - 1)  # Previous Monday
+    elseif day_of_week in [Dates.Thursday, Dates.Friday]
+        may_first + Day(8 - day_of_week)  # Next Monday
+    else
+        may_first  # Mon/Sat/Sun stay on May 1
+    end
+
+    return Date(x) == observed
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Uruguay})
     return [
         Holiday("New Year's Day", is_january_1st),
-        Holiday("Presidential Inauguration Day", is_presidential_inauguration),
+        Holiday("Presidential Inauguration Day", is_march_1st, start_year = 1985, end_year = 2020, only_years = year -> year % 5 == 0),
         Holiday("Workers' Day", is_may_1st, end_year = 1979),
-        Holiday("Workers' Day", is_may_1st, start_year = 1980, end_year = 1983, observed = previous_monday_if_falls_on_tuesday_or_wednesday_or_next_monday_if_falls_on_thursday_or_friday),
+        Holiday("Workers' Day", is_workers_day_1980_to_1983),
         Holiday("Workers' Day", is_may_1st, start_year = 1984),
         Holiday("Constitution Day", is_july_18th),
         Holiday("Independence Day", is_august_25th),
