@@ -23,4 +23,3 @@ function next_monday_if_falls_on_sunday(holiday::Holiday, x::TimeType)
     end
     return false
 end
-
