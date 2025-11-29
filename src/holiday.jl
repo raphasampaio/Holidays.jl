@@ -45,13 +45,10 @@ function is_holiday(holiday::Holiday, date::TimeType)::Bool
         return false
     end
 
-    # Case A: It's a Set of specific years (e.g., [2014, 2019])
     if isa(holiday.only_years, Set) && !isempty(holiday.only_years)
         if !(year in holiday.only_years)
             return false
         end
-
-        # Case B: It's a Function/Rule (e.g., every 5 years)
     elseif isa(holiday.only_years, Function)
         if !holiday.only_years(year)
             return false
