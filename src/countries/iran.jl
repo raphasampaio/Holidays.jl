@@ -29,7 +29,8 @@ function iran_islamic_holiday(iran_dates::Set{Date}, global_check::Function, x::
 end
 
 # Create Iran-specific functions for each Islamic holiday
-iran_ali_al_rida_death(x::TimeType) = iran_islamic_holiday(IRAN_ALI_AL_RIDA_DEATH_DATES, Islamic.is_ali_al_rida_death, x)
+iran_ali_al_rida_death(x::TimeType) =
+    iran_islamic_holiday(IRAN_ALI_AL_RIDA_DEATH_DATES, Islamic.is_ali_al_rida_death, x)
 iran_ali_birthday(x::TimeType) = iran_islamic_holiday(IRAN_ALI_BIRTHDAY_DATES, Islamic.is_ali_birthday, x)
 iran_ali_death(x::TimeType) = iran_islamic_holiday(IRAN_ALI_DEATH_DATES, Islamic.is_ali_death, x)
 iran_arbaeen(x::TimeType) = iran_islamic_holiday(IRAN_ARBAEEN_DATES, Islamic.is_arbaeen, x)
@@ -38,7 +39,8 @@ iran_eid_al_adha(x::TimeType) = iran_islamic_holiday(IRAN_EID_AL_ADHA_DATES, Isl
 iran_eid_al_fitr(x::TimeType) = iran_islamic_holiday(IRAN_EID_AL_FITR_DATES, Islamic.is_eid_al_fitr_day_one, x)
 iran_eid_al_ghadir(x::TimeType) = iran_islamic_holiday(IRAN_EID_AL_GHADIR_DATES, Islamic.is_eid_al_ghadir, x)
 iran_fatima_death(x::TimeType) = iran_islamic_holiday(IRAN_FATIMA_DEATH_DATES, Islamic.is_fatima_death, x)
-iran_hasan_al_askari_death(x::TimeType) = iran_islamic_holiday(IRAN_HASAN_AL_ASKARI_DEATH_DATES, Islamic.is_hasan_al_askari_death, x)
+iran_hasan_al_askari_death(x::TimeType) =
+    iran_islamic_holiday(IRAN_HASAN_AL_ASKARI_DEATH_DATES, Islamic.is_hasan_al_askari_death, x)
 iran_mahdi_birthday(x::TimeType) = iran_islamic_holiday(IRAN_IMAM_MAHDI_BIRTHDAY_DATES, Islamic.is_mahdi_birthday, x)
 iran_isra_and_miraj(x::TimeType) = iran_islamic_holiday(IRAN_ISRA_AND_MIRAJ_DATES, Islamic.is_isra_and_miraj, x)
 iran_prophet_death(x::TimeType) = iran_islamic_holiday(IRAN_PROPHET_DEATH_DATES, Islamic.is_prophet_death_day, x)
