@@ -25,7 +25,12 @@ function next_monday_if_falls_on_sunday(holiday::Holiday, x::TimeType)
 end
 
 # Tuesday/Wednesday -> previous Monday, Thursday/Friday -> next Monday
-function previous_monday_if_falls_on_tuesday_or_wednesday_or_next_monday_if_falls_on_thursday_or_friday(holiday::Holiday, x::TimeType)
+# For Uruguay: only applies during 1980-1983
+function previous_monday_if_falls_on_tuesday_or_wednesday_or_next_monday_if_falls_on_thursday_or_friday_for_uruguay(holiday::Holiday, x::TimeType)
+    year = Dates.year(x)
+    # Only applies during 1980-1983
+    (1980 <= year <= 1983) || return false
+
     # Only applies if x is a Monday
     is_monday(x) || return false
 

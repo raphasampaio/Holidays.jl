@@ -7,6 +7,7 @@ struct Holiday
     start_year::Optional{Int}
     end_year::Optional{Int}
     skip_years::Set{Int}
+    only_years::Union{Set{Int}, Function}
 
     function Holiday(
         label::String,
@@ -15,6 +16,7 @@ struct Holiday
         start_year::Optional{Int} = nothing,
         end_year::Optional{Int} = nothing,
         skip_years::Vector{Int} = Int[],
+        only_years::Union{Vector{Int}, Function} = Int[],
     )
         return new(
             label,
@@ -23,6 +25,7 @@ struct Holiday
             start_year,
             end_year,
             Set{Int}(skip_years),
+            isa(only_years, Vector) ? Set{Int}(only_years) : only_years,
         )
     end
 end
@@ -40,6 +43,19 @@ function is_holiday(holiday::Holiday, date::TimeType)::Bool
 
     if year in holiday.skip_years
         return false
+    end
+
+    # Case A: It's a Set of specific years (e.g., [2014, 2019])
+    if isa(holiday.only_years, Set) && !isempty(holiday.only_years)
+        if !(year in holiday.only_years)
+            return false
+        end
+
+        # Case B: It's a Function/Rule (e.g., every 5 years)
+    elseif isa(holiday.only_years, Function)
+        if !holiday.only_years(year)
+            return false
+        end
     end
 
     if holiday.handler(date)
