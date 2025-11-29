@@ -60,7 +60,7 @@ function Holidays.fetch_holidays(::Type{UnitedStates})
         Holiday("Martin Luther King Birthday", is_third_monday_of_january, start_year = 1986),
         Holiday("Washington Birthday", is_washington_birthday, start_year = 1872),
         Holiday("Memorial Day", is_memorial_day, start_year = 1889),
-        Holiday("Juneteenth National Independence Day", is_june_19th, observed = closest_weekday, start_year = 2021),
+        Holiday("Juneteenth National Independence Day", is_june_19th, start_year = 2021, observed = closest_weekday),
         Holiday("Independence Day", is_july_4th, start_year = 1871, observed = closest_weekday),
         Holiday("Labor Day", is_first_monday_of_september, start_year = 1894),
         Holiday("Columbus Day", is_columbus_day, start_year = 1969),
