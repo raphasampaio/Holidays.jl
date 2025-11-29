@@ -4,27 +4,40 @@ using Dates
 using Holidays
 
 include("../dates.jl")
-include("../observed.jl")
 
 const Christian = Holidays.Christian
 
-# Workers' Day with observed rule for 1980-1983
-function is_workers_day_1980_to_1983(x::TimeType)
-    year = Dates.year(x)
+# Handler for 1980-1983: Returns true for May 1 only if it doesn't move to Monday
+# For Tue-Fri, returns false (the observed function will mark the Monday instead)
+function is_may_1st_1980_1983(x::TimeType)
+    is_may_1st(x) || return false
 
+    year = Dates.year(x)
     may_first = Date(year, 5, 1)
     day_of_week = Dates.dayofweek(may_first)
 
-    # Calculate observed date based on day of week
-    observed = if day_of_week in [Dates.Tuesday, Dates.Wednesday]
-        may_first - Day(day_of_week - 1)  # Previous Monday
+    # Only mark May 1st itself if it falls on Mon/Sat/Sun (doesn't move)
+    return day_of_week in [Dates.Monday, Dates.Saturday, Dates.Sunday]
+end
+
+# Observed function specifically for Uruguay 1980-1983
+# Checks the ACTUAL May 1st date, not the filtered handler
+function uruguay_observed_1980_1983(holiday::Holiday, x::TimeType)
+    is_monday(x) || return false
+
+    year = Dates.year(x)
+    may_first = Date(year, 5, 1)
+    day_of_week = Dates.dayofweek(may_first)
+
+    # Tuesday/Wednesday -> previous Monday (this x)
+    if day_of_week in [Dates.Tuesday, Dates.Wednesday]
+        return Date(x) == may_first - Day(day_of_week - 1)
+    # Thursday/Friday -> next Monday (this x)
     elseif day_of_week in [Dates.Thursday, Dates.Friday]
-        may_first + Day(8 - day_of_week)  # Next Monday
-    else
-        may_first  # Mon/Sat/Sun stay on May 1
+        return Date(x) == may_first + Day(8 - day_of_week)
     end
 
-    return Date(x) == observed
+    return false
 end
 
 function Holidays.fetch_holidays(::Type{Holidays.Uruguay})
@@ -40,10 +53,10 @@ function Holidays.fetch_holidays(::Type{Holidays.Uruguay})
         Holiday("Workers' Day", is_may_1st, end_year = 1979),
         Holiday(
             "Workers' Day",
-            is_may_1st,
+            is_may_1st_1980_1983,
             start_year = 1980,
             end_year = 1983,
-            observed = previous_monday_if_falls_on_tuesday_or_wednesday_or_next_monday_if_falls_on_thursday_or_friday,
+            observed = uruguay_observed_1980_1983,
         ),
         Holiday("Workers' Day", is_may_1st, start_year = 1984),
         Holiday("Constitution Day", is_july_18th),
