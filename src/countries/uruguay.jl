@@ -32,7 +32,7 @@ function uruguay_observed_1980_1983(holiday::Holiday, x::TimeType)
     # Tuesday/Wednesday -> previous Monday (this x)
     if day_of_week in [Dates.Tuesday, Dates.Wednesday]
         return Date(x) == may_first - Day(day_of_week - 1)
-    # Thursday/Friday -> next Monday (this x)
+        # Thursday/Friday -> next Monday (this x)
     elseif day_of_week in [Dates.Thursday, Dates.Friday]
         return Date(x) == may_first + Day(8 - day_of_week)
     end
