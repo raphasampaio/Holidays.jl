@@ -178,8 +178,3 @@ end
 The test suite uses a recursive inclusion system that automatically finds and runs all `test_*.jl` files. Individual country tests can be run by passing the test file name as an argument to the test runner.
 
 All tests must pass before committing changes. The test files are located in `test/countries/` and follow the naming convention `test_country_name.jl`.
-
-## Julia Version Support
-
-Minimum Julia version: 1.9
-The project is designed to work with Julia 1.11+ as evidenced by the batch scripts using `julia +1.11`.
